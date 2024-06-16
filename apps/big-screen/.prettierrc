@@ -1,0 +1,16 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 80,
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@(.*)",
+    "^[./]"
+  ],
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": { "parser": "json" }
+    }
+  ]
+}

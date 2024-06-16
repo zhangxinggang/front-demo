@@ -1,0 +1,78 @@
+<!--
+ * @Description: 页面头部组件控件项
+ * @Date: 2021-08-12 16:31:29
+ * @LastEditTime: 2022-03-30 11:18:53
+-->
+<template>
+  <div class="page-handle__item">
+    <slot />
+  </div>
+</template>
+<script>
+export default {
+  name: 'PageHandleItem'
+}
+</script>
+
+<style scoped lang="less">
+.page-handle__item {
+  display: flex;
+  align-items: center;
+  & + .page-handle__item {
+    margin-left: 10px;
+  }
+  /* 输入框样式 */
+  /deep/ .ant-input {
+    width: 180px;
+    height: 40px;
+    border-radius: 6px;
+    line-height: 38px;
+  }
+  /* 下拉框样式 */
+  & > .ant-select {
+    min-width: 180px;
+    border-radius: 6px;
+    /deep/ .ant-select-selection, /deep/ .ant-select-selection__rendered {
+      height: 40px;
+      border-radius: 6px;
+      line-height: 38px;
+    }
+    /deep/ .ant-select-selection__rendered > ul > li {
+      margin-top: 7px;
+    }
+    /deep/ .ant-select-selection--multiple {
+      .ant-select-selection__clear, .ant-select-arrow {
+        top: 50%;
+      }
+    }
+  }
+  /* 日期范围框样式 */
+  /deep/ .ant-calendar-picker-input.ant-input {
+    width: 340px;
+    height: 40px;
+    line-height: 1;
+    .ant-calendar-range-picker-separator {
+      vertical-align: text-top;
+    }
+  }
+  /* 按钮样式 */
+   & > button {
+    padding-right: 10px;
+    padding-left: 10px;
+    min-width: 70px;
+    height: 26px;
+    border-radius: 32px;
+    font-size: 13px;
+    line-height: 1 !important;
+   
+    /* 查询按钮 */
+    &.search-btn {
+      padding-right: 10px;
+      padding-left: 10px;
+      height: 36px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+  }
+}
+</style>

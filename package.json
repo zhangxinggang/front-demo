@@ -1,0 +1,29 @@
+{
+  "name": "bricks",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:slash": "pnpm --filter \"slash\" dev",
+    "dev:slash1": "pnpm --filter=slash run dev",
+    "dev:comp": "pnpm --filter=\"bricks-component\" run dev",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "prepare": "husky",
+    "commit": "git-cz",
+    "lint-staged": "lint-staged"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

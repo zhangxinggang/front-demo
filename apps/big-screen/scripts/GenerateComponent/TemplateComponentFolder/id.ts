@@ -1,0 +1,1 @@
+export const CHART_ID:ComponentSelfType = '{{COMPONENT_TYPE}}';
