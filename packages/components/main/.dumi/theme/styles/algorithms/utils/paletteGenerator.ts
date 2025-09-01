@@ -1,5 +1,5 @@
 import chroma from 'chroma-js';
-import { merge } from 'lodash';
+import { merge } from 'lodash-es';
 
 export interface Color {
   hex: string;

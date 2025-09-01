@@ -28,6 +28,7 @@ const Content: FC<PropsWithChildren> = ({ children }) => {
         >
           {children}
         </div>
+        <div id="author-info"></div>
       </div>
 
       <ContentFooter />

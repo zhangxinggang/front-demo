@@ -1,11 +1,16 @@
 import { createStyles } from 'antd-style';
 
 export const useStyles = createStyles(({ token, prefixCls, css, cx }) => {
-  const prefix = `${prefixCls}-home-contents`;
-
   return {
+    home: cx(
+      `${prefixCls}-home`,
+      css`
+        height: 100vh;
+        overflow: hidden;
+      `
+    ),
     container: cx(
-      prefix,
+      `${prefixCls}-home-contents`,
       css`
         width: 100%;
         max-width: ${token.contentMaxWidth}px;

@@ -25,34 +25,9 @@ export const useStyles = createStyles(({ css, responsive, token, stylish, isDark
   titleContainer: css`
     position: relative;
   `,
-  title: css`
-    font-size: 68px;
-    z-index: 10;
-    color: transparent;
-    margin: 0;
-    font-family: AliPuHui, ${token.fontFamily};
-
-    ${responsive({
-      mobile: { fontSize: 40 },
-    })}
-
-    b {
-      position: relative;
-      z-index: 5;
-      ${stylish.heroGradient};
-      ${stylish.heroGradientFlow}
-
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  `,
   titleShadow: css`
-    position: absolute;
     z-index: 0;
     color: ${isDarkMode ? token.colorWhite : token.colorTextBase};
-
-    top: 0;
-    left: 0;
     font-size: 68px;
     font-family: AliPuHui, ${token.fontFamily};
     font-weight: bold;

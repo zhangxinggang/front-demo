@@ -1,4 +1,4 @@
-import { IAction } from '@/types';
+import { IAction } from '../../types';
 import { Button, ConfigProvider } from 'antd';
 import { Link } from 'dumi';
 import { type FC } from 'react';
@@ -40,7 +40,6 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
       <Center>
         {title && (
           <div className={styles.titleContainer}>
-            <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: title }} />
             <div
               className={cx(styles.titleShadow)}
               dangerouslySetInnerHTML={{ __html: title }}

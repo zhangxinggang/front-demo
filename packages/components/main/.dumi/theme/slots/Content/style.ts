@@ -2,6 +2,7 @@ import { createStyles } from 'antd-style';
 
 export const useStyles = createStyles(({ token, responsive, isDarkMode, css }) => ({
   content: css`
+    position: relative;
     min-height: 400px;
     flex: 1;
     width: 100%;
@@ -48,8 +49,10 @@ export const useStyles = createStyles(({ token, responsive, isDarkMode, css }) =
 
       img {
         max-width: 100%;
-
         opacity: ${isDarkMode ? 0.8 : 1};
+        border-radius: 10px;
+        box-shadow: 0 0 10px 10px rgb(236 236 236);
+        margin: 6px 0;
       }
 
       > [data-code-type='highlighter'] {

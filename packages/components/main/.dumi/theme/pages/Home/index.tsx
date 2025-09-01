@@ -17,18 +17,18 @@ const Home: FC = memo(() => {
   const { styles } = useStyles();
 
   return (
-    <>
+    <div className={styles.home}>
       <Helmet>
         <title>{siteTitle}</title>
       </Helmet>
-      <Flexbox align={'center'} gap={80}>
+      <Flexbox align={'center'} gap={60} style={{overflowY: 'auto', height: 'calc(100% - 66px)',paddingBottom: 20}}>
         <Header />
         <Hero />
         <Features />
         {showCustomContent && <div className={styles.container}>{outlet}</div>}
         <Footer />
       </Flexbox>
-    </>
+    </div>
   );
 });
 

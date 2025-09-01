@@ -1,4 +1,4 @@
-import { AnchorItem } from '@/types';
+import { AnchorItem } from '../../types';
 import { ISidebarItem } from 'dumi/dist/client/theme-api/types';
 import { SiteStore } from '../useSiteStore';
 

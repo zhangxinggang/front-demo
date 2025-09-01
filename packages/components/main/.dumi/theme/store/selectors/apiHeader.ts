@@ -1,4 +1,4 @@
-import { camelCase, kebabCase, snakeCase, upperFirst } from 'lodash';
+import { camelCase, kebabCase, snakeCase, upperFirst } from 'lodash-es';
 import { ApiHeaderConfig, ApiHeaderProps } from '../../types';
 import { SiteStore } from '../useSiteStore';
 import { githubSel } from './siteBasicInfo';

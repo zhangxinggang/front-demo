@@ -33,6 +33,7 @@ const FeatureItem: FC<IFeature> = ({
   link,
   imageStyle,
   openExternal,
+  emoji,
 }) => {
   const rowNum = row || 7;
   const { styles, theme } = useStyles({ rowNum, hasLink: !!link });
@@ -63,6 +64,7 @@ const FeatureItem: FC<IFeature> = ({
         )}
         {title && (
           <Flexbox as={'h3'} horizontal gap={8} align={'center'} className={styles.title}>
+            {emoji}
             {title}
             {imageType === 'soon' ? (
               <Tag

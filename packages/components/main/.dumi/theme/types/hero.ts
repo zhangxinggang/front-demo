@@ -48,6 +48,7 @@ export interface IFeature {
    * @title 是否在背后显示 hero 的流动色
    */
   hero?: boolean;
+  emoji?: any;
 }
 
 /**

@@ -23,6 +23,8 @@ const defaultTheme: ShikiSyntaxTheme = {
   light: 'github-light',
 };
 
+let highlighterData: any = null;
+
 export const useShiki = ({ onLoadingChange, theme }: ShikiOptions) => {
   const mergeTheme = useMemo(() => ({ ...defaultTheme, ...theme }), [theme]);
   const [THEME] = useControlledState(defaultTheme, { value: mergeTheme });
@@ -32,10 +34,17 @@ export const useShiki = ({ onLoadingChange, theme }: ShikiOptions) => {
   const initHighlighter = async (theme: ShikiSyntaxTheme) => {
     onLoadingChange?.(true);
 
-    shikiRef.current = await getHighlighter({
-      langs: Object.keys(languageMap) as any,
-      themes: Object.values(theme),
-    });
+    const getHighlighterData: any = ()=>{
+      return new Promise((resolve)=>{
+        if(highlighterData) return highlighterData;
+        return getHighlighter({
+          langs: Object.keys(languageMap) as any,
+          themes: Object.values(theme),
+        });
+      })
+    }
+
+    shikiRef.current = await getHighlighterData();
 
     onLoadingChange?.(false);
   };

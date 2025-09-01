@@ -6,7 +6,6 @@ import {
   useLocation,
   useNavData,
   useRouteMeta,
-  useSidebarData,
   useSiteData,
   useTabMeta,
 } from 'dumi';
@@ -15,6 +14,7 @@ import { PropsWithChildren, memo, useEffect, useMemo, type FC } from 'react';
 
 import DumiSiteProvider from '../../components/DumiSiteProvider';
 import { StoreUpdater } from '../../components/StoreUpdater';
+import useCustomSidebarData from '../../hooks/useCustomSidebarData'
 
 import Docs from '../../pages/Docs';
 import Home from '../../pages/Home';
@@ -86,7 +86,7 @@ const App = memo(({ initState }: any) => (
 
 export default () => {
   const siteData = useSiteData();
-  const sidebar = useSidebarData();
+  const sidebar = useCustomSidebarData();
   const routeMeta = useRouteMeta();
   const tabMeta = useTabMeta();
   const navData = useNavData();

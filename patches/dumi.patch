@@ -1,0 +1,29 @@
+diff --git a/dist/features/routes.js b/dist/features/routes.js
+index 301fefba8b3ad8a85d9c57df6596f869e94f4f4f..e1b0434e1f52030c88f386e3a100454a5e99b2f2 100644
+--- a/dist/features/routes.js
++++ b/dist/features/routes.js
+@@ -161,10 +161,10 @@ var routes_default = (api) => {
+         routes[route.id] = route;
+       });
+     });
+-    atomDirs.forEach(({ type, subType = "", dir }) => {
++    atomDirs.forEach(({ type, subType = "", dir, glob }) => {
+       const base = import_path.default.join(api.cwd, dir);
+       const atomFiles = import_plugin_utils.glob.sync(
+-        "{*,*/index,*/index.*,*/README,*/README.*}.md",
++        glob || "**/*.md",
+         { cwd: base }
+       );
+       atomFiles.forEach((file) => {
+diff --git a/dist/types.d.ts b/dist/types.d.ts
+index d2c0ca521b8e1fd0acb754b82c36f70b9e4b3989..7c9d9d3e9e8fa0264cd6cf6fed9409905531c2d9 100644
+--- a/dist/types.d.ts
++++ b/dist/types.d.ts
+@@ -26,6 +26,7 @@ interface IDumiExtendsConfig {
+             type: string;
+             subType?: string;
+             dir: string;
++            glob?: string;
+         }[];
+         codeBlockMode: 'active' | 'passive';
+         entryFile?: string;

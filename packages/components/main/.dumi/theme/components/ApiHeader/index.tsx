@@ -6,14 +6,13 @@ import { Flexbox } from 'react-layout-kit';
 
 import Code from '../CodeSnippet';
 
-import { ApiHeaderProps } from 'dumi-theme-antd-style/src';
 import { useStyles } from './style';
 
 /**
  * @title API 标题属性
  * @extends ApiHeaderProps
  */
-export interface ApiTitleProps extends ApiHeaderProps {
+export interface ApiTitleProps {
   /**
    * @title 标题
    */
@@ -23,6 +22,7 @@ export interface ApiTitleProps extends ApiHeaderProps {
    * @description 可选，若存在则展示 API 服务列表
    */
   serviceList?: ServiceItem[];
+  [key: string]: any;
 }
 
 /**

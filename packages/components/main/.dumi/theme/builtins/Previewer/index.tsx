@@ -15,7 +15,9 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
         border-color: ${token.colorBorderSecondary};
         display: flex;
         flex-direction: column;
-
+        &-action-btn:not(:last-child){
+          display: none;
+        }
         &-demo {
           flex: 1;
 
@@ -37,6 +39,9 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
         &-actions {
           svg {
             fill: ${token.colorTextTertiary};
+          }
+          span {
+            display: none;
           }
         }
         &-actions:not(:last-child) {
@@ -143,10 +148,22 @@ export default (props: IPreviewerProps) => {
 
   const demoAppearance = props.appearance;
   const lazyLoading = useSiteStore((s) => s.siteData.themeConfig.demo?.lazyLoading);
+  const fm = useSiteStore((s)=> s.routeMeta.frontmatter)
+  let demoDependencies = props.asset.dependencies;
+  if(fm.hideCode){
+    const newDemo = {}
+    Object.keys(props.asset.dependencies).forEach((key)=>{
+      if(!key.startsWith('.')){
+        newDemo[key] = props.asset.dependencies[key]
+      }
+      demoDependencies = newDemo
+    })
+  }
+
 
   const content = (
     <DemoProvider inheritSiteTheme={inheritSiteTheme} demoAppearance={demoAppearance}>
-      <Previewer {...props} />
+      <Previewer {...props} asset={{...props.asset, dependencies: demoDependencies }} />
     </DemoProvider>
   );
 

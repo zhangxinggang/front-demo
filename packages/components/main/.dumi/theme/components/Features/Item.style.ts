@@ -67,12 +67,6 @@ export const useStyles = createStyles(
             ${genSize(100)};
           }
 
-          .${descCls} {
-            position: absolute;
-            visibility: hidden;
-            opacity: 0;
-          }
-
           .${titleCls} {
             font-size: ${hasLink ? 14 : 20}px;
           }
@@ -158,8 +152,9 @@ export const useStyles = createStyles(
 
       link: css`
         ${withTransition};
-
-        margin-top: 24px;
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
 
         a {
           ${stylish.resetLinkColor};

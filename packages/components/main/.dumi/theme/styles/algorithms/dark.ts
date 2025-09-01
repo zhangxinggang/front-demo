@@ -1,4 +1,4 @@
-import { merge } from 'lodash';
+import { merge } from 'lodash-es';
 import { genMapTokenAlgorithm } from './default';
 import { MapTokenAlgorithmParams, TokenRelationship } from './types';
 

@@ -3,7 +3,7 @@ import { useResponsive } from 'antd-style';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
-import { IFooter } from '@/types';
+import { IFooter } from '../../types';
 import Foot, { FooterProps } from '../../components/Footer';
 import { githubSel, useSiteStore } from '../../store';
 import { getColumns } from './columns';
@@ -24,7 +24,7 @@ const Footer: FC = () => {
     : getColumns({ github: githubUrl || (pkg as any).homepage });
 
   const bottomFooter = footer?.bottom || themeConfig.footer;
-  const copyright = footer?.copyright || `Copyright © 2022-${new Date().getFullYear()}`;
+  const copyright = footer?.copyright || `Copyright © 2025-${new Date().getFullYear()}`;
   return (
     <Foot
       theme={footer?.theme || (theme.appearance as FooterProps['theme'])}
