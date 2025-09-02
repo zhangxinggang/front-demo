@@ -31,5 +31,7 @@ export default function ChartPie() {
     },
   });
 
-  return <Chart type="pie" series={series} options={chartOptions} height={320} />;
+  return (
+    <Chart type="pie" series={series} options={chartOptions} height={320} />
+  );
 }

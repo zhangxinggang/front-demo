@@ -1,14 +1,13 @@
-import { useMemo, useCallback, useState } from 'react';
-import { Button, Space, Modal, Form, message } from 'antd';
-import { DeleteOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import Input, { InputModal } from '@/components/ChartComponents/Common/Input';
 import GhostButton from '@/components/GhostButton';
 import IconTooltip from '@/components/IconTooltip';
 import { getPath } from '@/utils/Assist/Component';
 import CopyAndPasteUtil from '@/utils/Assist/CopyAndPaste';
-import InteractiveUtil from '@/utils/Assist/Interactive';
-import { updateInteractiveAndSyncParams } from '../../../utils';
+import { DeleteOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { Button, Form, message, Modal, Space } from 'antd';
+import { useCallback, useMemo, useState } from 'react';
 import MapTable from '../../../MapTable';
+import { updateInteractiveAndSyncParams } from '../../../utils';
 import styles from './index.less';
 
 const { Item, useForm } = Form;
@@ -68,8 +67,7 @@ const EditModal = (props: {
         <Form
           form={form}
           size="small"
-          className={styles['design-config-interactive-base-field-add-modal']}
-        >
+          className={styles['design-config-interactive-base-field-add-modal']}>
           <Item
             label="字段key"
             name="key"
@@ -78,8 +76,7 @@ const EditModal = (props: {
                 required: true,
                 message: '请输入字段key',
               },
-            ]}
-          >
+            ]}>
             <Input />
           </Item>
           <Item label="字段说明" name="description">
@@ -252,8 +249,7 @@ const FieldSetting = (props: IProps) => {
                 <div className="ali-l">
                   当前逻辑为：只有设置了绑定变量才可使用（默认值同样需要在此值设置的情况下）。
                 </div>
-              }
-            >
+              }>
               <InfoCircleOutlined className="m-l-4" />
             </IconTooltip>
           </>
@@ -285,8 +281,7 @@ const FieldSetting = (props: IProps) => {
                 <div className="ali-l">
                   若不可编辑可在基础配置中寻找是否存在默认值的配置
                 </div>
-              }
-            >
+              }>
               <InfoCircleOutlined className="m-l-4" />
             </IconTooltip>
           </>

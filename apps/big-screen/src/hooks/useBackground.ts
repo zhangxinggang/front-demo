@@ -1,5 +1,5 @@
-import { CSSProperties, useMemo, ReactNode } from 'react';
 import ColorSelect from '@/components/ColorSelect';
+import { CSSProperties, useMemo } from 'react';
 
 export const useBackground: (
   value?: ComponentData.TBackgroundConfig,

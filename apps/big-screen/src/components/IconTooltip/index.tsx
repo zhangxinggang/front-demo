@@ -1,6 +1,6 @@
-import { ReactNode, CSSProperties } from 'react';
-import classnames from 'classnames';
 import type { TooltipProps } from 'antd/es/tooltip';
+import classnames from 'classnames';
+import { CSSProperties, ReactNode } from 'react';
 import Tooltip from '../Tooltip';
 import styles from './index.less';
 
@@ -31,8 +31,7 @@ const IconTooltip = (props: Props) => {
         <div onClick={(e) => e.stopPropagation()}>
           {(title as any) || '提示'}
         </div>
-      }
-    >
+      }>
       <span className={classnames('c-po', iconClassName)} style={iconStyle}>
         {children}
       </span>

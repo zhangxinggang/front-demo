@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { get } from 'lodash';
-import querystring from 'query-string';
 import { getDvaGlobalModelData } from '@/utils/Assist/Component';
 import VariableString from '@/utils/Assist/VariableString';
+import { get } from 'lodash';
+import querystring from 'query-string';
+import { useCallback } from 'react';
 
 export const useLinkageInteractive = (
   linkage: ComponentData.TLinkageInteractiveConfig[],

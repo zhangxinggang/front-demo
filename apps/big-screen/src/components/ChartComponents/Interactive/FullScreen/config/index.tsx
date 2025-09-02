@@ -1,14 +1,14 @@
-import { Component } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import LocalUpload from '@/components/ChartComponents/Common/LocalUpload';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { CompatColorSelect } from '@/components/ColorSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import LocalUpload from '@/components/ChartComponents/Common/LocalUpload';
 import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Component } from 'react';
 import { TFullScreenConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -46,8 +46,7 @@ class Config extends Component<
                     <IconTooltip title="尽量上传小一点的图片">
                       <InfoCircleOutlined />
                     </IconTooltip>
-                  }
-                >
+                  }>
                   <FullForm>
                     <LocalUpload
                       value={icon.enter}
@@ -65,8 +64,7 @@ class Config extends Component<
                     <IconTooltip title="尽量上传小一点的图片">
                       <InfoCircleOutlined />
                     </IconTooltip>
-                  }
-                >
+                  }>
                   <FullForm>
                     <LocalUpload
                       value={icon.quit}

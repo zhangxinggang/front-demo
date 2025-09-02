@@ -6,8 +6,7 @@ const DoodleBubbleBackground = () => {
     <div className={'internal-background-doodle-hex-background'}>
       <css-doodle
         grid="12"
-        class={'internal-background-doodle-hex-background-main'}
-      >{`
+        class={'internal-background-doodle-hex-background-main'}>{`
         :doodle {
           @grid: 12 / 100vmax;
           background: #0a0c27;

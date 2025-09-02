@@ -13,7 +13,11 @@ interface Props extends UploadProps {
   defaultAvatar?: string;
   helperText?: React.ReactElement | string;
 }
-export function UploadAvatar({ helperText, defaultAvatar = '', ...other }: Props) {
+export function UploadAvatar({
+  helperText,
+  defaultAvatar = '',
+  ...other
+}: Props) {
   const [imageUrl, setImageUrl] = useState<string>(defaultAvatar);
 
   const [isHover, setIsHover] = useState(false);
@@ -21,7 +25,9 @@ export function UploadAvatar({ helperText, defaultAvatar = '', ...other }: Props
     setIsHover(hover);
   };
 
-  const handleChange: UploadProps['onChange'] = (info: UploadChangeParam<UploadFile>) => {
+  const handleChange: UploadProps['onChange'] = (
+    info: UploadChangeParam<UploadFile>,
+  ) => {
     if (info.file.status === 'uploading') {
       return;
     }
@@ -31,16 +37,18 @@ export function UploadAvatar({ helperText, defaultAvatar = '', ...other }: Props
     }
   };
 
-  const renderPreview = <img src={imageUrl} alt="" className="absolute rounded-full" />;
+  const renderPreview = (
+    <img src={imageUrl} alt="" className="absolute rounded-full" />
+  );
 
   const renderPlaceholder = (
     <div
       style={{
-        backgroundColor: !imageUrl || isHover ? 'rgba(22, 28, 36, 0.64)' : 'transparent',
+        backgroundColor:
+          !imageUrl || isHover ? 'rgba(22, 28, 36, 0.64)' : 'transparent',
         color: '#fff',
       }}
-      className="absolute z-10 flex h-full w-full flex-col items-center justify-center"
-    >
+      className="absolute z-10 flex h-full w-full flex-col items-center justify-center">
       <Iconify icon="solar:camera-add-bold" size={32} />
       <div className="mt-1 text-xs">Upload Photo</div>
     </div>
@@ -50,8 +58,7 @@ export function UploadAvatar({ helperText, defaultAvatar = '', ...other }: Props
     <div
       className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full"
       onMouseEnter={() => handelHover(true)}
-      onMouseLeave={() => handelHover(false)}
-    >
+      onMouseLeave={() => handelHover(false)}>
       {imageUrl ? renderPreview : null}
       {!imageUrl || isHover ? renderPlaceholder : null}
     </div>
@@ -63,7 +70,9 @@ export function UploadAvatar({ helperText, defaultAvatar = '', ...other }: Props
       <br /> max size of {fBytes(3145728)}
     </Typography.Text>
   );
-  const renderHelpText = <div className="text-center">{helperText || defaultHelperText}</div>;
+  const renderHelpText = (
+    <div className="text-center">{helperText || defaultHelperText}</div>
+  );
 
   return (
     <StyledUploadAvatar>
@@ -74,8 +83,7 @@ export function UploadAvatar({ helperText, defaultAvatar = '', ...other }: Props
         className="avatar-uploader !flex items-center justify-center"
         {...other}
         beforeUpload={beforeAvatarUpload}
-        onChange={handleChange}
-      >
+        onChange={handleChange}>
         {renderContent}
       </Upload>
       {renderHelpText}

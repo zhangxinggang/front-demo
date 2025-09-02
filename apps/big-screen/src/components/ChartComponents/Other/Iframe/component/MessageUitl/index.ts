@@ -1,6 +1,6 @@
-import { get } from 'lodash';
 import { getDvaGlobalModelData } from '@/utils/Assist/Component';
 import VariableStringUtil from '@/utils/Assist/VariableString';
+import { get } from 'lodash';
 
 // 发送给iframe的操作类型
 enum ActionType {

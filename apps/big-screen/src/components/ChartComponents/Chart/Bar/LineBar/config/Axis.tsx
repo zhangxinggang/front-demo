@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { Tabs } from 'antd';
-import { TLineBarConfig } from '../type';
 import AxisConfigCommon from '@/components/ChartComponents/Common/AxisConfig';
+import { Tabs } from 'antd';
+import { useCallback } from 'react';
 import styles from '../../../../Common/global.less';
+import { TLineBarConfig } from '../type';
 
 type ValueType = Pick<TLineBarConfig, 'yAxis' | 'xAxis' | 'yAxis2'>;
 

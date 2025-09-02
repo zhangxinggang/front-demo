@@ -1,9 +1,9 @@
-import { Modal } from 'antd';
-import { useState, useCallback, useRef } from 'react';
 import { FullscreenOutlined } from '@ant-design/icons';
+import { Modal } from 'antd';
+import { useCallback, useRef, useState } from 'react';
 import FocusWrapper from '../FocusWrapper';
-import Editor, { EditorRef } from './EditorNext';
 import IconTooltip from '../IconTooltip';
+import Editor, { EditorRef } from './EditorNext';
 import Typesetting from './Typesetting';
 import styles from './index.less';
 
@@ -53,8 +53,7 @@ const FullScreenEditor = (props: {
         onCancel={onCancel}
         wrapClassName={styles['full-screen-editor-modal']}
         width="70vw"
-        maskClosable={false}
-      >
+        maskClosable={false}>
         <FocusWrapper className="pos-re w-100 h-100">
           <Editor
             value={stateCode}

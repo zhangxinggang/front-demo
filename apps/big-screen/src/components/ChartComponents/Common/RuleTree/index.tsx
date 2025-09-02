@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
 import { Button } from 'antd';
+import { useCallback } from 'react';
 import { DEFAULT_CONDITION_CONFIG_ITEM_RULE } from '../Constants/defaultConfig';
-import Header from './components/Header';
 import Condition from './components/Condition';
+import Header from './components/Header';
 import styles from './index.less';
 
 const RuleTree = (props: {

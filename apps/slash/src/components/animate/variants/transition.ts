@@ -1,4 +1,4 @@
-import { TranHoverType, TranEnterType, TranExitType } from '../types';
+import { TranEnterType, TranExitType, TranHoverType } from '../types';
 
 // https://www.framer.com/motion/transition/
 // A transition defines how values animate from one state to another.

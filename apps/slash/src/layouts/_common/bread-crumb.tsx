@@ -2,7 +2,7 @@ import { Breadcrumb } from 'antd';
 import { ItemType } from 'antd/es/breadcrumb/Breadcrumb';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMatches, Link } from 'react-router-dom';
+import { Link, useMatches } from 'react-router-dom';
 
 import { useFlattenedRoutes, usePermissionRoutes } from '@/router/hooks';
 import { menuFilter } from '@/router/utils';
@@ -22,9 +22,13 @@ export default function BreadCrumb() {
 
   useEffect(() => {
     const menuRoutes = menuFilter(permissionRoutes);
-    const paths = matches.filter((item) => item.pathname !== '/').map((item) => item.pathname);
+    const paths = matches
+      .filter((item) => item.pathname !== '/')
+      .map((item) => item.pathname);
 
-    const pathRouteMetas = flattenedRoutes.filter((item) => paths.indexOf(item.key) !== -1);
+    const pathRouteMetas = flattenedRoutes.filter(
+      (item) => paths.indexOf(item.key) !== -1,
+    );
 
     let items: AppRouteObject[] | undefined = [...menuRoutes];
     const breadCrumbs = pathRouteMetas.map((routeMeta) => {

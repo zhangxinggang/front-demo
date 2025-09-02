@@ -38,12 +38,20 @@ export default function Page() {
               xmlns="http://www.w3.org/2000/svg"
               width={400}
               height={400}
-              className="w-full"
-            >
+              className="w-full">
               <defs>
-                <linearGradient id="BG" x1="19.496%" x2="77.479%" y1="71.822%" y2="16.69%">
+                <linearGradient
+                  id="BG"
+                  x1="19.496%"
+                  x2="77.479%"
+                  y1="71.822%"
+                  y2="16.69%">
                   <stop offset="0%" stopColor={colorPrimary} />
-                  <stop offset="100%" stopColor={colorPrimary} stopOpacity="0" />
+                  <stop
+                    offset="100%"
+                    stopColor={colorPrimary}
+                    stopOpacity="0"
+                  />
                 </linearGradient>
               </defs>
               <path
@@ -127,8 +135,7 @@ export default function Page() {
                   x2="255.652"
                   y1="143.24"
                   y2="187.057"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor={colorPrimary} />
                   <stop offset="1" stopColor={colorPrimary} />
                 </linearGradient>
@@ -138,8 +145,7 @@ export default function Page() {
                   x2="138"
                   y1="164"
                   y2="287.9"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor={colorPrimary} />
                   <stop offset="1" stopColor={colorPrimary} />
                 </linearGradient>
@@ -150,8 +156,7 @@ export default function Page() {
           <NavLink
             to={HOMEPAGE}
             style={{ background: colorTextBase, color: colorBgBase }}
-            className="rounded-md p-4"
-          >
+            className="rounded-md p-4">
             Go to Home
           </NavLink>
         </MotionContainer>

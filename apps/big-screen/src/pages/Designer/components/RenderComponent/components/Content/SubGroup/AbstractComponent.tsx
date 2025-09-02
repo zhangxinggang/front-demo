@@ -1,21 +1,21 @@
 import {
-  ReactNode,
-  useMemo,
-  useEffect,
-  useRef,
+  EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
+} from '@/utils/Assist/EventEmitter';
+import { useUpdateEffect } from 'ahooks';
+import AnimeJs from 'animejs';
+import classnames from 'classnames';
+import { isEqual, uniqueId } from 'lodash';
+import {
   cloneElement,
   CSSProperties,
+  ReactNode,
   useCallback,
+  useEffect,
   useLayoutEffect,
+  useMemo,
+  useRef,
 } from 'react';
-import { useUpdateEffect } from 'ahooks';
-import classnames from 'classnames';
-import AnimeJs from 'animejs';
-import { uniqueId, isEqual } from 'lodash';
-import {
-  GLOBAL_EVENT_EMITTER,
-  EVENT_NAME_MAP,
-} from '@/utils/Assist/EventEmitter';
 import styles from './index.less';
 
 export const CAROUSEL_COMPONENT_MAP = {
@@ -245,8 +245,7 @@ const AbstractComponent = (props: AbstractComponentProps) => {
         'pos-ab dis-flex w-100 h-100',
         className,
       )}
-      style={style}
-    >
+      style={style}>
       {realChildren}
     </div>
   );

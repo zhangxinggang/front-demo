@@ -109,8 +109,7 @@ const Button = (props: ComponentData.CommonComponentProps<TButtonConfig>) => {
         style,
         conditionStyle,
       )}
-      id={chartId.current}
-    >
+      id={chartId.current}>
       <Wrapper border={border}>
         {children}
         <AntButton
@@ -134,8 +133,7 @@ const Button = (props: ComponentData.CommonComponentProps<TButtonConfig>) => {
             ),
           }}
           disabled={!!finalValue.disabled}
-          loading={!!finalValue.loading}
-        >
+          loading={!!finalValue.loading}>
           {finalValue.value}
         </AntButton>
       </Wrapper>

@@ -1,10 +1,10 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import { Component } from 'react';
 import { TDecoration1Config } from '../type';
 
 const { Item } = ConfigList;

@@ -67,8 +67,7 @@ const Header = (props: {
           'c-po',
           'text-ellipsis',
         )}
-        onClick={setEditMode.bind(null, true, undefined)}
-      >
+        onClick={setEditMode.bind(null, true, undefined)}>
         {name}
       </div>
     );
@@ -145,8 +144,7 @@ const Header = (props: {
         type="link"
         onClick={handlePreview}
         icon={<FundOutlined />}
-        loading={fetchLoading}
-      ></GlobalLoadingActonButton>
+        loading={fetchLoading}></GlobalLoadingActonButton>
     );
     const storeButton = (
       <GlobalLoadingActonButton
@@ -156,8 +154,7 @@ const Header = (props: {
         type="link"
         onClick={handleStore}
         icon={<SendOutlined />}
-        loading={fetchLoading}
-      ></GlobalLoadingActonButton>
+        loading={fetchLoading}></GlobalLoadingActonButton>
     );
     const exchangeScreenFlagButton = (
       <ExchangeScreenFlagButton
@@ -174,8 +171,7 @@ const Header = (props: {
         type="link"
         onClick={handleExport}
         icon={<ExportOutlined />}
-        loading={fetchLoading}
-      ></GlobalLoadingActonButton>
+        loading={fetchLoading}></GlobalLoadingActonButton>
     );
     const leadinScreenButton = (
       <GlobalLoadingActonButton
@@ -185,8 +181,7 @@ const Header = (props: {
         type="link"
         onClick={handleImport}
         icon={<ImportOutlined />}
-        loading={fetchLoading}
-      ></GlobalLoadingActonButton>
+        loading={fetchLoading}></GlobalLoadingActonButton>
     );
     const resetScreenButton = (
       <GlobalLoadingActonButton
@@ -196,8 +191,7 @@ const Header = (props: {
         type="link"
         onClick={handleReset}
         icon={<IconFont type="icon-Initialize-o" />}
-        loading={fetchLoading}
-      ></GlobalLoadingActonButton>
+        loading={fetchLoading}></GlobalLoadingActonButton>
     );
     let baseList: any[] = [];
     // pc大屏有切换移动端
@@ -248,8 +242,7 @@ const Header = (props: {
                   当前版本为简化版本，不存在网络交互，本地图片上传均转换为base64（推荐直接使用链接），所有功能均为纯前端实现，包括数据的存储，请及时对浏览器缓存进行处理。关于完整版本，请fork
                   <a
                     href="https://github.com/food-billboard/create-chart"
-                    target="blank"
-                  >
+                    target="blank">
                     《github仓库》
                   </a>
                   代码在本地运行。
@@ -257,8 +250,7 @@ const Header = (props: {
                 </Marquee>
               ),
             }
-          : {})}
-      >
+          : {})}>
         <ActionList />
       </PageHeader>
     </FocusWrapper>

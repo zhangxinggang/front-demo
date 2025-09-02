@@ -56,8 +56,7 @@ const ComponentList = (props: {
             onClick={async () => {
               setSelect([componentId]);
             }}
-            key={componentId}
-          >
+            key={componentId}>
             {name}
           </GlobalLoadingActonButton>,
         );
@@ -72,8 +71,7 @@ const ComponentList = (props: {
       style={{
         maxHeight: 200,
         overflow: 'auto',
-      }}
-    >
+      }}>
       {list.length ? list : <Empty description="暂无组件" />}
     </div>
   );
@@ -183,9 +181,8 @@ const CallbackList = (props: {
           return (
             <div
               title={value}
-              className="c-po text-ellipsis normal-color"
-              onClick={previewCode.bind(null, value)}
-            >
+              className="c-po normal-color text-ellipsis"
+              onClick={previewCode.bind(null, value)}>
               {value}
             </div>
           );
@@ -225,8 +222,7 @@ const CallbackList = (props: {
                 Component={Popconfirm}
                 title="是否确定删除此过滤器？"
                 onClick={deleteData.bind(null, record)}
-                triggerName="onConfirm"
-              >
+                triggerName="onConfirm">
                 <Button key="delete" type="link" style={{ paddingLeft: 0 }}>
                   删除
                 </Button>
@@ -234,8 +230,7 @@ const CallbackList = (props: {
               <GlobalLoadingActonButton
                 key="copy"
                 type="link"
-                onClick={copyData.bind(null, record)}
-              >
+                onClick={copyData.bind(null, record)}>
                 复制
               </GlobalLoadingActonButton>
             </>
@@ -272,8 +267,7 @@ const CallbackList = (props: {
             Component={Popconfirm}
             title="是否确认删除"
             onClick={handleClear}
-            triggerName="onConfirm"
-          >
+            triggerName="onConfirm">
             <Button icon={<DeleteOutlined />}>清空无引用过滤函数</Button>
           </GlobalLoadingActonButton>
         )}
@@ -310,8 +304,7 @@ const CallbackList = (props: {
         onCancel={() => setVisible(false)}
         footer={null}
         open={visible}
-        bodyStyle={{ padding: 0, fontSize: '12px' }}
-      >
+        bodyStyle={{ padding: 0, fontSize: '12px' }}>
         <CodeViewer>{code}</CodeViewer>
       </Modal>
     </FocusWrapper>
@@ -346,15 +339,11 @@ const CallbackManage = forwardRef<CallbackManageRef, CallbackManageProps>(
       );
     }, [onClose]);
 
-    useImperativeHandle(
-      ref,
-      () => {
-        return {
-          open,
-        };
-      },
-      [open],
-    );
+    useImperativeHandle(ref, () => {
+      return {
+        open,
+      };
+    }, [open]);
 
     return (
       <Drawer
@@ -365,8 +354,7 @@ const CallbackManage = forwardRef<CallbackManageRef, CallbackManageProps>(
         footer={footer}
         title="回调管理"
         placement="left"
-        width={680}
-      >
+        width={680}>
         <WrapperCallbackList />
       </Drawer>
     );

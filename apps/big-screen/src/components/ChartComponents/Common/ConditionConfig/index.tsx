@@ -1,13 +1,13 @@
-import { ReactNode, useCallback, useMemo } from 'react';
-import { Radio } from 'antd';
 import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
-import Select from '../Select';
-import CodeEditor from './components/CodeEditor';
+import { Radio } from 'antd';
+import { ReactNode, useCallback, useMemo } from 'react';
 import { DEFAULT_CONDITION_CONFIG } from '../Constants/defaultConfig';
+import RuleTree from '../RuleTree';
+import Select from '../Select';
 import ConfigList from '../Structure/ConfigList';
 import FullForm from '../Structure/FullForm';
-import RuleTree from '../RuleTree';
+import CodeEditor from './components/CodeEditor';
 import InitialStateConfig from './components/InitialStateConfig';
 
 const { Item } = ConfigList;

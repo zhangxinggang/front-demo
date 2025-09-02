@@ -1,14 +1,14 @@
-import { useMemo, useRef, useState, useEffect } from 'react';
-import { uniqueId, merge } from 'lodash';
+import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
+import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
+import ColorSelect from '@/components/ColorSelect';
+import FilterDataUtil from '@/utils/Assist/FilterData';
+import { useUpdateEffect } from 'ahooks';
 import { Checkbox as AntCheckbox } from 'antd';
 import classnames from 'classnames';
-import { useUpdateEffect } from 'ahooks';
-import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
-import ColorSelect from '@/components/ColorSelect';
-import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TCheckboxConfig } from '../type';
+import { merge, uniqueId } from 'lodash';
+import { useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TCheckboxConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -90,8 +90,7 @@ const Checkbox = (
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           <AntCheckbox.Group
@@ -114,8 +113,7 @@ const Checkbox = (
               '--component-checkbox-checked-color': getRgbaString(check.color),
               '--component-checkbox-checked-width': (size / 14) * 5 + 'px',
               '--component-checkbox-checked-height': (size / 14) * 8 + 'px',
-            }}
-          >
+            }}>
             {(finalValue || []).map((item: any) => {
               const { name, value } = item;
               return (
@@ -125,8 +123,7 @@ const Checkbox = (
                   style={{
                     ...textStyle,
                     color: getRgbaString(textStyle.color),
-                  }}
-                >
+                  }}>
                   {name}
                 </AntCheckbox>
               );

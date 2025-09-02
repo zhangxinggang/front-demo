@@ -1,12 +1,12 @@
-import { useCallback, useMemo, ReactNode } from 'react';
-import { useControllableValue } from 'ahooks';
-import Select from '../Select';
 import { CompatColorSelect } from '@/components/ColorSelect';
-import ConfigList, { TConfigListItemProps } from '../Structure/ConfigList';
-import HalfForm from '../Structure/HalfForm';
+import { useControllableValue } from 'ahooks';
+import { ReactNode, useCallback, useMemo } from 'react';
 import Collapse from '../Collapse';
-import FullForm from '../Structure/FullForm';
 import InputNumber from '../InputNumber';
+import Select from '../Select';
+import ConfigList, { TConfigListItemProps } from '../Structure/ConfigList';
+import FullForm from '../Structure/FullForm';
+import HalfForm from '../Structure/HalfForm';
 
 const { Item } = ConfigList;
 const { Option } = Select;

@@ -6,13 +6,17 @@ type Props = {
   className?: string;
   style?: CSSProperties;
 } & ButtonProps;
-export default function IconButton({ children, className, style, onClick }: Props) {
+export default function IconButton({
+  children,
+  className,
+  style,
+  onClick,
+}: Props) {
   return (
     <button
       style={style}
       className={`hover:bg-hover flex cursor-pointer items-center justify-center rounded-full p-2 ${className}`}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       {children}
     </button>
   );

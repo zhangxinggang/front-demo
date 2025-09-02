@@ -36,7 +36,14 @@ function KanbanTask({ index, task }: Props) {
     padding: 0,
   };
 
-  const { id, title, comments = [], attachments = [], priority, assignee } = task;
+  const {
+    id,
+    title,
+    comments = [],
+    attachments = [],
+    priority,
+    assignee,
+  } = task;
   return (
     <>
       <Draggable draggableId={id} index={index}>
@@ -46,11 +53,14 @@ function KanbanTask({ index, task }: Props) {
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             $isDragging={snapshot.isDragging}
-            $themeMode={themeMode}
-          >
+            $themeMode={themeMode}>
             <div>
               {attachments.length > 0 && (
-                <Image src={attachments[0]} alt="" className="mb-4 rounded-md" />
+                <Image
+                  src={attachments[0]}
+                  alt=""
+                  className="mb-4 rounded-md"
+                />
               )}
               <div onClick={() => setDrawerOpen(true)}>
                 <div className="flex justify-end">
@@ -59,10 +69,18 @@ function KanbanTask({ index, task }: Props) {
                 <div>{title}</div>
                 <div className="mt-4 flex items-center justify-between">
                   <div className="flex items-center text-base text-gray-600">
-                    <Iconify icon="uim:comment-dots" size={16} className="mr-1" />
+                    <Iconify
+                      icon="uim:comment-dots"
+                      size={16}
+                      className="mr-1"
+                    />
                     <span className="text-xs">{comments.length}</span>
 
-                    <Iconify icon="iconamoon:attachment-bold" size={16} className="ml-2 mr-1" />
+                    <Iconify
+                      icon="iconamoon:attachment-bold"
+                      size={16}
+                      className="ml-2 mr-1"
+                    />
                     <span className="text-xs">{attachments.length}</span>
                   </div>
 
@@ -72,8 +90,7 @@ function KanbanTask({ index, task }: Props) {
                       maxStyle={{
                         color: themeToken.colorPrimary,
                         backgroundColor: themeToken.colorPrimaryBg,
-                      }}
-                    >
+                      }}>
                       {assignee.map((url) => (
                         <Avatar key={url} src={url} />
                       ))}
@@ -106,7 +123,11 @@ function KanbanTask({ index, task }: Props) {
             </div>
             <div className="text-gray flex">
               <IconButton>
-                <Iconify icon="solar:like-bold" size={20} color={themeToken.colorSuccess} />
+                <Iconify
+                  icon="solar:like-bold"
+                  size={20}
+                  color={themeToken.colorSuccess}
+                />
               </IconButton>
               <IconButton>
                 <Iconify icon="solar:trash-bin-trash-bold" size={20} />
@@ -123,8 +144,7 @@ function KanbanTask({ index, task }: Props) {
         width={420}
         bodyStyle={bodyStyle}
         maskStyle={{ backgroundColor: 'transparent' }}
-        style={style}
-      >
+        style={style}>
         <TaskDetail task={task} />
       </Drawer>
     </>
@@ -141,11 +161,27 @@ function TaskPrioritySvg({ taskPriority }: TaskPrioritySvgProps) {
   const { colorSuccess, colorInfo, colorWarning } = useThemeToken();
   switch (taskPriority) {
     case TaskPriority.HIGH:
-      return <SvgIcon icon="ic_rise" size={20} color={colorWarning} className="" />;
+      return (
+        <SvgIcon icon="ic_rise" size={20} color={colorWarning} className="" />
+      );
     case TaskPriority.MEDIUM:
-      return <SvgIcon icon="ic_rise" size={20} color={colorSuccess} className="rotate-90" />;
+      return (
+        <SvgIcon
+          icon="ic_rise"
+          size={20}
+          color={colorSuccess}
+          className="rotate-90"
+        />
+      );
     case TaskPriority.LOW:
-      return <SvgIcon icon="ic_rise" size={20} color={colorInfo} className="rotate-180" />;
+      return (
+        <SvgIcon
+          icon="ic_rise"
+          size={20}
+          color={colorInfo}
+          className="rotate-180"
+        />
+      );
     default:
       break;
   }
@@ -159,7 +195,9 @@ const Container = styled.div<{ $isDragging: boolean; $themeMode: ThemeMode }>`
   font-size: 12px;
   background-color: ${(props) => {
     if (props.$themeMode === ThemeMode.Light) {
-      return props.$isDragging ? 'rgba(255, 255, 255, 0.48)' : 'rgb(255, 255, 255)';
+      return props.$isDragging
+        ? 'rgba(255, 255, 255, 0.48)'
+        : 'rgb(255, 255, 255)';
     }
     return props.$isDragging ? 'rgba(22, 28, 36, 0.48)' : 'rgb(22, 28, 36)';
   }};

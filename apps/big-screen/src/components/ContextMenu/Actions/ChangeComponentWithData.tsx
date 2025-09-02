@@ -1,13 +1,13 @@
-import { useCallback, useMemo, useRef } from 'react';
-import { SwitcherOutlined } from '@ant-design/icons';
-import { get, omit } from 'lodash';
 import ComponentSelect, {
   ComponentSelectRef,
 } from '@/components/ComponentSelect';
 import { getComponent } from '@/utils/Assist/Component';
-import useChildren from './useChildren';
+import { SwitcherOutlined } from '@ant-design/icons';
+import { get, omit } from 'lodash';
+import { useCallback, useMemo, useRef } from 'react';
 import { getComponentDefaultConfigByType } from '../../ChartComponents';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 const ChangeComponentWithData = (props: CommonActionType) => {
   const { select, setComponent, onClick, components, childrenType, disabled } =

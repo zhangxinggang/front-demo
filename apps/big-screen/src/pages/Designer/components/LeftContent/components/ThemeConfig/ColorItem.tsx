@@ -1,9 +1,8 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import classnames from 'classnames';
-import Color from 'color';
 import ColorSelect from '@/components/ColorSelect';
 import { getHexString } from '@/utils/Assist/Theme';
+import { Col, Row } from 'antd';
+import classnames from 'classnames';
+import Color from 'color';
 import styles from './index.less';
 
 const ColorItem = ({
@@ -33,8 +32,7 @@ const ColorItem = ({
         styles['designer-theme-config-list'],
       )}
       key={name}
-      onClick={onClick?.bind(null, name)}
-    >
+      onClick={onClick?.bind(null, name)}>
       {value.map((item, index) => {
         const children = (
           <Col span={span} key={index}>
@@ -42,8 +40,7 @@ const ColorItem = ({
               className={styles['designer-theme-config-item']}
               style={{
                 backgroundColor: item,
-              }}
-            ></div>
+              }}></div>
           </Col>
         );
         if (editable) {
@@ -63,8 +60,7 @@ const ColorItem = ({
                 const newColor = [...value];
                 newColor.splice(index, 1, color);
                 onChange?.(newColor);
-              }}
-            >
+              }}>
               {children}
             </ColorSelect>
           );

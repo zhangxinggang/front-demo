@@ -1,5 +1,5 @@
-import React, { useMemo, forwardRef, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, forwardRef, useMemo } from 'react';
 import { useAutoResize } from '../../InternalBorder/components/Border/hooks';
 import styles from './index.less';
 
@@ -66,8 +66,7 @@ const Decoration = forwardRef((props: IProps, ref) => {
       <svg
         width={`${svgWH[0]}px`}
         height={`${svgWH[1]}px`}
-        style={{ transform: `scale(${svgScale[0]},${svgScale[1]})` }}
-      >
+        style={{ transform: `scale(${svgScale[0]},${svgScale[1]})` }}>
         {points.map((point, i) => (
           <rect
             key={i}
@@ -75,8 +74,7 @@ const Decoration = forwardRef((props: IProps, ref) => {
             x={point[0] - halfPointSideLength}
             y={point[1] - halfPointSideLength}
             width={pointSideLength}
-            height={pointSideLength}
-          >
+            height={pointSideLength}>
             {Math.random() > 0.6 && (
               <animate
                 attributeName="fill"

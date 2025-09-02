@@ -120,15 +120,13 @@ const Content = (props: {
               borderNone={isOuter}
               parent={parent}
               flag={flag}
-              key={component.id}
-            >
+              key={component.id}>
               <SubGroup
                 value={newComponent}
                 isOuter={isOuter}
                 flag={flag}
                 wrapper={ComponentInternalWrapper}
-                style={internalComponentTransform}
-              >
+                style={internalComponentTransform}>
                 {renderChildren(newComponent.components, newComponent, false)}
               </SubGroup>
             </ComponentWrapper>
@@ -137,14 +135,12 @@ const Content = (props: {
             <ComponentInternalWrapper
               border={border}
               key={component.id}
-              id={component.id}
-            >
+              id={component.id}>
               <ComponentWrapper
                 value={newComponent}
                 borderNone={isOuter}
                 parent={parent}
-                flag={flag}
-              >
+                flag={flag}>
                 <SubGroup value={newComponent} isOuter={isOuter} flag={flag}>
                   {renderChildren(newComponent.components, newComponent, false)}
                 </SubGroup>
@@ -163,8 +159,7 @@ const Content = (props: {
             key={newComponent.id}
             borderNone={isOuter}
             parent={parent}
-            flag={flag}
-          >
+            flag={flag}>
             <TargetComponent
               className={styles['render-component-children']}
               value={newComponent}

@@ -91,8 +91,7 @@ const ComponentItem = (props: ComponentItemProps) => {
         )}
         ref={connectDragSource}
         role={DRAG_TYPE}
-        onClick={handleSelect}
-      >
+        onClick={handleSelect}>
         {/* 暂时先不要大图预览组件了 */}
         {/* <Tooltip
           title={
@@ -119,15 +118,13 @@ const ComponentItem = (props: ComponentItemProps) => {
           style={{
             backgroundImage: `url(${icon})`,
           }}
-          className={styles['design-left-component-list-item-icon']}
-        ></div>
+          className={styles['design-left-component-list-item-icon']}></div>
         <div
           className={classnames(
             'ali-cen text-ellipsis',
             styles['design-left-component-list-item-title'],
           )}
-          title={title}
-        >
+          title={title}>
           {title}
         </div>
         {suffix}
@@ -135,8 +132,7 @@ const ComponentItem = (props: ComponentItemProps) => {
           <div
             className={
               styles['design-left-component-list-item-disabled-prefix']
-            }
-          >
+            }>
             <LockOutlined />
             <span>组件开发中</span>
           </div>
@@ -145,8 +141,7 @@ const ComponentItem = (props: ComponentItemProps) => {
           <div
             className={
               styles['design-left-component-list-item-disabled-prefix']
-            }
-          >
+            }>
             <LockOutlined />
             <span>组件不可用</span>
           </div>

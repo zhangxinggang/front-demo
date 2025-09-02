@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import ConfigList from '../Structure/ConfigList';
-import { SingleCollapse as Collapse } from '../Collapse';
 import type { SingleCollapseProps } from '../Collapse';
-import { SubConfigSchema, FromType } from './type';
+import { SingleCollapse as Collapse } from '../Collapse';
+import ConfigList from '../Structure/ConfigList';
+import { FromType, SubConfigSchema } from './type';
 
 // TODO
 // 看看将配置面板修改成schema形式是否会对性能带来影响
@@ -34,8 +34,7 @@ const FORM_MAP: {
                 ...extraProps.child,
               }
             : {}),
-        }}
-      >
+        }}>
         {getForm(children, dataSource, onKeyChange)}
       </Collapse>
     );

@@ -242,8 +242,7 @@ const PolarStackBar = (
           },
           style,
           conditionStyle,
-        )}
-      >
+        )}>
         <Wrapper border={border}>
           <div id={chartId.current} className="w-100 h-100"></div>
           {children}

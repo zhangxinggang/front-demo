@@ -15,7 +15,7 @@ export function UploadBox({ placeholder, ...other }: Props) {
       <Dragger {...other} showUploadList={false}>
         <div className="opacity-60 hover:opacity-50">
           {placeholder || (
-            <div className="m-auto flex h-16 w-16 items-center justify-center ">
+            <div className="m-auto flex h-16 w-16 items-center justify-center">
               <Iconify icon="eva:cloud-upload-fill" size={28} />
             </div>
           )}

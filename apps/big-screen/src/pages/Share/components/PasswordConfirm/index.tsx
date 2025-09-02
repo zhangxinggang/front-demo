@@ -1,6 +1,6 @@
-import { forwardRef, useImperativeHandle, useCallback, useState } from 'react';
-import { Modal, Input, message, Button } from 'antd';
 import EnterSubmitWrapper from '@/components/EnterSubmitWrapper';
+import { Button, Input, message, Modal } from 'antd';
+import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';
 
 const { Password } = Input;
 
@@ -51,15 +51,11 @@ const PasswordConfirm = forwardRef<
     setVisible(true);
   }, []);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open,
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open,
+    };
+  }, []);
 
   return (
     <Modal
@@ -72,8 +68,7 @@ const PasswordConfirm = forwardRef<
         <Button key="confirm" type="primary" onClick={onOk}>
           确认
         </Button>,
-      ]}
-    >
+      ]}>
       <EnterSubmitWrapper onSubmit={onOk}>
         <Password
           className="w-100"

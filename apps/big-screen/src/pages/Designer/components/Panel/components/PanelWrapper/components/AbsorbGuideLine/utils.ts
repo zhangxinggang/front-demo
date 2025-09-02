@@ -1,5 +1,5 @@
-import { uniqueId, pick, get, merge } from 'lodash';
-import { PANEL_ABSOLUTE_POSITION, GUIDE_LINE_PADDING } from '@/utils/constants';
+import { GUIDE_LINE_PADDING, PANEL_ABSOLUTE_POSITION } from '@/utils/constants';
+import { get, merge, pick, uniqueId } from 'lodash';
 
 type PositionData = {
   width: number;

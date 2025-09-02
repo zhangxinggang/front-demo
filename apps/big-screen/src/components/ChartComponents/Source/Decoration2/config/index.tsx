@@ -1,12 +1,12 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
+import InputNumbr from '@/components/ChartComponents/Common/InputNumber';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import InputNumbr from '@/components/ChartComponents/Common/InputNumber';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import { Switch } from 'antd';
+import { Component } from 'react';
 import { TDecoration2Config } from '../type';
 
 const { Item } = ConfigList;

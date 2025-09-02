@@ -33,8 +33,7 @@ const InterActiveConfig = (props: {
       className={classnames(
         styles['design-config-interactive'],
         'design-config-format-font-size',
-      )}
-    >
+      )}>
       {!baseInteractive.length && !linkageInteractive.length && (
         <div className={styles['design-config-interactive-base-empty']}>
           <InfoCircleOutlined style={{ marginRight: 4 }} />

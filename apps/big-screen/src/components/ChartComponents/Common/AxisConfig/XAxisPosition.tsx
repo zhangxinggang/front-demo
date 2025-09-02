@@ -1,4 +1,4 @@
-import { BorderTopOutlined, BorderBottomOutlined } from '@ant-design/icons';
+import { BorderBottomOutlined, BorderTopOutlined } from '@ant-design/icons';
 import RadioGroup, { Radio } from '../IconRadio';
 
 const XAxisPosition = (props: {

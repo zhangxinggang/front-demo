@@ -8,8 +8,7 @@ const InnerConnectLeft = () => {
         width: '99%',
         height: 24,
         position: 'relative',
-      }}
-    >
+      }}>
       <Connect />
     </div>
   );

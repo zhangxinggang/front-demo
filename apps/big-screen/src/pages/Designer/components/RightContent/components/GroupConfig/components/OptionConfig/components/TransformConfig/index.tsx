@@ -1,9 +1,9 @@
-import { useCallback } from 'react';
-import { Switch } from 'antd';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import PerspectiveConfig from './PerspectiveConfig';
+import { Switch } from 'antd';
+import { useCallback } from 'react';
 import ChildTransformConfig from './ChildTransformConfig';
+import PerspectiveConfig from './PerspectiveConfig';
 
 const { Item } = ConfigList;
 

@@ -138,11 +138,14 @@ const Weather = (props: ComponentData.CommonComponentProps<TWeatherConfig>) => {
 
     fetchData();
 
-    timerRef.current = setInterval(async () => {
-      if (moment(Date.now()).isSame(currentDate.current || 0, 'day')) {
-        await fetchData();
-      }
-    }, 1000 * 60 * 60);
+    timerRef.current = setInterval(
+      async () => {
+        if (moment(Date.now()).isSame(currentDate.current || 0, 'day')) {
+          await fetchData();
+        }
+      },
+      1000 * 60 * 60,
+    );
 
     return () => {
       clearInterval(timerRef.current);
@@ -155,8 +158,7 @@ const Weather = (props: ComponentData.CommonComponentProps<TWeatherConfig>) => {
         className={componentClassName}
         style={componentStyle}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           {listContent}

@@ -33,5 +33,12 @@ export default function ChartRadial() {
     },
   });
 
-  return <Chart type="radialBar" series={series} options={chartOptions} height={320} />;
+  return (
+    <Chart
+      type="radialBar"
+      series={series}
+      options={chartOptions}
+      height={320}
+    />
+  );
 }

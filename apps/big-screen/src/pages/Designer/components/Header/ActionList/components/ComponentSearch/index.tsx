@@ -31,8 +31,7 @@ const InternalComponentSearch = (props: {
 
   return (
     <div
-      className={classnames(styles['design-header-action-component-search'])}
-    >
+      className={classnames(styles['design-header-action-component-search'])}>
       <Tooltip title={'组件搜索'} placement="top">
         <GlobalLoadingActonButton
           icon={<SearchOutlined />}

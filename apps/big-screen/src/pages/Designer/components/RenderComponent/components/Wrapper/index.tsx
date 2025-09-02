@@ -1,29 +1,29 @@
-import {
-  ReactNode,
-  CSSProperties,
-  useState,
-  useMemo,
-  useRef,
-  useEffect,
-  useCallback,
-  useDeferredValue,
-} from 'react';
-import { Props, RndDragCallback, RndResizeCallback } from 'react-rnd';
-import { throttle, get, omit } from 'lodash';
-import { useDeepCompareEffect, useRafState } from 'ahooks';
-import { MIN_COMPONENT_HEIGHT, MIN_COMPONENT_WIDTH } from '@/utils/constants';
-import { isGroupComponent } from '@/utils/Assist/Component';
 import { mergeWithoutArray } from '@/utils';
-import { getGlobalSelect } from '@/utils/Assist/GlobalDva';
+import { isGroupComponent } from '@/utils/Assist/Component';
 import {
-  GLOBAL_EVENT_EMITTER,
   EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
 } from '@/utils/Assist/EventEmitter';
+import { getGlobalSelect } from '@/utils/Assist/GlobalDva';
 import MultiComponentActionUtil, {
   MultiComponentAction,
 } from '@/utils/Assist/MultiComponentAction';
-import PcWrapper from './PcWrapper';
+import { MIN_COMPONENT_HEIGHT, MIN_COMPONENT_WIDTH } from '@/utils/constants';
+import { useDeepCompareEffect, useRafState } from 'ahooks';
+import { get, omit, throttle } from 'lodash';
+import {
+  CSSProperties,
+  ReactNode,
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { Props, RndDragCallback, RndResizeCallback } from 'react-rnd';
 import H5Wrapper from './H5Wrapper';
+import PcWrapper from './PcWrapper';
 
 type IProps = {
   children?: ReactNode;

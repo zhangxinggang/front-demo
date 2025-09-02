@@ -1,33 +1,33 @@
-import { useEffect, useRef } from 'react';
-import {
-  Engine,
-  Render,
-  Runner,
-  Composite,
-  Mouse,
-  Bodies,
-  MouseConstraint,
-  World,
-  Svg,
-  Common,
-} from 'matter-js';
+import { DEFAULT_THEME_COLOR_LIST } from '@/components/ChartComponents/Common/Constants/defaultConfig';
+import ColorSelect from '@/components/ColorSelect';
 import { useDebounceFn } from 'ahooks';
 import classnames from 'classnames';
 import IsMobile from 'is-mobile';
-import ColorSelect from '@/components/ColorSelect';
-import { DEFAULT_THEME_COLOR_LIST } from '@/components/ChartComponents/Common/Constants/defaultConfig';
+import {
+  Bodies,
+  Common,
+  Composite,
+  Engine,
+  Mouse,
+  MouseConstraint,
+  Render,
+  Runner,
+  Svg,
+  World,
+} from 'matter-js';
+import { useEffect, useRef } from 'react';
 import AreaChart from '../../../../../public/home/area-chart.png';
 import BarChart from '../../../../../public/home/bar-chart.png';
 import DotChart from '../../../../../public/home/dot-chart.png';
+import MapChart from '../../../../../public/home/earth-chart.png';
+import ImageChart from '../../../../../public/home/image-chart.png';
 import LineChart from '../../../../../public/home/line-chart.png';
 import ListChart from '../../../../../public/home/list-chart.png';
-import MapChart from '../../../../../public/home/earth-chart.png';
 import PieChart from '../../../../../public/home/pie-chart.png';
 import RadarChart from '../../../../../public/home/radar-chart.png';
 import ThermogramChart from '../../../../../public/home/thermogram-chart.png';
 import TitleChart from '../../../../../public/home/title-chart.png';
 import VideoChart from '../../../../../public/home/video-chart.png';
-import ImageChart from '../../../../../public/home/image-chart.png';
 import svgWall from '../../../../../public/home/wall.svg';
 import styles from './index.less';
 
@@ -344,8 +344,7 @@ const MatterBoxes = () => {
     <div
       id="home-page-matter-boxes-container"
       className={classnames(styles['home-page-matter-boxes-container'])}
-      ref={elementRef}
-    ></div>
+      ref={elementRef}></div>
   );
 };
 

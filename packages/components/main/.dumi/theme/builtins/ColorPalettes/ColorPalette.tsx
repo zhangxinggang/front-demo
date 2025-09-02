@@ -2,9 +2,9 @@ import { createStyles } from 'antd-style';
 import { Flexbox } from 'react-layout-kit';
 
 import chroma from 'chroma-js';
-import { useStore } from './store';
 import { FC, useMemo } from 'react';
 import { invertColor } from './invertColor';
+import { useStore } from './store';
 
 const useStyles = createStyles(({ css }) => ({
   title: css`
@@ -63,8 +63,7 @@ const ColorItem = ({ color, index }: { color: string; index: number }) => {
       distribution={'space-between'}
       style={{ background: color, color: invertColor(color) }}
       className={styles.color}
-      width={160}
-    >
+      width={160}>
       <Flexbox style={{ paddingLeft: 8 }}>{index}</Flexbox>
       <Flexbox style={{ paddingRight: 12 }}>{colorValue}</Flexbox>
     </Flexbox>

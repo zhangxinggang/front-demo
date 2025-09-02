@@ -1,18 +1,18 @@
-import { omit } from 'lodash';
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { omit } from 'lodash';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
-  DEFAULT_TOOLTIP_CONFIG,
   DEFAULT_CONDITION_CONFIG,
-  DEFAULT_TOOLTIP_ANIMATION_CONFIG,
-  DEFAULT_LABEL_CONFIG,
-  DEFAULT_THEME_RADIAL_COLOR_LIST,
-  DEFAULT_LINKAGE_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LABEL_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
+  DEFAULT_THEME_RADIAL_COLOR_LIST,
+  DEFAULT_TOOLTIP_ANIMATION_CONFIG,
+  DEFAULT_TOOLTIP_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { TScatterMapConfig } from './type';
 
 const DEFAULT_VALUE = [

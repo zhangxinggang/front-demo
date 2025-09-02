@@ -87,13 +87,11 @@ const SubGroup = (props: {
       style={merge(childrenStyle, style || {}, conditionStyle, {
         position: flag === 'H5' ? 'relative' : 'absolute',
       })}
-      data-id={id}
-    >
+      data-id={id}>
       <Wrapper border={border}>
         <div
           className={classnames('pos-re w-100 h-100', className)}
-          style={transformStyle}
-        >
+          style={transformStyle}>
           {groupCarousel?.show ? (
             <CarouselGroupWrapper
               children={children}

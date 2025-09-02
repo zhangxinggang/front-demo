@@ -207,17 +207,13 @@ const FetchScreenComponent = forwardRef<
     onLoad?.();
   };
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        reload: GlobalConfig.IS_STATIC
-          ? fetchData4Static.bind(null, true)
-          : fetchData.bind(null, true),
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      reload: GlobalConfig.IS_STATIC
+        ? fetchData4Static.bind(null, true)
+        : fetchData.bind(null, true),
+    };
+  }, []);
 
   useEffect(() => {
     if (needFetch) {

@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import classnames from 'classnames';
+import { useMemo } from 'react';
 import styles from './index.less';
 
 const HomeBackground = () => {
@@ -8,37 +8,45 @@ const HomeBackground = () => {
       <>
         <div className={styles['g-group']}>
           <div
-            className={classnames(styles['g-item'], styles['item-right'])}
-          ></div>
+            className={classnames(
+              styles['g-item'],
+              styles['item-right'],
+            )}></div>
           <div
-            className={classnames(styles['g-item'], styles['item-left'])}
-          ></div>
+            className={classnames(styles['g-item'], styles['item-left'])}></div>
           <div
-            className={classnames(styles['g-item'], styles['item-top'])}
-          ></div>
+            className={classnames(styles['g-item'], styles['item-top'])}></div>
           <div
-            className={classnames(styles['g-item'], styles['item-bottom'])}
-          ></div>
+            className={classnames(
+              styles['g-item'],
+              styles['item-bottom'],
+            )}></div>
           <div
-            className={classnames(styles['g-item'], styles['item-middle'])}
-          ></div>
+            className={classnames(
+              styles['g-item'],
+              styles['item-middle'],
+            )}></div>
         </div>
         <div className={styles['g-group']}>
           <div
-            className={classnames(styles['g-item'], styles['item-right'])}
-          ></div>
+            className={classnames(
+              styles['g-item'],
+              styles['item-right'],
+            )}></div>
           <div
-            className={classnames(styles['g-item'], styles['item-left'])}
-          ></div>
+            className={classnames(styles['g-item'], styles['item-left'])}></div>
           <div
-            className={classnames(styles['g-item'], styles['item-top'])}
-          ></div>
+            className={classnames(styles['g-item'], styles['item-top'])}></div>
           <div
-            className={classnames(styles['g-item'], styles['item-bottom'])}
-          ></div>
+            className={classnames(
+              styles['g-item'],
+              styles['item-bottom'],
+            )}></div>
           <div
-            className={classnames(styles['g-item'], styles['item-middle'])}
-          ></div>
+            className={classnames(
+              styles['g-item'],
+              styles['item-middle'],
+            )}></div>
         </div>
       </>
     );

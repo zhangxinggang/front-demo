@@ -1,19 +1,18 @@
-import { useMemo, useRef, useState, useEffect, CSSProperties } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { Pagination as AntPagination } from 'antd';
-import type { PaginationProps } from 'antd';
 import {
   useComponent,
   useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import FilterDataUtil from '@/utils/Assist/FilterData';
 import ColorSelect from '@/components/ColorSelect';
-import { TPaginationConfig } from '../type';
+import FilterDataUtil from '@/utils/Assist/FilterData';
+import type { PaginationProps } from 'antd';
+import { Pagination as AntPagination } from 'antd';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TPaginationConfig } from '../type';
 import styles from './index.less';
-import { useUpdateEffect } from 'ahooks';
 
 const { getRgbaString } = ColorSelect;
 
@@ -105,8 +104,7 @@ const Pagination = (
             fontSize: total.textStyle.fontSize + 'px',
             fontWeight: total.textStyle.fontWeight,
             fontFamily: total.textStyle.fontFamily,
-          }}
-        >
+          }}>
           /{pageTotal}
         </span>
       );
@@ -164,8 +162,7 @@ const Pagination = (
         style,
         conditionStyle,
       )}
-      id={chartId.current}
-    >
+      id={chartId.current}>
       <Wrapper border={border}>
         {children}
         <div className="w-100 h-100 dis-flex-cen">

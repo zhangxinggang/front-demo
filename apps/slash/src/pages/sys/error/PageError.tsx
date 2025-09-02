@@ -12,8 +12,12 @@ import type { FallbackProps } from 'react-error-boundary';
 
 const { VITE_APP_HOMEPAGE: HOMEPAGE } = import.meta.env;
 
-export default function PageError({ error, resetErrorBoundary }: FallbackProps) {
-  const { colorBgBase, colorTextBase, colorPrimary, colorPrimaryActive } = useThemeToken();
+export default function PageError({
+  error,
+  resetErrorBoundary,
+}: FallbackProps) {
+  const { colorBgBase, colorTextBase, colorPrimary, colorPrimaryActive } =
+    useThemeToken();
 
   const { replace } = useRouter();
 
@@ -47,12 +51,20 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
               xmlns="http://www.w3.org/2000/svg"
               width={400}
               height={400}
-              className="w-full"
-            >
+              className="w-full">
               <defs>
-                <linearGradient id="BG" x1="19.496%" x2="77.479%" y1="71.822%" y2="16.69%">
+                <linearGradient
+                  id="BG"
+                  x1="19.496%"
+                  x2="77.479%"
+                  y1="71.822%"
+                  y2="16.69%">
                   <stop offset="0%" stopColor={colorPrimary} />
-                  <stop offset="100%" stopColor={colorPrimary} stopOpacity="0" />
+                  <stop
+                    offset="100%"
+                    stopColor={colorPrimary}
+                    stopOpacity="0"
+                  />
                 </linearGradient>
               </defs>
               <path
@@ -129,9 +141,18 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
                 d="M210.302 292.411c-2.657.122-5.499.157-8.447.089-14.491-.334-26.135-3.025-26.135-6.005a.81.81 0 01.02-.214h-.02l.06-.143a.834.834 0 01.054-.139l3.342-8.724 4.037-10.526 5.652-14.752 4.325-11.293 5.381-14.042c.673-1.758 1.922-2.851 3.269-2.851.183-.001.364.019.542.059.574 3.574 1.558 9.812 2.646 17.165.546 3.702 1.118 7.687 1.677 11.753a776.568 776.568 0 012.016 15.767c.485 4.188.899 8.185 1.192 11.754.429 5.167.604 9.441.389 12.102z"
                 opacity="0.2"
               />
-              <path fill="#FF5630" d="M118.108 103.182a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
-              <path fill="#FFAB00" d="M126.108 103.182a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
-              <path fill="#36B37E" d="M134.108 103.182a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+              <path
+                fill="#FF5630"
+                d="M118.108 103.182a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
+              />
+              <path
+                fill="#FFAB00"
+                d="M126.108 103.182a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
+              />
+              <path
+                fill="#36B37E"
+                d="M134.108 103.182a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
+              />
               <defs>
                 <linearGradient
                   id="paint0_linear_1_160"
@@ -139,8 +160,7 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
                   x2="166.881"
                   y1="125.454"
                   y2="199.671"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor={colorPrimaryActive} />
                   <stop offset="1" stopColor={colorPrimary} />
                 </linearGradient>
@@ -150,8 +170,7 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
                   x2="166.881"
                   y1="125.454"
                   y2="199.671"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor={colorPrimaryActive} />
                   <stop offset="1" stopColor={colorPrimary} />
                 </linearGradient>
@@ -161,8 +180,7 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
                   x2="249.709"
                   y1="290.69"
                   y2="290.69"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor="#FFC444" />
                   <stop offset="1" stopColor="#F36F56" />
                 </linearGradient>
@@ -172,8 +190,7 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
                   x2="225.966"
                   y1="290.498"
                   y2="292.586"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor="#FFC444" />
                   <stop offset="0.59" stopColor="#F8924F" />
                   <stop offset="1" stopColor="#F36F56" />
@@ -184,8 +201,7 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
                   x2="210.566"
                   y1="288.399"
                   y2="289.237"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor="#FFC444" />
                   <stop offset="0.59" stopColor="#F8924F" />
                   <stop offset="1" stopColor="#F36F56" />
@@ -196,8 +212,7 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
                   x2="199.672"
                   y1="204.073"
                   y2="311.415"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor="#FFC444" />
                   <stop offset="1" stopColor="#F36F56" />
                 </linearGradient>
@@ -207,8 +222,7 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
                   x2="210.394"
                   y1="258.172"
                   y2="258.172"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor="#FFC444" />
                   <stop offset="1" stopColor="#F36F56" />
                 </linearGradient>
@@ -220,8 +234,7 @@ export default function PageError({ error, resetErrorBoundary }: FallbackProps) 
           <button
             style={{ background: colorTextBase, color: colorBgBase }}
             className="rounded-md p-4"
-            onClick={goHome}
-          >
+            onClick={goHome}>
             Go to Home
           </button>
         </MotionContainer>

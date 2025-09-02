@@ -1,10 +1,10 @@
-import { useState, useCallback } from 'react';
-import { Upload, message } from 'antd';
-import type { UploadFile } from 'antd';
-import Color from 'color';
-import { useGlobalLoading } from '@/hooks';
 import { UploadButton } from '@/components/ImageUpload';
+import { useGlobalLoading } from '@/hooks';
 import getImageColor from '@/utils/getImageColor';
+import type { UploadFile } from 'antd';
+import { Upload, message } from 'antd';
+import Color from 'color';
+import { useCallback, useState } from 'react';
 import styles from './index.less';
 
 const UploadImage = (props: { onChange?: (value: string[][]) => void }) => {
@@ -49,8 +49,7 @@ const UploadImage = (props: { onChange?: (value: string[][]) => void }) => {
       beforeUpload={() => false}
       accept="image/*"
       multiple={false}
-      className={styles['designer-theme-config-custom-upload']}
-    >
+      className={styles['designer-theme-config-custom-upload']}>
       {fileList.length >= 1 ? null : <UploadButton />}
     </Upload>
   );

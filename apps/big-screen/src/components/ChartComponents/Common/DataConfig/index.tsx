@@ -40,8 +40,7 @@ const DataConfig = (props: {
           styles['design-config-data'],
           styles['design-config-data-empty'],
           'design-config-format-font-size',
-        )}
-      >
+        )}>
         <InfoCircleOutlined style={{ marginRight: 4 }} />
         该组件无数据配置
       </div>
@@ -53,11 +52,9 @@ const DataConfig = (props: {
       className={classnames(
         styles['design-config-data'],
         'design-config-format-font-size',
-      )}
-    >
+      )}>
       <div
-        className={classnames(styles['design-config-data-title'], 'border-1')}
-      >
+        className={classnames(styles['design-config-data-title'], 'border-1')}>
         <span className={classnames('text-ellipsis-2')}>数据接口</span>
       </div>
       <FieldMap
@@ -75,14 +72,12 @@ const DataConfig = (props: {
         }
       />
       <div
-        className={classnames(styles['design-config-data-title'], 'border-1')}
-      >
+        className={classnames(styles['design-config-data-title'], 'border-1')}>
         <span
           className={classnames(
             'text-ellipsis-2',
             styles['design-config-data-title-sub'],
-          )}
-        >
+          )}>
           数据响应结果
         </span>
       </div>

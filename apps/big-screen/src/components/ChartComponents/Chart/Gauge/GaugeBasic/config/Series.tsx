@@ -1,17 +1,16 @@
-import { useCallback, useMemo } from 'react';
+import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
 import { Switch } from 'antd';
 import { pick } from 'lodash';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import LineStyle from '@/components/ChartComponents/Common/LineStyleSelect';
-import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
-import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import { useCallback, useMemo } from 'react';
 import { TGaugeBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -67,8 +66,7 @@ const SeriesConfig = (props: {
               ...axisLine,
               show: value,
             }),
-        }}
-      >
+        }}>
         <Item label="线条">
           <FullForm>
             <InputNumber
@@ -145,8 +143,7 @@ const SeriesConfig = (props: {
             });
           },
           value: splitLine.show,
-        }}
-      >
+        }}>
         <Item label="宽度">
           <FullForm>
             <InputNumber
@@ -290,8 +287,7 @@ const SeriesConfig = (props: {
             });
           },
           value: axisTick.show,
-        }}
-      >
+        }}>
         <Item label="长度">
           <FullForm>
             <InputNumber
@@ -349,8 +345,7 @@ const SeriesConfig = (props: {
             });
           },
           value: axisLabel.show,
-        }}
-      >
+        }}>
         <Item label="距离">
           <FullForm>
             <InputNumber
@@ -368,8 +363,7 @@ const SeriesConfig = (props: {
           child={{
             header: '文字',
             key: 'font',
-          }}
-        >
+          }}>
           <FontConfigList
             value={pick(axisLabel, [
               'color',
@@ -397,8 +391,7 @@ const SeriesConfig = (props: {
             });
           },
           value: pointer.show,
-        }}
-      >
+        }}>
         <Item label="尺寸">
           <HalfForm label="长度">
             <InputNumber
@@ -452,14 +445,12 @@ const SeriesConfig = (props: {
             });
           },
           value: title.show,
-        }}
-      >
+        }}>
         <Collapse
           child={{
             header: '文字',
             key: 'font',
-          }}
-        >
+          }}>
           <FontConfigList
             value={pick(title, [
               'color',
@@ -498,14 +489,12 @@ const SeriesConfig = (props: {
             });
           },
           value: detail.show,
-        }}
-      >
+        }}>
         <Collapse
           child={{
             header: '文字',
             key: 'font',
-          }}
-        >
+          }}>
           <FontConfigList
             value={pick(detail, [
               'color',

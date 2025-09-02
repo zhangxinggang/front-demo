@@ -1,5 +1,5 @@
-import { Dropdown as AntDropdown } from 'antd';
 import type { DropDownProps } from 'antd';
+import { Dropdown as AntDropdown } from 'antd';
 import classnames from 'classnames';
 
 const { Button } = AntDropdown;

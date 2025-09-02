@@ -1,6 +1,6 @@
+import { usePrimaryColor } from '@/hooks';
 import {} from 'react';
 import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader';
-import { usePrimaryColor } from '@/hooks';
 import styles from './index.less';
 
 const PageLoading = (props: { value: boolean }) => {

@@ -1,19 +1,19 @@
 import { mergeWithoutArray } from '@/utils';
+import { getName } from '@/utils/constants';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
-  DEFAULT_TOOLTIP_CONFIG,
-  DEFAULT_FONT_CONFIG,
   DEFAULT_ANIMATION_CONFIG,
   DEFAULT_CONDITION_CONFIG,
+  DEFAULT_FONT_CONFIG,
+  DEFAULT_GRID_CONFIG,
+  DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
   DEFAULT_RADIAL_CONFIG,
   DEFAULT_THEME_COLOR_LIST,
-  DEFAULT_GRID_CONFIG,
-  DEFAULT_LINKAGE_CONFIG,
-  DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_TOOLTIP_CONFIG,
 } from '../../../Common/Constants/defaultConfig';
-import { getName } from '@/utils/constants';
 import { TPercentBarConfig } from './type';
 
 const DEFAULT_NAME = getName(3);

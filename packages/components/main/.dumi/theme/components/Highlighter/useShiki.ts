@@ -34,15 +34,15 @@ export const useShiki = ({ onLoadingChange, theme }: ShikiOptions) => {
   const initHighlighter = async (theme: ShikiSyntaxTheme) => {
     onLoadingChange?.(true);
 
-    const getHighlighterData: any = ()=>{
-      return new Promise((resolve)=>{
-        if(highlighterData) return highlighterData;
+    const getHighlighterData: any = () => {
+      return new Promise((resolve) => {
+        if (highlighterData) return highlighterData;
         return getHighlighter({
           langs: Object.keys(languageMap) as any,
           themes: Object.values(theme),
         });
-      })
-    }
+      });
+    };
 
     shikiRef.current = await getHighlighterData();
 

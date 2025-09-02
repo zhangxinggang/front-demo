@@ -1,12 +1,12 @@
-import { useCallback } from 'react';
-import { DeleteOutlined } from '@ant-design/icons';
 import { useIdPathMap } from '@/hooks';
 import {
-  GLOBAL_EVENT_EMITTER,
   EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
 } from '@/utils/Assist/EventEmitter';
-import useChildren from './useChildren';
+import { DeleteOutlined } from '@ant-design/icons';
+import { useCallback } from 'react';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 // 删除组件后，手动删除其相关的关联属性
 const deleteComponentInteractive = (id: string[]) => {

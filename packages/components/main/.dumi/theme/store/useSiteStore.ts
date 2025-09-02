@@ -1,9 +1,17 @@
 import { AtomAsset } from 'dumi-assets-types';
-import { ILocale,ILocalesConfig, INavItem, IPreviewerProps, IRouteMeta, ISidebarGroup, IThemeConfig } from 'dumi/dist/client/theme-api/types';
+import {
+  ILocale,
+  ILocalesConfig,
+  INavItem,
+  IPreviewerProps,
+  IRouteMeta,
+  ISidebarGroup,
+  IThemeConfig,
+} from 'dumi/dist/client/theme-api/types';
 import { PICKED_PKG_FIELDS } from 'dumi/dist/constants';
 import equal from 'fast-deep-equal';
-import { ComponentType } from 'react';
 import type { Location } from 'history';
+import { ComponentType } from 'react';
 import { StoreApi } from 'zustand';
 import { createContext } from 'zustand-utils';
 import { devtools } from 'zustand/middleware';
@@ -27,7 +35,7 @@ export interface ISiteData {
   themeConfig: IThemeConfig;
   loading: boolean;
   setLoading: (status: boolean) => void;
-};
+}
 
 export interface SiteStore {
   siteData: ISiteData;
@@ -45,5 +53,6 @@ export const createStore = (initState: SiteStore) =>
     equal,
   );
 
-const { useStore, useStoreApi, Provider } = createContext<StoreApi<SiteStore>>();
+const { useStore, useStoreApi, Provider } =
+  createContext<StoreApi<SiteStore>>();
 export { Provider, useStore as useSiteStore, useStoreApi };

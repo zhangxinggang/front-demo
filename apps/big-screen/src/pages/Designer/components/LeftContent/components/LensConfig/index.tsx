@@ -62,15 +62,11 @@ const LensConfig = forwardRef<LensConfigRef, Props>((props, ref) => {
     setVisible(false);
   }, []);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open,
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open,
+    };
+  }, []);
 
   return (
     <Drawer
@@ -80,8 +76,7 @@ const LensConfig = forwardRef<LensConfigRef, Props>((props, ref) => {
       onClose={onClose}
       title="全局滤镜"
       placement="left"
-      width={400}
-    >
+      width={400}>
       <ConfigList level={1}>
         <Item label="开启全局滤镜">
           <FullForm>

@@ -1,11 +1,11 @@
-import { useMemo, useCallback, Fragment } from 'react';
-import classnames from 'classnames';
-import { usePrimaryColor } from '@/hooks';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import styles from './index.less';
 import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { usePrimaryColor } from '@/hooks';
+import classnames from 'classnames';
+import { Fragment, useCallback, useMemo } from 'react';
+import styles from './index.less';
 
 const { Item } = ConfigList;
 
@@ -37,8 +37,7 @@ const PointSelect = (props: {
           '--point-select-item-active': themeColor,
           left: value[0] + '%',
           top: value[1] + '%',
-        }}
-      ></div>
+        }}></div>
     );
   }, [value, themeColor]);
 

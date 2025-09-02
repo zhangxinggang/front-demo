@@ -1,6 +1,6 @@
-setTimeout(()=>{
+setTimeout(() => {
   const iframes = document.querySelectorAll('iframe');
-  iframes.forEach(iframe => {
+  iframes.forEach((iframe) => {
     const doc = iframe.contentDocument || iframe.contentWindow.document;
     const script = doc.createElement('script');
     script.src = chrome.runtime.getURL('/web/js/iframe/inject.js');
@@ -9,4 +9,4 @@ setTimeout(()=>{
     };
     doc.body.appendChild(script);
   });
-},3000)
+}, 3000);

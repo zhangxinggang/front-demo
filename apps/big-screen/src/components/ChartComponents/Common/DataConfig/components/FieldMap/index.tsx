@@ -1,7 +1,7 @@
-import { useCallback, useMemo } from 'react';
-import { useControllableValue } from 'ahooks';
 import Input from '@/components/ChartComponents/Common/Input';
 import Tooltip from '@/components/Tooltip';
+import { useControllableValue } from 'ahooks';
+import { useCallback, useMemo } from 'react';
 import MapTable from '../../../MapTable';
 
 function fieldTypeToString(

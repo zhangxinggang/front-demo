@@ -1,9 +1,9 @@
-import { useCallback } from 'react';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import Input from '@/components/ChartComponents/Common/Input';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import Input from '@/components/ChartComponents/Common/Input';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { useCallback } from 'react';
 import { TProgressBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -46,8 +46,7 @@ const AxisConfig = (props: {
         }}
         parent={{
           activeKey: ['axisLabel'],
-        }}
-      >
+        }}>
         <Item label="标签名称">
           <FullForm>
             <Input
@@ -64,8 +63,7 @@ const AxisConfig = (props: {
           child={{
             header: '文字样式',
             key: 'textStyle',
-          }}
-        >
+          }}>
           <FontConfigList
             value={axisLabel.textStyle}
             onChange={(value) => {

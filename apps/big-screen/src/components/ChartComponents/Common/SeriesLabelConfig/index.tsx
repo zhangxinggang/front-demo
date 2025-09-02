@@ -1,7 +1,7 @@
 import { ReactNode, useCallback, useMemo } from 'react';
 import { SingleCollapse as Collapse, SingleCollapseProps } from '../Collapse';
-import LabelPositionConfig from '../LabelPositionConfig';
 import FontConfig from '../FontConfig';
+import LabelPositionConfig from '../LabelPositionConfig';
 
 const SeriesLabelConfig = (
   props: {
@@ -56,8 +56,7 @@ const SeriesLabelConfig = (
         ...child,
       }}
       parent={parent}
-      level={level}
-    >
+      level={level}>
       {childrenInsertPosition === 'start' && children}
       {needPositionConfig && (
         <LabelPositionConfig

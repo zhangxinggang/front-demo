@@ -1,16 +1,16 @@
-import { useCallback, useMemo } from 'react';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
-import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import GlobalConfig from '@/utils/Assist/GlobalConfig';
 import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { useCallback, useMemo } from 'react';
 import { TRadarBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -63,8 +63,7 @@ const SeriesConfig = (props: {
     return (
       <SeriesLabelConfig
         {...(label as any)}
-        onChange={onKeyChange.bind(null, 'label')}
-      >
+        onChange={onKeyChange.bind(null, 'label')}>
         <Item label="距离">
           <FullForm>
             <InputNumber

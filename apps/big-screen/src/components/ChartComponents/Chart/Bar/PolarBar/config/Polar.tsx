@@ -1,6 +1,6 @@
-import { useCallback, useMemo } from 'react';
 import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import { useCallback, useMemo } from 'react';
 import { TPolarBarConfig } from '../type';
 
 const PolarConfig = (props: {

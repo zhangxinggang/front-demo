@@ -1,6 +1,6 @@
+import Icon from '@/components/ChartComponents/Common/Icon';
 import { CaretLeftOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import classnames from 'classnames';
-import Icon from '@/components/ChartComponents/Common/Icon';
 import styles from './index.less';
 
 const LayerHeader = (props: {
@@ -17,8 +17,7 @@ const LayerHeader = (props: {
         'pos-sti',
         'dis-flex',
         'p-lr-4',
-      )}
-    >
+      )}>
       <CaretLeftOutlined className="m-r-8 c-po" onClick={onBack} />
       <div className="text-ellipsis">图层管理</div>
       {iconMode ? (

@@ -1,13 +1,13 @@
-import { useCallback } from 'react';
-import { get } from 'lodash';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import DataChangePool from '@/utils/Assist/DataChangePool';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import { getPath } from '@/utils/Assist/Component';
+import DataChangePool from '@/utils/Assist/DataChangePool';
 import { DEFAULT_CONFIG } from '@/utils/constants/screenData';
+import { get } from 'lodash';
+import { useCallback } from 'react';
 
 const { Item } = ConfigList;
 
@@ -48,8 +48,7 @@ const ChildTransformConfig = (props: {
       child={{
         header: '3d变换',
         key: 'transform-config',
-      }}
-    >
+      }}>
       <MultipleSeriesConfig
         disabledCal
         counter={components.length}

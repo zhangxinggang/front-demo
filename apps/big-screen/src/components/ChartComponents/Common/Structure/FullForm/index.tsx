@@ -1,5 +1,5 @@
-import { ReactNode, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, ReactNode } from 'react';
 import styles from './index.less';
 
 // 基础配置的行表单
@@ -18,8 +18,7 @@ const FullForm = ({
   return (
     <div
       className={classnames(styles['design-config-full-form'], className)}
-      style={style}
-    >
+      style={style}>
       <div className={styles['design-config-full-form-content']}>
         {children}
       </div>
@@ -28,8 +27,7 @@ const FullForm = ({
           className={classnames(
             styles['design-config-full-form-label'],
             'text-ellipsis',
-          )}
-        >
+          )}>
           {label}
         </div>
       )}

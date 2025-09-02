@@ -1,9 +1,9 @@
 import { ReactNode, useCallback, useMemo } from 'react';
-import ConfigList from '../Structure/ConfigList';
-import { SingleCollapse as Collapse } from '../Collapse';
-import FullForm from '../Structure/FullForm';
-import InputNumber from '../InputNumber';
 import ChartAnimationTypeSelect from '../ChartAnimationTypeSelect';
+import { SingleCollapse as Collapse } from '../Collapse';
+import InputNumber from '../InputNumber';
+import ConfigList from '../Structure/ConfigList';
+import FullForm from '../Structure/FullForm';
 
 const { Item } = ConfigList;
 
@@ -82,8 +82,7 @@ const AnimationConfig = (props: AnimationConfigProps) => {
         }}
         parent={{
           activeKey: ['animation'],
-        }}
-      >
+        }}>
         {animationEasingConfig}
         {animationDurationConfig}
         {children}

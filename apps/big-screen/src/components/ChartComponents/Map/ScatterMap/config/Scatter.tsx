@@ -1,15 +1,15 @@
-import { useCallback, useMemo } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import Select from '@/components/ChartComponents/Common/Select';
-import IconTooltip from '@/components/IconTooltip';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import Select from '@/components/ChartComponents/Common/Select';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { useCallback, useMemo } from 'react';
 import { TScatterMapConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -63,8 +63,7 @@ const SeriesConfig = (props: {
         child={{
           key: 'rippleEffect',
           header: '涟漪',
-        }}
-      >
+        }}>
         <Item label="颜色">
           <FullForm>
             <CompatColorSelect
@@ -145,8 +144,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         onChange={onKeyChange.bind(null, 'label')}
-        ignore={['position']}
-      >
+        ignore={['position']}>
         <FormatterSelect
           value={label.formatter}
           onChange={(value) => {
@@ -165,8 +163,7 @@ const SeriesConfig = (props: {
         child={{
           key: 'symbol',
           header: '图形',
-        }}
-      >
+        }}>
         <Item label="类型">
           <FullForm>
             <SymbolSelect
@@ -181,8 +178,7 @@ const SeriesConfig = (props: {
             <IconTooltip title="大小基数，根据此值乘数据的值">
               <InfoCircleOutlined />
             </IconTooltip>
-          }
-        >
+          }>
           <FullForm>
             <InputNumber
               value={symbolSize}

@@ -1,27 +1,27 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
-import type { UploadFile } from 'antd/es/upload/interface';
-import {
-  InfoCircleOutlined,
-  PictureOutlined,
-  BgColorsOutlined,
-} from '@ant-design/icons';
+import ClipPathSelect from '@/components/ChartComponents/Common/ClipPathSelect';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import ColorSelect, { CompatColorSelect } from '@/components/ColorSelect';
-import IconTooltip from '@/components/IconTooltip';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import RadioGroup, {
   Radio,
 } from '@/components/ChartComponents/Common/IconRadio';
-import ImageUpload from '@/components/ImageUpload';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import ClipPathSelect from '@/components/ChartComponents/Common/ClipPathSelect';
+import ColorSelect, { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
+import ImageUpload from '@/components/ImageUpload';
 import ThemeUtil from '@/utils/Assist/Theme';
-import ConditionConfig from './Condition';
+import {
+  BgColorsOutlined,
+  InfoCircleOutlined,
+  PictureOutlined,
+} from '@ant-design/icons';
+import { Switch } from 'antd';
+import type { UploadFile } from 'antd/es/upload/interface';
+import { Component } from 'react';
 import { TImageConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 
@@ -141,8 +141,7 @@ class Config extends Component<
                     <IconTooltip title="数据配置会影响到这里的配置">
                       <InfoCircleOutlined />
                     </IconTooltip>
-                  }
-                >
+                  }>
                   <FullForm>
                     {type === 'color' && (
                       <CompatColorSelect

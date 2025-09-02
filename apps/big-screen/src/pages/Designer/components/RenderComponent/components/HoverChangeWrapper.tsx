@@ -1,6 +1,6 @@
-import { useTransition } from 'react';
-import { useHover } from 'ahooks';
 import { useComponentHover } from '@/hooks';
+import { useHover } from 'ahooks';
+import { useTransition } from 'react';
 
 const HoverChangeWrapper = (props: { id: string }) => {
   const { id } = props;

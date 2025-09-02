@@ -1,5 +1,5 @@
-import React from 'react';
 import classnames from 'classnames';
+import React from 'react';
 import styles from './index.less';
 
 export default class Canvas extends React.Component {

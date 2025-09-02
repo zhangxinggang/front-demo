@@ -1,8 +1,8 @@
-import { useCallback, useMemo, CSSProperties } from 'react';
-import classnames from 'classnames';
-import { DeleteOutlined, PlusCircleTwoTone } from '@ant-design/icons';
-import { ParamsSelectSingle } from '@/components/ParamsSelect';
 import Select from '@/components/ChartComponents/Common/Select';
+import { ParamsSelectSingle } from '@/components/ParamsSelect';
+import { DeleteOutlined, PlusCircleTwoTone } from '@ant-design/icons';
+import classnames from 'classnames';
+import { CSSProperties, useCallback, useMemo } from 'react';
 import { DEFAULT_CONDITION_CONFIG_ITEM_RULE_VALUE } from '../../../Constants/defaultConfig';
 import Input from '../../../Input';
 import Header from '../Header';
@@ -16,8 +16,7 @@ const ConnectLine = (props: { className?: string; style?: CSSProperties }) => {
         styles['component-rule-tree-condition-connect'],
         className,
       )}
-      style={style}
-    ></div>
+      style={style}></div>
   );
 };
 
@@ -47,8 +46,7 @@ const ConditionItem = (props: {
           'component-rule-tree-connect-no-after': last || single,
           'component-rule-tree-connect-no-before': first && single,
         },
-      )}
-    >
+      )}>
       <ParamsSelectSingle
         value={params}
         wrapperStyle={{
@@ -188,8 +186,7 @@ const Condition = (props: {
       className={classnames(
         styles['component-rule-tree-condition'],
         'component-rule-tree-connect',
-      )}
-    >
+      )}>
       {RuleNode}
       {rule.map((item, index) => {
         const { id } = item;

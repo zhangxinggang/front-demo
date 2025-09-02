@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { Tabs } from 'antd';
 import AxisConfigCommon from '@/components/ChartComponents/Common/AxisConfig';
-import { TRadialStackLineConfig } from '../type';
+import { Tabs } from 'antd';
+import { useCallback } from 'react';
 import styles from '../../../../Common/global.less';
+import { TRadialStackLineConfig } from '../type';
 
 type ValueType = Pick<TRadialStackLineConfig, 'yAxis' | 'xAxis'>;
 

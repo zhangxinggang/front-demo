@@ -1,10 +1,10 @@
-import { useCallback, useMemo } from 'react';
 import Select from '@/components/ChartComponents/Common/Select';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { useCallback, useMemo } from 'react';
 import { TStepLineConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -36,8 +36,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         ignore={['position']}
-        onChange={onKeyChange.bind(null, 'label')}
-      >
+        onChange={onKeyChange.bind(null, 'label')}>
         <Item label="位置">
           <FullForm>
             <Select

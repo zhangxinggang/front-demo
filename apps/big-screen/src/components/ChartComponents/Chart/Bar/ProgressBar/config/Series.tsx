@@ -1,13 +1,13 @@
-import { useCallback, useMemo } from 'react';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
-import { TProgressBarConfig } from '../type';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import { useCallback, useMemo } from 'react';
+import { TProgressBarConfig } from '../type';
 
 const { Item } = ConfigList;
 
@@ -45,8 +45,7 @@ const SeriesConfig = (props: {
         }}
         parent={{
           defaultActiveKey: ['background'],
-        }}
-      >
+        }}>
         <Item label="颜色">
           <FullForm>
             <CompatColorSelect
@@ -68,8 +67,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         ignore={['position']}
-        onChange={onKeyChange.bind(null, 'label')}
-      >
+        onChange={onKeyChange.bind(null, 'label')}>
         <FormatterSelect
           value={label.formatter}
           onChange={(value) => {
@@ -88,8 +86,7 @@ const SeriesConfig = (props: {
         child={{
           header: '颜色',
           key: 'color',
-        }}
-      >
+        }}>
         <ChartGradientSelect
           value={itemStyle.color}
           onChange={(value) => {

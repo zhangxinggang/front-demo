@@ -1,12 +1,12 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesConfig from './Series';
+import { Component } from 'react';
+import { TWaterBallConfig } from '../type';
 import AnimationConfig from './Animation';
 import ConditionConfig from './Condition';
-import { TWaterBallConfig } from '../type';
+import SeriesConfig from './Series';
 class Config extends Component<
   ComponentData.ComponentConfigProps<TWaterBallConfig>
 > {

@@ -32,8 +32,7 @@ export default function MotionContainer({ children, className }: Props) {
       animate="animate"
       exit="exit"
       variants={varContainer()}
-      className={className}
-    >
+      className={className}>
       {children}
     </m.div>
   );

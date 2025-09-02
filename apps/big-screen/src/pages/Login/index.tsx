@@ -149,8 +149,7 @@ export const Captcha = (props: {
         <Button
           disabled={timing}
           onClick={onGetCaptcha}
-          className={classnames('w-100', styles['component-captcha'])}
-        >
+          className={classnames('w-100', styles['component-captcha'])}>
           {timing ? `${count} 秒` : '获取验证码'}
         </Button>
       </Col>
@@ -170,14 +169,12 @@ const Login = (props: { login: (value: any) => any }) => {
       <div
         style={{
           textAlign: 'right',
-        }}
-      >
+        }}>
         <Button
           type="link"
           onClick={() => {
             history.push('/forget');
-          }}
-        >
+          }}>
           忘记密码
         </Button>
       </div>
@@ -207,8 +204,7 @@ const Login = (props: { login: (value: any) => any }) => {
           loading={fetchLoading}
           type="primary"
           block
-          onClick={handleLogin}
-        >
+          onClick={handleLogin}>
           登录
         </Button>
         <Button
@@ -216,8 +212,7 @@ const Login = (props: { login: (value: any) => any }) => {
           block
           onClick={() => {
             history.push('/register');
-          }}
-        >
+          }}>
           注册
         </Button>
       </Space>
@@ -229,8 +224,7 @@ const Login = (props: { login: (value: any) => any }) => {
       title="登录"
       tips={tips}
       action={action}
-      onSubmit={handleLogin}
-    >
+      onSubmit={handleLogin}>
       <Mobile value={mobile} onChange={setMobile} />
       <Password value={password} onChange={setPassword} />
     </CommonBackground>

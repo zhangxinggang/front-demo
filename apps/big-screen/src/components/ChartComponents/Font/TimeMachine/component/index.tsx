@@ -1,11 +1,11 @@
-import { CSSProperties, useMemo, useRef, useState, useEffect } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import moment from 'moment';
 import { useLinkageInteractive } from '@/components/ChartComponents/Common/Component/hook/useLinkageInteractive';
 import ColorSelect from '@/components/ColorSelect';
-import { TTimeMachineConfig } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import moment from 'moment';
+import { CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TTimeMachineConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -91,16 +91,14 @@ const TimeMachineBasic = (
         componentStyle,
       )}
       id={chartId.current}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       <Wrapper border={border}>
         {children}
         <div
           className={classnames(
             'w-100 h-100 dis-flex',
             styles['component-font-time-machine-main'],
-          )}
-        >
+          )}>
           {icon.position === 'before' && iconNode}
           {currentTime.format(formatter)}
           {icon.position === 'after' && iconNode}

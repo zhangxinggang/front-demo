@@ -1,25 +1,25 @@
-import { Component } from 'react';
-import {
-  InfoCircleOutlined,
-  BorderLeftOutlined,
-  BorderRightOutlined,
-} from '@ant-design/icons';
+import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import IconTooltip from '@/components/IconTooltip';
-import Input from '@/components/ChartComponents/Common/Input';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
 import RadioGroup, {
   Radio,
 } from '@/components/ChartComponents/Common/IconRadio';
+import Input from '@/components/ChartComponents/Common/Input';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
+import {
+  BorderLeftOutlined,
+  BorderRightOutlined,
+  InfoCircleOutlined,
+} from '@ant-design/icons';
+import { Component } from 'react';
 import { TTimeMachineConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -55,8 +55,7 @@ class Config extends Component<
                   child={{
                     header: '文字样式',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(null, 'textStyle')}
@@ -73,8 +72,7 @@ class Config extends Component<
                         show: value,
                       });
                     },
-                  }}
-                >
+                  }}>
                   <BootstrapIconSelect
                     value={icon.value}
                     onChange={(value) => {
@@ -91,16 +89,13 @@ class Config extends Component<
                           this.onKeyChange('icon', {
                             position: value,
                           });
-                        }}
-                      >
+                        }}>
                         <Radio
                           icon={<BorderLeftOutlined />}
-                          value="before"
-                        ></Radio>
+                          value="before"></Radio>
                         <Radio
                           icon={<BorderRightOutlined />}
-                          value="after"
-                        ></Radio>
+                          value="after"></Radio>
                       </RadioGroup>
                     </HalfForm>
                     <HalfForm label="边距">
@@ -151,17 +146,14 @@ class Config extends Component<
                           <a
                             className="underline-anime underline-anime-color-white"
                             target="_blank"
-                            href="http://momentjs.cn/"
-                          >
+                            href="http://momentjs.cn/">
                             这里
                           </a>
                         </>
-                      }
-                    >
+                      }>
                       <InfoCircleOutlined />
                     </IconTooltip>
-                  }
-                >
+                  }>
                   <FullForm>
                     <Input
                       className="w-100"

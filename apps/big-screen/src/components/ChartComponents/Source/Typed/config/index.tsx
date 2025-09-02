@@ -1,13 +1,13 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { Switch } from 'antd';
+import { Component } from 'react';
 import { TTypedConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -46,8 +46,7 @@ class Config extends Component<
                   }}
                   parent={{
                     defaultActiveKey: ['textStyle'],
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(null, 'textStyle')}

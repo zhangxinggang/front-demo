@@ -19,8 +19,7 @@ export default function AnimatePage() {
       <Typography.Link
         href="https://www.framer.com/motion/"
         style={{ color: colorPrimary }}
-        className="mb-4 block"
-      >
+        className="mb-4 block">
         https://www.framer.com/motion/
       </Typography.Link>
       <Tabs items={TABS} type="card" />

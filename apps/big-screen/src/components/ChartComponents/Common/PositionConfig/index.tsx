@@ -1,13 +1,13 @@
-import {} from 'react';
+import IconTooltip from '@/components/IconTooltip';
 import {
   PicCenterOutlined,
   PicLeftOutlined,
   PicRightOutlined,
 } from '@ant-design/icons';
-import { Button, Space } from 'antd';
 import { useControllableValue } from 'ahooks';
+import { Button, Space } from 'antd';
 import classnames from 'classnames';
-import IconTooltip from '@/components/IconTooltip';
+import {} from 'react';
 import styles from './index.less';
 
 export const PositionConfig = (props: {
@@ -31,8 +31,7 @@ export const PositionConfig = (props: {
             className={classnames({
               [styles['design-config-position-config-active']]:
                 value === 'center',
-            })}
-          ></Button>
+            })}></Button>
         </IconTooltip>
         <IconTooltip title="居左">
           <Button
@@ -43,8 +42,7 @@ export const PositionConfig = (props: {
             className={classnames({
               [styles['design-config-position-config-active']]:
                 value === 'left',
-            })}
-          ></Button>
+            })}></Button>
         </IconTooltip>
         <IconTooltip title="居右">
           <Button
@@ -55,8 +53,7 @@ export const PositionConfig = (props: {
             className={classnames({
               [styles['design-config-position-config-active']]:
                 value === 'right',
-            })}
-          ></Button>
+            })}></Button>
         </IconTooltip>
       </Space>
     </div>

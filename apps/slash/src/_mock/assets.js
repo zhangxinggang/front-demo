@@ -13,9 +13,27 @@ export const ORG_LIST = [
     desc: faker.lorem.words(),
     order: 1,
     children: [
-      { id: '1-1', name: 'R&D Department', status: 'disable', desc: '', order: 1 },
-      { id: '1-2', name: 'Marketing Department', status: 'enable', desc: '', order: 2 },
-      { id: '1-3', name: 'Finance Department', status: 'enable', desc: '', order: 3 },
+      {
+        id: '1-1',
+        name: 'R&D Department',
+        status: 'disable',
+        desc: '',
+        order: 1,
+      },
+      {
+        id: '1-2',
+        name: 'Marketing Department',
+        status: 'enable',
+        desc: '',
+        order: 2,
+      },
+      {
+        id: '1-3',
+        name: 'Finance Department',
+        status: 'enable',
+        desc: '',
+        order: 3,
+      },
     ],
   },
   {
@@ -25,9 +43,27 @@ export const ORG_LIST = [
     desc: faker.lorem.words(),
     order: 2,
     children: [
-      { id: '2-1', name: 'R&D Department', status: 'disable', desc: '', order: 1 },
-      { id: '2-2', name: 'Marketing Department', status: 'enable', desc: '', order: 2 },
-      { id: '2-3', name: 'Finance Department', status: 'enable', desc: '', order: 3 },
+      {
+        id: '2-1',
+        name: 'R&D Department',
+        status: 'disable',
+        desc: '',
+        order: 1,
+      },
+      {
+        id: '2-2',
+        name: 'Marketing Department',
+        status: 'enable',
+        desc: '',
+        order: 2,
+      },
+      {
+        id: '2-3',
+        name: 'Finance Department',
+        status: 'enable',
+        desc: '',
+        order: 3,
+      },
     ],
   },
   {
@@ -37,9 +73,27 @@ export const ORG_LIST = [
     desc: faker.lorem.words(),
     order: 3,
     children: [
-      { id: '3-1', name: 'R&D Department', status: 'disable', desc: '', order: 1 },
-      { id: '3-2', name: 'Marketing Department', status: 'enable', desc: '', order: 2 },
-      { id: '3-3', name: 'Finance Department', status: 'enable', desc: '', order: 3 },
+      {
+        id: '3-1',
+        name: 'R&D Department',
+        status: 'disable',
+        desc: '',
+        order: 1,
+      },
+      {
+        id: '3-2',
+        name: 'Marketing Department',
+        status: 'enable',
+        desc: '',
+        order: 2,
+      },
+      {
+        id: '3-3',
+        name: 'Finance Department',
+        status: 'enable',
+        desc: '',
+        order: 3,
+      },
     ],
   },
 ];
@@ -329,7 +383,8 @@ const MENU_LEVEL_PERMISSION = {
               name: 'Menu Level 3a',
               type: PermissionType.MENU,
               route: 'menu-level-3a',
-              component: '/menu-level/menu-level-1b/menu-level-2b/menu-level-3a/index.tsx',
+              component:
+                '/menu-level/menu-level-1b/menu-level-2b/menu-level-3a/index.tsx',
             },
             {
               id: '3298034742548454',
@@ -338,7 +393,8 @@ const MENU_LEVEL_PERMISSION = {
               name: 'Menu Level 3b',
               type: PermissionType.MENU,
               route: 'menu-level-3b',
-              component: '/menu-level/menu-level-1b/menu-level-2b/menu-level-3b/index.tsx',
+              component:
+                '/menu-level/menu-level-1b/menu-level-2b/menu-level-3b/index.tsx',
             },
           ],
         },
@@ -501,7 +557,11 @@ const TEST_ROLE = {
   status: BasicStatus.ENABLE,
   order: 2,
   desc: 'test',
-  permission: [DASHBOARD_PERMISSION, COMPONENTS_PERMISSION, FUNCTIONS_PERMISSION],
+  permission: [
+    DASHBOARD_PERMISSION,
+    COMPONENTS_PERMISSION,
+    FUNCTIONS_PERMISSION,
+  ],
 };
 export const ROLE_LIST = [ADMIN_ROLE, TEST_ROLE];
 

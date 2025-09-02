@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
-import { CommonBorderProps } from '../type';
 import { useBorderWrapper } from '../hooks';
+import { CommonBorderProps } from '../type';
 import './index.less';
 
 const ConnorBorder = (props: CommonBorderProps) => {
@@ -27,8 +27,7 @@ const ConnorBorder = (props: CommonBorderProps) => {
             width * 0.4
           }px`,
           borderRadius: padding.map((item) => `${item}px`).join(' '),
-        }}
-      >
+        }}>
         {children}
       </div>
     </>

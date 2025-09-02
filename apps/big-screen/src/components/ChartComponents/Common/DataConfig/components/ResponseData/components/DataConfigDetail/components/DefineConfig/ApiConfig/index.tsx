@@ -95,8 +95,7 @@ const ApiConfig = (props: ApiConfigProps) => {
               <Typography.Paragraph
                 className={styles['api-config-copy-text']}
                 italic
-                copyable
-              >
+                copyable>
                 {API_CONTAIN_PARAMS_LAZY_REQUEST_URL_FLAG}
               </Typography.Paragraph>
               表示不会根据"变量"的改变而请求数据。
@@ -109,8 +108,7 @@ const ApiConfig = (props: ApiConfigProps) => {
                 {`{{${API_CONTAIN_PARAMS_LAZY_REQUEST_URL_FLAG}userId}}`}
               </Typography.Paragraph>
             </div>
-          }
-        >
+          }>
           <InfoCircleOutlined className="m-r-4" />
         </IconTooltipBase>
         URL
@@ -164,8 +162,7 @@ const ApiConfig = (props: ApiConfigProps) => {
                   serviceRequest: e.target.checked,
                 },
               });
-            }}
-          >
+            }}>
             服务端请求
           </Checkbox>
         </SubForm>

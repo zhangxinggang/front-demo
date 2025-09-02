@@ -63,14 +63,12 @@ class ResizeLine extends Component<ResizeLineProps & { primaryColor: string }> {
     return (
       <div
         className={styles['design-layer-manage-resize']}
-        onMouseDown={this.onMouseDown}
-      >
+        onMouseDown={this.onMouseDown}>
         <div
           className={styles['design-layer-manage-resize-content']}
           style={{
             backgroundColor: this.props.primaryColor,
-          }}
-        ></div>
+          }}></div>
       </div>
     );
   }
@@ -108,17 +106,13 @@ const LayerManage = forwardRef<LayerManageRef, LayerManageProps>(
       setVisible(true);
     }, []);
 
-    useImperativeHandle(
-      ref,
-      () => {
-        return {
-          open,
-          visible,
-          close: onClose,
-        };
-      },
-      [open, visible, onClose],
-    );
+    useImperativeHandle(ref, () => {
+      return {
+        open,
+        visible,
+        close: onClose,
+      };
+    }, [open, visible, onClose]);
 
     useEffect(() => {
       if (!isDeal.current && layerWidth != stateLayerWidth) {
@@ -139,8 +133,7 @@ const LayerManage = forwardRef<LayerManageRef, LayerManageProps>(
         )}
         style={{
           width: visible ? stateLayerWidth : 0,
-        }}
-      >
+        }}>
         <div className={styles['design-layer-manage-content']}>
           <Header
             onBack={onClose}

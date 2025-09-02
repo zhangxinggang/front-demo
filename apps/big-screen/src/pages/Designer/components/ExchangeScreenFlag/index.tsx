@@ -30,8 +30,7 @@ const ExchangeButton = ({
         onClick={handleClick}
         icon={<MobileOutlined />}
         loading={loading}
-        needLoading={false}
-      ></GlobalLoadingActionButton>
+        needLoading={false}></GlobalLoadingActionButton>
       <MobilePreviewer ref={ref} />
     </>
   );

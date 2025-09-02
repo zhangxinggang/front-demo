@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
-import { CommonBorderProps } from '../type';
 import { useBorderWrapper } from '../hooks';
+import { CommonBorderProps } from '../type';
 import './index.less';
 
 const GradientBorder = (props: CommonBorderProps) => {

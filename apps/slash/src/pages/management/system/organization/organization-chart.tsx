@@ -18,7 +18,9 @@ export default function OrganizationChart({ organizations = [] }: Props) {
     <Tree
       lineWidth="1px"
       lineColor={
-        themeMode === ThemeMode.Light ? themeToken.colorPrimaryBorder : themeToken.colorPrimary
+        themeMode === ThemeMode.Light
+          ? themeToken.colorPrimaryBorder
+          : themeToken.colorPrimary
       }
       lineBorderRadius="24px"
       label={
@@ -28,13 +30,15 @@ export default function OrganizationChart({ organizations = [] }: Props) {
               ? themeToken.colorPrimaryTextActive
               : themeToken.colorPrimaryText
           }
-          $backgroundColor={Color(themeToken.colorPrimary).alpha(0.08).toString()}
-          $borderColor={Color(themeToken.colorPrimaryBorder).alpha(0.24).toString()}
-        >
+          $backgroundColor={Color(themeToken.colorPrimary)
+            .alpha(0.08)
+            .toString()}
+          $borderColor={Color(themeToken.colorPrimaryBorder)
+            .alpha(0.24)
+            .toString()}>
           Root
         </StyledNode>
-      }
-    >
+      }>
       {organizations.map((org) => (
         <OrganizationChartTreeNode key={org.id} organization={org} />
       ))}
@@ -60,13 +64,15 @@ function OrganizationChartTreeNode({
               ? themeToken.colorPrimaryTextActive
               : themeToken.colorPrimaryText
           }
-          $backgroundColor={Color(themeToken.colorPrimary).alpha(0.08).toString()}
-          $borderColor={Color(themeToken.colorPrimaryBorder).alpha(0.24).toString()}
-        >
+          $backgroundColor={Color(themeToken.colorPrimary)
+            .alpha(0.08)
+            .toString()}
+          $borderColor={Color(themeToken.colorPrimaryBorder)
+            .alpha(0.24)
+            .toString()}>
           {name}
         </StyledNode>
-      }
-    >
+      }>
       {children?.map((org) => (
         <OrganizationChartTreeNode key={org.id} organization={org} />
       ))}

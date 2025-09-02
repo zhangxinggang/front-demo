@@ -1,6 +1,6 @@
-import { useState, useCallback, useEffect } from 'react';
 import { Slider as AntSlider } from 'antd';
 import { SliderSingleProps } from 'antd/es/slider';
+import { useCallback, useEffect, useState } from 'react';
 
 const Slider = (
   props: SliderSingleProps & {

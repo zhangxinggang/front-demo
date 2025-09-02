@@ -112,8 +112,7 @@ const InternalComponentActiveItem = (props: {
               top: top * scale,
               backgroundColor: primaryColor,
             }}
-            key={component.id}
-          ></div>,
+            key={component.id}></div>,
         );
       }
       return acc;
@@ -252,8 +251,7 @@ const InternalComponentActiveItem = (props: {
         '--panel-thumb-component-scale': `scale(${widthScale}, ${heightScale})`,
         '--panel-thumb-component-transform-origin':
           TransformOriginMap[resizeDirectionRef.current!] || 'center center',
-      }}
-    >
+      }}>
       {componentList}
     </div>
   );
@@ -288,8 +286,7 @@ const ComponentItem = (props: {
         left: left * scale,
         top: top * scale,
         backgroundColor: 'white',
-      }}
-    ></div>
+      }}></div>
   );
 };
 
@@ -336,8 +333,7 @@ const InternalPanelThumb = (props: {
       style={{
         width: THUMB_WIDTH,
         height: thumbHeight,
-      }}
-    >
+      }}>
       {componentList}
       <ComponentActiveItem
         width={THUMB_WIDTH}
@@ -387,13 +383,11 @@ export const Tooltip = (props: {
       )}
       style={{
         visibility: visible ? 'visible' : 'hidden',
-      }}
-    >
+      }}>
       <div
         style={{
           transform: `scale(${visible ? 1 : 0})`,
-        }}
-      >
+        }}>
         {children}
       </div>
     </div>
@@ -409,20 +403,17 @@ const ThumbButton = () => {
 
   return (
     <div
-      className={classnames(styles['component-panel-thumb-wrapper'], 'pos-re')}
-    >
+      className={classnames(styles['component-panel-thumb-wrapper'], 'pos-re')}>
       <Tooltip
         visible={visible}
         uniqueKey="thumb"
-        onHide={setVisible.bind(null, false)}
-      >
+        onHide={setVisible.bind(null, false)}>
         <PanelThumb />
       </Tooltip>
       <Button
         type="link"
         icon={icon}
-        onClick={setVisible.bind(null, !visible)}
-      ></Button>
+        onClick={setVisible.bind(null, !visible)}></Button>
     </div>
   );
 };

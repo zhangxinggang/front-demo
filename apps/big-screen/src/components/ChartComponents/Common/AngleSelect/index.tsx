@@ -1,7 +1,7 @@
-import { useCallback, ReactNode } from 'react';
-import HalfForm from '../Structure/HalfForm';
-import ConfigList, { TConfigListItemProps } from '../Structure/ConfigList';
+import { ReactNode, useCallback } from 'react';
 import InputNumber from '../InputNumber';
+import ConfigList, { TConfigListItemProps } from '../Structure/ConfigList';
+import HalfForm from '../Structure/HalfForm';
 import CircleSelect from './CircleSelect';
 
 const { Item } = ConfigList;

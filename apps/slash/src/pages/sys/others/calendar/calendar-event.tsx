@@ -8,8 +8,7 @@ export default function CalendarEvent(eventInfo: EventContentArg) {
       className="fc-event-main-wrapper"
       style={{
         color: backgroundColor,
-      }}
-    >
+      }}>
       <div className="fc-event-main-frame">
         <div className="fc-event-time">{timeText}</div>
         <div className="fc-event-title-container">

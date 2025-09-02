@@ -1,81 +1,83 @@
 import { createStyles } from 'antd-style';
 
-export const useStyles = createStyles(({ css, responsive, token, stylish, isDarkMode }) => ({
-  container: css`
-    position: relative;
-    text-align: center;
-    box-sizing: border-box;
-
-    + * {
+export const useStyles = createStyles(
+  ({ css, responsive, token, stylish, isDarkMode }) => ({
+    container: css`
       position: relative;
-    }
+      text-align: center;
+      box-sizing: border-box;
 
-    > p {
-      margin: 32px;
-      color: ${token.colorTextSecondary};
-      font-size: 20px;
-      line-height: 1.6;
+      + * {
+        position: relative;
+      }
 
+      > p {
+        margin: 32px;
+        color: ${token.colorTextSecondary};
+        font-size: 20px;
+        line-height: 1.6;
+
+        ${responsive({
+          mobile: { fontSize: 16 },
+        })}
+      }
+    `,
+
+    titleContainer: css`
+      position: relative;
+    `,
+    titleShadow: css`
+      z-index: 0;
+      color: ${isDarkMode ? token.colorWhite : token.colorTextBase};
+      font-size: 68px;
+      font-family: AliPuHui, ${token.fontFamily};
+      font-weight: bold;
       ${responsive({
-        mobile: { fontSize: 16 },
+        mobile: { fontSize: 40 },
       })}
-    }
-  `,
 
-  titleContainer: css`
-    position: relative;
-  `,
-  titleShadow: css`
-    z-index: 0;
-    color: ${isDarkMode ? token.colorWhite : token.colorTextBase};
-    font-size: 68px;
-    font-family: AliPuHui, ${token.fontFamily};
-    font-weight: bold;
-    ${responsive({
-      mobile: { fontSize: 40 },
-    })}
-
-    ${stylish.heroTextShadow}
+      ${stylish.heroTextShadow}
 
     b {
-      color: transparent;
-    }
-  `,
+        color: transparent;
+      }
+    `,
 
-  desc: css`
-    font-size: ${token.fontSizeHeading3}px;
-    color: ${token.colorTextSecondary};
+    desc: css`
+      font-size: ${token.fontSizeHeading3}px;
+      color: ${token.colorTextSecondary};
 
-    ${responsive.mobile} {
-      font-size: ${token.fontSizeHeading5}px;
-      margin: 24px 16px;
-    }
-  `,
+      ${responsive.mobile} {
+        font-size: ${token.fontSizeHeading5}px;
+        margin: 24px 16px;
+      }
+    `,
 
-  actions: css`
-    margin-top: 48px;
-    display: flex;
-    justify-content: center;
+    actions: css`
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
 
-    ${responsive({
-      mobile: { marginTop: 24 },
-    })}
-  `,
-  canvas: css`
-    z-index: 10;
-    pointer-events: none;
-    position: absolute;
-    top: -250px;
-    left: 50%;
-    transform: translateX(-50%) scale(1.5);
-    width: 600px;
-    height: 400px;
-    opacity: 0.2;
-    ${stylish.heroBlurBall}
+      ${responsive({
+        mobile: { marginTop: 24 },
+      })}
+    `,
+    canvas: css`
+      z-index: 10;
+      pointer-events: none;
+      position: absolute;
+      top: -250px;
+      left: 50%;
+      transform: translateX(-50%) scale(1.5);
+      width: 600px;
+      height: 400px;
+      opacity: 0.2;
+      ${stylish.heroBlurBall}
 
-    ${responsive.mobile} {
-      width: 200px;
-      height: 300px;
-    }
-  `,
-}));
+      ${responsive.mobile} {
+        width: 200px;
+        height: 300px;
+      }
+    `,
+  }),
+);

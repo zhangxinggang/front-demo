@@ -21,11 +21,14 @@ export default function ContainerView({ variant }: Props) {
     <div
       key={variant}
       className="h-[480px] overflow-scroll rounded-lg"
-      style={{ backgroundColor: colorBgLayout }}
-    >
+      style={{ backgroundColor: colorBgLayout }}>
       <MotionContainer className="flex h-full w-full flex-col items-center gap-6">
         {isKenburns ? (
-          <m.img src={Cover3} className="h-full w-full object-cover" variants={varients} />
+          <m.img
+            src={Cover3}
+            className="h-full w-full object-cover"
+            variants={varients}
+          />
         ) : (
           <m.div {...varients} className="h-full w-full" />
         )}

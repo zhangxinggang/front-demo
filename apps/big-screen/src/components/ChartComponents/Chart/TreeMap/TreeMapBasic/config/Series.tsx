@@ -1,16 +1,16 @@
-import { useCallback, useMemo } from 'react';
-import { Switch } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import IconTooltip from '@/components/IconTooltip';
-import KeyWordPosition from '@/components/ChartComponents/Common/KeyWordPosition';
-import { CompatColorSelect } from '@/components/ColorSelect';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import KeyWordPosition from '@/components/ChartComponents/Common/KeyWordPosition';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
+import { useCallback, useMemo } from 'react';
 import { TTreeMapBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -42,8 +42,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         onChange={onKeyChange.bind(null, 'label')}
-        ignore={['position']}
-      >
+        ignore={['position']}>
         <FormatterSelect
           value={label.formatter}
           onChange={(value) => {
@@ -63,8 +62,7 @@ const SeriesConfig = (props: {
         onChange={onKeyChange.bind(null, 'upperLabel')}
         child={{
           header: '父级标签',
-        }}
-      >
+        }}>
         <FormatterSelect
           value={upperLabel.formatter}
           onChange={(value) => {
@@ -85,8 +83,7 @@ const SeriesConfig = (props: {
           <IconTooltip title="默认为黄金比：0.5 * (1 + Math.sqrt(5))">
             <InfoCircleOutlined />
           </IconTooltip>
-        }
-      >
+        }>
         <FullForm>
           <InputNumber
             className="w-100"
@@ -126,8 +123,7 @@ const SeriesConfig = (props: {
               show: value,
             });
           },
-        }}
-      >
+        }}>
         <Item label="背景颜色">
           <CompatColorSelect
             value={breadcrumb.itemStyle.color}
@@ -151,8 +147,7 @@ const SeriesConfig = (props: {
           child={{
             header: '文本',
             key: 'textStyle',
-          }}
-        >
+          }}>
           <FontConfigList
             value={breadcrumb.itemStyle.textStyle}
             onChange={(value) => {

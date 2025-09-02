@@ -1,9 +1,9 @@
-import { useMemo, CSSProperties } from 'react';
 import classnames from 'classnames';
-import OuterConnectLeft from '../OuterConnectLeft';
-import OuterConnectRight from '../OuterConnectRight';
+import { CSSProperties, useMemo } from 'react';
 import InnerConnectLeft from '../InnerConnectLeft';
 import InnerConnectRight from '../InnerConnectRight';
+import OuterConnectLeft from '../OuterConnectLeft';
+import OuterConnectRight from '../OuterConnectRight';
 import styles from './index.less';
 
 const RuleHeader = (props: {
@@ -28,8 +28,7 @@ const RuleHeader = (props: {
   return (
     <div
       className={classnames(styles['component-rule-tree-header'], className)}
-      style={style}
-    >
+      style={style}>
       <div className={styles['component-rule-tree-header-action']}>
         <div
           className={classnames(
@@ -39,8 +38,7 @@ const RuleHeader = (props: {
                 value === 'and',
             },
           )}
-          onClick={onChange.bind(null, 'and')}
-        >
+          onClick={onChange.bind(null, 'and')}>
           并且
         </div>
         <div
@@ -51,8 +49,7 @@ const RuleHeader = (props: {
                 value === 'or',
             },
           )}
-          onClick={onChange.bind(null, 'or')}
-        >
+          onClick={onChange.bind(null, 'or')}>
           或者
         </div>
       </div>
@@ -64,8 +61,7 @@ const RuleHeader = (props: {
               [styles['component-rule-tree-header-connect-active']]:
                 value === 'and',
             },
-          )}
-        >
+          )}>
           {connectLeft}
         </div>
         <div
@@ -75,8 +71,7 @@ const RuleHeader = (props: {
               [styles['component-rule-tree-header-connect-active']]:
                 value === 'or',
             },
-          )}
-        >
+          )}>
           {connectRight}
         </div>
       </div>

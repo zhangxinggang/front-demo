@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
+import type { SingleCollapseProps } from '../Collapse';
 import { TabProps } from '../ComponentOptionConfig';
 import type { TConfigListItemProps } from '../Structure/ConfigList';
-import type { SingleCollapseProps } from '../Collapse';
 
 export type FromType = 'NORMAL' | 'COLLAPSE';
 

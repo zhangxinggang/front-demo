@@ -1,9 +1,9 @@
-import { useCallback } from 'react';
 import Select from '@/components/ChartComponents/Common/Select';
-import TooltipConfigCommon from '@/components/ChartComponents/Common/TooltipCommon';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import TooltipAnimationConfig from '@/components/ChartComponents/Common/TooltipAnimationConfig';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import TooltipAnimationConfig from '@/components/ChartComponents/Common/TooltipAnimationConfig';
+import TooltipConfigCommon from '@/components/ChartComponents/Common/TooltipCommon';
+import { useCallback } from 'react';
 import { TAli3DMapConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -31,8 +31,7 @@ const TooltipConfig = (props: {
     <TooltipConfigCommon
       value={value}
       onChange={onKeyChange}
-      ignore={['formatter']}
-    >
+      ignore={['formatter']}>
       <Item label="隐藏内容">
         <FullForm>
           <Select

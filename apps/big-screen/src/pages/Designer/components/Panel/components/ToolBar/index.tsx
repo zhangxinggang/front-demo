@@ -15,8 +15,7 @@ const ToolBar = (props: { flag: ComponentData.ScreenFlagType }) => {
         styles['design-page-toolbar'],
         'ali-r',
         'normal-background',
-      )}
-    >
+      )}>
       <ShortcutKeys />
       {flag === 'PC' && <PanelThumb />}
       <Scale />

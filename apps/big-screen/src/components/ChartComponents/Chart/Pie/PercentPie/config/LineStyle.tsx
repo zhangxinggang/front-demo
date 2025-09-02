@@ -1,9 +1,9 @@
-import { useCallback, useMemo } from 'react';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import { useCallback, useMemo } from 'react';
 import { TPercentPieConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -36,8 +36,7 @@ const LegendConfig = (props: {
         child={{
           header: '线条样式',
           key: 'line',
-        }}
-      >
+        }}>
         <Item label="宽度">
           <FullForm>
             <InputNumber
@@ -60,8 +59,7 @@ const LegendConfig = (props: {
         child={{
           header: '圆点样式',
           key: 'point',
-        }}
-      >
+        }}>
         <Item label="大小">
           <FullForm>
             <InputNumber
@@ -84,8 +82,7 @@ const LegendConfig = (props: {
         child={{
           key: 'color',
           header: '颜色',
-        }}
-      >
+        }}>
         {color.map((item, index) => {
           return (
             <Collapse
@@ -93,8 +90,7 @@ const LegendConfig = (props: {
               child={{
                 key: 'color' + (index + 1),
                 header: '颜色' + (index + 1),
-              }}
-            >
+              }}>
               <Item label="线条">
                 <FullForm>
                   <CompatColorSelect

@@ -1,5 +1,5 @@
-import { AnchorItem } from '../../types';
 import { ISidebarItem } from 'dumi/dist/client/theme-api/types';
+import { AnchorItem } from '../../types';
 import { SiteStore } from '../useSiteStore';
 
 export * from './apiHeader';
@@ -30,7 +30,11 @@ export const tocAnchorItemSel = (s: SiteStore) => {
     const shouldKeepWith = (depth: number) => {
       if (!frontmatter.tocDepth) return true;
 
-      if (typeof frontmatter.tocDepth === 'number' && frontmatter.tocDepth > depth - 1) return true;
+      if (
+        typeof frontmatter.tocDepth === 'number' &&
+        frontmatter.tocDepth > depth - 1
+      )
+        return true;
     };
 
     if (item.depth === 2 && shouldKeepWith(2)) {
@@ -59,5 +63,9 @@ export const contentBottomSel = (s: SiteStore) => {
   const path = s.location.pathname;
   const currentIndex = dataFlatten.findIndex((item) => item.link === path);
 
-  return { prev: dataFlatten[currentIndex - 1], currentIndex, next: dataFlatten[currentIndex + 1] };
+  return {
+    prev: dataFlatten[currentIndex - 1],
+    currentIndex,
+    next: dataFlatten[currentIndex + 1],
+  };
 };

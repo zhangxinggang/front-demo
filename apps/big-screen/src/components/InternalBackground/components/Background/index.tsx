@@ -1,6 +1,6 @@
-import GradientMixBackground from './GradientMixBackground';
-import DoodleBubbleBackground from './DoodleBubbleBackground';
 import LazyLoadWrapper from '../../../LazyLoad';
+import DoodleBubbleBackground from './DoodleBubbleBackground';
+import GradientMixBackground from './GradientMixBackground';
 
 const ColorLineBackground = LazyLoadWrapper(async () => {
   // @ts-ignore

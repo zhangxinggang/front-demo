@@ -9,8 +9,12 @@ import { AppRouteObject } from '#/router';
 const ProfilePage = lazy(() => import('@/pages/management/user/profile'));
 const AccountPage = lazy(() => import('@/pages/management/user/account'));
 
-const OrganizationPage = lazy(() => import('@/pages/management/system/organization'));
-const PermissioPage = lazy(() => import('@/pages/management/system/permission'));
+const OrganizationPage = lazy(
+  () => import('@/pages/management/system/organization'),
+);
+const PermissioPage = lazy(
+  () => import('@/pages/management/system/permission'),
+);
 
 const Blog = lazy(() => import('@/pages/management/blog'));
 
@@ -24,7 +28,9 @@ const management: AppRouteObject = {
   ),
   meta: {
     label: 'sys.menu.management',
-    icon: <SvgIcon icon="ic-management" className="ant-menu-item-icon" size="24" />,
+    icon: (
+      <SvgIcon icon="ic-management" className="ant-menu-item-icon" size="24" />
+    ),
     key: '/management',
   },
   children: [
@@ -43,12 +49,18 @@ const management: AppRouteObject = {
         {
           path: 'profile',
           element: <ProfilePage />,
-          meta: { label: 'sys.menu.user.profile', key: '/management/user/profile' },
+          meta: {
+            label: 'sys.menu.user.profile',
+            key: '/management/user/profile',
+          },
         },
         {
           path: 'account',
           element: <AccountPage />,
-          meta: { label: 'sys.menu.user.account', key: '/management/user/account' },
+          meta: {
+            label: 'sys.menu.user.account',
+            key: '/management/user/account',
+          },
         },
       ],
     },
@@ -59,12 +71,18 @@ const management: AppRouteObject = {
         {
           path: 'organization',
           element: <OrganizationPage />,
-          meta: { label: 'sys.menu.system.organization', key: '/management/system/organization' },
+          meta: {
+            label: 'sys.menu.system.organization',
+            key: '/management/system/organization',
+          },
         },
         {
           path: 'permission',
           element: <PermissioPage />,
-          meta: { label: 'sys.menu.system.permission', key: '/management/system/permission' },
+          meta: {
+            label: 'sys.menu.system.permission',
+            key: '/management/system/permission',
+          },
         },
       ],
     },

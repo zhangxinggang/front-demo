@@ -1,15 +1,15 @@
-import { useMemo, useCallback } from 'react';
+import IconTooltip from '@/components/IconTooltip';
 import {
-  BorderTopOutlined,
   BorderBottomOutlined,
-  BorderVerticleOutlined,
+  BorderHorizontalOutlined,
   BorderLeftOutlined,
   BorderRightOutlined,
-  BorderHorizontalOutlined,
+  BorderTopOutlined,
+  BorderVerticleOutlined,
 } from '@ant-design/icons';
-import ConfigList from '../Structure/ConfigList';
+import { useCallback, useMemo } from 'react';
 import RadioGroup, { Radio } from '../IconRadio';
-import IconTooltip from '@/components/IconTooltip';
+import ConfigList from '../Structure/ConfigList';
 import HalfForm from '../Structure/HalfForm';
 
 const { Item } = ConfigList;

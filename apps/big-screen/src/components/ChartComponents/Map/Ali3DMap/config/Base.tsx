@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import Select from '@/components/ChartComponents/Common/Select';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import { useCallback } from 'react';
 import { TAli3DMapConfig } from '../type';
 
 const { Item } = ConfigList;

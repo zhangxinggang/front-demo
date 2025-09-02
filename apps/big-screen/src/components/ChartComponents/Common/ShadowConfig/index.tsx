@@ -1,8 +1,8 @@
-import { ReactNode, useCallback, useMemo } from 'react';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import { ReactNode, useCallback, useMemo } from 'react';
+import InputNumber from '../InputNumber';
 import ConfigList from '../Structure/ConfigList';
 import FullForm from '../Structure/FullForm';
-import InputNumber from '../InputNumber';
 import HalfForm from '../Structure/HalfForm';
 
 const { Item } = ConfigList;

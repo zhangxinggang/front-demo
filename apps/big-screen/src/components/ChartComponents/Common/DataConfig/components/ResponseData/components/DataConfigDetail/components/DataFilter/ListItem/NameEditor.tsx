@@ -1,6 +1,6 @@
-import { useCallback, useState } from 'react';
-import { Button, Input, message } from 'antd';
 import { EditFilled } from '@ant-design/icons';
+import { Button, Input, message } from 'antd';
+import { useCallback, useState } from 'react';
 import styles from './index.less';
 
 const NameEditor = (props: {
@@ -44,8 +44,7 @@ const NameEditor = (props: {
   return (
     <div
       className={styles['design-config-data-filter-list-item-header-name']}
-      onClick={wrapperClick}
-    >
+      onClick={wrapperClick}>
       {editable ? (
         <Input
           value={inputValue}
@@ -70,8 +69,7 @@ const NameEditor = (props: {
             onClick={(e) => {
               stop(e);
               setEditable(true);
-            }}
-          ></Button>
+            }}></Button>
         </>
       )}
     </div>

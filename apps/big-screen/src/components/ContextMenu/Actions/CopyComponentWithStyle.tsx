@@ -1,10 +1,10 @@
-import { useCallback, useMemo } from 'react';
+import { getComponent } from '@/utils/Assist/Component';
 import { SkinOutlined } from '@ant-design/icons';
 import { nanoid } from 'nanoid';
-import { getComponent } from '@/utils/Assist/Component';
+import { useCallback, useMemo } from 'react';
 import { getComponentDefaultConfigByType } from '../../ChartComponents';
-import useChildren from './useChildren';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 const CopyComponentWithStyle = (props: CommonActionType) => {
   const { select, setComponent, onClick, components, childrenType, disabled } =

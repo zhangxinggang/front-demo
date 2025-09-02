@@ -1,9 +1,9 @@
-import { useEffect, useCallback } from 'react';
-import { Button } from 'antd';
-import TypedJs from 'typed.js';
-import classnames from 'classnames';
-import { history } from 'umi';
 import { gotoOperation } from '@/utils/Assist/About';
+import { Button } from 'antd';
+import classnames from 'classnames';
+import { useCallback, useEffect } from 'react';
+import TypedJs from 'typed.js';
+import { history } from 'umi';
 import AnimationTitle from '../AnimationTitle';
 import styles from './index.less';
 
@@ -31,8 +31,7 @@ const ActionSection = () => {
         {/* <span className="">设计器</span> */}
       </div>
       <div
-        className={classnames(styles['home-page-action-description'], 'w-100')}
-      >
+        className={classnames(styles['home-page-action-description'], 'w-100')}>
         <span id="home-page-action-description"></span>
       </div>
       <div className={classnames(styles['home-page-action-button'], 'w-100')}>

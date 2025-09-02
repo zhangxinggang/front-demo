@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
-import { pick } from 'lodash';
 import ColorSelect from '@/components/ColorSelect';
+import { pick } from 'lodash';
+import { useMemo } from 'react';
 
 const { getRgbaString } = ColorSelect;
 

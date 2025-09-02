@@ -1,15 +1,15 @@
-import { useCallback, useMemo } from 'react';
-import { pick } from 'lodash';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import Input from '@/components/ChartComponents/Common/Input';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
+import Input from '@/components/ChartComponents/Common/Input';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { pick } from 'lodash';
+import { useCallback, useMemo } from 'react';
 import { DEFAULT_RADIAL_CONFIG } from '../../../../Common/Constants/defaultConfig';
 import { DEFAULT_LABEL } from '../defaultConfig';
 import { TPercentBarConfig } from '../type';
@@ -61,8 +61,7 @@ const SeriesConfig = (props: {
                 child={{
                   header: '颜色',
                   key: 'color',
-                }}
-              >
+                }}>
                 <ChartGradientSelect
                   value={color}
                   onChange={(value) => {
@@ -101,8 +100,7 @@ const SeriesConfig = (props: {
                       index,
                     );
                   },
-                }}
-              >
+                }}>
                 <Collapse
                   child={{
                     header: '名称',
@@ -127,14 +125,12 @@ const SeriesConfig = (props: {
                         index,
                       );
                     },
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文字',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={pick(label.formatter.name, [
                         'fontSize',
@@ -187,14 +183,12 @@ const SeriesConfig = (props: {
                         index,
                       );
                     },
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文字',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={pick(label.formatter.value, [
                         'fontSize',
@@ -249,8 +243,7 @@ const SeriesConfig = (props: {
                           index,
                         );
                       },
-                    }}
-                  >
+                    }}>
                     <Item label="内容">
                       <FullForm>
                         <Input

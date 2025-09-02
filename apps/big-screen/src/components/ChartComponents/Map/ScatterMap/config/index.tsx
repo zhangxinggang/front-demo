@@ -1,13 +1,13 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import TooltipConfig from './Tooltip';
+import { Component } from 'react';
+import { TScatterMapConfig } from '../type';
+import ConditionConfig from './Condition';
 import GeoConfig from './Geo';
 import ScatterConfig from './Scatter';
-import ConditionConfig from './Condition';
-import { TScatterMapConfig } from '../type';
+import TooltipConfig from './Tooltip';
 class Config extends Component<
   ComponentData.ComponentConfigProps<TScatterMapConfig>
 > {

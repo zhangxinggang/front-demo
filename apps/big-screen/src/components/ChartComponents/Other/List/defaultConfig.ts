@@ -1,15 +1,15 @@
-import { random } from 'lodash';
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { random } from 'lodash';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
-  DEFAULT_FONT_CONFIG,
   DEFAULT_CONDITION_CONFIG,
-  DEFAULT_LINKAGE_CONFIG,
+  DEFAULT_FONT_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { TListConfig } from './type';
 
 const DEFAULT_VALUE = new Array(20)

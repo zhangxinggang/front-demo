@@ -23,5 +23,7 @@ export default function AuthGuard({ children }: Props) {
     check();
   }, [check]);
 
-  return <ErrorBoundary FallbackComponent={PageError}>{children}</ErrorBoundary>;
+  return (
+    <ErrorBoundary FallbackComponent={PageError}>{children}</ErrorBoundary>
+  );
 }

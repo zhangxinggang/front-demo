@@ -248,8 +248,7 @@ const _PathBasic = (
           conditionStyle,
         )}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           {shape}
@@ -266,8 +265,7 @@ const _PathBasic = (
               strokeWidth={path.width}
               {...(path.line === 'dashed'
                 ? { strokeDasharray: path.dashedValue }
-                : {})}
-            ></path>
+                : {})}></path>
           </svg>
         </Wrapper>
       </div>

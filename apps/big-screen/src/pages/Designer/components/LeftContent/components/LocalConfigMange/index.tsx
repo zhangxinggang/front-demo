@@ -1,12 +1,12 @@
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import { Button, Drawer } from 'antd';
 import {
-  useState,
   forwardRef,
   useCallback,
-  useMemo,
   useImperativeHandle,
+  useMemo,
+  useState,
 } from 'react';
-import { Button, Drawer } from 'antd';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import BackgroundConfig from './components/BackgroundConfig';
 import CrossClipboard from './components/CrossClipboard';
 import GuideLineSticky from './components/GuideLineSticky';
@@ -44,15 +44,11 @@ const LocalConfigManage = forwardRef<
     );
   }, [onClose]);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open,
-      };
-    },
-    [open],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open,
+    };
+  }, [open]);
 
   return (
     <Drawer
@@ -63,8 +59,7 @@ const LocalConfigManage = forwardRef<
       footer={footer}
       title="本地配置管理"
       placement="left"
-      width={400}
-    >
+      width={400}>
       <ConfigList level={1}>
         <BackgroundConfig />
         <CrossClipboard />

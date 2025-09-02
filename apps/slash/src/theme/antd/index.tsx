@@ -6,10 +6,10 @@ import useLocale from '@/locales/useLocale';
 import { useSettings } from '@/store/settingStore';
 
 import {
-  customThemeTokenConfig,
-  themeModeToken,
   colorPrimarys,
   customComponentConfig,
+  customThemeTokenConfig,
+  themeModeToken,
 } from './theme';
 
 import { ThemeMode } from '#/enum';
@@ -22,18 +22,27 @@ export default function AntdConfig({ children }: Props) {
 
   const { language } = useLocale();
 
-  const algorithm = themeMode === ThemeMode.Light ? theme.defaultAlgorithm : theme.darkAlgorithm;
+  const algorithm =
+    themeMode === ThemeMode.Light
+      ? theme.defaultAlgorithm
+      : theme.darkAlgorithm;
   const colorPrimary = colorPrimarys[themeColorPresets];
 
   return (
     <ConfigProvider
       locale={language.antdLocal}
       theme={{
-        token: { colorPrimary, ...customThemeTokenConfig, ...themeModeToken[themeMode].token },
-        components: { ...customComponentConfig, ...themeModeToken[themeMode].components },
+        token: {
+          colorPrimary,
+          ...customThemeTokenConfig,
+          ...themeModeToken[themeMode].token,
+        },
+        components: {
+          ...customComponentConfig,
+          ...themeModeToken[themeMode].components,
+        },
         algorithm,
-      }}
-    >
+      }}>
       {/* https://ant.design/docs/react/compatible-style-cn#styleprovider */}
       <StyleProvider hashPriority="high">{children}</StyleProvider>
     </ConfigProvider>

@@ -1,11 +1,11 @@
-import { useState, useCallback, useEffect } from 'react';
-import { BlockOutlined } from '@ant-design/icons';
 import DebounceButton from '@/components/DebounceButton';
-import {
-  GLOBAL_EVENT_EMITTER,
-  EVENT_NAME_MAP,
-} from '@/utils/Assist/EventEmitter';
 import Tooltip from '@/components/Tooltip';
+import {
+  EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
+} from '@/utils/Assist/EventEmitter';
+import { BlockOutlined } from '@ant-design/icons';
+import { useCallback, useEffect, useState } from 'react';
 
 // 图层显示隐藏
 const LayerShowIcon = (props: {}) => {
@@ -43,8 +43,7 @@ const LayerShowIcon = (props: {}) => {
         title="图层"
         icon={<BlockOutlined />}
         type={visible ? 'primary' : 'default'}
-        onClick={handleOpen}
-      ></DebounceButton>
+        onClick={handleOpen}></DebounceButton>
     </Tooltip>
   );
 };

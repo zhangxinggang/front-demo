@@ -26,12 +26,23 @@ import { ThemeColorPresets, ThemeLayout, ThemeMode } from '#/enum';
  */
 export default function SettingButton() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { colorPrimary, colorBgBase, colorTextSecondary, colorTextTertiary, colorBgContainer } =
-    useThemeToken();
+  const {
+    colorPrimary,
+    colorBgBase,
+    colorTextSecondary,
+    colorTextTertiary,
+    colorBgContainer,
+  } = useThemeToken();
 
   const settings = useSettings();
-  const { themeMode, themeColorPresets, themeLayout, themeStretch, breadCrumb, multiTab } =
-    settings;
+  const {
+    themeMode,
+    themeColorPresets,
+    themeLayout,
+    themeStretch,
+    breadCrumb,
+    multiTab,
+  } = settings;
   const { setSettings } = useSettingActions();
 
   const setThemeMode = (themeMode: ThemeMode) => {
@@ -116,8 +127,7 @@ export default function SettingButton() {
           whileTap="tap"
           whileHover="hover"
           variants={varHover(1.05)}
-          onClick={() => setDrawerOpen(true)}
-        >
+          onClick={() => setDrawerOpen(true)}>
           <IconButton className="h-10 w-10">
             <SvgIcon icon="ic-setting" size="24" />
           </IconButton>
@@ -134,7 +144,9 @@ export default function SettingButton() {
         maskStyle={{ backgroundColor: 'transparent' }}
         style={style}
         extra={
-          <IconButton onClick={() => setDrawerOpen(false)} className="h-9 w-9 hover:scale-105">
+          <IconButton
+            onClick={() => setDrawerOpen(false)}
+            className="h-9 w-9 hover:scale-105">
             <CloseOutlined className="text-gray-400" />
           </IconButton>
         }
@@ -153,24 +165,24 @@ export default function SettingButton() {
               ) : (
                 <>
                   <SvgIcon icon="ic-settings-fullscreen" className="!m-0" />
-                  <span className="ml-2 text-gray">FullScreen</span>
+                  <span className="text-gray ml-2">FullScreen</span>
                 </>
               )}
             </div>
           </Button>
-        }
-      >
+        }>
         <div className="flex flex-col gap-6 p-6">
           {/* theme mode */}
           <div>
-            <div className="mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
+            <div
+              className="mb-3 text-base font-semibold"
+              style={{ color: colorTextSecondary }}>
               Mode
             </div>
             <div className="flex flex-row gap-4">
               <Card
                 onClick={() => setThemeMode(ThemeMode.Light)}
-                className="flex h-20 w-full cursor-pointer items-center justify-center"
-              >
+                className="flex h-20 w-full cursor-pointer items-center justify-center">
                 <SvgIcon
                   icon="ic-settings-mode-sun"
                   size="24"
@@ -179,8 +191,7 @@ export default function SettingButton() {
               </Card>
               <Card
                 onClick={() => setThemeMode(ThemeMode.Dark)}
-                className="flex h-20 w-full cursor-pointer items-center justify-center"
-              >
+                className="flex h-20 w-full cursor-pointer items-center justify-center">
                 <SvgIcon
                   icon="ic-settings-mode-moon"
                   size="24"
@@ -192,7 +203,9 @@ export default function SettingButton() {
 
           {/* theme layout */}
           <div>
-            <div className="mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
+            <div
+              className="mb-3 text-base font-semibold"
+              style={{ color: colorTextSecondary }}>
               Layout
             </div>
             <div className="grid grid-cols-3 gap-4">
@@ -206,26 +219,33 @@ export default function SettingButton() {
                   justifyContent: 'center',
                   alignItems: 'center',
                   height: '100%',
-                }}
-              >
+                }}>
                 <div className="flex h-full w-7 flex-shrink-0 flex-col gap-1 p-1">
                   <div
                     className="h-2 w-2 flex-shrink-0 rounded"
-                    style={{ background: layoutBackground(ThemeLayout.Vertical) }}
+                    style={{
+                      background: layoutBackground(ThemeLayout.Vertical),
+                    }}
                   />
                   <div
                     className="h-1 w-full flex-shrink-0 rounded opacity-50"
-                    style={{ background: layoutBackground(ThemeLayout.Vertical) }}
+                    style={{
+                      background: layoutBackground(ThemeLayout.Vertical),
+                    }}
                   />
                   <div
                     className="h-1 max-w-[12px] flex-shrink-0 rounded opacity-20"
-                    style={{ background: layoutBackground(ThemeLayout.Vertical) }}
+                    style={{
+                      background: layoutBackground(ThemeLayout.Vertical),
+                    }}
                   />
                 </div>
                 <div className="h-full w-full flex-1 flex-grow p-1">
                   <div
                     className="h-full w-full rounded opacity-20"
-                    style={{ background: layoutBackground(ThemeLayout.Vertical) }}
+                    style={{
+                      background: layoutBackground(ThemeLayout.Vertical),
+                    }}
                   />
                 </div>
               </Card>
@@ -240,26 +260,33 @@ export default function SettingButton() {
                   justifyContent: 'center',
                   alignItems: 'center',
                   height: '100%',
-                }}
-              >
-                <div className="flex h-4 w-full items-center gap-1  p-1">
+                }}>
+                <div className="flex h-4 w-full items-center gap-1 p-1">
                   <div
                     className="h-2 w-2 flex-shrink-0 rounded"
-                    style={{ background: layoutBackground(ThemeLayout.Horizontal) }}
+                    style={{
+                      background: layoutBackground(ThemeLayout.Horizontal),
+                    }}
                   />
                   <div
                     className="h-1 w-4 flex-shrink-0 rounded opacity-50"
-                    style={{ background: layoutBackground(ThemeLayout.Horizontal) }}
+                    style={{
+                      background: layoutBackground(ThemeLayout.Horizontal),
+                    }}
                   />
                   <div
                     className="h-1 w-3 flex-shrink-0 rounded opacity-20"
-                    style={{ background: layoutBackground(ThemeLayout.Horizontal) }}
+                    style={{
+                      background: layoutBackground(ThemeLayout.Horizontal),
+                    }}
                   />
                 </div>
                 <div className="h-full w-full flex-1 flex-grow p-1">
                   <div
                     className="h-full w-full rounded opacity-20"
-                    style={{ background: layoutBackground(ThemeLayout.Horizontal) }}
+                    style={{
+                      background: layoutBackground(ThemeLayout.Horizontal),
+                    }}
                   />
                 </div>
               </Card>
@@ -273,8 +300,7 @@ export default function SettingButton() {
                   justifyContent: 'center',
                   alignItems: 'center',
                   height: '100%',
-                }}
-              >
+                }}>
                 <div className="flex h-full flex-shrink-0 flex-col gap-1 p-1">
                   <div
                     className="h-2 w-2 flex-shrink-0 rounded"
@@ -301,7 +327,9 @@ export default function SettingButton() {
 
           {/* theme stretch */}
           <div>
-            <div className=" mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
+            <div
+              className="mb-3 text-base font-semibold"
+              style={{ color: colorTextSecondary }}>
               <span className="mr-2">Stretch</span>
               <Tooltip title="Only available at large resolutions > 1600px (xl)">
                 <QuestionCircleOutlined />
@@ -317,16 +345,14 @@ export default function SettingButton() {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-              }}
-            >
+              }}>
               {themeStretch ? (
                 <div
                   className="flex w-full items-center justify-between"
                   style={{
                     color: colorPrimary,
                     transition: 'width 300ms 0ms',
-                  }}
-                >
+                  }}>
                   <LeftOutlined />
                   <div className="flex flex-grow border-b border-dashed" />
                   <RightOutlined />
@@ -336,8 +362,7 @@ export default function SettingButton() {
                   className="flex w-1/2 items-center justify-between"
                   style={{
                     transition: 'width 300ms 0ms',
-                  }}
-                >
+                  }}>
                   <RightOutlined />
                   <div className="flex-grow border-b border-dashed" />
                   <LeftOutlined />
@@ -348,7 +373,9 @@ export default function SettingButton() {
 
           {/* theme presets */}
           <div>
-            <div className="mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
+            <div
+              className="mb-3 text-base font-semibold"
+              style={{ color: colorTextSecondary }}>
               Presets
             </div>
             <div className="grid grid-cols-3 gap-x-4 gap-y-3">
@@ -356,11 +383,19 @@ export default function SettingButton() {
                 <Card
                   key={preset}
                   className="flex h-14 w-full cursor-pointer items-center justify-center"
-                  style={{ backgroundColor: themeColorPresets === preset ? `${color}14` : '' }}
-                  onClick={() => setThemeColorPresets(preset as ThemeColorPresets)}
-                >
+                  style={{
+                    backgroundColor:
+                      themeColorPresets === preset ? `${color}14` : '',
+                  }}
+                  onClick={() =>
+                    setThemeColorPresets(preset as ThemeColorPresets)
+                  }>
                   <div style={{ color }}>
-                    <MdCircle style={{ fontSize: themeColorPresets === preset ? 24 : 12 }} />
+                    <MdCircle
+                      style={{
+                        fontSize: themeColorPresets === preset ? 24 : 12,
+                      }}
+                    />
                   </div>
                 </Card>
               ))}
@@ -369,14 +404,15 @@ export default function SettingButton() {
 
           {/* Page config */}
           <div>
-            <div className="mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
+            <div
+              className="mb-3 text-base font-semibold"
+              style={{ color: colorTextSecondary }}>
               Page
             </div>
             <div className="flex flex-col gap-2">
               <div
                 className="flex items-center justify-between"
-                style={{ color: colorTextTertiary }}
-              >
+                style={{ color: colorTextTertiary }}>
                 <div>BreadCrumb</div>
                 <Switch
                   size="small"
@@ -386,8 +422,7 @@ export default function SettingButton() {
               </div>
               <div
                 className="flex items-center justify-between"
-                style={{ color: colorTextTertiary }}
-              >
+                style={{ color: colorTextTertiary }}>
                 <div>Multi Tab</div>
                 <Switch
                   size="small"

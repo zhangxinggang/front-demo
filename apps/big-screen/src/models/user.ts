@@ -1,22 +1,22 @@
-import { stringify } from 'querystring';
-import { history } from 'umi';
-import { message } from 'antd';
 import {
-  getUserInfo,
-  forgetPassword,
-  register,
   LoginParamsType,
-  accountLogin,
   RegisterParamsType,
   ResetParamsType,
+  accountLogin,
+  forgetPassword,
+  getUserInfo,
   outLogin,
+  register,
 } from '@/services';
-import GlobalConfig from '@/utils/Assist/GlobalConfig';
 import { getPageQuery } from '@/utils';
 import {
   setErrorOriginUser,
   unsetErrorOriginUser,
 } from '@/utils/Assist/ErrorBoundary';
+import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { message } from 'antd';
+import { stringify } from 'querystring';
+import { history } from 'umi';
 
 export default {
   namespace: 'user',

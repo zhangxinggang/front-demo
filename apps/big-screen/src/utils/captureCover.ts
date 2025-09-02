@@ -1,5 +1,5 @@
-import type { Options } from 'html2canvas';
 import { getBase64 } from '@/components/ImageUpload';
+import type { Options } from 'html2canvas';
 import GlobalConfig from './Assist/GlobalConfig';
 import { UploadImage } from './Assist/Upload';
 
@@ -79,9 +79,12 @@ export async function captureCoverAndUpload(blob: Blob) {
           } else if (status === 'error') {
             reject('upload error');
           }
-          setTimeout(() => {
-            reject('timeout');
-          }, 1 * 60 * 1000);
+          setTimeout(
+            () => {
+              reject('timeout');
+            },
+            1 * 60 * 1000,
+          );
         },
       },
     );

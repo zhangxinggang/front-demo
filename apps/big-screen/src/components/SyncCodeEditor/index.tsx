@@ -1,18 +1,18 @@
-import {
-  useCallback,
-  forwardRef,
-  useImperativeHandle,
-  useState,
-  useRef,
-  useMemo,
-} from 'react';
 import { Space } from 'antd';
 import classnames from 'classnames';
+import {
+  forwardRef,
+  useCallback,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import ClipboardAction from './Clipboard';
 import Editor, {
   EditorProps as InternalEditorProps,
   EditorRef as InternalEditorRef,
 } from './EditorNext';
-import ClipboardAction from './Clipboard';
 import FullScreenEditor from './FullScreenEditor';
 import Typesetting from './Typesetting';
 import styles from './index.less';
@@ -84,13 +84,9 @@ const CodeEditor = forwardRef<EditorRef, EditorProps>((props, ref) => {
     );
   }, [action, code, onValueChange, language]);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return editorContentRef.current! || {};
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return editorContentRef.current! || {};
+  }, []);
 
   return (
     <div className="pos-re">

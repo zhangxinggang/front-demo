@@ -1,18 +1,18 @@
-import { message } from 'antd';
-import {
-  postScreen,
-  putScreen,
-  postScreenModel,
-  putScreenModel,
-  putScreenPool,
-  putScreenModelPool,
-} from '@/services';
 import { isModelHash, useAnyDva } from '@/hooks';
 import { IGlobalModelState } from '@/models/connect';
+import {
+  postScreen,
+  postScreenModel,
+  putScreen,
+  putScreenModel,
+  putScreenModelPool,
+  putScreenPool,
+} from '@/services';
 import { captureCover, captureCoverAndUpload } from '@/utils/captureCover';
+import { message } from 'antd';
+import { SCREEN_VERSION } from '../../constants';
 import LocalConfigInstance, { LocalConfig } from '../LocalConfig';
 import nProgressUtil from '../Progress';
-import { SCREEN_VERSION } from '../../constants';
 
 // 正常保存大屏
 export const saveScreenData = async ({

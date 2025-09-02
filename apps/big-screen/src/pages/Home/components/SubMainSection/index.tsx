@@ -1,26 +1,26 @@
-import { useRef, useEffect, useState, ReactNode, useCallback } from 'react';
-import classnames from 'classnames';
-import { TextLoop } from 'react-text-loop-next';
-import { CountUp } from 'countup.js';
 import { Carousel } from 'antd';
 import type { CarouselRef } from 'antd/es/carousel';
+import classnames from 'classnames';
+import { CountUp } from 'countup.js';
 import { random, shuffle } from 'lodash';
-import MatterBoxes from '../MatterBoxes';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { TextLoop } from 'react-text-loop-next';
 import AreaChart from '../../../../../public/home/area-chart.png';
 import BarChart from '../../../../../public/home/bar-chart.png';
+import Condition1 from '../../../../../public/home/condition-1.png';
+import Condition2 from '../../../../../public/home/condition-2.png';
+import ConditionNormal from '../../../../../public/home/condition-normal.png';
 import DotChart from '../../../../../public/home/dot-chart.png';
+import MapChart from '../../../../../public/home/earth-chart.png';
+import ImageChart from '../../../../../public/home/image-chart.png';
 import LineChart from '../../../../../public/home/line-chart.png';
 import ListChart from '../../../../../public/home/list-chart.png';
-import MapChart from '../../../../../public/home/earth-chart.png';
 import PieChart from '../../../../../public/home/pie-chart.png';
 import RadarChart from '../../../../../public/home/radar-chart.png';
 import ThermogramChart from '../../../../../public/home/thermogram-chart.png';
 import TitleChart from '../../../../../public/home/title-chart.png';
 import VideoChart from '../../../../../public/home/video-chart.png';
-import ImageChart from '../../../../../public/home/image-chart.png';
-import ConditionNormal from '../../../../../public/home/condition-normal.png';
-import Condition1 from '../../../../../public/home/condition-1.png';
-import Condition2 from '../../../../../public/home/condition-2.png';
+import MatterBoxes from '../MatterBoxes';
 import styles from './index.less';
 
 const ComponentRich = () => {
@@ -90,8 +90,7 @@ const ChangeAble = () => {
     <div className={styles['home-page-sub-main-tag-two']}>
       <div
         className={styles['home-page-sub-main-tag-two-counter']}
-        id="home-page-sub-main-tag-two-counter"
-      >
+        id="home-page-sub-main-tag-two-counter">
         {/* {conditionNumber} */}
       </div>
       <div className={styles['home-page-sub-main-tag-two-main']}>
@@ -99,8 +98,7 @@ const ChangeAble = () => {
           effect="fade"
           ref={carouselRef}
           className="w-100"
-          dots={false}
-        >
+          dots={false}>
           {[
             {
               value: ConditionNormal,
@@ -146,8 +144,7 @@ const Word = (props: {
       className={styles['home-page-sub-main-tag-three-item']}
       style={{
         transform: `translateX(${translateX}) translateY(${translateY}) scale(${scale})`,
-      }}
-    >
+      }}>
       {children}
     </div>
   );
@@ -199,8 +196,7 @@ const ExtendAble = () => {
         className={classnames(
           styles['home-page-sub-main-tag-three-main'],
           'pos-re',
-        )}
-      >
+        )}>
         {['A', 'B', 'C', 'D'].map((item, index) => {
           return (
             <Word key={item} {...wordCloud[index]}>

@@ -3,12 +3,12 @@ import { Button, ConfigProvider, Tooltip } from 'antd';
 import copy from 'copy-to-clipboard';
 import { CSSProperties, FC, memo } from 'react';
 
-import { PrismSyntaxTheme } from './Prism';
-import { ShikiSyntaxTheme } from './useShiki';
 import { useCopied } from '../../hooks/useCopied';
 import SyntaxHighlighter from './Highlighter';
 import { LanguageKeys } from './language';
+import { PrismSyntaxTheme } from './Prism';
 import { useStyles } from './style';
+import { ShikiSyntaxTheme } from './useShiki';
 export { Prism } from './Prism';
 
 export interface HighlighterSyntaxTheme {
@@ -74,30 +74,34 @@ export const Highlighter: FC<HighlighterProps> = memo(
   }) => {
     const { copied, setCopied } = useCopied();
     const { styles, theme, cx } = useStyles();
-    const container = cx(styles.container, background && styles.withBackground, className);
+    const container = cx(
+      styles.container,
+      background && styles.withBackground,
+      className,
+    );
 
     return (
       <div
         // 用于标记是 markdown 中的代码块，避免和普通 code 的样式混淆
         data-code-type="highlighter"
         className={container}
-        style={style}
-      >
+        style={style}>
         {copyable && (
-          <ConfigProvider theme={{ token: { colorBgContainer: theme.colorBgElevated } }}>
+          <ConfigProvider
+            theme={{ token: { colorBgContainer: theme.colorBgElevated } }}>
             <Tooltip
               placement={'left'}
               arrow={false}
               title={
                 copied ? (
                   <>
-                    <CheckOutlined style={{ color: theme.colorSuccess }} /> 复制成功
+                    <CheckOutlined style={{ color: theme.colorSuccess }} />{' '}
+                    复制成功
                   </>
                 ) : (
                   '复制'
                 )
-              }
-            >
+              }>
               <Button
                 icon={<CopyOutlined />}
                 className={styles.button}
@@ -110,13 +114,14 @@ export const Highlighter: FC<HighlighterProps> = memo(
           </ConfigProvider>
         )}
 
-        {language && <div className={styles.lang}>{language.toLowerCase()}</div>}
+        {language && (
+          <div className={styles.lang}>{language.toLowerCase()}</div>
+        )}
 
         <SyntaxHighlighter
           language={language?.toLowerCase()}
           type={type}
-          syntaxThemes={syntaxThemes}
-        >
+          syntaxThemes={syntaxThemes}>
           {trim ? children.trim() : children}
         </SyntaxHighlighter>
       </div>

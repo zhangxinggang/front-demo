@@ -1,8 +1,8 @@
-import {} from 'react';
-import classnames from 'classnames';
 import ColorSelect from '@/components/ColorSelect';
 import { useLocalStorage } from '@/hooks';
 import { LocalConfig } from '@/utils/Assist/LocalConfig';
+import classnames from 'classnames';
+import {} from 'react';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -31,8 +31,7 @@ export const BackgroundConfigRender = () => {
         color: getRgbaString(value || defaultColor),
       }}
       className={classnames('pos-ab', styles['designer-page-background'])}
-      id={BACKGROUND_ID}
-    ></div>
+      id={BACKGROUND_ID}></div>
   );
 };
 

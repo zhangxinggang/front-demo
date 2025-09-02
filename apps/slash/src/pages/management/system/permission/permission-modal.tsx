@@ -1,4 +1,12 @@
-import { AutoComplete, Form, Input, InputNumber, Modal, Radio, TreeSelect } from 'antd';
+import {
+  AutoComplete,
+  Form,
+  Input,
+  InputNumber,
+  Modal,
+  Radio,
+  TreeSelect,
+} from 'antd';
 import { useCallback, useEffect, useState } from 'react';
 
 import { pagesSelect } from '@/router/hooks/use-permission-routes';
@@ -68,8 +76,7 @@ export default function PermissionModal({
         form={form}
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 18 }}
-        layout="horizontal"
-      >
+        layout="horizontal">
         <Form.Item<Permission> label="Type" name="type" required>
           <Radio.Group optionType="button" buttonStyle="solid">
             <Radio value={PermissionType.CATALOGUE}>CATALOGUE</Radio>
@@ -85,8 +92,7 @@ export default function PermissionModal({
           label="Label"
           name="label"
           required
-          tooltip="internationalization config"
-        >
+          tooltip="internationalization config">
           <Input />
         </Form.Item>
 
@@ -111,20 +117,22 @@ export default function PermissionModal({
 
         <Form.Item
           noStyle
-          shouldUpdate={(prevValues, currentValues) => prevValues.type !== currentValues.type}
-        >
+          shouldUpdate={(prevValues, currentValues) =>
+            prevValues.type !== currentValues.type
+          }>
           {({ getFieldValue }) => {
             if (getFieldValue('type') === PermissionType.MENU) {
               return (
                 <Form.Item<Permission>
                   label="Component"
                   name="component"
-                  required={getFieldValue('type') === PermissionType.MENU}
-                >
+                  required={getFieldValue('type') === PermissionType.MENU}>
                   <AutoComplete
                     options={compOptions}
                     filterOption={(input, option) =>
-                      ((option?.label || '') as string).toLowerCase().includes(input.toLowerCase())
+                      ((option?.label || '') as string)
+                        .toLowerCase()
+                        .includes(input.toLowerCase())
                     }
                   />
                 </Form.Item>
@@ -134,7 +142,10 @@ export default function PermissionModal({
           }}
         </Form.Item>
 
-        <Form.Item<Permission> label="Icon" name="icon" tooltip="local icon should start with ic">
+        <Form.Item<Permission>
+          label="Icon"
+          name="icon"
+          tooltip="local icon should start with ic">
           <Input />
         </Form.Item>
 

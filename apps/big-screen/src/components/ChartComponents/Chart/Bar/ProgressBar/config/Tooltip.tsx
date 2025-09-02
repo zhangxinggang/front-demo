@@ -1,6 +1,5 @@
-import { useCallback } from 'react';
 import TooltipConfigCommon from '@/components/ChartComponents/Common/TooltipCommon';
-import TooltipAnimationConfig from '@/components/ChartComponents/Common/TooltipAnimationConfig';
+import { useCallback } from 'react';
 import { TProgressBarConfig } from '../type';
 
 const TooltipConfig = (props: {
@@ -25,8 +24,7 @@ const TooltipConfig = (props: {
   return (
     <TooltipConfigCommon
       value={value}
-      onChange={onKeyChange}
-    ></TooltipConfigCommon>
+      onChange={onKeyChange}></TooltipConfigCommon>
   );
 };
 

@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
 import { SVG } from '@svgdotjs/svg.js';
 import { useSize } from 'ahooks';
+import { useEffect, useRef } from 'react';
 
 const AnimationSvg = (props: { value: any; id: string; delay?: number }) => {
   const { value, id, delay } = props;
@@ -53,8 +53,7 @@ const AnimationSvg = (props: { value: any; id: string; delay?: number }) => {
     <div
       ref={elementRef}
       style={{ alignItems: 'center', justifyContent: 'center' }}
-      className="w-100 h-100 dis-flex"
-    >
+      className="w-100 h-100 dis-flex">
       {value}
     </div>
   );

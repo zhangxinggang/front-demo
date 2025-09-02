@@ -1,5 +1,5 @@
+import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
 import { useCallback, useMemo } from 'react';
-import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 
 const VisibleEditor = (props: {
   visible: boolean;

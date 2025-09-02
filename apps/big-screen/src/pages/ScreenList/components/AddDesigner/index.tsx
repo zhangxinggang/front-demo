@@ -1,9 +1,9 @@
-import { useCallback, useState, useMemo } from 'react';
-import { Button, Modal, Form, Input, message, Select } from 'antd';
 import { postScreen, postScreenModel } from '@/services';
-import { goDesign, goDesignModel } from '@/utils/tool';
-import { createScreenDataRequest } from '@/utils/constants/screenData';
 import ThemeUtil from '@/utils/Assist/Theme';
+import { createScreenDataRequest } from '@/utils/constants/screenData';
+import { goDesign, goDesignModel } from '@/utils/tool';
+import { Button, Form, Input, message, Modal, Select } from 'antd';
+import { useCallback, useMemo, useState } from 'react';
 
 const { Item, useForm } = Form;
 
@@ -62,14 +62,12 @@ const AddDesigner = (props: { type: 'screen' | 'model' }) => {
         title={title + '设置'}
         open={visible}
         onCancel={setVisible.bind(null, false)}
-        onOk={handleAdd}
-      >
+        onOk={handleAdd}>
         <Form
           form={form}
           initialValues={{
             theme: ThemeUtil.currentTheme,
-          }}
-        >
+          }}>
           <Item
             label={`${title}名称`}
             name="name"
@@ -84,8 +82,7 @@ const AddDesigner = (props: { type: 'screen' | 'model' }) => {
                 min: 6,
                 message: `最少6个字`,
               },
-            ]}
-          >
+            ]}>
             <Input placeholder={`请输入${title}名称`} />
           </Item>
           <Item label="平台" name="flag" initialValue={'PC'}>

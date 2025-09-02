@@ -1,4 +1,5 @@
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
@@ -6,7 +7,6 @@ import {
   DEFAULT_FONT_CONFIG,
   DEFAULT_LINKAGE_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { TTimeMachineConfig } from './type';
 
 export default () => {

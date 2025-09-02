@@ -1,5 +1,5 @@
-import { useRef } from 'react';
 import { useDeepCompareEffect } from 'ahooks';
+import { useRef } from 'react';
 
 export const useDeepUpdateEffect: typeof useDeepCompareEffect = (
   effect,

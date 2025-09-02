@@ -1,4 +1,4 @@
-import { Breadcrumb, Layout as AntLayout, Menu } from 'antd';
+import { Layout as AntLayout, Breadcrumb, Menu } from 'antd';
 import classnames from 'classnames';
 import type { ReactNode } from 'react';
 import { useCallback, useState } from 'react';
@@ -65,8 +65,7 @@ const Layout = (props: { children?: ReactNode }) => {
       </Header>
       <Content
         className={styles['screen-page-content']}
-        style={{ padding: '0 50px' }}
-      >
+        style={{ padding: '0 50px' }}>
         <Breadcrumb style={{ margin: '16px 0', visibility: 'hidden' }}>
           <Breadcrumb.Item>Home</Breadcrumb.Item>
         </Breadcrumb>
@@ -74,8 +73,7 @@ const Layout = (props: { children?: ReactNode }) => {
           className={classnames(
             styles['screen-page-content-main'],
             'border-r-16',
-          )}
-        >
+          )}>
           {props.children}
         </div>
       </Content>

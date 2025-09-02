@@ -213,13 +213,11 @@ const ShepherdWrapper = (props: {
         exitOnEsc: true,
         keyboardNavigation: true,
         useModalOverlay: true,
-      }}
-    >
+      }}>
       <InternalWrapper
         loading={loading}
         onStart={onStart}
-        onComplete={onComplete}
-      >
+        onComplete={onComplete}>
         {children}
       </InternalWrapper>
     </ShepherdTour>

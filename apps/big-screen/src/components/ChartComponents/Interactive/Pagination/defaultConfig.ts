@@ -1,14 +1,14 @@
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
-  DEFAULT_FONT_CONFIG,
-  DEFAULT_CONDITION_CONFIG,
   DEFAULT_BORDER_RADIUS,
+  DEFAULT_CONDITION_CONFIG,
+  DEFAULT_FONT_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { TPaginationConfig } from './type';
 
 export default () => {

@@ -1,12 +1,12 @@
-import { Upload } from 'chunk-file-upload';
-import { nanoid } from 'nanoid';
-import type { UploadFile, RcFile } from 'antd/es/upload/interface';
 import {
   checkUploadFile,
-  uploadFile,
   DEFAULT_CHECK_UPLOAD_PARAMS,
   getUploadFile,
+  uploadFile,
 } from '@/services';
+import type { RcFile, UploadFile } from 'antd/es/upload/interface';
+import { Upload } from 'chunk-file-upload';
+import { nanoid } from 'nanoid';
 
 const UPLOAD_INSTANCE = new Upload();
 

@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 // import PerfectScrollbar from 'perfect-scrollbar';
 
 type PerfectScrollbar = any;

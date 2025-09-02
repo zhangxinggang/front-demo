@@ -1,20 +1,20 @@
-import { useCallback, useMemo } from 'react';
+import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
+import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ThemeUtil from '@/utils/Assist/Theme';
 import { Switch } from 'antd';
 import { omit } from 'lodash';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
-import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
-import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
-import ThemeUtil from '@/utils/Assist/Theme';
-import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { useCallback, useMemo } from 'react';
 import { DEFAULT_DECAL, DEFAULT_LINE_STYLE } from '../defaultConfig';
 import { TRadialLineConfig } from '../type';
 
@@ -59,8 +59,7 @@ const SeriesConfig = (props: {
     return (
       <SeriesLabelConfig
         {...(label as any)}
-        onChange={onKeyChange.bind(null, 'label')}
-      >
+        onChange={onKeyChange.bind(null, 'label')}>
         <AngleSelect
           value={label.rotate}
           onChange={(value) => {
@@ -91,8 +90,7 @@ const SeriesConfig = (props: {
                 child={{
                   header: '拐点',
                   key: 'itemStyle',
-                }}
-              >
+                }}>
                 <Item label="颜色">
                   <FullForm>
                     <CompatColorSelect
@@ -181,14 +179,12 @@ const SeriesConfig = (props: {
                       },
                     },
                   });
-                }}
-              >
+                }}>
                 <Collapse
                   child={{
                     key: 'lineColor',
                     header: '颜色',
-                  }}
-                >
+                  }}>
                   <ChartGradientSelect
                     value={targetLineStyle.color}
                     onChange={(value) => {

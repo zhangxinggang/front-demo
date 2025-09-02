@@ -27,8 +27,7 @@ export default function SecurityTab() {
         layout="vertical"
         initialValues={initFormValues}
         labelCol={{ span: 8 }}
-        className="w-full"
-      >
+        className="w-full">
         <Form.Item<FieldType> label="Old Password" name="oldPassword">
           <Input.Password />
         </Form.Item>
@@ -37,7 +36,9 @@ export default function SecurityTab() {
           <Input.Password />
         </Form.Item>
 
-        <Form.Item<FieldType> label="Confirm New Password" name="confirmPassword">
+        <Form.Item<FieldType>
+          label="Confirm New Password"
+          name="confirmPassword">
           <Input.Password />
         </Form.Item>
       </Form>

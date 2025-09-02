@@ -1,21 +1,21 @@
-import { useEffect, useRef } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
 import {
-  useComponent,
-  useChartComponentResize,
-  useChartValueMapField,
-  useComponentResize,
   useAnimationChange,
-  useCondition,
+  useChartComponentResize,
   useChartPerConfig,
+  useChartValueMapField,
+  useComponent,
+  useComponentResize,
+  useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
-import { useDeepUpdateEffect } from '@/hooks';
-import ColorSelect from '@/components/ColorSelect';
-import { init } from '@/utils/Assist/EchartsLoader';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import { TParallelBasicConfig } from '../type';
+import ColorSelect from '@/components/ColorSelect';
+import { useDeepUpdateEffect } from '@/hooks';
+import { init } from '@/utils/Assist/EchartsLoader';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useEffect, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TParallelBasicConfig } from '../type';
 
 const { getRgbaString } = ColorSelect;
 
@@ -230,8 +230,7 @@ const ParallelBasic = (
           style,
           conditionStyle,
         )}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           <div id={chartId.current} className="w-100 h-100"></div>
           {children}

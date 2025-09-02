@@ -10,7 +10,11 @@ type Props = {
   selectedVariant: string;
   onChangeVarient: (varient: string) => void;
 };
-export default function ControlPanel({ variantKey, selectedVariant, onChangeVarient }: Props) {
+export default function ControlPanel({
+  variantKey,
+  selectedVariant,
+  onChangeVarient,
+}: Props) {
   const { colorPrimary, colorTextBase } = useThemeToken();
 
   const selectedStyle = (variantKey: string) => {
@@ -32,8 +36,7 @@ export default function ControlPanel({ variantKey, selectedVariant, onChangeVari
                 key={item}
                 className="my-2 cursor-pointer rounded-md p-1"
                 onClick={() => onChangeVarient(item)}
-                style={selectedStyle(item)}
-              >
+                style={selectedStyle(item)}>
                 {item}
               </li>
             ))}

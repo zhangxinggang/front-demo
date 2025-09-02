@@ -1,22 +1,22 @@
-import { useEffect, useRef, useMemo } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import 'echarts-liquidfill';
-import { useDeepUpdateEffect } from '@/hooks';
 import {
-  useComponent,
-  useChartComponentResize,
-  useComponentResize,
   useAnimationChange,
+  useChartComponentResize,
+  useComponent,
+  useComponentResize,
   useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
-import { init } from '@/utils/Assist/EchartsLoader';
+import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import { radialGradientColor } from '@/components/ChartComponents/Common/utils';
 import ColorSelect from '@/components/ColorSelect';
+import { useDeepUpdateEffect } from '@/hooks';
+import { init } from '@/utils/Assist/EchartsLoader';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import { TWaterBallConfig } from '../type';
+import classnames from 'classnames';
+import 'echarts-liquidfill';
+import { merge, uniqueId } from 'lodash';
+import { useEffect, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TWaterBallConfig } from '../type';
 
 const { getRgbaString } = ColorSelect;
 
@@ -174,8 +174,7 @@ const WaterBall = (
           },
           style,
           conditionStyle,
-        )}
-      >
+        )}>
         <Wrapper border={border}>
           <div id={chartId.current} className="w-100 h-100"></div>
           {children}

@@ -1,11 +1,11 @@
-import { useCallback, useMemo } from 'react';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import { InputNumber as AutoInputNumber } from '@/components/ChartComponents/Common/NumberPositionConfig';
 import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
-import { InputNumber as AutoInputNumber } from '@/components/ChartComponents/Common/NumberPositionConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { useCallback, useMemo } from 'react';
 import { TNegativeBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -48,8 +48,7 @@ const SeriesConfig = (props: {
           }
           child={{
             header: '负轴标签',
-          }}
-        >
+          }}>
           <FormatterSelect
             value={label[0].formatter}
             onChange={(value) => {
@@ -76,8 +75,7 @@ const SeriesConfig = (props: {
           }
           child={{
             header: '正轴标签',
-          }}
-        >
+          }}>
           <FormatterSelect
             value={label[1].formatter}
             onChange={(value) => {

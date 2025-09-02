@@ -1,8 +1,8 @@
+import IntroductionButton from '@/components/IntroductionButton';
 import { Empty } from 'antd';
 import isMobileJudge from 'is-mobile';
 import { useMemo } from 'react';
 import { history, useLocation } from 'umi';
-import IntroductionButton from '@/components/IntroductionButton';
 import FetchLoginWrapper from '../FetchLoginWrapper';
 import Layout from '../ListLayout';
 

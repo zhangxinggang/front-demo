@@ -1,8 +1,14 @@
 import type { ColorMapToken } from 'antd/es/theme/interface/maps/colors';
 
-import { NeutralPaletteOptions, SeedColors, TokenType } from './utils/paletteGenerator';
+import {
+  NeutralPaletteOptions,
+  SeedColors,
+  TokenType,
+} from './utils/paletteGenerator';
 
-export type TokenRelationship = (type: TokenType) => Partial<Record<keyof ColorMapToken, number>>;
+export type TokenRelationship = (
+  type: TokenType,
+) => Partial<Record<keyof ColorMapToken, number>>;
 
 export interface MapTokenAlgorithmParams extends NeutralPaletteOptions {
   relationship?: TokenRelationship;

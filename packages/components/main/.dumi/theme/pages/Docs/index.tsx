@@ -12,7 +12,12 @@ import Toc from 'dumi/theme/slots/Toc';
 // @ts-ignore
 import ApiHeader from 'dumi/theme/slots/ApiHeader';
 
-import { isApiPageSel, siteTitleSel, tocAnchorItemSel, useSiteStore } from '../../store';
+import {
+  isApiPageSel,
+  siteTitleSel,
+  tocAnchorItemSel,
+  useSiteStore,
+} from '../../store';
 import { useStyles } from './styles';
 
 const Docs: FC = memo(() => {
@@ -44,10 +49,12 @@ const Docs: FC = memo(() => {
       {mobile || hideSidebar ? null : <Sidebar />}
 
       {isApiPage ? (
-        <Flexbox style={{ gridArea: 'title', paddingBlock: mobile ? 24 : undefined }}>
+        <Flexbox
+          style={{ gridArea: 'title', paddingBlock: mobile ? 24 : undefined }}>
           <Center>
             <Flexbox style={{ maxWidth: theme.contentMaxWidth, width: '100%' }}>
-              <Flexbox style={{ paddingBlock: 0, paddingInline: mobile ? 16 : 48 }}>
+              <Flexbox
+                style={{ paddingBlock: 0, paddingInline: mobile ? 16 : 48 }}>
                 <ApiHeader />
               </Flexbox>
             </Flexbox>
@@ -61,8 +68,7 @@ const Docs: FC = memo(() => {
           gridArea: 'main',
           margin: mobile ? 0 : 24,
           marginBottom: mobile ? 0 : 48,
-        }}
-      >
+        }}>
         <Center width={'100%'}>
           <Flexbox className={styles.content}>
             <Flexbox horizontal>

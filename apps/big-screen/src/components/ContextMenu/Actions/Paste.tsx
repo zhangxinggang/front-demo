@@ -1,7 +1,5 @@
-import { useCallback, useMemo } from 'react';
-import { get } from 'lodash';
-import { SnippetsOutlined } from '@ant-design/icons';
 import { useIdPathMap } from '@/hooks/useComponentsPath';
+import ClipboardComponent from '@/utils/Assist/ClipboardComponent';
 import {
   createComponent,
   getParentComponent,
@@ -9,9 +7,11 @@ import {
   isGroupComponent as isGroupComponentMethod,
 } from '@/utils/Assist/Component';
 import GroupUtil from '@/utils/Assist/Group';
-import ClipboardComponent from '@/utils/Assist/ClipboardComponent';
-import useChildren from './useChildren';
+import { SnippetsOutlined } from '@ant-design/icons';
+import { get } from 'lodash';
+import { useCallback, useMemo } from 'react';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 function coverPreviousId(
   component: ComponentData.TComponentData,

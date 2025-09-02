@@ -1,11 +1,11 @@
-import { useCallback } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import IconTooltip from '@/components/IconTooltip';
 import { CompatColorSelect } from '@/components/ColorSelect';
-import { useLocalStorage, useGlobalLoading } from '@/hooks';
+import IconTooltip from '@/components/IconTooltip';
+import { useGlobalLoading, useLocalStorage } from '@/hooks';
 import { LocalConfig } from '@/utils/Assist/LocalConfig';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { useCallback } from 'react';
 
 const { Item } = ConfigList;
 
@@ -36,8 +36,7 @@ const BackgroundConfig = () => {
         <IconTooltip title="只在设计时使用">
           <InfoCircleOutlined />
         </IconTooltip>
-      }
-    >
+      }>
       <FullForm>
         <CompatColorSelect value={value} onChange={onChange} />
       </FullForm>

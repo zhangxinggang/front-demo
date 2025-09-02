@@ -8,32 +8,33 @@
 }
 */
 function getAllQueryStrings() {
-    var result = {};
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i=0; i<vars.length; i++) {
-      var pair = vars[i].split("=");
-      if (typeof result[pair[0]] === "undefined") {
-        result[pair[0]] = decodeURIComponent(pair[1]);
-      } else if (typeof result[pair[0]] === "string") {
-        var arr = [result[pair[0]], decodeURIComponent(pair[1])];
-        result[pair[0]] = arr;
-      } else {
-        result[pair[0]].push(decodeURIComponent(pair[1]));
-      }
+  var result = {};
+  var query = window.location.search.substring(1);
+  var vars = query.split('&');
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split('=');
+    if (typeof result[pair[0]] === 'undefined') {
+      result[pair[0]] = decodeURIComponent(pair[1]);
+    } else if (typeof result[pair[0]] === 'string') {
+      var arr = [result[pair[0]], decodeURIComponent(pair[1])];
+      result[pair[0]] = arr;
+    } else {
+      result[pair[0]].push(decodeURIComponent(pair[1]));
     }
-    return result;
+  }
+  return result;
 }
 
-
-window.addEventListener('load',()=>{
-    let AllQueryStrings = getAllQueryStrings();
-    //当被点击时通知父页面
-    document.body.addEventListener("click",()=>{
-        parent.window.postMessage({
-            type:'onclick',
-            name:AllQueryStrings.name
-        },'*');
-    });
-})
-
+window.addEventListener('load', () => {
+  let AllQueryStrings = getAllQueryStrings();
+  //当被点击时通知父页面
+  document.body.addEventListener('click', () => {
+    parent.window.postMessage(
+      {
+        type: 'onclick',
+        name: AllQueryStrings.name,
+      },
+      '*',
+    );
+  });
+});

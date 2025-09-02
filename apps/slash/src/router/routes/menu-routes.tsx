@@ -21,5 +21,8 @@ export const menuRoutes: AppRouteObject = {
       <DashboardLayout />
     </AuthGuard>
   ),
-  children: [{ index: true, element: <Navigate to={HOMEPAGE} replace /> }, ...menuModuleRoutes],
+  children: [
+    { index: true, element: <Navigate to={HOMEPAGE} replace /> },
+    ...menuModuleRoutes,
+  ],
 };

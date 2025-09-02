@@ -1,7 +1,7 @@
-import React, { useMemo, forwardRef, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, forwardRef, useMemo } from 'react';
+import { useAutoResize, useBorderWrapper } from '../hooks';
 import { CommonBorderProps } from '../type';
-import { useBorderWrapper, useAutoResize } from '../hooks';
 import styles from './index.less';
 
 const defaultColor = ['#6586ec', '#2cf7fe'];
@@ -40,8 +40,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       <svg
         className={styles['internal-border-13-border-container']}
         width={width}
-        height={height}
-      >
+        height={height}>
         <path
           fill={backgroundColor}
           stroke={mergedColor[0]}
@@ -78,8 +77,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       </svg>
       <div
         {...nextProps}
-        className={styles['internal-border-13-border-content']}
-      >
+        className={styles['internal-border-13-border-content']}>
         {children}
       </div>
     </div>

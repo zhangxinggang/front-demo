@@ -1,18 +1,18 @@
-import { useEffect, useRef, useMemo, useState, CSSProperties } from 'react';
-import classnames from 'classnames';
 import { DEFAULT_THEME_COLOR_LIST } from '@/components/ChartComponents/Common/Constants/defaultConfig';
 import ColorSelect from '@/components/ColorSelect';
+import classnames from 'classnames';
+import { CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
 import AnimationSvg from '../AnimationSvg';
 import {
-  AnimationOne,
-  AnimationTwo,
-  AnimationThree,
-  AnimationFour,
-  AnimationFive,
-  AnimationSix,
-  AnimationSeven,
-  AnimationMap,
   AnimationEight,
+  AnimationFive,
+  AnimationFour,
+  AnimationMap,
+  AnimationOne,
+  AnimationSeven,
+  AnimationSix,
+  AnimationThree,
+  AnimationTwo,
 } from '../AnimationSvg/Animation';
 import styles from './index.less';
 
@@ -226,14 +226,12 @@ const Home = () => {
           )}
           data-depth="0.7"
           data-invert-x="true"
-          data-invert-y="true"
-        >
+          data-invert-y="true">
           <div>{/* <Background /> */}</div>
         </div>
         <div
           className={classnames('home-page-layer', styles['home-page-border'])}
-          data-depth="0.2"
-        >
+          data-depth="0.2">
           <div>
             <ul
               className={classnames(
@@ -242,8 +240,7 @@ const Home = () => {
               )}
               data-depth="0.25"
               data-invert-x="true"
-              data-invert-y="true"
-            >
+              data-invert-y="true">
               <div>{chartLineOneList}</div>
               <div>{iconChartList}</div>
               <div>{chartLineThreeList}</div>

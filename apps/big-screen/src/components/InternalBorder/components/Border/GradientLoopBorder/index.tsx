@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
-import { CommonBorderProps } from '../type';
 import { useBorderWrapper } from '../hooks';
+import { CommonBorderProps } from '../type';
 import './index.less';
 
 const GradientLoopBorder = (props: CommonBorderProps) => {
@@ -17,8 +17,7 @@ const GradientLoopBorder = (props: CommonBorderProps) => {
       <div {...nextProps} style={style}></div>
       <div
         className={'w-100 h-100 internal-border-gradient-loop-border-outer'}
-        style={style}
-      >
+        style={style}>
         {children}
       </div>
     </>

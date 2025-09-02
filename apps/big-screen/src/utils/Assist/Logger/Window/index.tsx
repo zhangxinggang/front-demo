@@ -1,10 +1,10 @@
-import { useState, ReactNode, useEffect, useRef, useCallback } from 'react';
-import { useKeyPress } from 'ahooks';
-import { Tabs, Button, Collapse } from 'antd';
-import { CaretRightOutlined } from '@ant-design/icons';
-import classnames from 'classnames';
-import type { WinBoxRef } from '@/components/Winbox';
 import LazyLoadWrapper from '@/components/LazyLoad';
+import type { WinBoxRef } from '@/components/Winbox';
+import { CaretRightOutlined } from '@ant-design/icons';
+import { useKeyPress } from 'ahooks';
+import { Button, Collapse, Tabs } from 'antd';
+import classnames from 'classnames';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import Logger from '../index';
 import styles from './index.less';
 
@@ -40,11 +40,9 @@ const WindowBoxWrapper = () => {
     <WinBox
       wrapperComponentRef={boxRef}
       widthRate={[0.4, 0.7]}
-      heightRate={[0.4, 0.7]}
-    >
+      heightRate={[0.4, 0.7]}>
       <div
-        className={classnames(styles['logger-window'], 'p-4 dis-flex h-100')}
-      >
+        className={classnames(styles['logger-window'], 'dis-flex h-100 p-4')}>
         <Tabs
           defaultActiveKey="request"
           onChange={setCurrentTab}
@@ -58,14 +56,12 @@ const WindowBoxWrapper = () => {
               ...item,
               children: (
                 <div
-                  className={classnames(styles['logger-window-main'], 'p-4')}
-                >
+                  className={classnames(styles['logger-window-main'], 'p-4')}>
                   <Collapse
                     bordered={false}
                     expandIcon={({ isActive }) => (
                       <CaretRightOutlined rotate={isActive ? 90 : 0} />
-                    )}
-                  >
+                    )}>
                     {dataSource}
                   </Collapse>
                 </div>

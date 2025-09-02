@@ -1,12 +1,12 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
-import { Pagination, Input, Button, Empty, Space, Select } from 'antd';
-import classnames from 'classnames';
+import GhostButton from '@/components/GhostButton';
 import { getScreenList } from '@/services';
 import { LeadIn } from '@/utils/Assist/LeadInAndOutput';
-import GhostButton from '@/components/GhostButton';
-import SvgAnimation from './components/SvgAnimation';
-import List from './components/ScreenList';
+import { Button, Empty, Input, Pagination, Select, Space } from 'antd';
+import classnames from 'classnames';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import AddDesigner from './components/AddDesigner';
+import List from './components/ScreenList';
+import SvgAnimation from './components/SvgAnimation';
 import styles from './index.less';
 
 const { Search } = Input;
@@ -110,8 +110,7 @@ function ScreenList() {
           'animate__fadeInDown',
           'animate__animated',
           'animate__delay-1s',
-        )}
-      >
+        )}>
         自己做的数据可视化大屏
       </div>
       <div
@@ -119,8 +118,7 @@ function ScreenList() {
           styles['screen-page-content-main-action'],
           'm-tb-16',
           'dis-flex',
-        )}
-      >
+        )}>
         <Space>
           <Search
             value={searchData}
@@ -157,8 +155,7 @@ function ScreenList() {
           <GhostButton
             className="m-r-8"
             style={{ width: 'auto' }}
-            onClick={handleReset}
-          >
+            onClick={handleReset}>
             重置
           </GhostButton>
         </Space>

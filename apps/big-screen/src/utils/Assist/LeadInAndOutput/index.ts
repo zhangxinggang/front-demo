@@ -1,7 +1,7 @@
+import { postScreenExport, postScreenLeadIn } from '@/services';
 import { message } from 'antd';
 import { Upload } from 'chunk-file-upload';
 import { saveAs } from 'file-saver';
-import { postScreenLeadIn, postScreenExport } from '@/services';
 import LocalConfigInstance, { LocalConfig } from '../LocalConfig';
 import { exitDataFn, uploadFn } from '../Upload';
 

@@ -1,16 +1,16 @@
-import { Component } from 'react';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import Input from '@/components/ChartComponents/Common/Input';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { updateInteractiveAndSyncParams4Component } from '@/components/ChartComponents/Common/utils';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import { Component } from 'react';
 import { TSelectConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -60,14 +60,12 @@ class Config extends Component<
                   child={{
                     key: 'active',
                     header: '内容',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       key: 'active',
                       header: '文本',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={active.textStyle}
                       onChange={(value) => {
@@ -102,8 +100,7 @@ class Config extends Component<
                   child={{
                     key: 'placeholder',
                     header: '占位符',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文本',
@@ -111,8 +108,7 @@ class Config extends Component<
                     }}
                     parent={{
                       defaultActiveKey: ['textStyle'],
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={placeholder.textStyle}
                       onChange={(value) => {
@@ -127,8 +123,7 @@ class Config extends Component<
                   child={{
                     header: '选择箭头',
                     key: 'indicator',
-                  }}
-                >
+                  }}>
                   <Item label="大小">
                     <FullForm>
                       <InputNumber
@@ -167,14 +162,12 @@ class Config extends Component<
                   child={{
                     header: '选中样式',
                     key: 'activeSelect',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文本',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={activeSelect.textStyle}
                       onChange={(value) => {
@@ -201,14 +194,12 @@ class Config extends Component<
                   child={{
                     header: '基础样式',
                     key: 'base',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文本',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={base.textStyle}
                       onChange={(value) => {
@@ -243,14 +234,12 @@ class Config extends Component<
                   child={{
                     header: '基础移入样式',
                     key: 'baseHover',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文本',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={baseHover.textStyle}
                       onChange={(value) => {
@@ -277,14 +266,12 @@ class Config extends Component<
                   child={{
                     header: '选中移入样式',
                     key: 'activeHover',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文本',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={activeHover.textStyle}
                       onChange={(value) => {

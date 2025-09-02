@@ -1,10 +1,10 @@
-import { useCallback, useMemo, ReactNode } from 'react';
 import { CompatColorSelect } from '@/components/ColorSelect';
-import ConfigList, { TConfigListItemProps } from '../Structure/ConfigList';
-import LineStyle from '../LineStyleSelect';
+import { ReactNode, useCallback, useMemo } from 'react';
 import { SingleCollapse as Collapse, SingleCollapseProps } from '../Collapse';
-import FullForm from '../Structure/FullForm';
 import InputNumber from '../InputNumber';
+import LineStyle from '../LineStyleSelect';
+import ConfigList, { TConfigListItemProps } from '../Structure/ConfigList';
+import FullForm from '../Structure/FullForm';
 
 const { Item } = ConfigList;
 
@@ -84,8 +84,7 @@ const LineStyleGroupConfig = (props: {
         key: 'lineStyle',
       }}
       level={level}
-      {...collapseProps}
-    >
+      {...collapseProps}>
       {typeConfig}
       {widthConfig}
       {colorConfig}

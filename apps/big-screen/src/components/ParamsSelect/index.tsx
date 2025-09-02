@@ -79,8 +79,7 @@ const ParamsSelect = (
         checked={changeLazy}
         onChange={(e) => onChangeLazyChange?.(e.target.checked)}
         className={styles['params-select-checkbox']}
-        style={{ marginLeft: 8 }}
-      >
+        style={{ marginLeft: 8 }}>
         懒更新
       </Checkbox>
     );
@@ -89,8 +88,7 @@ const ParamsSelect = (
   return (
     <div
       className={classnames('dis-flex flex-al-cen', wrapperClassName)}
-      style={wrapperStyle}
-    >
+      style={wrapperStyle}>
       <Select
         mode="tags"
         allowClear
@@ -170,8 +168,7 @@ const InternalParamsSelectSingle = (
         checked={changeLazy}
         onChange={(e) => onChangeLazyChange?.(e.target.checked)}
         className={styles['params-select-checkbox']}
-        style={{ marginLeft: 8 }}
-      >
+        style={{ marginLeft: 8 }}>
         懒更新
       </Checkbox>
     );
@@ -180,8 +177,7 @@ const InternalParamsSelectSingle = (
   return (
     <div
       className={classnames('dis-flex flex-al-cen', wrapperClassName)}
-      style={wrapperStyle}
-    >
+      style={wrapperStyle}>
       <Select
         mode="tags"
         allowClear

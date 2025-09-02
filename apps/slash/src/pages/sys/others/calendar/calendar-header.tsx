@@ -6,7 +6,11 @@ import { IconButton, Iconify } from '@/components/icon';
 import { useResponsive } from '@/theme/hooks';
 
 export type HandleMoveArg = 'next' | 'prev' | 'today';
-export type ViewType = 'dayGridMonth' | 'timeGridWeek' | 'timeGridDay' | 'listWeek';
+export type ViewType =
+  | 'dayGridMonth'
+  | 'timeGridWeek'
+  | 'timeGridDay'
+  | 'listWeek';
 type ViewTypeMenu = {
   key: string;
   label: string;
@@ -21,7 +25,13 @@ type Props = {
   onCreate: VoidFunction;
   onViewTypeChange: (view: ViewType) => void;
 };
-export default function CalendarHeader({ now, view, onMove, onCreate, onViewTypeChange }: Props) {
+export default function CalendarHeader({
+  now,
+  view,
+  onMove,
+  onCreate,
+  onViewTypeChange,
+}: Props) {
   const { screenMap } = useResponsive();
 
   const items = useMemo<ViewTypeMenu[]>(
@@ -82,11 +92,21 @@ export default function CalendarHeader({ now, view, onMove, onCreate, onViewType
 
       <div className="flex cursor-pointer items-center justify-center">
         <IconButton>
-          <Iconify icon="solar:alt-arrow-left-outline" onClick={() => onMove('prev')} size={20} />
+          <Iconify
+            icon="solar:alt-arrow-left-outline"
+            onClick={() => onMove('prev')}
+            size={20}
+          />
         </IconButton>
-        <span className="mx-2 text-base font-bold">{dayjs(now).format('DD MMM YYYY')}</span>
+        <span className="mx-2 text-base font-bold">
+          {dayjs(now).format('DD MMM YYYY')}
+        </span>
         <IconButton>
-          <Iconify icon="solar:alt-arrow-right-outline" onClick={() => onMove('next')} size={20} />
+          <Iconify
+            icon="solar:alt-arrow-right-outline"
+            onClick={() => onMove('next')}
+            size={20}
+          />
         </IconButton>
       </div>
 
@@ -95,7 +115,7 @@ export default function CalendarHeader({ now, view, onMove, onCreate, onViewType
           Today
         </Button>
         <Button className="ml-2" type="primary" onClick={() => onCreate()}>
-          <div className=" flex items-center justify-center">
+          <div className="flex items-center justify-center">
             <Iconify icon="material-symbols:add" size={24} />
             New Event
           </div>

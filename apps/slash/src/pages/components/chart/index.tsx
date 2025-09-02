@@ -22,8 +22,7 @@ export default function ChartPage() {
       <Typography.Link
         href="https://apexcharts.com"
         style={{ color: colorPrimary }}
-        className="mb-4 block"
-      >
+        className="mb-4 block">
         https://apexcharts.com
       </Typography.Link>
 

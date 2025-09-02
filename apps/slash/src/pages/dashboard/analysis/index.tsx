@@ -31,7 +31,9 @@ function Analysis() {
             subtitle="Weekly Sales"
             style={{
               color: theme.colorPrimaryTextActive,
-              background: `linear-gradient(135deg, ${Color(theme.colorPrimaryActive)
+              background: `linear-gradient(135deg, ${Color(
+                theme.colorPrimaryActive,
+              )
                 .alpha(0.2)
                 .toString()}, ${Color(theme.colorPrimary)
                 .alpha(0.2)
@@ -46,7 +48,9 @@ function Analysis() {
             subtitle="New Users"
             style={{
               color: theme.colorInfoTextActive,
-              background: `linear-gradient(135deg, ${Color(theme.colorInfoActive)
+              background: `linear-gradient(135deg, ${Color(
+                theme.colorInfoActive,
+              )
                 .alpha(0.2)
                 .toString()}, ${Color(theme.colorInfo).alpha(0.2).toString()}) rgb(255, 255, 255)`,
             }}
@@ -59,7 +63,9 @@ function Analysis() {
             subtitle="New Orders"
             style={{
               color: theme.colorWarningTextActive,
-              background: `linear-gradient(135deg, ${Color(theme.colorWarningActive)
+              background: `linear-gradient(135deg, ${Color(
+                theme.colorWarningActive,
+              )
                 .alpha(0.2)
                 .toString()}, ${Color(theme.colorWarning)
                 .alpha(0.2)
@@ -74,7 +80,9 @@ function Analysis() {
             subtitle="Bug Reports"
             style={{
               color: theme.colorErrorTextActive,
-              background: `linear-gradient(135deg, ${Color(theme.colorErrorActive)
+              background: `linear-gradient(135deg, ${Color(
+                theme.colorErrorActive,
+              )
                 .alpha(0.2)
                 .toString()}, ${Color(theme.colorError).alpha(0.2).toString()}) rgb(255, 255, 255)`,
             }}
@@ -127,7 +135,9 @@ function Analysis() {
             <Row gutter={[16, 16]}>
               <Col span={12}>
                 <AnalysisTrafficCard
-                  icon={<Iconify icon="bxl:facebook" size={32} color="#1877f2" />}
+                  icon={
+                    <Iconify icon="bxl:facebook" size={32} color="#1877f2" />
+                  }
                   title="1.95k"
                   subtitle="FaceBook"
                 />
@@ -135,7 +145,13 @@ function Analysis() {
 
               <Col span={12}>
                 <AnalysisTrafficCard
-                  icon={<Iconify icon="ant-design:google-outlined" size={32} color="#df3e30" />}
+                  icon={
+                    <Iconify
+                      icon="ant-design:google-outlined"
+                      size={32}
+                      color="#df3e30"
+                    />
+                  }
                   title="9.12k"
                   subtitle="Google"
                 />
@@ -143,7 +159,13 @@ function Analysis() {
 
               <Col span={12}>
                 <AnalysisTrafficCard
-                  icon={<Iconify icon="eva:linkedin-fill" size={32} color="#006097" />}
+                  icon={
+                    <Iconify
+                      icon="eva:linkedin-fill"
+                      size={32}
+                      color="#006097"
+                    />
+                  }
                   title="6.98k"
                   subtitle="Linkedin"
                 />
@@ -151,7 +173,13 @@ function Analysis() {
 
               <Col span={12}>
                 <AnalysisTrafficCard
-                  icon={<Iconify icon="eva:twitter-fill" size={32} color="#1c9cea" />}
+                  icon={
+                    <Iconify
+                      icon="eva:twitter-fill"
+                      size={32}
+                      color="#1c9cea"
+                    />
+                  }
                   title="8.49k"
                   subtitle="Twitter"
                 />

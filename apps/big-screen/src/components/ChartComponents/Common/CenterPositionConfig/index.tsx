@@ -1,7 +1,7 @@
-import { useCallback, ReactNode } from 'react';
+import { ReactNode, useCallback } from 'react';
+import InputNumber from '../InputNumber';
 import ConfigList from '../Structure/ConfigList';
 import HalfForm from '../Structure/HalfForm';
-import InputNumber from '../InputNumber';
 
 const { Item } = ConfigList;
 
@@ -37,8 +37,7 @@ const CenterPositionConfig = (props: CenterPositionConfigProps) => {
       label={parentLabel || '位置'}
       labelProps={{
         level,
-      }}
-    >
+      }}>
       <HalfForm label={subLabel?.[0] || '左'}>
         <InputNumber value={left} onChange={onKeyChange.bind(null, 'left')} />
       </HalfForm>

@@ -1,5 +1,11 @@
 import { theme } from 'antd';
-import { ThemeAppearance, ThemeMode, ThemeProvider, useTheme, useThemeMode } from 'antd-style';
+import {
+  ThemeAppearance,
+  ThemeMode,
+  ThemeProvider,
+  useTheme,
+  useThemeMode,
+} from 'antd-style';
 import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useState } from 'react';
 
@@ -66,8 +72,7 @@ const DemoProvider: FC<DemoProviderProps> = ({
         if (!!demoAppearance) return;
 
         setThemeMode(mode);
-      }}
-    >
+      }}>
       {children}
     </ThemeProvider>
   );

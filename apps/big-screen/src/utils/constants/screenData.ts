@@ -1,15 +1,15 @@
-import { nanoid } from 'nanoid';
-import IsMobile from 'is-mobile';
-import { pick, merge } from 'lodash';
-import { DEFAULT_BORDER } from '@/components/InternalBorder';
 import {
+  BASIC_DEFAULT_DATA_CONFIG,
   DEFAULT_CONDITION_CONFIG,
   DEFAULT_GROUP_COMPONENT_TRANSFORM,
-  BASIC_DEFAULT_DATA_CONFIG,
 } from '@/components/ChartComponents/Common/Constants/defaultConfig';
+import { DEFAULT_BORDER } from '@/components/InternalBorder';
 import ScreenComponentConfigChangeTooltipMap from '@/components/ScreenComponentConfigChangeTooltip/Constants';
-import GlobalConfig from '../Assist/GlobalConfig';
+import IsMobile from 'is-mobile';
+import { merge, pick } from 'lodash';
+import { nanoid } from 'nanoid';
 import Theme from '../../theme/wonderland.project.json';
+import GlobalConfig from '../Assist/GlobalConfig';
 import { DEFAULT_THEME_NAME } from '../Assist/Theme';
 
 const isMobile = IsMobile();

@@ -199,8 +199,7 @@ const Designer = (props: {
       <ShepherdWrapper
         onStart={setGuideLoading.bind(null, true)}
         onComplete={setGuideLoading.bind(null, false)}
-        loading={loading}
-      >
+        loading={loading}>
         <div
           className={styles['designer-page']}
           onContextMenu={preventDefaultContextMenu}
@@ -208,8 +207,7 @@ const Designer = (props: {
             pointerEvents: loading || guideLoading ? 'none' : 'all',
             // @ts-ignore
             '--designer-primary-color': primaryColor,
-          }}
-        >
+          }}>
           <Header />
           <div className={styles['designer-page-content']}>
             <DndProvider backend={HTML5Backend}>

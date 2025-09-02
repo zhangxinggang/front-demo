@@ -1,10 +1,10 @@
-import { useMemo, useRef } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
 import ColorSelect from '@/components/ColorSelect';
 import InternalDecoration from '@/components/Decoration/Decoration8';
-import { TDecoration7Config } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TDecoration7Config } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -42,15 +42,13 @@ const Decoration = (
         },
         style,
       )}
-      id={chartId.current}
-    >
+      id={chartId.current}>
       <Wrapper border={border}>
         {children}
         <InternalDecoration
           className={'w-100 h-100'}
           color={color.map((item) => getRgbaString(item))}
-          reverse={reverse}
-        ></InternalDecoration>
+          reverse={reverse}></InternalDecoration>
       </Wrapper>
     </div>
   );

@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { ArrowUpOutlined } from '@ant-design/icons';
 import { useIdPathMap } from '@/hooks';
-import useChildren from './useChildren';
+import { ArrowUpOutlined } from '@ant-design/icons';
+import { useCallback } from 'react';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 const PrevOrderAction = (props: CommonActionType) => {
   const { value, setComponent, select, onClick, childrenType, disabled } =

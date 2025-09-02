@@ -1,30 +1,30 @@
 import {
+  EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
+} from '@/utils/Assist/EventEmitter';
+import ThemeUtil, {
+  getHexString,
+  getOpacity,
+  getRgbaString,
+} from '@/utils/Assist/Theme';
+import { DEFAULT_COLOR } from '@/utils/constants';
+import { useControllableValue, useUnmount, useUpdateEffect } from 'ahooks';
+import { Input, InputNumber } from 'antd';
+import classnames from 'classnames';
+import color from 'color';
+import { debounce, isEqual, merge } from 'lodash';
+import {
+  CSSProperties,
+  ReactNode,
   useCallback,
   useEffect,
   useState,
-  CSSProperties,
-  ReactNode,
 } from 'react';
-import { useControllableValue, useUpdateEffect, useUnmount } from 'ahooks';
-import { Input, InputNumber } from 'antd';
 import {
+  ColorChangeHandler,
   SketchPicker,
   SketchPickerProps,
-  ColorChangeHandler,
 } from 'react-color';
-import color from 'color';
-import classnames from 'classnames';
-import { merge, debounce, isEqual } from 'lodash';
-import { DEFAULT_COLOR } from '@/utils/constants';
-import ThemeUtil, {
-  getRgbaString,
-  getHexString,
-  getOpacity,
-} from '@/utils/Assist/Theme';
-import {
-  GLOBAL_EVENT_EMITTER,
-  EVENT_NAME_MAP,
-} from '@/utils/Assist/EventEmitter';
 import Tooltip from '../ChartComponents/Common/Tooltip';
 import styles from './index.less';
 
@@ -126,8 +126,7 @@ const ColorSelect = (props: TColorSelectProps) => {
       }
       trigger="click"
       overlayClassName={styles['component-color-select-tooltip']}
-      onOpenChange={onVisibleChange}
-    >
+      onOpenChange={onVisibleChange}>
       {children || (
         <div
           className={classnames(
@@ -137,8 +136,7 @@ const ColorSelect = (props: TColorSelectProps) => {
           )}
           style={{
             backgroundColor: getRgbaString(stateValue),
-          }}
-        ></div>
+          }}></div>
       )}
     </Tooltip>
   );

@@ -1,13 +1,13 @@
 import { mergeWithoutArray } from '@/utils';
+import { getName } from '@/utils/constants/defaultValue';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
   DEFAULT_CONDITION_CONFIG,
-  DEFAULT_LINKAGE_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import { getName } from '@/utils/constants/defaultValue';
 import { TCarouselConfig } from './type';
 
 const DEFAULT_VALUE = new Array(3).fill({

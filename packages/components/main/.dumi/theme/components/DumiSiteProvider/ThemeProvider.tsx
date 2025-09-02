@@ -1,13 +1,17 @@
 import {
   CustomTokenParams,
   extractStaticStyle,
-  StyleProvider,
   ThemeProvider as Provider,
+  StyleProvider,
 } from 'antd-style';
 import { ReactNode, useCallback } from 'react';
 
 import { useThemeStore } from '../../store/useThemeStore';
-import { createCustomToken, getAntdTheme, getCustomStylish } from '../../styles';
+import {
+  createCustomToken,
+  getAntdTheme,
+  getCustomStylish,
+} from '../../styles';
 import { SiteConfigToken } from '../../types';
 
 export interface ThemeProviderProps {
@@ -17,7 +21,12 @@ export interface ThemeProviderProps {
   cache?: typeof extractStaticStyle.cache;
 }
 
-export const ThemeProvider = ({ children, token, ssrInline, cache }: ThemeProviderProps) => {
+export const ThemeProvider = ({
+  children,
+  token,
+  ssrInline,
+  cache,
+}: ThemeProviderProps) => {
   const themeMode = useThemeStore((s) => s.themeMode);
 
   const getCustomToken = useCallback(
@@ -38,15 +47,13 @@ export const ThemeProvider = ({ children, token, ssrInline, cache }: ThemeProvid
       speedy={process.env.NODE_ENV === 'production'}
       prefix={'site'}
       cache={cache}
-      ssrInline={ssrInline}
-    >
+      ssrInline={ssrInline}>
       <Provider
         prefixCls={'site'}
         themeMode={themeMode}
         theme={getAntdTheme}
         customStylish={getCustomStylish}
-        customToken={getCustomToken}
-      >
+        customToken={getCustomToken}>
         {children}
       </Provider>
     </StyleProvider>

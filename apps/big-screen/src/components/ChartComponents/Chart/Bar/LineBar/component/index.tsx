@@ -1,23 +1,23 @@
-import { useEffect, useRef } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useDeepUpdateEffect } from '@/hooks';
 import {
-  useComponent,
-  useChartComponentResize,
-  useChartValueMapField,
-  useComponentResize,
   useAnimationChange,
-  useCondition,
+  useChartComponentResize,
   useChartComponentTooltip,
   useChartPerConfig,
+  useChartValueMapField,
+  useComponent,
+  useComponentResize,
+  useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
+import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import { radialGradientColor } from '@/components/ChartComponents/Common/utils';
 import ColorSelect from '@/components/ColorSelect';
-import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
+import { useDeepUpdateEffect } from '@/hooks';
 import { init } from '@/utils/Assist/EchartsLoader';
-import { TLineBarConfig } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useEffect, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TLineBarConfig } from '../type';
 
 const { getRgbaString } = ColorSelect;
 
@@ -375,8 +375,7 @@ const LineBar = (props: ComponentData.CommonComponentProps<TLineBarConfig>) => {
           },
           style,
           conditionStyle,
-        )}
-      >
+        )}>
         <Wrapper border={border}>
           <div id={chartId.current} className="w-100 h-100"></div>
           {children}

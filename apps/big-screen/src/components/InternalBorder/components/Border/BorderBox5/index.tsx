@@ -1,7 +1,7 @@
-import React, { useMemo, forwardRef, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, forwardRef, useMemo } from 'react';
+import { useAutoResize, useBorderWrapper } from '../hooks';
 import { CommonBorderProps } from '../type';
-import { useBorderWrapper, useAutoResize } from '../hooks';
 import styles from './index.less';
 
 const defaultColor = ['rgba(255, 255, 255, 0.35)', 'rgba(255, 255, 255, 0.20)'];
@@ -42,8 +42,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           [styles['internal-border-5-border-reverse']]: !!reverse,
         })}
         width={width}
-        height={height}
-      >
+        height={height}>
         <polygon
           fill={backgroundColor}
           points={`
@@ -94,8 +93,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
 
       <div
         {...nextProps}
-        className={styles['internal-border-5-border-content']}
-      >
+        className={styles['internal-border-5-border-content']}>
         {children}
       </div>
     </div>

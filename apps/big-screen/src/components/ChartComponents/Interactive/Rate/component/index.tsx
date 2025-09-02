@@ -1,12 +1,12 @@
-import { useMemo, useRef, useState } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { Rate as AntRate } from 'antd';
-import { useUpdateEffect } from 'ahooks';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
 import ColorSelect from '@/components/ColorSelect';
-import { TRateConfig } from '../type';
+import { useUpdateEffect } from 'ahooks';
+import { Rate as AntRate } from 'antd';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TRateConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -74,8 +74,7 @@ const Rate = (props: ComponentData.CommonComponentProps<TRateConfig>) => {
         },
         style,
       )}
-      id={chartId.current}
-    >
+      id={chartId.current}>
       <Wrapper border={border}>
         {children}
         <AntRate

@@ -1,5 +1,6 @@
-import moment from 'moment';
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
+import moment from 'moment';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
@@ -7,7 +8,6 @@ import {
   DEFAULT_FONT_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { TDatePickerConfig } from './type';
 
 export default () => {

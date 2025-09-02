@@ -1,5 +1,5 @@
-import {} from 'react';
 import classnames from 'classnames';
+import {} from 'react';
 import styles from './index.less';
 
 export const GridBackground = () => {
@@ -28,20 +28,17 @@ const LinearBackground = () => {
         className={classnames(
           styles['home-linear-background-polygon'],
           styles['home-linear-background-polygon-one'],
-        )}
-      ></div>
+        )}></div>
       <div
         className={classnames(
           styles['home-linear-background-polygon'],
           styles['home-linear-background-polygon-two'],
-        )}
-      ></div>
+        )}></div>
       <div
         className={classnames(
           styles['home-linear-background-polygon'],
           styles['home-linear-background-polygon-three'],
-        )}
-      ></div>
+        )}></div>
     </div>
   );
 };

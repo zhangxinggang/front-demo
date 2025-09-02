@@ -59,14 +59,14 @@ const Toc: FC<TocProps> = memo(({ items, activeKey, onChange }) => {
             bordered={false}
             ghost
             expandIconPosition={'end'}
-            expandIcon={({ isActive }) => (isActive ? <ArrowDownOutlined /> : <MenuOutlined />)}
-            className={styles.expand}
-          >
+            expandIcon={({ isActive }) =>
+              isActive ? <ArrowDownOutlined /> : <MenuOutlined />
+            }
+            className={styles.expand}>
             <Collapse.Panel
               forceRender
               key={'toc'}
-              header={!activeAnchor ? '目录' : activeAnchor.title}
-            >
+              header={!activeAnchor ? '目录' : activeAnchor.title}>
               <ConfigProvider theme={{ token: { fontSize: 14, sizeStep: 4 } }}>
                 <Anchor
                   onChange={(currentLink) => {
@@ -83,7 +83,11 @@ const Toc: FC<TocProps> = memo(({ items, activeKey, onChange }) => {
     ) : (
       <div className={styles.container}>
         <h4>目录</h4>
-        <Anchor items={linkItems} className={styles.anchor} targetOffset={theme.headerHeight + 12}/>
+        <Anchor
+          items={linkItems}
+          className={styles.anchor}
+          targetOffset={theme.headerHeight + 12}
+        />
       </div>
     )) || null
   );

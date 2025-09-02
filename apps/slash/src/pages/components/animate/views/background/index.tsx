@@ -1,4 +1,4 @@
-import { Card, Row, Col } from 'antd';
+import { Card, Col, Row } from 'antd';
 import { useMemo, useState } from 'react';
 
 import ControlPanel from '../../control-panel';
@@ -12,7 +12,9 @@ export default function BackgroundView() {
       selectedVariant: 'kenburnsTop',
     };
   }, []);
-  const [selectedVariant, setSelectedVariant] = useState(defaultValue.selectedVariant);
+  const [selectedVariant, setSelectedVariant] = useState(
+    defaultValue.selectedVariant,
+  );
 
   const onRefresh = () => {
     setSelectedVariant(defaultValue.selectedVariant);

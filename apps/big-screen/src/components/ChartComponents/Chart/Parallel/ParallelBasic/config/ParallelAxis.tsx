@@ -1,14 +1,14 @@
-import { useCallback, useMemo } from 'react';
-import Select from '@/components/ChartComponents/Common/Select';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import { CompatColorSelect } from '@/components/ColorSelect';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import Select from '@/components/ChartComponents/Common/Select';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import { useCallback, useMemo } from 'react';
 import { TParallelBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -49,8 +49,7 @@ const ParallelAxisConfig = (props: {
         child={{
           header: '框选区域',
           key: 'areaSelectStyle',
-        }}
-      >
+        }}>
         <Item label="宽度">
           <FullForm>
             <InputNumber
@@ -86,8 +85,7 @@ const ParallelAxisConfig = (props: {
         child={{
           header: '坐标轴名称',
           key: 'name',
-        }}
-      >
+        }}>
         <Item label="位置">
           <FullForm>
             <Select
@@ -106,8 +104,7 @@ const ParallelAxisConfig = (props: {
           child={{
             header: '文本',
             key: 'textStyle',
-          }}
-        >
+          }}>
           <FontConfigList
             value={nameTextStyle}
             onChange={onKeyChange.bind(null, 'nameTextStyle')}
@@ -135,8 +132,7 @@ const ParallelAxisConfig = (props: {
       <SeriesLabelConfig
         {...(axisLabel as any)}
         ignore={['position']}
-        onChange={onKeyChange.bind(null, 'axisLabel')}
-      >
+        onChange={onKeyChange.bind(null, 'axisLabel')}>
         <AngleSelect
           value={axisLabel.rotate}
           onChange={(value) => {
@@ -175,8 +171,7 @@ const ParallelAxisConfig = (props: {
               show: value,
             });
           },
-        }}
-      >
+        }}>
         <LineStyleGroupConfig
           value={axisLine.lineStyle}
           onChange={(value) => {

@@ -1,5 +1,5 @@
-import { useCallback, useMemo, useState, useEffect } from 'react';
 import { InputNumber as AntInputNumber, Switch } from 'antd';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import ConfigList from '../Structure/ConfigList';
 import FullForm from '../Structure/FullForm';
 
@@ -79,8 +79,7 @@ const NumberPositionConfig = (props: {
       label="位置"
       labelProps={{
         level,
-      }}
-    >
+      }}>
       <FullForm label="上">
         <InputNumber value={top} onChange={onKeyChange.bind(null, 'top')} />
       </FullForm>

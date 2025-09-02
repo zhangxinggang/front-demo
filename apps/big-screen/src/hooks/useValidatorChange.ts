@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import { get } from 'lodash';
+import { useCallback } from 'react';
 
 const PRESET_VALIDATOR: {
   [key: string]: BaseValidator;

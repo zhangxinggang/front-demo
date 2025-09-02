@@ -1,13 +1,13 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import { TPictureWallConfig } from '../type';
 import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { Switch } from 'antd';
+import { Component } from 'react';
+import { TPictureWallConfig } from '../type';
 
 const { Item } = ConfigList;
 class Config extends Component<

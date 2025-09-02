@@ -7,7 +7,10 @@ import { useEffect } from 'react';
 
 import { IconButton, Iconify } from '@/components/icon';
 
-export type CalendarEventFormFieldType = Pick<EventInput, 'title' | 'allDay' | 'color'> & {
+export type CalendarEventFormFieldType = Pick<
+  EventInput,
+  'title' | 'allDay' | 'color'
+> & {
   id: string;
   description?: string;
   start?: Dayjs;
@@ -63,8 +66,7 @@ export default function CalendarEventForm({
               onClick={() => {
                 onDelete(initValues.id);
                 onCancel();
-              }}
-            >
+              }}>
               <Iconify icon="fluent:delete-16-filled" size={20} />
             </IconButton>
             <div>
@@ -104,20 +106,17 @@ export default function CalendarEventForm({
           .catch((info) => {
             console.log('Validate Failed:', info);
           });
-      }}
-    >
+      }}>
       <Form
         form={form}
         size="small"
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 18 }}
-        initialValues={initValues}
-      >
+        initialValues={initValues}>
         <Form.Item<CalendarEventFormFieldType>
           label="Titile"
           name="title"
-          rules={[{ required: true, message: 'Please input title!' }]}
-        >
+          rules={[{ required: true, message: 'Please input title!' }]}>
           <Input />
         </Form.Item>
 
@@ -128,32 +127,36 @@ export default function CalendarEventForm({
         <Form.Item<CalendarEventFormFieldType>
           label="All day"
           name="allDay"
-          valuePropName="checked"
-        >
+          valuePropName="checked">
           <Switch />
         </Form.Item>
 
         <Form.Item<CalendarEventFormFieldType>
           label="Start date"
           name="start"
-          rules={[{ required: true, message: 'Please input start date!' }]}
-        >
-          <DatePicker showTime className="w-full" format="YYYY-MM-DD HH:mm:ss" />
+          rules={[{ required: true, message: 'Please input start date!' }]}>
+          <DatePicker
+            showTime
+            className="w-full"
+            format="YYYY-MM-DD HH:mm:ss"
+          />
         </Form.Item>
 
         <Form.Item<CalendarEventFormFieldType>
           label="End date"
           name="end"
-          rules={[{ required: true, message: 'Please input end date!' }]}
-        >
-          <DatePicker showTime className="w-full" format="YYYY-MM-DD HH:mm:ss" />
+          rules={[{ required: true, message: 'Please input end date!' }]}>
+          <DatePicker
+            showTime
+            className="w-full"
+            format="YYYY-MM-DD HH:mm:ss"
+          />
         </Form.Item>
 
         <Form.Item<CalendarEventFormFieldType>
           label="Color"
           name="color"
-          getValueFromEvent={(e) => e.toHexString()}
-        >
+          getValueFromEvent={(e) => e.toHexString()}>
           <ColorPicker
             presets={[
               {

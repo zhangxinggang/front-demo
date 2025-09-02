@@ -1,18 +1,18 @@
-import { useCallback, useMemo } from 'react';
-import { Switch } from 'antd';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
 import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
+import { CompatColorSelect } from '@/components/ColorSelect';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { Switch } from 'antd';
+import { useCallback, useMemo } from 'react';
 import { DEFAULT_DECAL, DEFAULT_LINE_STYLE } from '../defaultConfig';
 import { TLineBasicConfig } from '../type';
 
@@ -57,8 +57,7 @@ const SeriesConfig = (props: {
     return (
       <SeriesLabelConfig
         {...(label as any)}
-        onChange={onKeyChange.bind(null, 'label')}
-      >
+        onChange={onKeyChange.bind(null, 'label')}>
         <AngleSelect
           value={label.rotate}
           onChange={(value) => {
@@ -89,8 +88,7 @@ const SeriesConfig = (props: {
                 child={{
                   header: '拐点',
                   key: 'itemStyle',
-                }}
-              >
+                }}>
                 <Item label="颜色">
                   <FullForm>
                     <CompatColorSelect

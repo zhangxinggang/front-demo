@@ -1,4 +1,4 @@
-import { varBgKenburns, varBgPan, varBgColor } from './background';
+import { varBgColor, varBgKenburns, varBgPan } from './background';
 import { varBounce } from './bounce';
 import { varFade } from './fade';
 import { varFlip } from './flip';

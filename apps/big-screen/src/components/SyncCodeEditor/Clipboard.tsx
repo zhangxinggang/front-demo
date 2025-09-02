@@ -1,8 +1,8 @@
-import { useCallback, useRef, useState, useMemo } from 'react';
+import { sleep } from '@/utils';
+import { CheckOutlined, CloseOutlined, CopyOutlined } from '@ant-design/icons';
 import Clipboard from 'clipboard';
 import { uniqueId } from 'lodash';
-import { CopyOutlined, CheckOutlined, CloseOutlined } from '@ant-design/icons';
-import { sleep } from '@/utils';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import IconTooltip from '../IconTooltip';
 
 const ClipboardAction = (props: { value: string }) => {

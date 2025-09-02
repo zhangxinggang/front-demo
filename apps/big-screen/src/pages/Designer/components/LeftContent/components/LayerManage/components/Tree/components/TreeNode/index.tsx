@@ -1,23 +1,23 @@
-import {
-  useCallback,
-  useRef,
-  useMemo,
-  useEffect,
-  CSSProperties,
-  useTransition,
-} from 'react';
-import { Space } from 'antd';
-import classnames from 'classnames';
-import { FolderOutlined, FolderOpenOutlined } from '@ant-design/icons';
-import { useHover, useRafState } from 'ahooks';
-import { useComponentHover, useLayerHover } from '@/hooks';
 import ContextMenu from '@/components/ContextMenu';
 import { ActionItemType } from '@/components/ContextMenu/action.map';
+import { useComponentHover, useLayerHover } from '@/hooks';
 import DataChangePool from '@/utils/Assist/DataChangePool';
+import { FolderOpenOutlined, FolderOutlined } from '@ant-design/icons';
+import { useHover, useRafState } from 'ahooks';
+import { Space } from 'antd';
+import classnames from 'classnames';
+import {
+  CSSProperties,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useTransition,
+} from 'react';
 import { COMPONENT_ICON_MAP } from '../../../../../../../../utils/component';
-import VisibleEditor from './Visible';
-import NameEditor, { NameEditorRefProps } from './NameEdit';
 import LockEditor from './Lock';
+import NameEditor, { NameEditorRefProps } from './NameEdit';
+import VisibleEditor from './Visible';
 import styles from './index.less';
 
 const ListItem = ({
@@ -128,16 +128,14 @@ const ListItem = ({
             styles['design-page-layer-item-icon'],
             styles['design-page-layer-item-icon-leaf'],
             'm-r-8',
-          )}
-        >
+          )}>
           <img src={icon} />
         </div>
       );
     }
     return (
       <div
-        className={classnames(styles['design-page-layer-item-icon'], 'm-r-8')}
-      >
+        className={classnames(styles['design-page-layer-item-icon'], 'm-r-8')}>
         {isExpend ? <FolderOpenOutlined /> : <FolderOutlined />}
       </div>
     );
@@ -155,8 +153,7 @@ const ListItem = ({
       value={value}
       path={path}
       onClick={handleEditName}
-      actionFrom="layer"
-    >
+      actionFrom="layer">
       <div
         className={classnames(
           styles['design-page-layer-item'],
@@ -172,8 +169,7 @@ const ListItem = ({
         )}
         style={hoverStyle}
         onClick={handleSelect}
-        ref={listItemRef}
-      >
+        ref={listItemRef}>
         {treeNodeIcon}
         <div className={classnames(styles['design-page-layer-item-name'])}>
           <NameEditor
@@ -187,8 +183,7 @@ const ListItem = ({
           className={classnames(
             styles['design-page-layer-item-action'],
             'dis-flex',
-          )}
-        >
+          )}>
           <Space size="large">
             <VisibleEditor
               disabled={disabled}

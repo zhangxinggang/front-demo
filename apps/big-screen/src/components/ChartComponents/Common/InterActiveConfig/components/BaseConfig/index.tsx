@@ -138,12 +138,10 @@ const BaseConfig = (props: {
                     show: value,
                   });
                   enableComponentInteractive(value, type);
-                }}
-              >
+                }}>
                 <span onClick={(e) => e.stopPropagation()}>启用</span>
               </Checkbox>
-            }
-          >
+            }>
             <FieldSetting
               value={cur}
               onChange={onChange}
@@ -172,15 +170,13 @@ const BaseConfig = (props: {
         defaultActiveKey={['1']}
         expandIcon={Icon}
         bordered={false}
-        className={styles['design-config-interactive-base-collapse']}
-      >
+        className={styles['design-config-interactive-base-collapse']}>
         <Panel header="交互事件" key="1">
           <Collapse
             defaultActiveKey={keys}
             expandIcon={Icon}
             bordered={false}
-            className={styles['design-config-interactive-base-collapse']}
-          >
+            className={styles['design-config-interactive-base-collapse']}>
             {domList}
           </Collapse>
         </Panel>

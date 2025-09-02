@@ -1,11 +1,10 @@
-import { CSSProperties, useMemo } from 'react';
-import classnames from 'classnames';
-import { merge } from 'lodash';
 import { DEFAULT_THEME_COLOR_LIST } from '@/components/ChartComponents/Common/Constants/defaultConfig';
 import { getRgbaString } from '@/utils/Assist/Theme';
-import { SELECTO_CLASSNAME } from '@/utils/constants';
-import { CommonBorderProps } from './type';
+import classnames from 'classnames';
+import { merge } from 'lodash';
+import { CSSProperties, useMemo } from 'react';
 import commonStyles from './index.less';
+import { CommonBorderProps } from './type';
 
 // @ts-ignore
 export { default as useAutoResize } from './autoResize';

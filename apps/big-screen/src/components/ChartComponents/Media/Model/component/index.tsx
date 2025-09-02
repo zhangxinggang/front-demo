@@ -1,15 +1,15 @@
-import { useMemo, useRef, useCallback, useState, useEffect } from 'react';
-import { uniqueId, merge, noop } from 'lodash';
-import classnames from 'classnames';
-import GridLoader from 'react-spinners/GridLoader';
-import { useUpdateEffect } from 'ahooks';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import { usePrimaryColor } from '@/hooks';
 import FilterDataUtil from '@/utils/Assist/FilterData';
 import { DEFAULT_THREE_D_MODEL_URL } from '@/utils/constants';
-import { TModelConfig } from '../type';
+import { useUpdateEffect } from 'ahooks';
+import classnames from 'classnames';
+import { merge, noop, uniqueId } from 'lodash';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import GridLoader from 'react-spinners/GridLoader';
 import { CHART_ID } from '../id';
+import { TModelConfig } from '../type';
 import styles from './index.less';
 
 const getDomain = (url: string) => {
@@ -133,8 +133,7 @@ const ModelBasic = (
           style,
         )}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           {pageLoading && (

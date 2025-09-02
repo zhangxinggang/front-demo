@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
 import {
-  GLOBAL_EVENT_EMITTER,
   EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
 } from '@/utils/Assist/EventEmitter';
+import { useEffect } from 'react';
 import { TFetchFragmentRef } from '../../FetchFragment';
 
 export const useFilterChange = (

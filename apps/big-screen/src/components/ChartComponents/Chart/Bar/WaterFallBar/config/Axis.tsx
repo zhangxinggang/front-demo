@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { Tabs } from 'antd';
-import { TWaterFallBarConfig } from '../type';
 import AxisConfigCommon from '@/components/ChartComponents/Common/AxisConfig';
+import { Tabs } from 'antd';
+import { useCallback } from 'react';
 import styles from '../../../../Common/global.less';
+import { TWaterFallBarConfig } from '../type';
 
 type ValueType = Pick<TWaterFallBarConfig, 'yAxis' | 'xAxis'>;
 

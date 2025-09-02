@@ -153,8 +153,7 @@ const ConstantList = (props: {
             <Button
               style={{ paddingLeft: 0 }}
               type="link"
-              onClick={deleteData.bind(null, record)}
-            >
+              onClick={deleteData.bind(null, record)}>
               删除
             </Button>
           );
@@ -177,8 +176,7 @@ const ConstantList = (props: {
       <GhostButton
         className="m-t-8 c-f-s"
         onClick={handleAdd}
-        icon={<PlusOutlined />}
-      >
+        icon={<PlusOutlined />}>
         新增一个字段
       </GhostButton>
     </FocusWrapper>
@@ -213,15 +211,11 @@ const ConstantManage = forwardRef<ConstantManageRef, ConstantManageProps>(
       );
     }, [onClose]);
 
-    useImperativeHandle(
-      ref,
-      () => {
-        return {
-          open,
-        };
-      },
-      [open],
-    );
+    useImperativeHandle(ref, () => {
+      return {
+        open,
+      };
+    }, [open]);
 
     return (
       <Drawer
@@ -232,8 +226,7 @@ const ConstantManage = forwardRef<ConstantManageRef, ConstantManageProps>(
         footer={footer}
         title="全局常量管理"
         placement="left"
-        width={520}
-      >
+        width={520}>
         <WrapperConstantList />
       </Drawer>
     );

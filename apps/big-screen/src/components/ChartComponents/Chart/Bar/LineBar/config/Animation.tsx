@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
 import AnimationConfigCommon from '@/components/ChartComponents/Common/AnimationConfig';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import { useCallback } from 'react';
 import { TLineBarConfig } from '../type';
 
 const AnimationConfig = (props: {
@@ -28,8 +28,7 @@ const AnimationConfig = (props: {
         child={{
           header: '柱图',
           key: 'bar',
-        }}
-      >
+        }}>
         <AnimationConfigCommon
           value={value.bar}
           onChange={(value) => {
@@ -43,8 +42,7 @@ const AnimationConfig = (props: {
         child={{
           header: '折线',
           key: 'line',
-        }}
-      >
+        }}>
         <AnimationConfigCommon
           value={value.line}
           onChange={(value) => {

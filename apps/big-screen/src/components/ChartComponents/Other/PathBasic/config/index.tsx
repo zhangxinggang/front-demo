@@ -1,20 +1,20 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
+import Input from '@/components/ChartComponents/Common/Input';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import LocalUpload from '@/components/ChartComponents/Common/LocalUpload';
 import Select from '@/components/ChartComponents/Common/Select';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import LocalUpload from '@/components/ChartComponents/Common/LocalUpload';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { CompatColorSelect } from '@/components/ColorSelect';
 import IconTooltip from '@/components/IconTooltip';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import Input from '@/components/ChartComponents/Common/Input';
-import ConditionConfig from './Condition';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
+import { Component } from 'react';
 import { TPathBasicConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 class Config extends Component<
@@ -340,8 +340,7 @@ class Config extends Component<
                         show: value,
                       });
                     },
-                  }}
-                >
+                  }}>
                   <Item label="路径形式">
                     <FullForm>
                       <Select
@@ -376,17 +375,14 @@ class Config extends Component<
                               <a
                                 className="underline-anime underline-anime-color-white"
                                 target="_blank"
-                                href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/stroke-dasharray"
-                              >
+                                href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/stroke-dasharray">
                                 这里
                               </a>
                             </>
-                          }
-                        >
+                          }>
                           <InfoCircleOutlined />
                         </IconTooltip>
-                      }
-                    >
+                      }>
                       <FullForm>
                         <Input
                           value={path.dashedValue}

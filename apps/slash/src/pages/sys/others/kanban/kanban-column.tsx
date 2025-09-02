@@ -6,7 +6,12 @@ import { useEvent } from 'react-use';
 
 import { Iconify } from '@/components/icon';
 import KanbanTask from '@/pages/sys/others/kanban/kanban-task';
-import { Column, DragType, Task, TaskPriority } from '@/pages/sys/others/kanban/types';
+import {
+  Column,
+  DragType,
+  Task,
+  TaskPriority,
+} from '@/pages/sys/others/kanban/types';
 import { useSettings } from '@/store/settingStore';
 
 import { ThemeMode } from '#/enum';
@@ -37,7 +42,9 @@ export default function KanbanColumn({
     padding: '16px',
     borderRadius: '16px',
     backgroundColor:
-      themeMode === ThemeMode.Light ? 'rgb(244, 246, 248)' : 'rgba(145, 158, 171, 0.12)',
+      themeMode === ThemeMode.Light
+        ? 'rgb(244, 246, 248)'
+        : 'rgba(145, 158, 171, 0.12)',
   };
 
   const items: MenuProps['items'] = [
@@ -48,8 +55,7 @@ export default function KanbanColumn({
           className="text-gray flex items-center"
           onClick={() => {
             setRenamingTask(true);
-          }}
-        >
+          }}>
           <Iconify icon="solar:pen-bold" />
           <span className="ml-2">rename</span>
         </div>
@@ -58,7 +64,9 @@ export default function KanbanColumn({
     {
       key: '2',
       label: (
-        <div className="text-gray flex items-center" onClick={() => clearColumn(column.id)}>
+        <div
+          className="text-gray flex items-center"
+          onClick={() => clearColumn(column.id)}>
           <Iconify icon="solar:eraser-bold" />
           <span className="ml-2">clear</span>
         </div>
@@ -67,7 +75,9 @@ export default function KanbanColumn({
     {
       key: '3',
       label: (
-        <div className="text-warning flex items-center" onClick={() => deleteColumn(column.id)}>
+        <div
+          className="text-warning flex items-center"
+          onClick={() => deleteColumn(column.id)}>
           <Iconify icon="solar:trash-bin-trash-bold" />
           <span className="ml-2">delete</span>
         </div>
@@ -78,7 +88,10 @@ export default function KanbanColumn({
   const [addingTask, setAddingTask] = useState(false);
   const addTaskInputRef = useRef<InputRef>(null);
   const handleClickOutside = (event: MouseEvent) => {
-    if (addTaskInputRef.current && !addTaskInputRef.current.input?.contains(event.target as Node)) {
+    if (
+      addTaskInputRef.current &&
+      !addTaskInputRef.current.input?.contains(event.target as Node)
+    ) {
       const addTaskInputVal = addTaskInputRef.current.input?.value;
       if (addTaskInputVal) {
         createTask(column.id, {
@@ -121,8 +134,7 @@ export default function KanbanColumn({
           <div style={style}>
             <header
               {...provided.dragHandleProps}
-              className="mb-4 flex select-none items-center justify-between text-base font-semibold"
-            >
+              className="mb-4 flex select-none items-center justify-between text-base font-semibold">
               {renamingTask ? (
                 <Input ref={renameTaskInputRef} size="large" autoFocus />
               ) : (
@@ -133,8 +145,7 @@ export default function KanbanColumn({
                 onOpenChange={(flag) => setDropdownOpen(flag)}
                 menu={{ items, onClick: handleMenuItemClick }}
                 placement="bottomRight"
-                trigger={['click']}
-              >
+                trigger={['click']}>
                 <Button shape="circle" type="text" className="!text-gray">
                   <Iconify icon="dashicons:ellipsis" />
                 </Button>
@@ -143,7 +154,10 @@ export default function KanbanColumn({
 
             <Droppable droppableId={column.id} type={DragType.TASK}>
               {(provided) => (
-                <main ref={provided.innerRef} {...provided.droppableProps} className="min-h-[10px]">
+                <main
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                  className="min-h-[10px]">
                   {tasks.map((task, index) => (
                     <KanbanTask task={task} key={task.id} index={index} />
                   ))}
@@ -154,7 +168,12 @@ export default function KanbanColumn({
 
             <footer className="w-[248px]">
               {addingTask ? (
-                <Input ref={addTaskInputRef} size="large" placeholder="Task Name" autoFocus />
+                <Input
+                  ref={addTaskInputRef}
+                  size="large"
+                  placeholder="Task Name"
+                  autoFocus
+                />
               ) : (
                 <Button
                   onClick={(e) => {
@@ -164,8 +183,7 @@ export default function KanbanColumn({
                   className="!flex items-center justify-center !text-xs !font-medium"
                   type="text"
                   block
-                  size="large"
-                >
+                  size="large">
                   <Iconify icon="carbon:add" size={20} />
                   <span>Add Task</span>
                 </Button>

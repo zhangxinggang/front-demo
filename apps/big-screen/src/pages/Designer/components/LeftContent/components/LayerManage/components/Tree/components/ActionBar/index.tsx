@@ -72,8 +72,7 @@ const _ActionHeaderBar = (props: ActionProps) => {
   return (
     <div
       className={styles['layer-action-bar-header']}
-      style={!actionProps.disabled ? {} : { height: 0 }}
-    >
+      style={!actionProps.disabled ? {} : { height: 0 }}>
       {!actionProps.disabled && (
         <Space size={'middle'}>
           <PrevOrderAction {...actionProps} />
@@ -97,8 +96,7 @@ const _ActionFooterBar = (props: ActionProps) => {
   return (
     <div
       className={styles['layer-action-bar-footer']}
-      style={!actionProps.disabled ? {} : { height: 0 }}
-    >
+      style={!actionProps.disabled ? {} : { height: 0 }}>
       {!actionProps.disabled && (
         <Space size={'middle'}>
           <GroupAction {...actionProps} />

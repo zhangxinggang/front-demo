@@ -1,10 +1,10 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesConfig from './Series';
+import { Component } from 'react';
 import { TClockGaugeConfig } from '../type';
+import SeriesConfig from './Series';
 class Config extends Component<
   ComponentData.ComponentConfigProps<TClockGaugeConfig>
 > {

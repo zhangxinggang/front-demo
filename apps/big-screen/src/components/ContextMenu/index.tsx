@@ -153,8 +153,7 @@ const ContextMenu = (
       trigger={['contextMenu']}
       onOpenChange={onVisibleChange}
       open={visible}
-      {...nextProps}
-    >
+      {...nextProps}>
       {children}
     </Dropdown>
   );

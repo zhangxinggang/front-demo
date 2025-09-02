@@ -7,7 +7,11 @@ import Footer from 'dumi/theme/slots/Footer';
 import Header from 'dumi/theme/slots/Header';
 import Hero from 'dumi/theme/slots/Hero';
 
-import { showHeroPageCustomContent, siteTitleSel, useSiteStore } from '../../store';
+import {
+  showHeroPageCustomContent,
+  siteTitleSel,
+  useSiteStore,
+} from '../../store';
 import { useStyles } from './styles';
 
 const Home: FC = memo(() => {
@@ -21,7 +25,14 @@ const Home: FC = memo(() => {
       <Helmet>
         <title>{siteTitle}</title>
       </Helmet>
-      <Flexbox align={'center'} gap={60} style={{overflowY: 'auto', height: 'calc(100% - 66px)',paddingBottom: 20}}>
+      <Flexbox
+        align={'center'}
+        gap={60}
+        style={{
+          overflowY: 'auto',
+          height: 'calc(100% - 66px)',
+          paddingBottom: 20,
+        }}>
         <Header />
         <Hero />
         <Features />

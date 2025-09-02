@@ -1,13 +1,13 @@
-import { CSSProperties, useEffect, useMemo, useRef } from 'react';
-import { uniqueId, merge, noop } from 'lodash';
-import classnames from 'classnames';
-import TypedJs from 'typed.js';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TTypedConfig } from '../type';
+import classnames from 'classnames';
+import { merge, noop, uniqueId } from 'lodash';
+import { CSSProperties, useEffect, useMemo, useRef } from 'react';
+import TypedJs from 'typed.js';
 import { CHART_ID } from '../id';
+import { TTypedConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -79,8 +79,7 @@ const Typed = (props: ComponentData.CommonComponentProps<TTypedConfig>) => {
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           <div style={componentStyle}>

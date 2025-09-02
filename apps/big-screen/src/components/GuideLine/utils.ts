@@ -1,9 +1,9 @@
-import { merge } from 'lodash';
-import { PANEL_ABSOLUTE_POSITION, GUIDE_LINE_PADDING } from '@/utils/constants';
 import { getDvaGlobalModelData } from '@/utils/Assist/Component';
 import LocalConfig, {
   LocalConfig as LocalConfigClass,
 } from '@/utils/Assist/LocalConfig';
+import { GUIDE_LINE_PADDING, PANEL_ABSOLUTE_POSITION } from '@/utils/constants';
+import { merge } from 'lodash';
 import { AbsorbUtil } from '../../pages/Designer/components/Panel/components/PanelWrapper/components/AbsorbGuideLine/utils';
 
 type NearlyData = {

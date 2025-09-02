@@ -82,8 +82,7 @@ const ComponentList = (props: { type: string; componentCollapse: boolean }) => {
       expandIcon={({ isActive }) => (
         <CaretRightOutlined rotate={isActive ? 90 : 0} />
       )}
-      onChange={onCollapseChange}
-    >
+      onChange={onCollapseChange}>
       {list}
     </Collapse>
   );

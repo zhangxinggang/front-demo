@@ -1,12 +1,12 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConditionConfig from './Condition';
+import { Switch } from 'antd';
+import { Component } from 'react';
 import { TAudioConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 class Config extends Component<

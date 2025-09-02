@@ -98,16 +98,14 @@ const ScreenComponentConfigChangeTooltip = (props: Props) => {
         className={classnames(
           styles['screen-component-config-change-tooltip'],
           'c-f-s',
-        )}
-      >
+        )}>
         <div className="f-b">{version}</div>
         <div className="m-tb-4">{tooltip}</div>
         <div className="ali-r">
           <Button
             size="small"
             type="primary"
-            onClick={handleRead.bind(null, version)}
-          >
+            onClick={handleRead.bind(null, version)}>
             我已知晓
           </Button>
         </div>
@@ -144,8 +142,7 @@ const ScreenComponentConfigChangeTooltip = (props: Props) => {
       iconStyle={{
         visibility: versionTooltip.length ? 'visible' : 'hidden',
         pointerEvents: versionTooltip.length ? 'all' : 'none',
-      }}
-    >
+      }}>
       <InfoCircleOutlined />
     </IconTooltip>
   );

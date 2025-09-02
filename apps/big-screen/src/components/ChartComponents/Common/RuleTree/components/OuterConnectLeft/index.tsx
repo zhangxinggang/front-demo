@@ -8,8 +8,7 @@ const OuterConnectLeft = (props: {}) => {
         width: '100%',
         height: 24,
         position: 'relative',
-      }}
-    >
+      }}>
       <Connect />
     </div>
   );

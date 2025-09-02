@@ -34,7 +34,10 @@ const SSRPlugin = (api: IApi) => {
 
   const addLinkStyle = (html: string, cssFile: string) => {
     const prefix = api.userConfig.publicPath || api.config.publicPath;
-    return html.replace('</head>', `<link rel="stylesheet" href="${prefix + cssFile}"></head>`);
+    return html.replace(
+      '</head>',
+      `<link rel="stylesheet" href="${prefix + cssFile}"></head>`,
+    );
   };
 
   api.modifyExportHTMLFiles((files) =>
@@ -55,7 +58,11 @@ const SSRPlugin = (api: IApi) => {
             )} styles`,
           );
 
-          const cssFile = writeCSSFile(result.key, result.ids.join(''), result.css);
+          const cssFile = writeCSSFile(
+            result.key,
+            result.ids.join(''),
+            result.css,
+          );
 
           file.content = addLinkStyle(file.content, cssFile);
         });

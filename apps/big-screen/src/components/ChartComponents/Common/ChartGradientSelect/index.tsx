@@ -1,15 +1,15 @@
-import { useCallback } from 'react';
-import { Radio } from 'antd';
-import { useControllableValue } from 'ahooks';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import { merge } from 'lodash';
-import IconTooltip from '@/components/IconTooltip';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
 import { DEFAULT_GRADIENT_COLOR } from '@/utils/constants';
-import ConfigList from '../Structure/ConfigList';
-import HalfForm from '../Structure/HalfForm';
-import FullForm from '../Structure/FullForm';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { useControllableValue } from 'ahooks';
+import { Radio } from 'antd';
+import { merge } from 'lodash';
+import { useCallback } from 'react';
 import InputNumber from '../InputNumber';
+import ConfigList from '../Structure/ConfigList';
+import FullForm from '../Structure/FullForm';
+import HalfForm from '../Structure/HalfForm';
 
 const { Item } = ConfigList;
 
@@ -86,8 +86,7 @@ const ChartGradientSelect = (props: {
           <Item
             label="起始方向坐标"
             placeholder={<CommonPlaceholder />}
-            labelProps={labelProps}
-          >
+            labelProps={labelProps}>
             <HalfForm label="x">
               <InputNumber
                 value={linearPosition.startX}
@@ -112,8 +111,7 @@ const ChartGradientSelect = (props: {
           <Item
             label="结束方向坐标"
             placeholder={<CommonPlaceholder />}
-            labelProps={labelProps}
-          >
+            labelProps={labelProps}>
             <HalfForm label="x">
               <InputNumber
                 value={linearPosition.endX}
@@ -142,8 +140,7 @@ const ChartGradientSelect = (props: {
           <Item
             label="位置"
             placeholder={<CommonPlaceholder />}
-            labelProps={labelProps}
-          >
+            labelProps={labelProps}>
             <HalfForm label="x">
               <InputNumber
                 value={radialPosition.x}

@@ -1,5 +1,10 @@
 import { lazy } from 'react';
-import { Navigate, RouteObject, RouterProvider, createHashRouter } from 'react-router-dom';
+import {
+  Navigate,
+  RouteObject,
+  RouterProvider,
+  createHashRouter,
+} from 'react-router-dom';
 
 import DashboardLayout from '@/layouts/dashboard';
 import AuthGuard from '@/router/components/auth-guard';
@@ -27,7 +32,10 @@ export default function Router() {
         <DashboardLayout />
       </AuthGuard>
     ),
-    children: [{ index: true, element: <Navigate to={HOMEPAGE} replace /> }, ...permissionRoutes],
+    children: [
+      { index: true, element: <Navigate to={HOMEPAGE} replace /> },
+      ...permissionRoutes,
+    ],
   };
 
   const routes = [LoginRoute, asyncRoutes, ErrorRoutes, PAGE_NOT_FOUND_ROUTE];

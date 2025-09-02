@@ -1,16 +1,16 @@
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { getText } from '@/utils/constants';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
-  DEFAULT_FONT_CONFIG,
   DEFAULT_CONDITION_CONFIG,
-  DEFAULT_THEME_COLOR_LIST,
-  DEFAULT_LINKAGE_CONFIG,
+  DEFAULT_FONT_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
+  DEFAULT_THEME_COLOR_LIST,
 } from '../../Common/Constants/defaultConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
-import { getText } from '@/utils/constants';
 import { TTagConfig } from './type';
 
 const DEFAULT_TEXT = getText(4);

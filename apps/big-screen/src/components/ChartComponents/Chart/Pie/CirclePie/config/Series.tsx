@@ -1,14 +1,14 @@
-import { useCallback, useMemo } from 'react';
-import { Switch } from 'antd';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
-import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { Switch } from 'antd';
+import { useCallback, useMemo } from 'react';
 import { TCirclePieConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -40,8 +40,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         onChange={onKeyChange.bind(null, 'label')}
-        ignore={['position']}
-      >
+        ignore={['position']}>
         <FormatterSelect
           value={label.formatter}
           onChange={(value) => {
@@ -67,8 +66,7 @@ const SeriesConfig = (props: {
             });
           },
           value: labelLine.show,
-        }}
-      >
+        }}>
         <MaxMinConfig
           label="线段"
           subLabel={['第一线段', '第二线段']}

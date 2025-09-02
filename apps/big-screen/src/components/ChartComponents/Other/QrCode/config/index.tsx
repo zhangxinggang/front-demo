@@ -1,19 +1,19 @@
-import { Component } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import IconTooltip from '@/components/IconTooltip';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import LocalUpload from '@/components/ChartComponents/Common/LocalUpload';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import ConditionConfig from './Condition';
+import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import LocalUpload from '@/components/ChartComponents/Common/LocalUpload';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Component } from 'react';
 import { TQrCodeConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 class Config extends Component<
@@ -50,8 +50,7 @@ class Config extends Component<
                     <IconTooltip title="颜色需要比背景颜色深">
                       <InfoCircleOutlined />
                     </IconTooltip>
-                  }
-                >
+                  }>
                   <FullForm>
                     <CompatColorSelect
                       value={base.codeColor}
@@ -101,8 +100,7 @@ class Config extends Component<
                   }}
                   parent={{
                     activeKey: ['logo'],
-                  }}
-                >
+                  }}>
                   <Item label="图形">
                     <FullForm>
                       <LocalUpload
@@ -121,8 +119,7 @@ class Config extends Component<
                       <IconTooltip title="尺寸过大可能会影响扫码">
                         <InfoCircleOutlined />
                       </IconTooltip>
-                    }
-                  >
+                    }>
                     <HalfForm label="宽度">
                       <InputNumber
                         value={logo.size.width}

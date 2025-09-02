@@ -1,22 +1,22 @@
+import { closeShareScreen, shareScreenGet } from '@/services';
+import { getShare } from '@/utils';
 import {
-  forwardRef,
-  useImperativeHandle,
-  useCallback,
-  useState,
-  useMemo,
-} from 'react';
-import {
-  Modal,
+  Button,
   Form,
-  Select,
-  Radio,
   Input,
   message,
-  Button,
+  Modal,
+  Radio,
+  Select,
   Typography,
 } from 'antd';
-import { shareScreenGet, closeShareScreen } from '@/services';
-import { getShare } from '@/utils';
+import {
+  forwardRef,
+  useCallback,
+  useImperativeHandle,
+  useMemo,
+  useState,
+} from 'react';
 
 const { Item } = Form;
 const { Password } = Input;
@@ -166,15 +166,11 @@ const ShareSetting = forwardRef<
     [screenId, clear, onCancelShare, open],
   );
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open,
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open,
+    };
+  }, []);
 
   return (
     <Modal
@@ -193,16 +189,14 @@ const ShareSetting = forwardRef<
         <Button key="ok" onClick={onOk} type="primary">
           确定
         </Button>,
-      ]}
-    >
+      ]}>
       <Form labelCol={{ span: 4 }} wrapperCol={{ span: 20 }}>
         <Item label="权限">
           <Radio.Group
             value={auth}
             onChange={(e) => {
               setAuth(e.target.value);
-            }}
-          >
+            }}>
             <Radio value="PUBLIC" key="PUBLIC">
               公开
             </Radio>

@@ -67,7 +67,10 @@ export interface SiteToken {
   demoInheritSiteTheme: boolean;
 }
 
-export const createCustomToken: GetCustomToken<SiteToken> = ({ isDarkMode, token }) => {
+export const createCustomToken: GetCustomToken<SiteToken> = ({
+  isDarkMode,
+  token,
+}) => {
   const gradientColor1 = token.blue;
   const gradientColor2 = isDarkMode ? token.pink : token.cyan;
   const gradientColor3 = token.purple;

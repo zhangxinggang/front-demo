@@ -1,22 +1,35 @@
 import { useDebounceEffect } from 'ahooks';
-import { useLocale, useLocation, useNavData, useRouteMeta, useSiteData, useTabMeta } from 'dumi';
+import {
+  useLocale,
+  useLocation,
+  useNavData,
+  useRouteMeta,
+  useSiteData,
+  useTabMeta,
+} from 'dumi';
 import isEqual from 'fast-deep-equal';
 import React, { memo, useEffect } from 'react';
-import { SiteStore, useStoreApi } from '../../store/useSiteStore';
 import useCustomSidebarData from '../../hooks/useCustomSidebarData';
+import { SiteStore, useStoreApi } from '../../store/useSiteStore';
 
 const isBrowser = typeof window !== 'undefined';
 
 const SSRInit: Record<string, boolean> = {};
 
-const useReact18xUpdater = (effect: React.EffectCallback, deps?: React.DependencyList) => {
+const useReact18xUpdater = (
+  effect: React.EffectCallback,
+  deps?: React.DependencyList,
+) => {
   useEffect(() => {
     (React as any).startTransition(() => {
       effect();
     });
   }, deps);
 };
-const useLegacyUpdater = (effect: React.EffectCallback, deps?: React.DependencyList) => {
+const useLegacyUpdater = (
+  effect: React.EffectCallback,
+  deps?: React.DependencyList,
+) => {
   useDebounceEffect(
     () => {
       effect();
@@ -26,7 +39,9 @@ const useLegacyUpdater = (effect: React.EffectCallback, deps?: React.DependencyL
   );
 };
 const useUpdater =
-  typeof (React as any).startTransition === 'function' ? useReact18xUpdater : useLegacyUpdater;
+  typeof (React as any).startTransition === 'function'
+    ? useReact18xUpdater
+    : useLegacyUpdater;
 
 const useSyncState = <T extends keyof SiteStore>(
   key: T,
@@ -63,7 +78,7 @@ const getHomeNav = (id: string) => ({
 
 export const StoreUpdater = memo(() => {
   const siteData = useSiteData();
-  const routeMeta = useRouteMeta()
+  const routeMeta = useRouteMeta();
   const sidebar = useCustomSidebarData();
   const tabMeta = useTabMeta();
   const navData = useNavData();
@@ -91,7 +106,9 @@ export const StoreUpdater = memo(() => {
   useSyncState('locale', locale);
 
   useSyncState('navData', navData, () => {
-    const data = siteData.themeConfig.hideHomeNav ? navData : [getHomeNav(locale.id), ...navData];
+    const data = siteData.themeConfig.hideHomeNav
+      ? navData
+      : [getHomeNav(locale.id), ...navData];
 
     storeApi.setState({ navData: data });
   });

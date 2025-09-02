@@ -1,11 +1,11 @@
-import pMap from 'p-map';
 import { IGlobalModelState } from '@/models/connect';
-import GlobalConfig from '../GlobalConfig';
+import pMap from 'p-map';
 import {
-  saveScreenDataAuto,
   saveScreenDataAllAuto,
   saveScreenDataAllAutoStatic,
+  saveScreenDataAuto,
 } from '../DataChangePool';
+import GlobalConfig from '../GlobalConfig';
 
 class RequestPool {
   constructor(

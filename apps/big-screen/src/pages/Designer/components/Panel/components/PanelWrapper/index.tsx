@@ -122,8 +122,7 @@ const PanelWrapper = (props: {
         styles['designer-page-main'],
         'box-sizing-border',
         'pos-re',
-      )}
-    >
+      )}>
       {/* background */}
       <BackgroundConfigRender />
       <div id={wrapperId} ref={panelRef} className="w-100 h-100 pos-re">
@@ -134,8 +133,7 @@ const PanelWrapper = (props: {
             width: width * scale,
             height: height * scale,
           }}
-          onMouseDown={onMouseDown}
-        >
+          onMouseDown={onMouseDown}>
           <Ruler
             size={size}
             wrapperSetGuideLine={wrapperSetGuideLine}

@@ -12,21 +12,29 @@ interface Palette {
   colors: string[];
 }
 
-const lightColorMaps: Palette[] = Object.entries(lightColorPalettes).map(([key, value]) => ({
-  key,
-  colors: value,
-}));
+const lightColorMaps: Palette[] = Object.entries(lightColorPalettes).map(
+  ([key, value]) => ({
+    key,
+    colors: value,
+  }),
+);
 
-const darkColorMaps: Palette[] = Object.entries(darkColorPalettes).map(([key, value]) => ({
-  key,
-  colors: value,
-}));
+const darkColorMaps: Palette[] = Object.entries(darkColorPalettes).map(
+  ([key, value]) => ({
+    key,
+    colors: value,
+  }),
+);
 
 export default () => {
   const { mode } = useStore();
   return (
     <Flexbox>
-      <Flexbox align={'center'} horizontal gap={12} style={{ marginBottom: 8, alignSelf: 'end' }}>
+      <Flexbox
+        align={'center'}
+        horizontal
+        gap={12}
+        style={{ marginBottom: 8, alignSelf: 'end' }}>
         色彩模型
         <Radio.Group
           value={mode}

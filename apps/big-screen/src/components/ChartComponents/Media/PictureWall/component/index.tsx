@@ -1,14 +1,14 @@
-import { useMemo, useRef, useEffect } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import Viewer from 'viewerjs';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
+import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
-import { TPictureWallConfig } from '../type';
-import { CHART_ID } from '../id';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useEffect, useMemo, useRef } from 'react';
+import Viewer from 'viewerjs';
 import 'viewerjs/dist/viewer.css';
+import { CHART_ID } from '../id';
+import { TPictureWallConfig } from '../type';
 import styles from './index.less';
 
 const PictureWall = (
@@ -109,8 +109,7 @@ const PictureWall = (
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           {imageList}

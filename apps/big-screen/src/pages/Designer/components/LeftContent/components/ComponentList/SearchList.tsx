@@ -1,15 +1,15 @@
-import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
-import { useDebounceFn } from 'ahooks';
-import classnames from 'classnames';
-import { Input, Empty, Divider } from 'antd';
-import { SearchOutlined, CloseOutlined } from '@ant-design/icons';
 import {
-  GLOBAL_EVENT_EMITTER,
   EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
 } from '@/utils/Assist/EventEmitter';
+import { CloseOutlined, SearchOutlined } from '@ant-design/icons';
+import { useDebounceFn } from 'ahooks';
+import { Divider, Empty, Input } from 'antd';
+import classnames from 'classnames';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { COMPONENT_TYPE_LIST } from '../../../../utils/component';
-import ComponentItem from './item';
 import styles from './index.less';
+import ComponentItem from './item';
 
 const findComponentByString = (list: any[]) => {
   const searchResult: any[] = [];
@@ -93,8 +93,7 @@ const ComponentSearch = () => {
               orientation="left"
               orientationMargin={16}
               plain
-              className={styles['component-search-list-item-path']}
-            >
+              className={styles['component-search-list-item-path']}>
               {item.path.join(' / ')}
             </Divider>
           }
@@ -119,8 +118,7 @@ const ComponentSearch = () => {
     <div
       className={classnames(styles['component-search-list'], {
         [styles['component-search-list-visible']]: visible,
-      })}
-    >
+      })}>
       <CloseOutlined
         onClick={onVisibleChange}
         className={styles['component-search-list-close']}
@@ -144,8 +142,7 @@ const ComponentSearch = () => {
         className={classnames(
           styles['component-search-list-content'],
           'zero-scrollbar',
-        )}
-      >
+        )}>
         {searchListDom}
       </div>
     </div>

@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import classnames from 'classnames';
+import { ReactNode } from 'react';
 import styles from './index.less';
 
 const RelationBorder = (props: { children?: ReactNode }) => {
@@ -8,8 +8,10 @@ const RelationBorder = (props: { children?: ReactNode }) => {
   return (
     <div className={styles['component-relation-border-wrapper']}>
       <div
-        className={classnames(styles['component-relation-border'], 'border-1')}
-      ></div>
+        className={classnames(
+          styles['component-relation-border'],
+          'border-1',
+        )}></div>
       <div className={styles['component-relation-border-main']}>{children}</div>
     </div>
   );

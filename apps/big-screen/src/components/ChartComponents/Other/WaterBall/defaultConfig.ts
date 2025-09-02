@@ -1,4 +1,5 @@
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
@@ -6,11 +7,10 @@ import {
   DEFAULT_ANIMATION_CONFIG,
   DEFAULT_CONDITION_CONFIG,
   DEFAULT_FONT_CONFIG,
-  DEFAULT_RADIAL_CONFIG,
-  DEFAULT_LINKAGE_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
+  DEFAULT_RADIAL_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { TWaterBallConfig } from './type';
 
 export const DEFAULT_DECAL = {

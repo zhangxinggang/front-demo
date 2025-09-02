@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
 import { AppstoreAddOutlined } from '@ant-design/icons';
-import { paste, useIsValidPasteSelect, pasteClick } from './Paste';
-import useChildren from './useChildren';
+import { useCallback } from 'react';
+import { paste, pasteClick, useIsValidPasteSelect } from './Paste';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 export const copy = (pasteParams: {
   sourceComponents: ComponentData.TComponentData[];

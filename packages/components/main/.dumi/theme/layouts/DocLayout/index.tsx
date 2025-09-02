@@ -14,12 +14,18 @@ import { PropsWithChildren, memo, useEffect, useMemo, type FC } from 'react';
 
 import DumiSiteProvider from '../../components/DumiSiteProvider';
 import { StoreUpdater } from '../../components/StoreUpdater';
-import useCustomSidebarData from '../../hooks/useCustomSidebarData'
+import useCustomSidebarData from '../../hooks/useCustomSidebarData';
 
 import Docs from '../../pages/Docs';
 import Home from '../../pages/Home';
 
-import { Provider, createStore, isHeroPageSel, tokenSel, useSiteStore } from '../../store';
+import {
+  Provider,
+  createStore,
+  isHeroPageSel,
+  tokenSel,
+  useSiteStore,
+} from '../../store';
 import { GlobalStyle } from './styles';
 
 const DocLayout: FC = memo(() => {
@@ -51,9 +57,15 @@ const DocLayout: FC = memo(() => {
         <html lang={intl.locale.replace(/-.+$/, '')} />
         {fm.title && <meta property="og:title" content={fm.title} />}
         {fm.description && <meta name="description" content={fm.description} />}
-        {fm.description && <meta property="og:description" content={fm.description} />}
-        {fm.keywords && <meta name="keywords" content={fm.keywords.join(',')} />}
-        {fm.keywords && <meta property="og:keywords" content={fm.keywords.join(',')} />}
+        {fm.description && (
+          <meta property="og:description" content={fm.description} />
+        )}
+        {fm.keywords && (
+          <meta name="keywords" content={fm.keywords.join(',')} />
+        )}
+        {fm.keywords && (
+          <meta property="og:keywords" content={fm.keywords.join(',')} />
+        )}
       </Helmet>
 
       {isHomePage ? <Home /> : <Docs />}
@@ -94,7 +106,15 @@ export default () => {
   const locale = useLocale();
 
   const initState = useMemo(
-    () => ({ siteData, navData, locale, location, routeMeta, tabMeta, sidebar }),
+    () => ({
+      siteData,
+      navData,
+      locale,
+      location,
+      routeMeta,
+      tabMeta,
+      sidebar,
+    }),
     [],
   );
 

@@ -1,4 +1,4 @@
-import { ReactNode, CSSProperties } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 export type CommonBorderProps = {
   children: ReactNode;

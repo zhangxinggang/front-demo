@@ -4,7 +4,6 @@ import {
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
   DEFAULT_FONT_CONFIG,
-  DEFAULT_LINKAGE_CONFIG,
 } from '../../Common/Constants/defaultConfig';
 import { TTypedConfig } from './type';
 

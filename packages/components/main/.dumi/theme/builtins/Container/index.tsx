@@ -21,8 +21,7 @@ const Container: FC<{
               styles.desc,
               // 为了让 markdown 的样式生效，需要在这里添加一个额外的 class
               'markdown',
-            )}
-          >
+            )}>
             {children}
           </div>
         }

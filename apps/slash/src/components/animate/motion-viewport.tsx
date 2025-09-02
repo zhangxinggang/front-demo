@@ -12,7 +12,11 @@ interface Props extends MotionProps {
  *
  *    + once: 仅触发一次
  */
-export default function MotionViewport({ children, className, ...other }: Props) {
+export default function MotionViewport({
+  children,
+  className,
+  ...other
+}: Props) {
   return (
     <m.div
       initial="initial"
@@ -20,8 +24,7 @@ export default function MotionViewport({ children, className, ...other }: Props)
       viewport={{ once: true, amount: 0.3 }}
       variants={varContainer()}
       className={className}
-      {...other}
-    >
+      {...other}>
       {children}
     </m.div>
   );

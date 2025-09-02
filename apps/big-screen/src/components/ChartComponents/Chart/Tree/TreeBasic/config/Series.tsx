@@ -1,18 +1,18 @@
-import { useCallback, useMemo } from 'react';
-import { Switch } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import Select from '@/components/ChartComponents/Common/Select';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
-import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
-import Input from '@/components/ImageUpload/Input';
 import IconTooltip from '@/components/IconTooltip';
+import Input from '@/components/ImageUpload/Input';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
+import { useCallback, useMemo } from 'react';
 import { TTreeBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -55,8 +55,7 @@ const SeriesConfig = (props: {
         child={{
           header: '布局',
           key: 'lineStyle',
-        }}
-      >
+        }}>
         <Item label="隐藏重叠标签">
           <FullForm>
             <Switch
@@ -122,8 +121,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         onChange={onKeyChange.bind(null, 'label')}
-        ignore={['position']}
-      >
+        ignore={['position']}>
         <FormatterSelect
           value={label.formatter}
           onChange={(value) => {
@@ -143,8 +141,7 @@ const SeriesConfig = (props: {
         child={{
           header: '树图边',
           key: 'lineStyle',
-        }}
-      >
+        }}>
         <Item label="宽度">
           <InputNumber
             value={lineStyle.width}
@@ -232,8 +229,7 @@ const SeriesConfig = (props: {
         child={{
           key: 'symbol',
           header: '图形',
-        }}
-      >
+        }}>
         <Item label="类型">
           <FullForm>
             <SymbolSelect
@@ -256,8 +252,7 @@ const SeriesConfig = (props: {
             <IconTooltip title="数据计算公式计算子节点与父节点的大小关系">
               <InfoCircleOutlined />
             </IconTooltip>
-          }
-        >
+          }>
           <FullForm>
             <Input
               defaultValue={symbolSize}

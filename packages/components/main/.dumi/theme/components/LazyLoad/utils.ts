@@ -4,7 +4,9 @@
     : element.style.getPropertyValue(prop);
 
 const overflow = (element: HTMLElement) =>
-  style(element, 'overflow') + style(element, 'overflow-y') + style(element, 'overflow-x');
+  style(element, 'overflow') +
+  style(element, 'overflow-y') +
+  style(element, 'overflow-x');
 
 export default (element: HTMLElement) => {
   if (!(element instanceof HTMLElement)) {

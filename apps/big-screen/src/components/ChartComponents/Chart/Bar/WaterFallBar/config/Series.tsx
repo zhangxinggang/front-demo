@@ -1,10 +1,10 @@
-import { useCallback, useMemo } from 'react';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { useCallback, useMemo } from 'react';
 import { TWaterFallBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -46,8 +46,7 @@ const SeriesConfig = (props: {
         child={{
           header: '柱子颜色',
           key: 'itemStyle',
-        }}
-      >
+        }}>
         <ChartGradientSelect
           value={itemStyle.color}
           onChange={(value) => {

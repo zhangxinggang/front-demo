@@ -1,6 +1,6 @@
-import { useState, useImperativeHandle, useCallback, forwardRef } from 'react';
 import { Input as AntInput } from 'antd';
 import { InputProps } from 'antd/es/input';
+import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';
 
 export type InputRef = {
   setValue: (value: string) => void;
@@ -30,16 +30,12 @@ const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     [propsOnBlur],
   );
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        setValue,
-        getValue: () => value,
-      };
-    },
-    [value],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      setValue,
+      getValue: () => value,
+    };
+  }, [value]);
 
   return (
     <AntInput {...props} onChange={onChange} onBlur={onBlur} value={value} />

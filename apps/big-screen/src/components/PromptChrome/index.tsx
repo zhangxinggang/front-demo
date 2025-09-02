@@ -1,10 +1,10 @@
-import { useMemo, ReactNode, useCallback } from 'react';
-import isMobileJudge from 'is-mobile';
-import UaParser from 'ua-parser-js';
-import { Result, Button } from 'antd';
-import { ChromeOutlined } from '@ant-design/icons';
 import { useLocalStorage } from '@/hooks';
 import { LocalConfig } from '@/utils/Assist/LocalConfig';
+import { ChromeOutlined } from '@ant-design/icons';
+import { Button, Result } from 'antd';
+import isMobileJudge from 'is-mobile';
+import { ReactNode, useCallback, useMemo } from 'react';
+import UaParser from 'ua-parser-js';
 import styles from './index.less';
 
 const PromptChrome = (props: { children?: ReactNode }) => {

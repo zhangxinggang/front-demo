@@ -1,5 +1,14 @@
 import { faker } from '@faker-js/faker';
-import { Row, Col, Typography, Timeline, Table, Space, Avatar, Progress } from 'antd';
+import {
+  Avatar,
+  Col,
+  Progress,
+  Row,
+  Space,
+  Table,
+  Timeline,
+  Typography,
+} from 'antd';
 import { ColumnsType } from 'antd/es/table';
 
 import { fakeAvatars } from '@/_mock/utils';
@@ -24,12 +33,36 @@ export default function ProfileTab() {
   const { username } = useUserInfo();
   const theme = useThemeToken();
   const AboutItems = [
-    { icon: <Iconify icon="fa-solid:user" size={18} />, label: 'Full Name', val: username },
-    { icon: <Iconify icon="eos-icons:role-binding" size={18} />, label: 'Role', val: 'Developer' },
-    { icon: <Iconify icon="tabler:location-filled" size={18} />, label: 'Country', val: 'USA' },
-    { icon: <Iconify icon="ion:language" size={18} />, label: 'Language', val: 'English' },
-    { icon: <Iconify icon="ph:phone-fill" size={18} />, label: 'Contact', val: '(123)456-7890' },
-    { icon: <Iconify icon="ic:baseline-email" size={18} />, label: 'Email', val: username },
+    {
+      icon: <Iconify icon="fa-solid:user" size={18} />,
+      label: 'Full Name',
+      val: username,
+    },
+    {
+      icon: <Iconify icon="eos-icons:role-binding" size={18} />,
+      label: 'Role',
+      val: 'Developer',
+    },
+    {
+      icon: <Iconify icon="tabler:location-filled" size={18} />,
+      label: 'Country',
+      val: 'USA',
+    },
+    {
+      icon: <Iconify icon="ion:language" size={18} />,
+      label: 'Language',
+      val: 'English',
+    },
+    {
+      icon: <Iconify icon="ph:phone-fill" size={18} />,
+      label: 'Contact',
+      val: '(123)456-7890',
+    },
+    {
+      icon: <Iconify icon="ic:baseline-email" size={18} />,
+      label: 'Email',
+      val: username,
+    },
   ];
 
   const ConnectionsItems = [
@@ -153,7 +186,11 @@ export default function ProfileTab() {
       title: 'STATUS',
       dataIndex: 'status',
       render: (val) => (
-        <Progress percent={val} strokeColor={theme.colorPrimary} trailColor="transparent" />
+        <Progress
+          percent={val}
+          strokeColor={theme.colorPrimary}
+          trailColor="transparent"
+        />
       ),
     },
     {
@@ -202,7 +239,9 @@ export default function ProfileTab() {
                   children: (
                     <div className="flex flex-col">
                       <div className="flex items-center justify-between">
-                        <Typography.Text strong>8 Invoices have been paid</Typography.Text>
+                        <Typography.Text strong>
+                          8 Invoices have been paid
+                        </Typography.Text>
                         <div className="opacity-50">Wednesday</div>
                       </div>
                       <Typography.Text type="secondary" className="text-xs">
@@ -211,7 +250,9 @@ export default function ProfileTab() {
 
                       <div className="mt-2 flex items-center gap-2">
                         <SvgIcon icon="ic_file_pdf" size={30} />
-                        <span className="font-medium opacity-60">invoice.pdf</span>
+                        <span className="font-medium opacity-60">
+                          invoice.pdf
+                        </span>
                       </div>
                     </div>
                   ),
@@ -221,7 +262,9 @@ export default function ProfileTab() {
                   children: (
                     <div className="flex flex-col">
                       <div className="flex items-center justify-between">
-                        <Typography.Text strong>Create a new project for client 😎</Typography.Text>
+                        <Typography.Text strong>
+                          Create a new project for client 😎
+                        </Typography.Text>
                         <div className="opacity-50">April, 18</div>
                       </div>
                       <Typography.Text type="secondary" className="text-xs">
@@ -245,7 +288,9 @@ export default function ProfileTab() {
                   children: (
                     <div className="flex flex-col">
                       <div className="flex items-center justify-between">
-                        <Typography.Text strong>Order #37745 from September</Typography.Text>
+                        <Typography.Text strong>
+                          Order #37745 from September
+                        </Typography.Text>
                         <div className="opacity-50">January, 10</div>
                       </div>
                       <Typography.Text type="secondary" className="text-xs">
@@ -282,18 +327,27 @@ export default function ProfileTab() {
             <div className="mt-2 flex w-full flex-col gap-4">
               {ConnectionsItems.map((item, index) => (
                 <div className="flex" key={index}>
-                  <img alt="" src={item.avatar} className="h-10 w-10 flex-none rounded-full" />
+                  <img
+                    alt=""
+                    src={item.avatar}
+                    className="h-10 w-10 flex-none rounded-full"
+                  />
                   <div className="ml-4 flex flex-1 flex-col">
                     <span className="font-semibold">{item.name}</span>
-                    <span className="mt-1 text-xs opacity-50">{item.connections}</span>
+                    <span className="mt-1 text-xs opacity-50">
+                      {item.connections}
+                    </span>
                   </div>
                   <div
                     className="flex h-9 w-9 flex-none items-center justify-center rounded"
                     style={{
-                      backgroundColor: item.connected ? theme.colorPrimaryText : 'transparent',
-                      border: item.connected ? '' : `1px solid ${theme.colorPrimaryText}`,
-                    }}
-                  >
+                      backgroundColor: item.connected
+                        ? theme.colorPrimaryText
+                        : 'transparent',
+                      border: item.connected
+                        ? ''
+                        : `1px solid ${theme.colorPrimaryText}`,
+                    }}>
                     <Iconify
                       icon="tdesign:user"
                       color={item.connected ? '#fff' : theme.colorPrimaryText}
@@ -306,8 +360,7 @@ export default function ProfileTab() {
 
             <div
               className="mt-4 w-full text-center text-lg"
-              style={{ color: theme.colorPrimaryText }}
-            >
+              style={{ color: theme.colorPrimaryText }}>
               View all connections
             </div>
           </Card>
@@ -326,7 +379,9 @@ export default function ProfileTab() {
                   {item.avatar}
                   <div className="ml-4 flex flex-1 flex-col">
                     <span className="font-semibold">{item.name}</span>
-                    <span className="mt-1 text-xs opacity-50">{item.members}</span>
+                    <span className="mt-1 text-xs opacity-50">
+                      {item.members}
+                    </span>
                   </div>
                   {item.tag}
                 </div>
@@ -335,8 +390,7 @@ export default function ProfileTab() {
 
             <div
               className="mt-4 w-full text-center text-lg"
-              style={{ color: theme.colorPrimaryText }}
-            >
+              style={{ color: theme.colorPrimaryText }}>
               View all members
             </div>
           </Card>

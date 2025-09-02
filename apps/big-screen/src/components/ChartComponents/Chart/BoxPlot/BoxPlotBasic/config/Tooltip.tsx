@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import TooltipConfigCommon from '@/components/ChartComponents/Common/TooltipCommon';
+import { useCallback } from 'react';
 import { TBoxPlotBasicConfig } from '../type';
 
 const TooltipConfig = (props: {

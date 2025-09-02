@@ -1,8 +1,8 @@
-import { IAction } from '../../types';
 import { Button, ConfigProvider } from 'antd';
 import { Link } from 'dumi';
 import { type FC } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
+import { IAction } from '../../types';
 import HeroButton from './HeroButton';
 import { useStyles } from './style';
 
@@ -42,15 +42,18 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
           <div className={styles.titleContainer}>
             <div
               className={cx(styles.titleShadow)}
-              dangerouslySetInnerHTML={{ __html: title }}
-            ></div>
+              dangerouslySetInnerHTML={{ __html: title }}></div>
           </div>
         )}
         {description && (
-          <p className={styles.desc} dangerouslySetInnerHTML={{ __html: description }} />
+          <p
+            className={styles.desc}
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         )}
         {Boolean(actions?.length) && (
-          <ConfigProvider theme={{ token: { fontSize: 16, controlHeight: 40 } }}>
+          <ConfigProvider
+            theme={{ token: { fontSize: 16, controlHeight: 40 } }}>
             <Flexbox horizontal gap={24} className={styles.actions}>
               {actions!.map(({ text, link, openExternal }, index) => {
                 const isOutLink = /^(https?:)?\/\//i.test(link);
@@ -63,7 +66,11 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
                     </Button>
                   );
                 return isOutLink ? (
-                  <a key={`${text}-${index}`} href={link} target="_blank" rel="noopener noreferrer">
+                  <a
+                    key={`${text}-${index}`}
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer">
                     {dom}
                   </a>
                 ) : (
@@ -71,8 +78,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => {
                     key={text}
                     to={link}
                     target={openExternal ? '_blank' : undefined}
-                    rel="noreferrer"
-                  >
+                    rel="noreferrer">
                     {dom}
                   </Link>
                 );

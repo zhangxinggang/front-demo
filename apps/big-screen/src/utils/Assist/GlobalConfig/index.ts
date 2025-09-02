@@ -1,6 +1,6 @@
 import {
-  DEFAULT_SCREEN_COVER as defaultScreenCover,
   MOCK_REQUEST_URL as DEFAULT_MOCK_REQUEST_URL,
+  DEFAULT_SCREEN_COVER as defaultScreenCover,
   SERVICE_REQUEST_URL,
 } from '../../constants';
 

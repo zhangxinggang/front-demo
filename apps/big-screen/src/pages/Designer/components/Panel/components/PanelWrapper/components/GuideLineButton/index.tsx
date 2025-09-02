@@ -1,7 +1,3 @@
-import { useScroll } from 'ahooks';
-import { Button } from 'antd';
-import { useCallback, useMemo } from 'react';
-import { connect } from 'umi';
 import GlobalLoadingActonButton from '@/components/GlobalLoadingActionButton';
 import Tooltip from '@/components/Tooltip';
 import { usePrimaryColor } from '@/hooks';
@@ -11,6 +7,10 @@ import {
   EyeInvisibleOutlined,
   EyeOutlined,
 } from '@ant-design/icons';
+import { useScroll } from 'ahooks';
+import { Button } from 'antd';
+import { useCallback, useMemo } from 'react';
+import { connect } from 'umi';
 import { wrapperId } from '../../constants';
 import styles from './index.less';
 
@@ -67,8 +67,7 @@ const GuideLineButton = (props: {
           top,
           backgroundColor: primaryColor,
         }}
-        icon={guideLineShowIcon}
-      ></Button>
+        icon={guideLineShowIcon}></Button>
     </Tooltip>
   );
 };

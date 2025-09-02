@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
-import classnames from 'classnames';
 import { useThrottleFn } from 'ahooks';
+import classnames from 'classnames';
+import { useEffect, useRef } from 'react';
 // @ts-ignore
 import * as Shine from '@/lib/shine';
 import styles from './index.less';
@@ -44,8 +44,7 @@ const AnimationTitle = () => {
         'animate__animated animate__repeat-1 animate__slow',
         'animate__flipInX',
       )}
-      id="typed-title"
-    >
+      id="typed-title">
       Screen Designer
     </div>
   );

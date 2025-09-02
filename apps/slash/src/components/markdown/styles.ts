@@ -20,7 +20,10 @@ const getHeadingStyle = (level: 1 | 2 | 3 | 4 | 5, token: GlobalToken) => {
     lineHeight: token[lineHeightHeading],
   };
 };
-const StyledMarkdown = styled.div<{ $token: GlobalToken; $thememode: ThemeMode }>`
+const StyledMarkdown = styled.div<{
+  $token: GlobalToken;
+  $thememode: ThemeMode;
+}>`
   display: grid;
   // Text
   h1 {

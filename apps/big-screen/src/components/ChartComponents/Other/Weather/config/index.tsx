@@ -1,22 +1,22 @@
-import { Component } from 'react';
-import { Tabs, Switch } from 'antd';
-import { merge } from 'lodash';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import Select from '@/components/ChartComponents/Common/Select';
+import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import IconTooltip from '@/components/IconTooltip';
+import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import Select from '@/components/ChartComponents/Common/Select';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import TextAlignConfig from '@/components/ChartComponents/Common/TextAlignConfig';
-import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
-import { TWeatherConfig } from '../type';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Switch, Tabs } from 'antd';
+import { merge } from 'lodash';
+import { Component } from 'react';
 import { KEY_MAP } from '../defaultConfig';
+import { TWeatherConfig } from '../type';
 
 const { TabPane } = Tabs;
 const { Item } = ConfigList;
@@ -55,8 +55,7 @@ class Config extends Component<
                     <IconTooltip title="选择顺序影响显示顺序">
                       <InfoCircleOutlined />
                     </IconTooltip>
-                  }
-                >
+                  }>
                   <FullForm>
                     <Select
                       className="w-100"
@@ -77,8 +76,7 @@ class Config extends Component<
                   child={{
                     header: '文字样式',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(this, 'textStyle')}

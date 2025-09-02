@@ -16,7 +16,12 @@ const Footer: FC<FooterProps> = ({ columns, bottom, theme }) => {
 
   return (
     <div className={styles.container}>
-      <RcFooter theme={theme} className={styles.footer} columns={columns} bottom={bottom} />
+      <RcFooter
+        theme={theme}
+        className={styles.footer}
+        columns={columns}
+        bottom={bottom}
+      />
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import React, { useMemo, forwardRef, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, forwardRef, useMemo } from 'react';
 import { useAutoResize } from '../../InternalBorder/components/Border/hooks';
 import styles from './index.less';
 
@@ -46,8 +46,7 @@ const Decoration = forwardRef((props: IProps, ref) => {
                 height: `${height}px`,
                 animationDuration: `${dur}s`,
               }
-        }
-      >
+        }>
         <svg width={reverse ? width : 5} height={reverse ? 5 : height}>
           <polyline
             stroke={mergedColor[0]}

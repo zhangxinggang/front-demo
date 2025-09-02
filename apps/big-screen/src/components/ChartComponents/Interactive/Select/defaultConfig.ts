@@ -1,4 +1,6 @@
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { getName } from '@/utils/constants';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
@@ -6,8 +8,6 @@ import {
   DEFAULT_FONT_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import { getName } from '@/utils/constants';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { TSelectConfig } from './type';
 
 const DEFAULT_NAME_LABEL = getName(3);

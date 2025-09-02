@@ -1,7 +1,12 @@
 import { faker } from '@faker-js/faker';
 import { Button, Input, InputRef } from 'antd';
 import { useRef, useState } from 'react';
-import { DragDropContext, DropResult, Droppable, OnDragEndResponder } from 'react-beautiful-dnd';
+import {
+  DragDropContext,
+  DropResult,
+  Droppable,
+  OnDragEndResponder,
+} from 'react-beautiful-dnd';
 import { useEvent } from 'react-use';
 import SimpleBar from 'simplebar-react';
 
@@ -97,7 +102,10 @@ export default function Kanban() {
       return;
     }
     // 原地放下
-    if (destination.droppableId === source.droppableId && destination.index === source.index) {
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
       return;
     }
 
@@ -112,7 +120,10 @@ export default function Kanban() {
   const inputRef = useRef<InputRef>(null);
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (inputRef.current && !inputRef.current.input?.contains(event.target as Node)) {
+    if (
+      inputRef.current &&
+      !inputRef.current.input?.contains(event.target as Node)
+    ) {
       const inputVal = inputRef.current.input?.value;
       if (inputVal) {
         createColumn({
@@ -173,7 +184,9 @@ export default function Kanban() {
         result[key] = state.columns[key];
         return result;
       }, {} as Columns);
-    const newColumnOrder = Array.from(state.columnOrder).filter((item) => item !== columnId);
+    const newColumnOrder = Array.from(state.columnOrder).filter(
+      (item) => item !== columnId,
+    );
 
     const newState: DndDataType = {
       tasks: newTasks,
@@ -226,16 +239,20 @@ export default function Kanban() {
     <SimpleBar>
       <div className="flex">
         <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="all-columns" direction="horizontal" type={DragType.COLUMN}>
+          <Droppable
+            droppableId="all-columns"
+            direction="horizontal"
+            type={DragType.COLUMN}>
             {(provided) => (
               <div
                 ref={provided.innerRef}
                 {...provided.droppableProps}
-                className="flex h-full items-start gap-6 p-1"
-              >
+                className="flex h-full items-start gap-6 p-1">
                 {state.columnOrder.map((columnId, index) => {
                   const column = state.columns[columnId];
-                  const tasks = column.taskIds.map((taskId) => state.tasks[taskId]);
+                  const tasks = column.taskIds.map(
+                    (taskId) => state.tasks[taskId],
+                  );
 
                   return (
                     <KanbanColumn
@@ -258,7 +275,12 @@ export default function Kanban() {
 
         <div className="ml-[1.6rem] mt-[0.25rem] min-w-[280px]">
           {addingColumn ? (
-            <Input ref={inputRef} size="large" placeholder="Column Name" autoFocus />
+            <Input
+              ref={inputRef}
+              size="large"
+              placeholder="Column Name"
+              autoFocus
+            />
           ) : (
             <Button
               onClick={(e) => {
@@ -267,8 +289,7 @@ export default function Kanban() {
               }}
               className="!inline-flex !w-full items-center justify-center !text-xs !font-semibold"
               block
-              size="large"
-            >
+              size="large">
               <Iconify icon="carbon:add" size={20} />
               <div>Add Column</div>
             </Button>

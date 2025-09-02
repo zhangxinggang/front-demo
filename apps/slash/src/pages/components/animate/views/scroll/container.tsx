@@ -16,8 +16,7 @@ export default function ContainerView({ variant }: Props) {
     <div
       key={variant}
       className="h-[480px] overflow-scroll rounded-lg px-20"
-      style={{ backgroundColor: colorBgLayout }}
-    >
+      style={{ backgroundColor: colorBgLayout }}>
       {[...Array(40)].map((_, index) => (
         <MotionViewport key={index} variants={varients} className="mt-4">
           <Card>

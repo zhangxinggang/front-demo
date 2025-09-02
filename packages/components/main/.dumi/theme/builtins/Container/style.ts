@@ -8,8 +8,11 @@ export const useStyles = createStyles(({ token, prefixCls, css }) => {
 
   const overwriteAlert = (type: string) => {
     const tokens = {
-      background: token[`color${toCamelCase(type)}Bg` as unknown as keyof FullToken],
-      text: token[`color${toCamelCase(type)}Text` as unknown as keyof FullToken],
+      background:
+        token[`color${toCamelCase(type)}Bg` as unknown as keyof FullToken],
+      text: token[
+        `color${toCamelCase(type)}Text` as unknown as keyof FullToken
+      ],
     };
 
     return css`

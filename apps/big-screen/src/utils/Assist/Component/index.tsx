@@ -1,15 +1,15 @@
-import { CSSProperties } from 'react';
-import { get, omit } from 'lodash';
-import { nanoid } from 'nanoid';
-import { useIdPathMap, useAnyDva } from '@/hooks';
 import { getComponentDefaultConfigByType } from '@/components/ChartComponents';
 import ColorSelect from '@/components/ColorSelect';
-import { mergeWithoutArray } from '../../tool';
-import { EComponentType, EComponentSelfType } from '../../index';
+import { useAnyDva, useIdPathMap } from '@/hooks';
+import { get, omit } from 'lodash';
+import { nanoid } from 'nanoid';
+import { CSSProperties } from 'react';
 import {
   DEFAULT_CONFIG,
   DEFAULT_GROUP_CONFIG,
 } from '../../constants/screenData';
+import { EComponentSelfType, EComponentType } from '../../index';
+import { mergeWithoutArray } from '../../tool';
 import ThemeUtil from '../Theme';
 import ComponentUtil, { getParentPath } from './ComponentUtil';
 

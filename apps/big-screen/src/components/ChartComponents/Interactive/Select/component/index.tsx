@@ -1,16 +1,16 @@
-import { useMemo, useRef, useCallback, useState } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import Select from 'react-select';
-import { CaretRightOutlined } from '@ant-design/icons';
-import { useUpdateEffect } from 'ahooks';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
+import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
-import { TSelectConfig } from '../type';
+import { CaretRightOutlined } from '@ant-design/icons';
+import { useUpdateEffect } from 'ahooks';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import Select from 'react-select';
 import { CHART_ID } from '../id';
+import { TSelectConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -162,8 +162,7 @@ const SelectBasic = (
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           <Select
@@ -241,8 +240,7 @@ const SelectBasic = (
                 };
               },
             }}
-            options={selectOptions}
-          ></Select>
+            options={selectOptions}></Select>
         </Wrapper>
       </div>
       <FetchFragment

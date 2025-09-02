@@ -1,6 +1,6 @@
-import { useRef } from 'react';
 import { useUpdateEffect } from 'ahooks';
 import type { ECharts } from 'echarts';
+import { useRef } from 'react';
 
 export function useAnimationChange(
   instance: ECharts,

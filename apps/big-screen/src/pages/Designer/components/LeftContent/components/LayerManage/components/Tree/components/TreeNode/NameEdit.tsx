@@ -1,12 +1,12 @@
-import {
-  useCallback,
-  useMemo,
-  useState,
-  forwardRef,
-  useImperativeHandle,
-} from 'react';
 import { Input } from 'antd';
 import classnames from 'classnames';
+import {
+  forwardRef,
+  useCallback,
+  useImperativeHandle,
+  useMemo,
+  useState,
+} from 'react';
 import styles from './index.less';
 
 export type NameEditorRefProps = {
@@ -94,24 +94,19 @@ const NameEditor = forwardRef<
           styles['design-page-layer-item-name-basic'],
           styles['design-page-layer-item-name-size'],
         )}
-        title={name}
-      >
+        title={name}>
         {name}
       </div>
     );
   }, [editable, name, changeName, changeEditState]);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        changeEditStatus: (status) => {
-          setEditable(status);
-        },
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      changeEditStatus: (status) => {
+        setEditable(status);
+      },
+    };
+  }, []);
 
   return baseNameEdit;
 });

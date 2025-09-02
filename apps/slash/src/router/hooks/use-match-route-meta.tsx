@@ -54,7 +54,10 @@ export function useMatchRouteMeta() {
 /**
  * replace `user/:id`  to `/user/1234512345`
  */
-export const replaceDynamicParams = (menuKey: string, params: Params<string>) => {
+export const replaceDynamicParams = (
+  menuKey: string,
+  params: Params<string>,
+) => {
   let replacedPathName = menuKey;
 
   // 解析路由路径中的参数名称
@@ -67,7 +70,10 @@ export const replaceDynamicParams = (menuKey: string, params: Params<string>) =>
       // 检查params对象中是否有这个参数
       if (params[paramKey]) {
         // 使用params中的值替换路径中的参数
-        replacedPathName = replacedPathName.replace(paramName, params[paramKey]!);
+        replacedPathName = replacedPathName.replace(
+          paramName,
+          params[paramKey]!,
+        );
       }
     });
   }

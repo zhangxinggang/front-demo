@@ -1,11 +1,11 @@
-import { Component } from 'react';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import { Component } from 'react';
 import { TModelConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -127,8 +127,7 @@ class Config extends Component<
                   }}
                   parent={{
                     activeKey: ['rotate'],
-                  }}
-                >
+                  }}>
                   <Item label="速度">
                     <FullForm>
                       <InputNumber

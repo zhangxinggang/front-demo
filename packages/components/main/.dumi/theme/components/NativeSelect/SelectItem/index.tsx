@@ -12,7 +12,10 @@ interface SelectItemProps {
 }
 
 const SelectItem = forwardRef<HTMLButtonElement, SelectItemProps>(
-  ({ value, label, prefixCls, isSelected, isActive, disabled, ...props }, ref) => {
+  (
+    { value, label, prefixCls, isSelected, isActive, disabled, ...props },
+    ref,
+  ) => {
     const { styles, cx } = useStyles(prefixCls);
 
     return (
@@ -28,8 +31,7 @@ const SelectItem = forwardRef<HTMLButtonElement, SelectItemProps>(
           [styles.active]: isActive,
         })}
         ref={ref}
-        {...props}
-      >
+        {...props}>
         {label}
       </button>
     );

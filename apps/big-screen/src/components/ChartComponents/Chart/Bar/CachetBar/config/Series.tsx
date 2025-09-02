@@ -1,12 +1,12 @@
-import { useCallback, useMemo } from 'react';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import { SimpleHueRadialSelect } from '@/components/ChartComponents/Common/SimpleHueSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { useCallback, useMemo } from 'react';
 import { TCachetBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -39,8 +39,7 @@ const SeriesConfig = (props: {
         child={{
           key: 'background',
           header: '背景',
-        }}
-      >
+        }}>
         <Item label="背景色">
           <FullForm>
             <CompatColorSelect
@@ -112,8 +111,7 @@ const SeriesConfig = (props: {
         }}
         parent={{
           activeKey: ['itemColor'],
-        }}
-      >
+        }}>
         <SimpleHueRadialSelect
           value={itemStyle.color}
           onChange={(value) => {

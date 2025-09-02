@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { Tabs } from 'antd';
 import AxisConfigCommon from '@/components/ChartComponents/Common/AxisConfig';
-import { TBoxPlotBasicConfig } from '../type';
+import { Tabs } from 'antd';
+import { useCallback } from 'react';
 import styles from '../../../../Common/global.less';
+import { TBoxPlotBasicConfig } from '../type';
 
 type ValueType = Pick<TBoxPlotBasicConfig, 'yAxis' | 'xAxis'>;
 

@@ -1,7 +1,7 @@
-import React, { useMemo, forwardRef, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, forwardRef, useMemo } from 'react';
+import { useAutoResize, useBorderWrapper } from '../hooks';
 import { CommonBorderProps } from '../type';
-import { useBorderWrapper, useAutoResize } from '../hooks';
 import styles from './index.less';
 
 const defaultColor = ['rgba(128,128,128,0.3)', 'rgba(128,128,128,0.5)'];
@@ -49,8 +49,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       <svg
         className={styles['internal-border-7-border-container']}
         width={width}
-        height={height}
-      >
+        height={height}>
         <polyline
           className={styles['internal-border-7-border-line-width-2']}
           stroke={mergedColor[0]}
@@ -99,8 +98,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
 
       <div
         {...nextProps}
-        className={styles['internal-border-7-border-content']}
-      >
+        className={styles['internal-border-7-border-content']}>
         {children}
       </div>
     </div>

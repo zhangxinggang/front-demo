@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { Tabs } from 'antd';
-import { THorizontalBarConfig } from '../type';
 import AxisConfigCommon from '@/components/ChartComponents/Common/AxisConfig';
+import { Tabs } from 'antd';
+import { useCallback } from 'react';
 import styles from '../../../../Common/global.less';
+import { THorizontalBarConfig } from '../type';
 
 type ValueType = Pick<THorizontalBarConfig, 'yAxis' | 'xAxis'>;
 

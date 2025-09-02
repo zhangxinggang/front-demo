@@ -147,8 +147,7 @@ const RenderComponent = memo(
             },
           )}
           id={id}
-          data-id={id}
-        >
+          data-id={id}>
           {content}
           <ConnectSelectChangeWrapper
             value={value}
@@ -166,8 +165,7 @@ const RenderComponent = memo(
         actionIgnore={['undo', 'redo', 'edit_name']}
         path={path}
         disabled={pointerDisabled}
-        actionFrom="screen"
-      >
+        actionFrom="screen">
         <ComponentWrapper
           type={type}
           style={baseStyle}
@@ -195,8 +193,7 @@ const RenderComponent = memo(
           componentId={id}
           isSelect={isSelect}
           grid={grid}
-          flag={flag}
-        >
+          flag={flag}>
           {children}
         </ComponentWrapper>
       </ContextMenu>

@@ -1,5 +1,5 @@
-import { ReactNode, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, ReactNode } from 'react';
 import styles from './index.less';
 
 // 基础配置的行占位符
@@ -20,8 +20,7 @@ const PlaceHolder = (props: {
         },
         className,
       )}
-      style={style}
-    >
+      style={style}>
       {children}
     </i>
   );

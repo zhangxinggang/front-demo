@@ -1,15 +1,15 @@
-import { useCallback } from 'react';
-import { pick } from 'lodash';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
-import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
-import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
-import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
-import Input from '@/components/ImageUpload/Input';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
+import Input from '@/components/ImageUpload/Input';
+import { pick } from 'lodash';
+import { useCallback } from 'react';
 import { TBubbleScatterConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -54,14 +54,12 @@ const AxisConfig = (props: {
             onKeyChange('axisLabel', {
               show: value,
             }),
-        }}
-      >
+        }}>
         <Collapse
           child={{
             header: '文字',
             key: 'axisLabel',
-          }}
-        >
+          }}>
           <FontConfigList
             value={pick(axisLabel, [
               'color',
@@ -115,8 +113,7 @@ const AxisConfig = (props: {
             onKeyChange('axisTick', {
               show: value,
             }),
-        }}
-      >
+        }}>
         <LineStyleGroupConfig
           value={axisTick.lineStyle}
           onChange={(value) =>
@@ -136,8 +133,7 @@ const AxisConfig = (props: {
             onKeyChange('axisLine', {
               show: value,
             }),
-        }}
-      >
+        }}>
         <Item label="图形类型">
           <FullForm>
             <SymbolSelect
@@ -175,8 +171,7 @@ const AxisConfig = (props: {
         child={{
           header: '坐标轴名称',
           key: 'name',
-        }}
-      >
+        }}>
         <Item label="内容">
           <FullForm>
             <Input value={name} onChange={onKeyChange.bind(null, 'name')} />
@@ -194,8 +189,7 @@ const AxisConfig = (props: {
           child={{
             header: '文字',
             key: 'textStyle',
-          }}
-        >
+          }}>
           <FontConfigList
             value={nameTextStyle}
             onChange={onKeyChange.bind(null, 'nameTextStyle')}

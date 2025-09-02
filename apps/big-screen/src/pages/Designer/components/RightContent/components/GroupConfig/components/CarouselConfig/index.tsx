@@ -146,32 +146,27 @@ const CarouselConfig = (props: {
             child={{
               header: '基础设置',
               key: 'base-config',
-            }}
-          >
+            }}>
             <Item label="组内对齐">
               <HalfForm label="水平">
                 <RadioGroup
                   value={groupCarousel!.horizontalAlign}
-                  onChange={onKeyChange.bind(null, 'horizontalAlign')}
-                >
+                  onChange={onKeyChange.bind(null, 'horizontalAlign')}>
                   <Radio icon={<BorderLeftOutlined />} value="start"></Radio>
                   <Radio
                     icon={<BorderHorizontalOutlined />}
-                    value="center"
-                  ></Radio>
+                    value="center"></Radio>
                   <Radio icon={<BorderRightOutlined />} value="end"></Radio>
                 </RadioGroup>
               </HalfForm>
               <HalfForm label="垂直">
                 <RadioGroup
                   value={groupCarousel!.verticalAlign}
-                  onChange={onKeyChange.bind(null, 'verticalAlign')}
-                >
+                  onChange={onKeyChange.bind(null, 'verticalAlign')}>
                   <Radio icon={<BorderTopOutlined />} value="start"></Radio>
                   <Radio
                     icon={<BorderVerticleOutlined />}
-                    value="center"
-                  ></Radio>
+                    value="center"></Radio>
                   <Radio icon={<BorderBottomOutlined />} value="end"></Radio>
                 </RadioGroup>
               </HalfForm>
@@ -211,8 +206,7 @@ const CarouselConfig = (props: {
             }}
             parent={{
               defaultActiveKey: ['animation-config'],
-            }}
-          >
+            }}>
             <ComponentList
               components={components}
               current={currentIndex}
@@ -292,8 +286,7 @@ const CarouselConfig = (props: {
           <div className="ali-cen">
             <GlobalLoadingActonButton
               Component={GhostButton}
-              onClick={onPreviewAbleChange}
-            >
+              onClick={onPreviewAbleChange}>
               {!!previewAble ? '暂停' : '预览'}
             </GlobalLoadingActonButton>
           </div>

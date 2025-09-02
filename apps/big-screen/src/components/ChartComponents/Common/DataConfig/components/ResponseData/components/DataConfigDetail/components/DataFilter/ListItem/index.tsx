@@ -1,21 +1,21 @@
-import { useState, useCallback, useMemo, useRef } from 'react';
-import { Button, Checkbox, Collapse, Badge, Space } from 'antd';
-import classnames from 'classnames';
-import { useHover } from 'ahooks';
+import CodeEditor from '@/components/CodeEditor';
+import IconTooltip from '@/components/IconTooltip';
+import ParamsSelect from '@/components/ParamsSelect';
+import FunctionHeader from '@/components/SyncCodeEditor/FunctionHeader';
+import { ComponentNumber } from '@/pages/Designer/components/LeftContent/components/CallbackManage';
 import {
-  DeleteOutlined,
   CaretRightOutlined,
+  DeleteOutlined,
   HolderOutlined,
   QuestionCircleOutlined,
 } from '@ant-design/icons';
-import { SortableHandle, SortableElement } from 'react-sortable-hoc';
-import CodeEditor from '@/components/CodeEditor';
-import ParamsSelect from '@/components/ParamsSelect';
-import IconTooltip from '@/components/IconTooltip';
-import FunctionHeader from '@/components/SyncCodeEditor/FunctionHeader';
-import { ComponentNumber } from '@/pages/Designer/components/LeftContent/components/CallbackManage';
-import StepDataButton from './StepData';
+import { useHover } from 'ahooks';
+import { Badge, Button, Checkbox, Collapse, Space } from 'antd';
+import classnames from 'classnames';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import { SortableElement, SortableHandle } from 'react-sortable-hoc';
 import NameEditor from './NameEditor';
+import StepDataButton from './StepData';
 import styles from './index.less';
 
 export type TOnChangeType = (
@@ -130,8 +130,7 @@ const DataFilter = (props: {
           'dis-flex',
           'w-100',
           styles['design-config-data-filter-list-item-header'],
-        )}
-      >
+        )}>
         {!dragDisabled && !isTemp && <DragHandle />}
         <StepDataButton
           buttonProps={{
@@ -159,15 +158,13 @@ const DataFilter = (props: {
         <div
           className={
             styles['design-config-data-filter-list-item-header-action-right']
-          }
-        >
+          }>
           <div
             className={
               styles[
                 'design-config-data-filter-list-item-header-action-right-info'
               ]
-            }
-          >
+            }>
             共有
             <span>
               <ComponentNumber id={id} />
@@ -217,16 +214,14 @@ const DataFilter = (props: {
       activeKey={[activeKey]}
       onChange={onPanelCloseChange}
       style={{ zIndex: 9999, opacity: 1, visibility: 'visible' }}
-      {...nextProps}
-    >
+      {...nextProps}>
       <Panel
         header={header}
         key={id}
         className={classnames({
           [styles['design-config-data-filter-list-item-content']]:
             !!updateFilter,
-        })}
-      >
+        })}>
         <p className="m-t-4">
           全局参数
           <IconTooltip title="可响应式更新数据">

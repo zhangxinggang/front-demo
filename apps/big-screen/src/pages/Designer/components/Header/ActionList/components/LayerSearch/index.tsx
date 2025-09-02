@@ -69,8 +69,7 @@ const _LayerSearch = (props: { setSelect: (value: string[]) => void }) => {
     <div
       className={classnames(styles['design-header-action-layer-search'], {
         [styles['design-header-action-layer-search-active']]: visible,
-      })}
-    >
+      })}>
       <Tooltip title="图层搜索">
         <DebounceButton
           icon={<FileSearchOutlined />}

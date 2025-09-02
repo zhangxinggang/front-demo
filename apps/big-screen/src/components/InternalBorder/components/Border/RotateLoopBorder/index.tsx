@@ -23,8 +23,7 @@ const RotateLoopBorder = (props: CommonBorderProps) => {
         'internal-border-rotate-loop-border',
         commonStyles['internal-border-common'],
         className,
-      )}
-    >
+      )}>
       {children}
     </div>
   );

@@ -1,5 +1,5 @@
-import Select from '../Select';
 import { PathStyleMap } from '@/hooks/useClipPath';
+import Select from '../Select';
 import ConfigList from '../Structure/ConfigList';
 import FullForm from '../Structure/FullForm';
 
@@ -25,8 +25,7 @@ const ClipPathSelect = (props: {
       label="外框形状"
       labelProps={{
         level,
-      }}
-    >
+      }}>
       <FullForm>
         <Select className="w-100" options={options} {...nextProps} />
       </FullForm>

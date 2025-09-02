@@ -92,7 +92,9 @@ function transformPermissionToMenuRoutes(
 
     if (newFeature) {
       appRoute.meta!.suffix = (
-        <ProTag color="cyan" icon={<Iconify icon="solar:bell-bing-bold-duotone" size={14} />}>
+        <ProTag
+          color="cyan"
+          icon={<Iconify icon="solar:bell-bing-bold-duotone" size={14} />}>
           NEW
         </ProTag>
       );
@@ -107,7 +109,10 @@ function transformPermissionToMenuRoutes(
           </Suspense>
         );
       }
-      appRoute.children = transformPermissionToMenuRoutes(children, flattenedPermissions);
+      appRoute.children = transformPermissionToMenuRoutes(
+        children,
+        flattenedPermissions,
+      );
 
       if (!isEmpty(children)) {
         appRoute.children.unshift({
@@ -139,12 +144,24 @@ function transformPermissionToMenuRoutes(
  * @param {string} route - parent permission route
  * @returns {string} - The complete route after splicing
  */
-function getCompleteRoute(permission: Permission, flattenedPermissions: Permission[], route = '') {
-  const currentRoute = route ? `/${permission.route}${route}` : `/${permission.route}`;
+function getCompleteRoute(
+  permission: Permission,
+  flattenedPermissions: Permission[],
+  route = '',
+) {
+  const currentRoute = route
+    ? `/${permission.route}${route}`
+    : `/${permission.route}`;
 
   if (permission.parentId) {
-    const parentPermission = flattenedPermissions.find((p) => p.id === permission.parentId)!;
-    return getCompleteRoute(parentPermission, flattenedPermissions, currentRoute);
+    const parentPermission = flattenedPermissions.find(
+      (p) => p.id === permission.parentId,
+    )!;
+    return getCompleteRoute(
+      parentPermission,
+      flattenedPermissions,
+      currentRoute,
+    );
   }
 
   return currentRoute;

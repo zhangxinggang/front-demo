@@ -1,12 +1,12 @@
-import { useCallback, useMemo } from 'react';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
-import { CompatColorSelect } from '@/components/ColorSelect';
 import { InputNumber as AutoInputNumber } from '@/components/ChartComponents/Common/NumberPositionConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { useCallback, useMemo } from 'react';
 import { TStackBarConfig } from '../type';
 
 const { Item } = ConfigList;

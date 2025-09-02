@@ -1,7 +1,7 @@
-import { useCallback, useMemo } from 'react';
-import { Button } from 'antd';
+import { IsGlobalActionLoadingParams, useGlobalLoading } from '@/hooks';
 import type { ButtonProps } from 'antd';
-import { useGlobalLoading, IsGlobalActionLoadingParams } from '@/hooks';
+import { Button } from 'antd';
+import { useCallback, useMemo } from 'react';
 
 const GlobalLoadingActonButton = (
   props: Omit<ButtonProps, 'onClick'> & {

@@ -1,15 +1,15 @@
-import { ReactNode, useCallback, useMemo } from 'react';
 import { pick } from 'lodash';
-import LineStyleGroupConfig from '../LineStyleGroupConfig';
-import ConfigList from '../Structure/ConfigList';
-import YAxisPosition from './YAxisPosition';
-import XAxisPosition from './XAxisPosition';
+import { ReactNode, useCallback, useMemo } from 'react';
+import AngleSelect from '../AngleSelect';
 import { SingleCollapse as Collapse } from '../Collapse';
 import { FontConfigList } from '../FontConfig';
-import AngleSelect from '../AngleSelect';
-import FullForm from '../Structure/FullForm';
 import Input from '../Input';
 import InputNumber from '../InputNumber';
+import LineStyleGroupConfig from '../LineStyleGroupConfig';
+import ConfigList from '../Structure/ConfigList';
+import FullForm from '../Structure/FullForm';
+import XAxisPosition from './XAxisPosition';
+import YAxisPosition from './YAxisPosition';
 
 const { Item } = ConfigList;
 
@@ -89,8 +89,7 @@ const AxisConfig = (props: AxisConfigProps) => {
         child={{
           header: '文本',
           key: 'textStyle',
-        }}
-      >
+        }}>
         <FontConfigList
           value={pick(axisLabel!, [
             'color',
@@ -112,8 +111,7 @@ const AxisConfig = (props: AxisConfigProps) => {
         child={{
           header: '刻度标签',
           key: 'axisLabel',
-        }}
-      >
+        }}>
         <AngleSelect
           value={axisLabel!.rotate || 0}
           onChange={onAxisLabelChange.bind(null, 'rotate')}
@@ -141,8 +139,7 @@ const AxisConfig = (props: AxisConfigProps) => {
         }}
         parent={{
           defaultActiveKey: ['name'],
-        }}
-      >
+        }}>
         <Item label="内容">
           <FullForm>
             <Input value={name} onChange={onKeyChange.bind(null, 'name')} />

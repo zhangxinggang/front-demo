@@ -1,9 +1,9 @@
-import { useCallback } from 'react';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import Input from '@/components/ChartComponents/Common/Input';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import Input from '@/components/ChartComponents/Common/Input';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { useCallback } from 'react';
 import { TBubbleScatterConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -41,8 +41,7 @@ const LegendConfig = (props: {
         }}
         parent={{
           activeKey: ['title'],
-        }}
-      >
+        }}>
         <Item label="标题">
           <FullForm>
             <Input
@@ -55,8 +54,7 @@ const LegendConfig = (props: {
           child={{
             header: '文字',
             key: 'textStyle',
-          }}
-        >
+          }}>
           <FontConfigList
             value={value.textStyle}
             onChange={onKeyChange.bind(null, 'textStyle')}

@@ -72,15 +72,13 @@ const Scale = (props: {
       <Space
         style={{
           minWidth: 300,
-        }}
-      >
+        }}>
         <Dropdown
           menu={{
             items: sizeSelect,
             selectable: true,
             onSelect: selectScaleSize,
-          }}
-        >
+          }}>
           <GlobalLoadingActonButton type="link" onClick={autoFitScaleMethod}>
             自适应
           </GlobalLoadingActonButton>

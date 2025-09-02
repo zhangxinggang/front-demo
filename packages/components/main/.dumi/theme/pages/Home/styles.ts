@@ -7,7 +7,7 @@ export const useStyles = createStyles(({ token, prefixCls, css, cx }) => {
       css`
         height: 100vh;
         overflow: hidden;
-      `
+      `,
     ),
     container: cx(
       `${prefixCls}-home-contents`,

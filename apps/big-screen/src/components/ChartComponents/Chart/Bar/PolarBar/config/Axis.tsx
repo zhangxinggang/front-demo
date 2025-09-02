@@ -1,10 +1,10 @@
-import { useCallback, useMemo } from 'react';
-import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
 import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import { useCallback, useMemo } from 'react';
 import { TPolarBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -46,8 +46,7 @@ const AxisConfig = (props: {
       <SeriesLabelConfig
         {...(axisLabel as any)}
         onChange={onKeyChange.bind(null, 'axisLabel')}
-        ignore={['position']}
-      >
+        ignore={['position']}>
         <Item label="间距">
           <FullForm>
             <InputNumber

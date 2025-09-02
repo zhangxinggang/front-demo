@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import {
   DragDropContext,
-  Droppable,
   Draggable,
-  OnDragEndResponder,
   DraggableLocation,
+  Droppable,
+  OnDragEndResponder,
 } from 'react-beautiful-dnd';
 
 type Task = {
@@ -108,16 +108,14 @@ export default function Kanban() {
         type="button"
         onClick={() => {
           setState([...state, []]);
-        }}
-      >
+        }}>
         Add new group
       </button>
       <button
         type="button"
         onClick={() => {
           setState([...state, getItems(1)]);
-        }}
-      >
+        }}>
         Add new item
       </button>
       <div style={{ display: 'flex' }}>
@@ -128,32 +126,36 @@ export default function Kanban() {
                 <div
                   ref={provided.innerRef}
                   style={getListStyle(snapshot.isDraggingOver)}
-                  {...provided.droppableProps}
-                >
+                  {...provided.droppableProps}>
                   {el.map((item, index) => (
-                    <Draggable key={item.id} draggableId={item.id} index={index}>
+                    <Draggable
+                      key={item.id}
+                      draggableId={item.id}
+                      index={index}>
                       {(provided, snapshot) => (
                         <div
                           ref={provided.innerRef}
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
-                          style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
-                        >
+                          style={getItemStyle(
+                            snapshot.isDragging,
+                            provided.draggableProps.style,
+                          )}>
                           <div
                             style={{
                               display: 'flex',
                               justifyContent: 'space-around',
-                            }}
-                          >
+                            }}>
                             {item.content}
                             <button
                               type="button"
                               onClick={() => {
                                 const newState = [...state];
                                 newState[ind].splice(index, 1);
-                                setState(newState.filter((group) => group.length));
-                              }}
-                            >
+                                setState(
+                                  newState.filter((group) => group.length),
+                                );
+                              }}>
                               delete
                             </button>
                           </div>

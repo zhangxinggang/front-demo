@@ -1,18 +1,18 @@
-import { useMemo, useRef, useCallback } from 'react';
-import { merge, uniqueId } from 'lodash';
-import classnames from 'classnames';
-import { Tag as AntTag } from 'antd';
 import {
   useComponent,
   useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
+import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
 import ThemeUtil from '@/utils/Assist/Theme';
-import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
-import { TTagConfig } from '../type';
+import { Tag as AntTag } from 'antd';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TTagConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -112,8 +112,7 @@ const Tag = (props: ComponentData.CommonComponentProps<TTagConfig>) => {
           }}
           color={getRgbaString(
             color || ThemeUtil.generateNextColor4CurrentTheme(currIndex),
-          )}
-        >
+          )}>
           {!!iconName && icon.position === 'start' && iconDom}
           {tagValue}
           {!!iconName && icon.position === 'end' && iconDom}
@@ -135,8 +134,7 @@ const Tag = (props: ComponentData.CommonComponentProps<TTagConfig>) => {
       <div
         className={componentClassName}
         style={componentStyle}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           {valueList}

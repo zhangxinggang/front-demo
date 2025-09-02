@@ -1,24 +1,24 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
-import {
-  BorderTopOutlined,
-  BorderRightOutlined,
-  BorderBottomOutlined,
-  BorderLeftOutlined,
-} from '@ant-design/icons';
+import ClipPathSelect from '@/components/ChartComponents/Common/ClipPathSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import RadioGroup, {
   Radio,
 } from '@/components/ChartComponents/Common/IconRadio';
-import ClipPathSelect from '@/components/ChartComponents/Common/ClipPathSelect';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import ConditionConfig from './Condition';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import {
+  BorderBottomOutlined,
+  BorderLeftOutlined,
+  BorderRightOutlined,
+  BorderTopOutlined,
+} from '@ant-design/icons';
+import { Switch } from 'antd';
+import { Component } from 'react';
 import { TCarouselConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 
@@ -96,8 +96,7 @@ class Config extends Component<
                         show: value,
                       });
                     },
-                  }}
-                >
+                  }}>
                   <Item label="位置">
                     <FullForm>
                       <RadioGroup
@@ -106,8 +105,7 @@ class Config extends Component<
                           this.onKeyChange('dot', {
                             position: value,
                           });
-                        }}
-                      >
+                        }}>
                         <Radio
                           key="top"
                           value="top"

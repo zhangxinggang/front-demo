@@ -1,29 +1,29 @@
-import { Component } from 'react';
-import {
-  InfoCircleOutlined,
-  BorderLeftOutlined,
-  BorderRightOutlined,
-} from '@ant-design/icons';
-import { merge } from 'lodash';
+import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
 import RadioGroup, {
   Radio,
 } from '@/components/ChartComponents/Common/IconRadio';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
 import IconTooltip from '@/components/IconTooltip';
-import ThemeUtil from '@/utils/Assist/Theme';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
-import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
-import ConditionConfig from './Condition';
+import ThemeUtil from '@/utils/Assist/Theme';
+import {
+  BorderLeftOutlined,
+  BorderRightOutlined,
+  InfoCircleOutlined,
+} from '@ant-design/icons';
+import { merge } from 'lodash';
+import { Component } from 'react';
 import { TTagConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 
@@ -67,8 +67,7 @@ class Config extends Component<ComponentData.ComponentConfigProps<TTagConfig>> {
                   child={{
                     header: '文字样式',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(this, 'textStyle')}
@@ -78,8 +77,7 @@ class Config extends Component<ComponentData.ComponentConfigProps<TTagConfig>> {
                   child={{
                     header: '图标',
                     key: 'icon',
-                  }}
-                >
+                  }}>
                   <Item label="位置">
                     <FullForm>
                       <RadioGroup
@@ -88,16 +86,13 @@ class Config extends Component<ComponentData.ComponentConfigProps<TTagConfig>> {
                           this.onKeyChange('icon', {
                             position: value,
                           });
-                        }}
-                      >
+                        }}>
                         <Radio
                           icon={<BorderLeftOutlined />}
-                          value="start"
-                        ></Radio>
+                          value="start"></Radio>
                         <Radio
                           icon={<BorderRightOutlined />}
-                          value="end"
-                        ></Radio>
+                          value="end"></Radio>
                       </RadioGroup>
                     </FullForm>
                   </Item>
@@ -154,8 +149,7 @@ class Config extends Component<ComponentData.ComponentConfigProps<TTagConfig>> {
                             <IconTooltip title="与数据的value字段相关">
                               <InfoCircleOutlined />
                             </IconTooltip>
-                          }
-                        >
+                          }>
                           <FullForm>
                             <CompatColorSelect
                               value={color}

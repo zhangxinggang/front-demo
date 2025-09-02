@@ -1,8 +1,8 @@
-import React, { useMemo, forwardRef, useRef, CSSProperties } from 'react';
 import classnames from 'classnames';
 import { nanoid } from 'nanoid';
+import { CSSProperties, forwardRef, useMemo, useRef } from 'react';
+import { useAutoResize, useBorderWrapper } from '../hooks';
 import { CommonBorderProps } from '../type';
-import { useBorderWrapper, useAutoResize } from '../hooks';
 import styles from './index.less';
 
 const defaultColor = ['#2e6099', '#7ce7fd'];
@@ -43,8 +43,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       <svg
         className={styles['internal-border-12-border-container']}
         width={width}
-        height={height}
-      >
+        height={height}>
         <defs>
           <filter id={filterId} height="150%" width="150%" x="-25%" y="-25%">
             <feMorphology
@@ -57,8 +56,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
             <feFlood
               // floodColor={fade(mergedColor[1] || defaultColor[1], 70)}
               floodColor={mergedColor[1]}
-              result="glowColor"
-            >
+              result="glowColor">
               <animate
                 attributeName="flood-color"
                 //     values={`
@@ -149,8 +147,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       </svg>
       <div
         {...nextProps}
-        className={styles['internal-border-12-border-content']}
-      >
+        className={styles['internal-border-12-border-content']}>
         {children}
       </div>
     </div>

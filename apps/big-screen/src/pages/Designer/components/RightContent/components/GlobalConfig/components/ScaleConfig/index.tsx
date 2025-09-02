@@ -1,9 +1,9 @@
-import { StopOutlined } from '@ant-design/icons';
+import IconFont from '@/components/ChartComponents/Common/Icon';
 import RadioGroup, {
   Radio,
 } from '@/components/ChartComponents/Common/IconRadio';
 import Tooltip from '@/components/Tooltip';
-import IconFont from '@/components/ChartComponents/Common/Icon';
+import { StopOutlined } from '@ant-design/icons';
 
 export const ScaleConfig = (props: {
   value?: string;
@@ -49,8 +49,7 @@ export const ScaleConfig = (props: {
                 {typeof type === 'string' ? <IconFont type={type} /> : type}
               </Tooltip>
             }
-            value={value}
-          ></Radio>
+            value={value}></Radio>
         );
       })}
     </RadioGroup>

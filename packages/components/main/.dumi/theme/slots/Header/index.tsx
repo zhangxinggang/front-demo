@@ -17,7 +17,9 @@ import { useThemeStore } from '../../store/useThemeStore';
 import { useStyle } from './style';
 
 const Switcher = () => {
-  const allowSwitchTheme = useSiteStore((s) => s.siteData.themeConfig.prefersColor.switch);
+  const allowSwitchTheme = useSiteStore(
+    (s) => s.siteData.themeConfig.prefersColor.switch,
+  );
   const themeMode = useThemeStore((s) => s.themeMode);
   const [, , setColorMode] = usePrefersColor();
   useEffect(() => setColorMode(themeMode), [themeMode]);
@@ -44,8 +46,7 @@ const Header: FC = () => {
         distribution={'space-between'}
         align={'center'}
         width={'auto'}
-        className={styles.content}
-      >
+        className={styles.content}>
         {mobile ? (
           <>
             <Flexbox>
@@ -72,8 +73,7 @@ const Header: FC = () => {
                 gap={16}
                 horizontal
                 align={'center'}
-                className="dumi-default-header-right-aside"
-              >
+                className="dumi-default-header-right-aside">
                 <SearchBar />
                 <LangSwitch />
                 <GithubButton />

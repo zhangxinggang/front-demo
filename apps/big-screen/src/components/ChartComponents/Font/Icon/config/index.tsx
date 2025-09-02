@@ -1,11 +1,11 @@
-import { Component } from 'react';
+import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import { Component } from 'react';
 import { TIconConfig } from '../type';
 
 const { Item } = ConfigList;

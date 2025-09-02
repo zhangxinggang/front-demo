@@ -1,10 +1,9 @@
-import { useCallback, useMemo } from 'react';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import Input from '@/components/ChartComponents/Common/Input';
-import OrientSelect from '@/components/ChartComponents/Common/OrientSelect';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import Input from '@/components/ChartComponents/Common/Input';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { useCallback, useMemo } from 'react';
 import { TPercentPieConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -38,8 +37,7 @@ const StatisticsConfig = (props: {
           header: '文字',
           key: 'textStyle',
         }}
-        level={2}
-      >
+        level={2}>
         <FontConfigList
           value={textStyle}
           onChange={onKeyChange.bind(null, 'textStyle')}
@@ -61,8 +59,7 @@ const StatisticsConfig = (props: {
               show: value,
             });
           },
-        }}
-      >
+        }}>
         <Item label="内容">
           <FullForm>
             <Input
@@ -80,8 +77,7 @@ const StatisticsConfig = (props: {
             header: '文字',
             key: 'textStyle',
           }}
-          level={2}
-        >
+          level={2}>
           <FontConfigList
             value={addonAfter.textStyle}
             onChange={(value) => {
@@ -107,8 +103,7 @@ const StatisticsConfig = (props: {
         }}
         parent={{
           activeKey: ['statistics'],
-        }}
-      >
+        }}>
         {textStyleConfig}
         {addonAfterConfig}
       </Collapse>

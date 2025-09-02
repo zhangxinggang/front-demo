@@ -1,4 +1,4 @@
-import { useEffect, useRef, useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { getUserInfo } from '../services';
 
 export function useGetUserInfo(location: {
@@ -18,9 +18,12 @@ export function useGetUserInfo(location: {
 
     if (!needRequest) return;
 
-    timerRef.current = setInterval(() => {
-      getUserInfo();
-    }, 1000 * 60 * 5);
+    timerRef.current = setInterval(
+      () => {
+        getUserInfo();
+      },
+      1000 * 60 * 5,
+    );
 
     return () => {
       clearInterval(timerRef.current);

@@ -14,7 +14,9 @@ import { useSettings } from '@/store/settingStore';
 import { useResponsive } from '@/theme/hooks';
 
 import CalendarEvent from './calendar-event';
-import CalendarEventForm, { CalendarEventFormFieldType } from './calendar-event-form';
+import CalendarEventForm, {
+  CalendarEventFormFieldType,
+} from './calendar-event-form';
 import CalendarHeader, { HandleMoveArg, ViewType } from './calendar-header';
 import { INITIAL_EVENTS } from './event-utils';
 import { StyledCalendar } from './styles';
@@ -100,7 +102,8 @@ export default function Calendar() {
    */
   // click event and open modal
   const handleEventClick = (arg: EventClickArg) => {
-    const { title, extendedProps, allDay, start, end, backgroundColor, id } = arg.event;
+    const { title, extendedProps, allDay, start, end, backgroundColor, id } =
+      arg.event;
     setOpen(true);
     setEventFormType('edit');
     const newEventValue: CalendarEventFormFieldType = {
@@ -125,7 +128,15 @@ export default function Calendar() {
   };
   // edit event
   const handleEdit = (values: CalendarEventFormFieldType) => {
-    const { id, title = '', description, start, end, allDay = false, color } = values;
+    const {
+      id,
+      title = '',
+      description,
+      start,
+      end,
+      allDay = false,
+      color,
+    } = values;
     const calendarApi = fullCalendarRef.current!.getApi();
     const oldEvent = calendarApi.getEventById(id);
 
@@ -148,7 +159,14 @@ export default function Calendar() {
   // create event
   const handleCreate = (values: CalendarEventFormFieldType) => {
     const calendarApi = fullCalendarRef.current!.getApi();
-    const { title = '', description, start, end, allDay = false, color } = values;
+    const {
+      title = '',
+      description,
+      start,
+      end,
+      allDay = false,
+      color,
+    } = values;
 
     const newEvent: EventInput = {
       id: faker.string.uuid(),
@@ -185,7 +203,12 @@ export default function Calendar() {
           />
           <FullCalendar
             ref={fullCalendarRef}
-            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+            plugins={[
+              dayGridPlugin,
+              timeGridPlugin,
+              interactionPlugin,
+              listPlugin,
+            ]}
             initialDate={date}
             initialView={screenMap.xs ? 'listWeek' : view}
             events={INITIAL_EVENTS}

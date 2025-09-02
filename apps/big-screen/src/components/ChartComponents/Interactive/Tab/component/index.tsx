@@ -1,14 +1,14 @@
-import { useMemo, useRef, useCallback, useEffect, useState } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useUpdateEffect } from 'ahooks';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
+import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
-import { TTabConfig } from '../type';
+import { useUpdateEffect } from 'ahooks';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TTabConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -125,8 +125,7 @@ const TabBasic = (props: ComponentData.CommonComponentProps<TTabConfig>) => {
           onClick={onClick.bind(null, item, index)}
           style={merge({}, realActiveTab === index ? activeStyle : baseStyle, {
             borderRadius: DEFAULT_BORDER_RADIUS,
-          })}
-        >
+          })}>
           {value}
         </div>
       );
@@ -170,8 +169,7 @@ const TabBasic = (props: ComponentData.CommonComponentProps<TTabConfig>) => {
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           <div className="dis-flex w-100 h-100">{domList}</div>

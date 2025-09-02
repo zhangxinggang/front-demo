@@ -1,22 +1,22 @@
-import { useEffect, useRef } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useDeepUpdateEffect } from '@/hooks';
 import {
-  useComponent,
   useChartComponentResize,
+  useChartComponentTooltip,
   useChartValueMapField,
+  useComponent,
   useComponentResize,
   useCondition,
-  useChartComponentTooltip,
 } from '@/components/ChartComponents/Common/Component/hook';
+import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import { radialGradientColor } from '@/components/ChartComponents/Common/utils';
 import ColorSelect from '@/components/ColorSelect';
+import { useDeepUpdateEffect } from '@/hooks';
 import { init, registerMap } from '@/utils/Assist/EchartsLoader';
-import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import chinaMap from './china.json';
-import { TScatterMapConfig } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useEffect, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TScatterMapConfig } from '../type';
+import chinaMap from './china.json';
 
 const { getRgbaString } = ColorSelect;
 
@@ -257,8 +257,7 @@ const ScatterMap = (
           },
           style,
           conditionStyle,
-        )}
-      >
+        )}>
         <Wrapper border={border}>
           <div id={chartId.current} className="w-100 h-100"></div>
           {children}

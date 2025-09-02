@@ -1,4 +1,12 @@
-import { Avatar, DatePicker, Input, Radio, Space, Image, Typography } from 'antd';
+import {
+  Avatar,
+  DatePicker,
+  Image,
+  Input,
+  Radio,
+  Space,
+  Typography,
+} from 'antd';
 import dayjs from 'dayjs';
 import styled from 'styled-components';
 
@@ -70,12 +78,22 @@ export default function TaskDetail({ task }: Props) {
                 </Radio.Button>
 
                 <Radio.Button value="Medium">
-                  <SvgIcon icon="ic_rise" size={20} color={colorSuccess} className="rotate-90" />
+                  <SvgIcon
+                    icon="ic_rise"
+                    size={20}
+                    color={colorSuccess}
+                    className="rotate-90"
+                  />
                   <span>Medium</span>
                 </Radio.Button>
 
                 <Radio.Button value="Low">
-                  <SvgIcon icon="ic_rise" size={20} color={colorInfo} className="rotate-180" />
+                  <SvgIcon
+                    icon="ic_rise"
+                    size={20}
+                    color={colorInfo}
+                    className="rotate-180"
+                  />
                   <span>Low</span>
                 </Radio.Button>
               </Space>
@@ -92,7 +110,13 @@ export default function TaskDetail({ task }: Props) {
           <div className="label">Attachments</div>
           <Space wrap>
             {attachments?.map((item) => (
-              <Image key={item} src={item} width={62} height={62} className="rounded-lg" />
+              <Image
+                key={item}
+                src={item}
+                width={62}
+                height={62}
+                className="rounded-lg"
+              />
             ))}
           </Space>
         </div>
@@ -102,15 +126,16 @@ export default function TaskDetail({ task }: Props) {
         className="flex flex-col gap-4"
         style={{
           padding: '24px 20px 40px',
-        }}
-      >
+        }}>
         {comments?.map(({ avatar, username, content, time }) => (
           <div key={username} className="flex gap-4">
             <Avatar src={avatar} size={40} className="flex-shrink-0" />
             <div className="text-gray flex flex-grow flex-col flex-wrap gap-1">
               <div className="flex justify-between">
                 <Typography.Text>{username}</Typography.Text>
-                <Typography.Text>{dayjs(time).format('DD/MM/YYYY HH:mm')}</Typography.Text>
+                <Typography.Text>
+                  {dayjs(time).format('DD/MM/YYYY HH:mm')}
+                </Typography.Text>
               </div>
               <p>{content}</p>
             </div>

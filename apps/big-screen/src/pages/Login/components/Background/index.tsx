@@ -1,11 +1,11 @@
-import { CSSProperties, ReactNode, useEffect, useRef } from 'react';
+import { Col, Form, Row, Space } from 'antd';
 import classnames from 'classnames';
-import { Form, Space, Row, Col } from 'antd';
+import { CSSProperties, ReactNode, useEffect, useRef } from 'react';
 // @ts-ignore
-import Parallax from 'parallax-js';
 import EnterSubmitWrapper from '@/components/EnterSubmitWrapper';
-import circleImage from '../../../../../public/login/login-left-circle.png';
+import Parallax from 'parallax-js';
 import animationImageMain from '../../../../../public/login/login-background-main.png';
+import circleImage from '../../../../../public/login/login-left-circle.png';
 import logo from '../../../../../public/logo.jpg';
 import styles from '../../index.less';
 
@@ -47,13 +47,11 @@ const CommonBackground = (props: {
     <EnterSubmitWrapper
       className={classnames(styles['login-form-background'], className)}
       style={style}
-      onSubmit={onSubmit}
-    >
+      onSubmit={onSubmit}>
       <div>
         <div
           className={classnames(styles['login-form-background-wrapper'])}
-          id="login-form-background"
-        >
+          id="login-form-background">
           <div className={classnames(styles['login-form-background-circle'])}>
             <div>
               <img src={circleImage} />
@@ -66,8 +64,7 @@ const CommonBackground = (props: {
               className={classnames(
                 'w-100',
                 styles['login-form-background-main-row'],
-              )}
-            >
+              )}>
               <Col
                 style={{ padding: 0 }}
                 span={16}
@@ -75,21 +72,18 @@ const CommonBackground = (props: {
                   styles['login-form-background-main-col'],
                   PARALLAX_CLASS_NAME,
                 )}
-                data-depth="0.3"
-              >
+                data-depth="0.3">
                 <div
                   className={classnames(
                     styles['login-form-background-info'],
                     'w-100',
                     'h-100',
-                  )}
-                >
+                  )}>
                   <div className="pos-re w-100 h-100">
                     <div
                       className={classnames(
                         styles['login-form-background-info-animation'],
-                      )}
-                    >
+                      )}>
                       <div>
                         <img src={animationImageMain} />
                       </div>
@@ -99,8 +93,7 @@ const CommonBackground = (props: {
                       className={classnames(
                         styles['login-form-background-info-logo'],
                         'pos-re',
-                      )}
-                    >
+                      )}>
                       <div>
                         <img src={logo} />
                       </div>
@@ -109,29 +102,27 @@ const CommonBackground = (props: {
                       className={classnames(
                         styles['login-form-background-info-title'],
                         'pos-re',
-                      )}
-                    >
+                      )}>
                       <div>欢迎使用可视化数据大屏</div>
                     </div>
                     <div
                       className={classnames(
                         styles['login-form-background-info-sub-title'],
                         'pos-re',
-                      )}
-                    >
+                      )}>
                       <div>{/* TODO */}</div>
                     </div>
                     <div
-                      className={styles['login-form-background-info-prefix']}
-                    ></div>
+                      className={
+                        styles['login-form-background-info-prefix']
+                      }></div>
                   </div>
                 </div>
               </Col>
               <Col
                 style={{ padding: 0 }}
                 span={8}
-                className={styles['login-form-background-main-col']}
-              >
+                className={styles['login-form-background-main-col']}>
                 <div className={styles['login-form-main']}>
                   <div className={styles['login-form-main-title']}>{title}</div>
                   <div className={styles['login-form-main-sub-title']}>

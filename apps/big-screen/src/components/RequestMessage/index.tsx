@@ -1,7 +1,7 @@
-import { useRef, useCallback } from 'react';
-import { uniqueId } from 'lodash';
 import { message } from 'antd';
 import type { ArgsProps } from 'antd/es/message';
+import { uniqueId } from 'lodash';
+import { useCallback, useRef } from 'react';
 
 const MESSAGE_KEY = 'MESSAGE_KEY';
 

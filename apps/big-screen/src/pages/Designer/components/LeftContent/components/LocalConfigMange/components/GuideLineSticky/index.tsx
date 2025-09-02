@@ -1,11 +1,11 @@
-import { useCallback } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import { Switch } from 'antd';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import IconTooltip from '@/components/IconTooltip';
-import { useLocalStorage, useGlobalLoading } from '@/hooks';
+import { useGlobalLoading, useLocalStorage } from '@/hooks';
 import { LocalConfig } from '@/utils/Assist/LocalConfig';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
+import { useCallback } from 'react';
 
 const { Item } = ConfigList;
 
@@ -39,8 +39,7 @@ const GuideLineSticky = () => {
         <IconTooltip title="辅助线拖拽结束时，允许吸附其最近的整数坐标">
           <InfoCircleOutlined />
         </IconTooltip>
-      }
-    >
+      }>
       <FullForm>
         <Switch checked={value?.show} onChange={onChange.bind(null, 'show')} />
       </FullForm>

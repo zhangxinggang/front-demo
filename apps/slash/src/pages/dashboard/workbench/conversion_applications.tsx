@@ -40,12 +40,13 @@ type Props = {
 };
 function Basic({ percent, title, subtitle, iconify, bg, strokeColor }: Props) {
   const { colorBgBase } = useThemeToken();
-  const format = (val?: number) => <span style={{ color: colorBgBase }}>{val}%</span>;
+  const format = (val?: number) => (
+    <span style={{ color: colorBgBase }}>{val}%</span>
+  );
   return (
     <div
       className="relative flex items-center rounded-2xl p-6"
-      style={{ background: bg, color: colorBgBase }}
-    >
+      style={{ background: bg, color: colorBgBase }}>
       <Progress
         type="circle"
         size={70}

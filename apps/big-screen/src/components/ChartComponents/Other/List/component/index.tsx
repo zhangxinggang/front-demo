@@ -1,8 +1,3 @@
-import { useMemo, useRef, useCallback } from 'react';
-import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
-import { merge, uniqueId } from 'lodash';
-import classnames from 'classnames';
-import Slider from 'react-slick';
 import {
   useComponent,
   useCondition,
@@ -11,10 +6,15 @@ import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import ScrollText from '@/components/ScrollText';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TListConfig } from '../type';
-import { CHART_ID } from '../id';
-import 'slick-carousel/slick/slick.css';
+import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useMemo, useRef } from 'react';
+import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import { CHART_ID } from '../id';
+import { TListConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -26,8 +26,7 @@ const MarkText = ({ value }: { value: number }) => {
       className={classnames(styles['component-other-list-item-mark'], 'w-100')}
       style={{
         color: realValue > 0 ? 'red' : realValue < 0 ? 'green' : 'currentcolor',
-      }}
-    >
+      }}>
       <strong>{value}</strong>
       {realValue > 0 && <ArrowUpOutlined className="m-l-4" />}
       {realValue < 0 && <ArrowDownOutlined className="m-l-4" />}
@@ -142,8 +141,7 @@ const ListBasic = (props: ComponentData.CommonComponentProps<TListConfig>) => {
                   ? getRgbaString(odd.backgroundColor)
                   : getRgbaString(even.backgroundColor),
             }}
-            onClick={onColumnClick.bind(null, value)}
-          >
+            onClick={onColumnClick.bind(null, value)}>
             {/* index索引 */}
             {index.show && (
               <div
@@ -159,8 +157,7 @@ const ListBasic = (props: ComponentData.CommonComponentProps<TListConfig>) => {
                   color: getRgbaString(index.textStyle.color),
                   textAlign: 'center',
                   display: 'flex',
-                }}
-              >
+                }}>
                 <div
                   style={{
                     backgroundColor: getRgbaString(index.backgroundColor),
@@ -170,8 +167,7 @@ const ListBasic = (props: ComponentData.CommonComponentProps<TListConfig>) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
-                  className="dis-flex"
-                >
+                  className="dis-flex">
                   {currIndex + 1}
                 </div>
               </div>
@@ -203,8 +199,7 @@ const ListBasic = (props: ComponentData.CommonComponentProps<TListConfig>) => {
                   onClick={onItemClick.bind(null, {
                     name: key,
                     value: value[key],
-                  })}
-                >
+                  })}>
                   {type === 'image' && <img src={value[key]} alt={name} />}
                   {type === 'text' &&
                     (show ? <ScrollText>{value[key]}</ScrollText> : value[key])}
@@ -242,8 +237,7 @@ const ListBasic = (props: ComponentData.CommonComponentProps<TListConfig>) => {
         autoplay
         arrows={false}
         touchMove={false}
-        easing="ease-in"
-      >
+        easing="ease-in">
         {valueList}
       </Slider>
     );
@@ -268,8 +262,7 @@ const ListBasic = (props: ComponentData.CommonComponentProps<TListConfig>) => {
           color: getRgbaString(textStyle.color),
           backgroundColor: getRgbaString(backgroundColor),
           height,
-        }}
-      >
+        }}>
         {(index.show
           ? [
               {
@@ -299,8 +292,7 @@ const ListBasic = (props: ComponentData.CommonComponentProps<TListConfig>) => {
                 textAlign,
                 lineHeight: height + 'px',
               }}
-              key={key}
-            >
+              key={key}>
               {name}
             </div>
           );
@@ -314,8 +306,7 @@ const ListBasic = (props: ComponentData.CommonComponentProps<TListConfig>) => {
       <div
         className={componentClassName}
         style={merge(style, conditionStyle)}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           {headerDom}

@@ -12,10 +12,10 @@ const ContentFooter = () => {
 
   const { mobile } = useResponsive();
 
-  const fm = useSiteStore((s)=> s.routeMeta.frontmatter, isEqual);
+  const fm = useSiteStore((s) => s.routeMeta.frontmatter, isEqual);
   const hideContentFooter = fm.contentFooter === false;
-  if(hideContentFooter){
-    return <></>
+  if (hideContentFooter) {
+    return <></>;
   }
 
   return (
@@ -25,8 +25,7 @@ const ContentFooter = () => {
       distribution={'space-between'}
       style={{
         margin: mobile ? 12 : 0,
-      }}
-    >
+      }}>
       {prev ? <Linker type={'prev'} {...prev} /> : <div />}
 
       {next ? <Linker type={'next'} {...next} /> : <div />}

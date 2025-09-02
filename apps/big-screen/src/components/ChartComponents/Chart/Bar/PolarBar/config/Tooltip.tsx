@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import TooltipConfigCommon from '@/components/ChartComponents/Common/TooltipCommon';
+import { useCallback } from 'react';
 import { TPolarBarConfig } from '../type';
 
 const TooltipConfig = (props: {
@@ -24,8 +24,7 @@ const TooltipConfig = (props: {
   return (
     <TooltipConfigCommon
       value={value}
-      onChange={onKeyChange}
-    ></TooltipConfigCommon>
+      onChange={onKeyChange}></TooltipConfigCommon>
   );
 };
 

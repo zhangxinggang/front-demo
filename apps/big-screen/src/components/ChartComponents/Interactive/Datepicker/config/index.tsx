@@ -1,20 +1,20 @@
-import { Component } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import Select from '@/components/ChartComponents/Common/Select';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { CompatColorSelect } from '@/components/ColorSelect';
+import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
 import Input from '@/components/ChartComponents/Common/Input';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import CodeEditor from './components/CodeEditor';
-import IconTooltip from '@/components/IconTooltip';
+import Select from '@/components/ChartComponents/Common/Select';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { updateInteractiveAndSyncParams4Component } from '@/components/ChartComponents/Common/utils';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Component } from 'react';
 import { TDatePickerConfig } from '../type';
+import CodeEditor from './components/CodeEditor';
 
 const { Item } = ConfigList;
 class Config extends Component<
@@ -65,8 +65,7 @@ class Config extends Component<
                   child={{
                     header: '输入框样式',
                     key: 'input',
-                  }}
-                >
+                  }}>
                   <Item label="边框颜色">
                     <FullForm>
                       <CompatColorSelect
@@ -95,8 +94,7 @@ class Config extends Component<
                     child={{
                       header: '文字样式',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={input.textStyle}
                       onChange={(value) =>
@@ -111,8 +109,7 @@ class Config extends Component<
                   child={{
                     header: '年月及时间文字',
                     key: 'header',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={yearAndMonthAndTime.textStyle}
                     onChange={(value) =>
@@ -126,8 +123,7 @@ class Config extends Component<
                   child={{
                     header: '周文字',
                     key: 'week',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={week.textStyle}
                     onChange={(value) =>
@@ -141,8 +137,7 @@ class Config extends Component<
                   child={{
                     key: 'dateAndTime',
                     header: '日期及时间',
-                  }}
-                >
+                  }}>
                   <Item label="圆角">
                     <FullForm>
                       <InputNumber
@@ -171,8 +166,7 @@ class Config extends Component<
                     child={{
                       header: '文字样式',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={dateAndTime.textStyle}
                       onChange={(value) => {
@@ -186,8 +180,7 @@ class Config extends Component<
                     child={{
                       header: '上下时间样式',
                       key: 'prevAndNext',
-                    }}
-                  >
+                    }}>
                     <Item label="背景色">
                       <FullForm>
                         <CompatColorSelect
@@ -206,8 +199,7 @@ class Config extends Component<
                       child={{
                         header: '文字样式',
                         key: 'textStyle',
-                      }}
-                    >
+                      }}>
                       <FontConfigList
                         value={dateAndTime.prevAndNext.textStyle}
                         onChange={(value) => {
@@ -224,8 +216,7 @@ class Config extends Component<
                     child={{
                       header: '移入样式',
                       key: 'hover',
-                    }}
-                  >
+                    }}>
                     <Item label="背景色">
                       <FullForm>
                         <CompatColorSelect
@@ -244,8 +235,7 @@ class Config extends Component<
                       child={{
                         header: '文字样式',
                         key: 'textStyle',
-                      }}
-                    >
+                      }}>
                       <FontConfigList
                         value={dateAndTime.hover.textStyle}
                         onChange={(value) => {
@@ -262,8 +252,7 @@ class Config extends Component<
                     child={{
                       header: '选中样式',
                       key: 'active',
-                    }}
-                  >
+                    }}>
                     <Item label="背景色">
                       <FullForm>
                         <CompatColorSelect
@@ -282,8 +271,7 @@ class Config extends Component<
                       child={{
                         header: '文字样式',
                         key: 'textStyle',
-                      }}
-                    >
+                      }}>
                       <FontConfigList
                         value={dateAndTime.active.textStyle}
                         onChange={(value) => {
@@ -300,8 +288,7 @@ class Config extends Component<
                     child={{
                       header: '禁用样式',
                       key: 'disabled',
-                    }}
-                  >
+                    }}>
                     <Item label="背景色">
                       <FullForm>
                         <CompatColorSelect
@@ -320,8 +307,7 @@ class Config extends Component<
                       child={{
                         header: '文字样式',
                         key: 'textStyle',
-                      }}
-                    >
+                      }}>
                       <FontConfigList
                         value={dateAndTime.disabled.textStyle}
                         onChange={(value) => {
@@ -339,8 +325,7 @@ class Config extends Component<
                   child={{
                     key: 'arrow',
                     header: '切换箭头',
-                  }}
-                >
+                  }}>
                   <Item label="颜色">
                     <FullForm>
                       <CompatColorSelect
@@ -372,8 +357,7 @@ class Config extends Component<
                   child={{
                     key: 'confirmBtn',
                     header: '确认按钮',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={confirmBtn.textStyle}
                     onChange={(value) =>
@@ -428,8 +412,7 @@ class Config extends Component<
                     <IconTooltip title="需要和选择的时间类型格式对应">
                       <InfoCircleOutlined />
                     </IconTooltip>
-                  }
-                >
+                  }>
                   <FullForm>
                     <Input
                       value={format}

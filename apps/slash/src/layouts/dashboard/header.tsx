@@ -14,7 +14,12 @@ import NoticeButton from '../_common/notice';
 import SearchBar from '../_common/search-bar';
 import SettingButton from '../_common/setting-button';
 
-import { NAV_COLLAPSED_WIDTH, NAV_WIDTH, HEADER_HEIGHT, OFFSET_HEADER_HEIGHT } from './config';
+import {
+  HEADER_HEIGHT,
+  NAV_COLLAPSED_WIDTH,
+  NAV_WIDTH,
+  OFFSET_HEADER_HEIGHT,
+} from './config';
 import Nav from './nav';
 
 import { ThemeLayout } from '#/enum';
@@ -54,30 +59,37 @@ export default function Header({ className = '', offsetTop = false }: Props) {
     <>
       <header className={`z-20 w-full ${className}`} style={headerStyle}>
         <div
-          className="flex flex-grow items-center justify-between px-4 text-gray backdrop-blur xl:px-6 2xl:px-10"
+          className="text-gray flex flex-grow items-center justify-between px-4 backdrop-blur xl:px-6 2xl:px-10"
           style={{
             height: offsetTop ? OFFSET_HEADER_HEIGHT : HEADER_HEIGHT,
             transition: 'height 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-          }}
-        >
+          }}>
           <div className="flex items-baseline">
             {themeLayout !== ThemeLayout.Horizontal ? (
-              <IconButton onClick={() => setDrawerOpen(true)} className="h-10 w-10 md:hidden">
+              <IconButton
+                onClick={() => setDrawerOpen(true)}
+                className="h-10 w-10 md:hidden">
                 <SvgIcon icon="ic-menu" size="24" />
               </IconButton>
             ) : (
               <Logo />
             )}
-            <div className="ml-4 hidden md:block">{breadCrumb ? <BreadCrumb /> : null}</div>
+            <div className="ml-4 hidden md:block">
+              {breadCrumb ? <BreadCrumb /> : null}
+            </div>
           </div>
 
           <div className="flex">
             <SearchBar />
             <LocalePicker />
-            <IconButton onClick={() => window.open('https://github.com/d3george/slash-admin')}>
+            <IconButton
+              onClick={() =>
+                window.open('https://github.com/d3george/slash-admin')
+              }>
               <Iconify icon="mdi:github" size={24} />
             </IconButton>
-            <IconButton onClick={() => window.open('https://discord.gg/fXemAXVNDa')}>
+            <IconButton
+              onClick={() => window.open('https://discord.gg/fXemAXVNDa')}>
               <Iconify icon="carbon:logo-discord" size={24} />
             </IconButton>
             <NoticeButton />
@@ -93,8 +105,7 @@ export default function Header({ className = '', offsetTop = false }: Props) {
         closeIcon={false}
         headerStyle={{ display: 'none' }}
         bodyStyle={{ padding: 0, overflow: 'hidden' }}
-        width="auto"
-      >
+        width="auto">
         <Nav closeSideBarDrawer={() => setDrawerOpen(false)} />
       </Drawer>
     </>

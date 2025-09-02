@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react';
-import { Button } from 'antd';
 import type { ButtonProps } from 'antd';
+import { Button } from 'antd';
+import { useCallback, useState } from 'react';
 
 const LoadingButton = (
   props: ButtonProps & {

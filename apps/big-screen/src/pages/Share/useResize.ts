@@ -1,5 +1,5 @@
-import { useMemo, useEffect, useState } from 'react';
 import { sleep } from '@/utils';
+import { useEffect, useMemo, useState } from 'react';
 
 const useResize = ({
   containerWidth,

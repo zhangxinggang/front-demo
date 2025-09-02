@@ -124,8 +124,7 @@ const ComponentSelect = forwardRef<
                   }
                 : {}
             }
-            onClick={handleSelect.bind(null, isSelect ? '' : type)}
-          >
+            onClick={handleSelect.bind(null, isSelect ? '' : type)}>
             <img src={icon} title={title} className="w-100" />
             <span>{title}</span>
           </div>
@@ -134,15 +133,11 @@ const ComponentSelect = forwardRef<
     });
   }, [select, filterComponentList, primaryColor]);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open,
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open,
+    };
+  }, []);
 
   return (
     <Modal
@@ -153,8 +148,7 @@ const ComponentSelect = forwardRef<
       }}
       onCancel={close}
       onOk={handleOk}
-      title="组件切换"
-    >
+      title="组件切换">
       <div className="pos-re w-100 h-100">
         {!loading && (
           <>

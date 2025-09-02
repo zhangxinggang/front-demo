@@ -34,11 +34,20 @@ export default function ChartRadar() {
       categories: ['2011', '2012', '2013', '2014', '2015', '2016'],
       labels: {
         style: {
-          colors: [colorText, colorText, colorText, colorText, colorText, colorText],
+          colors: [
+            colorText,
+            colorText,
+            colorText,
+            colorText,
+            colorText,
+            colorText,
+          ],
         },
       },
     },
   });
 
-  return <Chart type="radar" series={series} options={chartOptions} height={320} />;
+  return (
+    <Chart type="radar" series={series} options={chartOptions} height={320} />
+  );
 }

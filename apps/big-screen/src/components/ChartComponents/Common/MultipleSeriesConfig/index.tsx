@@ -1,7 +1,7 @@
-import { ReactNode, useCallback, useMemo, useState } from 'react';
-import { Tabs } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
 import GhostButton from '@/components/GhostButton';
+import { PlusOutlined } from '@ant-design/icons';
+import { Tabs } from 'antd';
+import { ReactNode, useCallback, useMemo, useState } from 'react';
 import styles from './index.less';
 
 const { TabPane } = Tabs;
@@ -70,8 +70,7 @@ const MultipleSeriesConfig = (props: {
         <GhostButton
           icon={<PlusOutlined />}
           onClick={add}
-          className="m-t-8 m-b-4"
-        >
+          className="m-t-8 m-b-4">
           {buttonLabel || '新增系列'}
         </GhostButton>
       )}

@@ -1,5 +1,5 @@
-import { versionCompare, mergeWithoutArray } from '@/utils';
 import InputComponent from '@/components/ChartComponents/Interactive/Input';
+import { mergeWithoutArray, versionCompare } from '@/utils';
 
 export const ComponentInputButtonWidthChange = (
   components: ComponentData.TComponentData[],

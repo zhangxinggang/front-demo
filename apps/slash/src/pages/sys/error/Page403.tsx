@@ -35,8 +35,8 @@ export default function Page403() {
 
           <m.div variants={varBounce().in}>
             <Typography.Paragraph type="secondary" className="text-center">
-              The page you are trying access has restricted access. Please refer to your system
-              administrator
+              The page you are trying access has restricted access. Please refer
+              to your system administrator
             </Typography.Paragraph>
           </m.div>
 
@@ -46,12 +46,20 @@ export default function Page403() {
               xmlns="http://www.w3.org/2000/svg"
               width={400}
               height={400}
-              className="w-full"
-            >
+              className="w-full">
               <defs>
-                <linearGradient id="BG" x1="19.496%" x2="77.479%" y1="71.822%" y2="16.69%">
+                <linearGradient
+                  id="BG"
+                  x1="19.496%"
+                  x2="77.479%"
+                  y1="71.822%"
+                  y2="16.69%">
                   <stop offset="0%" stopColor={colorPrimary} />
-                  <stop offset="100%" stopColor={colorPrimary} stopOpacity="0" />
+                  <stop
+                    offset="100%"
+                    stopColor={colorPrimary}
+                    stopOpacity="0"
+                  />
                 </linearGradient>
               </defs>
               <path
@@ -106,8 +114,7 @@ export default function Page403() {
                   x2="78.245"
                   y1="187.309"
                   y2="307.306"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor={colorPrimaryHover} />
                   <stop offset="1" stopColor={colorPrimaryActive} />
                 </linearGradient>
@@ -118,8 +125,7 @@ export default function Page403() {
           <NavLink
             to={HOMEPAGE}
             style={{ background: colorTextBase, color: colorBgBase }}
-            className="rounded-md p-4"
-          >
+            className="rounded-md p-4">
             Go to Home
           </NavLink>
         </MotionContainer>

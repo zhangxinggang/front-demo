@@ -1,6 +1,12 @@
 ﻿// copy form https://github.com/loktar00/react-lazy-load/blob/master/src/LazyLoad.tsx#L2
 import { Card } from 'antd';
-import React, { Children, Component, createElement, ReactNode, RefObject } from 'react';
+import React, {
+  Children,
+  Component,
+  createElement,
+  ReactNode,
+  RefObject,
+} from 'react';
 import scrollParent from './utils';
 
 type Props = {
@@ -51,13 +57,17 @@ export class IntersectionLoad extends Component<Props, State> {
     setTimeout(() => {
       const { offset, threshold } = this.props;
       const options = {
-        rootMargin: typeof offset === 'number' ? `${offset}px` : offset || '0px',
+        rootMargin:
+          typeof offset === 'number' ? `${offset}px` : offset || '0px',
         threshold: threshold || 0,
 
         root: document.body,
       };
 
-      this.elementObserver = new IntersectionObserver(this.lazyLoadHandler, options);
+      this.elementObserver = new IntersectionObserver(
+        this.lazyLoadHandler,
+        options,
+      );
 
       const node = this.wrapper?.current;
 

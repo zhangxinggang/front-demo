@@ -1,5 +1,5 @@
-import { CSSProperties, useMemo } from 'react';
 import { shuffle } from 'lodash';
+import { CSSProperties, useMemo } from 'react';
 
 const COMMON_STYLE = {
   strokeWidth: 4,
@@ -51,8 +51,7 @@ export const AreaChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="area-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -73,8 +72,7 @@ export const BarChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="bar-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -95,8 +93,7 @@ export const DotChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="dot-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -117,8 +114,7 @@ export const ImageChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="image-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -139,8 +135,7 @@ export const LineChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="line-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -161,8 +156,7 @@ export const ListChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="list-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -183,8 +177,7 @@ export const MapChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="map-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -205,8 +198,7 @@ export const PieChart = ({ style }: { style?: CSSProperties }) => {
       height="200.00px"
       viewBox="0 0 1024 1024"
       version="1.1"
-      id="pie-chart"
-    >
+      id="pie-chart">
       <LinearGradient id="pie-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -227,8 +219,7 @@ export const RadarChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="radar-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -249,8 +240,7 @@ export const ThermogramChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="thermogram-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -271,8 +261,7 @@ export const TitleChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="title-chart-linear" />
       <path
         {...COMMON_STYLE}
@@ -293,8 +282,7 @@ export const VideoChart = ({ style }: { style?: CSSProperties }) => {
       width="200px"
       height="200.00px"
       viewBox="0 0 1024 1024"
-      version="1.1"
-    >
+      version="1.1">
       <LinearGradient id="video-chart-linear" />
       <path
         {...COMMON_STYLE}

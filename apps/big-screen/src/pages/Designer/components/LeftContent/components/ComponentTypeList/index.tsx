@@ -1,8 +1,8 @@
-import { useCallback, useMemo, useState } from 'react';
 import { Menu } from 'antd';
 import classnames from 'classnames';
-import ComponentList from '../ComponentList';
+import { useCallback, useMemo, useState } from 'react';
 import { COMPONENT_TYPE_LIST } from '../../../../utils/component';
+import ComponentList from '../ComponentList';
 import styles from './index.less';
 
 const ComponentTypeList = (props: {
@@ -38,8 +38,7 @@ const ComponentTypeList = (props: {
         className={classnames(
           styles['page-design-left-component-list'],
           'pos-sti',
-        )}
-      >
+        )}>
         <Menu
           theme="dark"
           mode="vertical"

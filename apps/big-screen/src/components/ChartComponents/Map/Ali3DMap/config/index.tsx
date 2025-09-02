@@ -1,13 +1,13 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import TooltipConfig from './Tooltip';
-import ScatterConfig from './Scatter';
+import { Component } from 'react';
+import { TAli3DMapConfig } from '../type';
 import Base from './Base';
 import ConditionConfig from './Condition';
-import { TAli3DMapConfig } from '../type';
+import ScatterConfig from './Scatter';
+import TooltipConfig from './Tooltip';
 class Config extends Component<
   ComponentData.ComponentConfigProps<TAli3DMapConfig>
 > {

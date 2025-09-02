@@ -1,5 +1,5 @@
-import { ReactNode, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, ReactNode } from 'react';
 import styles from './index.less';
 
 // 基础配置的半行表单
@@ -22,8 +22,7 @@ const HalfForm = ({
   return (
     <div
       className={classnames(styles['design-config-half-form'], className)}
-      style={style}
-    >
+      style={style}>
       <div className={styles['design-config-half-form-content']}>
         {prefix}
         {children}
@@ -34,8 +33,7 @@ const HalfForm = ({
           className={classnames(
             styles['design-config-half-form-label'],
             'text-ellipsis',
-          )}
-        >
+          )}>
           {label}
         </div>
       )}

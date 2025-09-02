@@ -1,6 +1,6 @@
 import LocalForage from 'localforage';
 import { debounce } from 'lodash';
-import { GLOBAL_EVENT_EMITTER_FACTORY, EVENT_NAME_MAP } from '../EventEmitter';
+import { EVENT_NAME_MAP, GLOBAL_EVENT_EMITTER_FACTORY } from '../EventEmitter';
 
 export class LocalConfig extends GLOBAL_EVENT_EMITTER_FACTORY {
   constructor() {

@@ -1,6 +1,6 @@
-import { getDvaApp } from 'umi';
-import type { Dispatch } from 'dva';
 import { ConnectState } from '@/models/connect';
+import type { Dispatch } from 'dva';
+import { getDvaApp } from 'umi';
 
 let app: any;
 

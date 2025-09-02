@@ -1,7 +1,3 @@
-import { CSSProperties, useMemo, useRef } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { TextLoop } from 'react-text-loop-next';
 import {
   useComponent,
   useCondition,
@@ -9,8 +5,12 @@ import {
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TLoopTextConfig } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { CSSProperties, useMemo, useRef } from 'react';
+import { TextLoop } from 'react-text-loop-next';
 import { CHART_ID } from '../id';
+import { TLoopTextConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -101,8 +101,7 @@ const LoopText = (
           style,
           conditionStyle,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           <div className="w-100 h-100 dis-flex" style={componentStyle}>
@@ -111,8 +110,7 @@ const LoopText = (
                 style={{
                   ...addonBefore.textStyle,
                   color: getRgbaString(addonBefore.textStyle.color),
-                }}
-              >
+                }}>
                 {addonBefore.value}
               </span>
             )}
@@ -127,8 +125,7 @@ const LoopText = (
                         color: getRgbaString(textStyle.color),
                       }}
                       key={index}
-                      onClick={onClick.bind(null, item)}
-                    >
+                      onClick={onClick.bind(null, item)}>
                       {item}
                     </span>
                   );
@@ -139,8 +136,7 @@ const LoopText = (
                 style={{
                   ...addonAfter.textStyle,
                   color: getRgbaString(addonAfter.textStyle.color),
-                }}
-              >
+                }}>
                 {addonAfter.value}
               </span>
             )}

@@ -9,7 +9,10 @@ import { useSignIn } from '@/store/userStore';
 import ProTag from '@/theme/antd/components/tag';
 import { useThemeToken } from '@/theme/hooks';
 
-import { LoginStateEnum, useLoginStateContext } from './providers/LoginStateProvider';
+import {
+  LoginStateEnum,
+  useLoginStateContext,
+} from './providers/LoginStateProvider';
 
 function LoginForm() {
   const { t } = useTranslation();
@@ -31,7 +34,9 @@ function LoginForm() {
   };
   return (
     <>
-      <div className="mb-4 text-2xl font-bold xl:text-3xl">{t('sys.login.signInFormTitle')}</div>
+      <div className="mb-4 text-2xl font-bold xl:text-3xl">
+        {t('sys.login.signInFormTitle')}
+      </div>
       <Form
         name="login"
         size="large"
@@ -40,30 +45,41 @@ function LoginForm() {
           username: DEFAULT_USER.username,
           password: DEFAULT_USER.password,
         }}
-        onFinish={handleFinish}
-      >
+        onFinish={handleFinish}>
         <div className="mb-4 flex flex-col">
           <Alert
             type="info"
             description={
               <div className="flex flex-col">
                 <div className="flex">
-                  <ProTag className="flex-shrink-0">Admin {t('sys.login.userName')}:</ProTag>
-                  <strong className="ml-1" style={{ color: themeToken.colorInfoTextHover }}>
+                  <ProTag className="flex-shrink-0">
+                    Admin {t('sys.login.userName')}:
+                  </ProTag>
+                  <strong
+                    className="ml-1"
+                    style={{ color: themeToken.colorInfoTextHover }}>
                     <span>{DEFAULT_USER.username}</span>
                   </strong>
                 </div>
 
                 <div className="flex">
-                  <ProTag className="flex-shrink-0">Test {t('sys.login.userName')}:</ProTag>
-                  <strong className="ml-1" style={{ color: themeToken.colorInfoTextHover }}>
+                  <ProTag className="flex-shrink-0">
+                    Test {t('sys.login.userName')}:
+                  </ProTag>
+                  <strong
+                    className="ml-1"
+                    style={{ color: themeToken.colorInfoTextHover }}>
                     <span>{TEST_USER.username}</span>
                   </strong>
                 </div>
 
                 <div>
-                  <ProTag className="flex-shrink-0">{t('sys.login.password')}:</ProTag>
-                  <strong className=" ml-1" style={{ color: themeToken.colorInfoTextHover }}>
+                  <ProTag className="flex-shrink-0">
+                    {t('sys.login.password')}:
+                  </ProTag>
+                  <strong
+                    className="ml-1"
+                    style={{ color: themeToken.colorInfoTextHover }}>
                     {DEFAULT_USER.password}
                   </strong>
                 </div>
@@ -75,15 +91,20 @@ function LoginForm() {
 
         <Form.Item
           name="username"
-          rules={[{ required: true, message: t('sys.login.accountPlaceholder') }]}
-        >
+          rules={[
+            { required: true, message: t('sys.login.accountPlaceholder') },
+          ]}>
           <Input placeholder={t('sys.login.userName')} />
         </Form.Item>
         <Form.Item
           name="password"
-          rules={[{ required: true, message: t('sys.login.passwordPlaceholder') }]}
-        >
-          <Input.Password type="password" placeholder={t('sys.login.password')} />
+          rules={[
+            { required: true, message: t('sys.login.passwordPlaceholder') },
+          ]}>
+          <Input.Password
+            type="password"
+            placeholder={t('sys.login.password')}
+          />
         </Form.Item>
         <Form.Item>
           <Row>
@@ -93,12 +114,18 @@ function LoginForm() {
               </Form.Item>
             </Col>
             <Col span={12} className="text-right">
-              <button className="!underline">{t('sys.login.forgetPassword')}</button>
+              <button className="!underline">
+                {t('sys.login.forgetPassword')}
+              </button>
             </Col>
           </Row>
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit" className="w-full" loading={loading}>
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="w-full"
+            loading={loading}>
             {t('sys.login.loginButton')}
           </Button>
         </Form.Item>
@@ -107,21 +134,24 @@ function LoginForm() {
           <Col span={9} flex="1">
             <Button
               className="w-full !text-sm"
-              onClick={() => setLoginState(LoginStateEnum.MOBILE)}
-            >
+              onClick={() => setLoginState(LoginStateEnum.MOBILE)}>
               {t('sys.login.mobileSignInFormTitle')}
             </Button>
           </Col>
           <Col span={9} flex="1">
             <Button
               className="w-full !text-sm"
-              onClick={() => setLoginState(LoginStateEnum.QR_CODE)}
-            >
+              onClick={() => setLoginState(LoginStateEnum.QR_CODE)}>
               {t('sys.login.qrSignInFormTitle')}
             </Button>
           </Col>
-          <Col span={6} flex="1" onClick={() => setLoginState(LoginStateEnum.REGISTER)}>
-            <Button className="w-full !text-sm">{t('sys.login.signUpFormTitle')}</Button>
+          <Col
+            span={6}
+            flex="1"
+            onClick={() => setLoginState(LoginStateEnum.REGISTER)}>
+            <Button className="w-full !text-sm">
+              {t('sys.login.signUpFormTitle')}
+            </Button>
           </Col>
         </Row>
 

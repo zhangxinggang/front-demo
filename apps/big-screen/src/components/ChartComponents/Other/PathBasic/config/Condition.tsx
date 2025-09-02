@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import ConditionConfigCommon from '@/components/ChartComponents/Common/ConditionConfig';
+import { useCallback } from 'react';
 import { TPathBasicConfig } from '../type';
 
 const ConditionConfig = (props: {

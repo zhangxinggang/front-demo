@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { useDebounceEffect } from 'ahooks';
+import { useState } from 'react';
 
 export function useComponentSize(
   query: string,

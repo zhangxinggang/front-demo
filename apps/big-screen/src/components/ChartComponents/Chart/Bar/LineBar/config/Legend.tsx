@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import LegendConfigCommon from '@/components/ChartComponents/Common/LegendConfig';
+import { useCallback } from 'react';
 import { TLineBarConfig } from '../type';
 
 const LegendConfig = (props: {

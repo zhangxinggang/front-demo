@@ -51,15 +51,13 @@ function PainterWrapper(props: {
         className={classnames(
           'w-100 h-100 zero-scrollbar',
           styles['page-preview-h5-wrapper'],
-        )}
-      >
+        )}>
         <div
           className="w-100"
           style={{
             height: height * scale,
             overflow: 'hidden',
-          }}
-        >
+          }}>
           {children}
         </div>
       </div>

@@ -1,13 +1,13 @@
-import { useCallback, useMemo } from 'react';
-import { Button } from 'antd';
-import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
-import classnames from 'classnames';
-import GhostButton from '@/components/GhostButton';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import GhostButton from '@/components/GhostButton';
 import ThemeUtil from '@/utils/Assist/Theme';
+import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
+import classnames from 'classnames';
+import { useCallback, useMemo } from 'react';
 import ChartGradientSelect from '../ChartGradientSelect';
 import { DEFAULT_RADIAL_CONFIG } from '../Constants/defaultConfig';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import FullForm from '../Structure/FullForm';
 import styles from './index.less';
 
@@ -79,8 +79,7 @@ export const SimpleHueRadialSelect = (props: {
               ),
             }}
             key={index}
-            level={2}
-          >
+            level={2}>
             <ChartGradientSelect
               value={color}
               onChange={onColorChange.bind(null, index)}
@@ -141,8 +140,7 @@ const SimpleHueSelect = (props: {
               className={classnames(
                 'dis-flex',
                 styles['simple-hue-select-wrapper'],
-              )}
-            >
+              )}>
               <CompatColorSelect
                 value={color}
                 onChange={onColorChange.bind(null, index)}

@@ -1,16 +1,16 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import TitleConfig from './Title';
-import TooltipConfig from './Tooltip';
-import SeriesConfig from './Series';
+import { Component } from 'react';
+import { TBubbleScatterConfig } from '../type';
 import AnimationConfig from './Animation';
 import AxisConfig from './Axis';
 import ConditionConfig from './Condition';
 import GridConfig from './GridConfig';
-import { TBubbleScatterConfig } from '../type';
+import SeriesConfig from './Series';
+import TitleConfig from './Title';
+import TooltipConfig from './Tooltip';
 class Config extends Component<
   ComponentData.ComponentConfigProps<TBubbleScatterConfig>
 > {

@@ -1,11 +1,11 @@
-import { useState, forwardRef, useRef, useImperativeHandle } from 'react';
+import { useColorList } from '@/hooks';
 import { useSize } from 'ahooks';
 import classnames from 'classnames';
-import 'winbox/dist/css/winbox.min.css'; // required
-import 'winbox/dist/css/themes/modern.min.css'; // optional
-import WinBox from 'react-winbox';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import type { WinBoxPropType } from 'react-winbox';
-import { useColorList } from '@/hooks';
+import WinBox from 'react-winbox';
+import 'winbox/dist/css/themes/modern.min.css'; // optional
+import 'winbox/dist/css/winbox.min.css'; // required
 
 export type WinBoxRef = {
   open: () => void;
@@ -32,19 +32,15 @@ const Winbox = forwardRef<
 
   const boxRef = useRef<WinBox>(null);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open: () => {
-          setVisible((prev) => {
-            return !prev;
-          });
-        },
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open: () => {
+        setVisible((prev) => {
+          return !prev;
+        });
+      },
+    };
+  }, []);
 
   if (visible) return null;
 

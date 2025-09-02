@@ -1,8 +1,8 @@
 /* eslint react/prop-types: 0 */
-import * as React from 'react';
 import classNames from 'classnames';
-import { Status, Icons } from './interface';
-import { StepIconRender, ProgressDotRender } from './Steps';
+import * as React from 'react';
+import { Icons, Status } from './interface';
+import { ProgressDotRender, StepIconRender } from './Steps';
 
 function isString(str: any): str is string {
   return typeof str === 'string';
@@ -185,12 +185,10 @@ export default class Step extends React.Component<StepProps> {
         <div
           onClick={onClick}
           {...accessibilityProps}
-          className={`${prefixCls}-item-container`}
-        >
+          className={`${prefixCls}-item-container`}>
           <div
             className={`${prefixCls}-item-tail`}
-            style={this.tailContentStyle}
-          >
+            style={this.tailContentStyle}>
             {tailContent}
           </div>
           <div className={`${prefixCls}-item-icon`}>
@@ -198,15 +196,13 @@ export default class Step extends React.Component<StepProps> {
           </div>
           <div
             className={`${prefixCls}-item-content`}
-            style={this.contentStyle}
-          >
+            style={this.contentStyle}>
             <div className={`${prefixCls}-item-title`}>
               {title}
               {subTitle && (
                 <div
                   title={typeof subTitle === 'string' ? subTitle : undefined}
-                  className={`${prefixCls}-item-subtitle`}
-                >
+                  className={`${prefixCls}-item-subtitle`}>
                   {subTitle}
                 </div>
               )}

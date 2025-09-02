@@ -1,10 +1,10 @@
-import { useRef, useEffect, useState } from 'react';
-import classnames from 'classnames';
-import { Button, Space } from 'antd';
-import { useInViewport, useDebounceFn } from 'ahooks';
-import { isNil } from 'lodash';
-import { LeftSquareOutlined, RightSquareOutlined } from '@ant-design/icons';
 import Tooltip from '@/components/Tooltip';
+import { LeftSquareOutlined, RightSquareOutlined } from '@ant-design/icons';
+import { useDebounceFn, useInViewport } from 'ahooks';
+import { Button, Space } from 'antd';
+import classnames from 'classnames';
+import { isNil } from 'lodash';
+import { useEffect, useRef, useState } from 'react';
 import { COMPONENT_ICON_MAP } from '../../../../../../../../utils/component';
 import styles from './index.less';
 
@@ -57,15 +57,13 @@ const ComponentList = (props: {
       )}
       style={{
         pointerEvents: disabled ? 'none' : 'all',
-      }}
-    >
+      }}>
       <div
         ref={listRef}
         className={classnames(
           'zero-scrollbar',
           styles['group-carousel-component-list'],
-        )}
-      >
+        )}>
         <div
           className={classnames(
             'dis-flex',
@@ -75,8 +73,7 @@ const ComponentList = (props: {
               [styles['group-carousel-component-list-btn-visible']]:
                 loaded && !isNil(isLeftInViewport) && !isLeftInViewport,
             },
-          )}
-        >
+          )}>
           <Button
             type="link"
             icon={<LeftSquareOutlined />}
@@ -97,8 +94,7 @@ const ComponentList = (props: {
                         index === current,
                     },
                   )}
-                  onClick={onChange?.bind(null, index)}
-                >
+                  onClick={onChange?.bind(null, index)}>
                   <img
                     className="w-100 h-100"
                     src={COMPONENT_ICON_MAP[componentType]}
@@ -118,8 +114,7 @@ const ComponentList = (props: {
               [styles['group-carousel-component-list-btn-visible']]:
                 loaded && !isNil(isRightInViewport) && !isRightInViewport,
             },
-          )}
-        >
+          )}>
           <Button
             icon={<RightSquareOutlined />}
             type="link"

@@ -1,8 +1,8 @@
-import { merge } from 'lodash';
-import { RadialGradient, LinearGradient } from '@/utils/Assist/EchartsLoader';
 import ColorSelect from '@/components/ColorSelect';
 import { useAnyDva } from '@/hooks';
+import { LinearGradient, RadialGradient } from '@/utils/Assist/EchartsLoader';
 import InteractiveUtil from '@/utils/Assist/Interactive';
+import { merge } from 'lodash';
 
 const { getRgbaString } = ColorSelect;
 

@@ -120,8 +120,7 @@ const InsertComponent = (props: { setSelect: (select: string[]) => void }) => {
         disabled={IS_EMPTY}
         type="primary"
         className="m-r-4"
-        onClick={handleAutoInsert}
-      >
+        onClick={handleAutoInsert}>
         {isStart && '停止'}自动添加
       </Button>
       <Button disabled={IS_EMPTY} type="primary" onClick={handleInsert}>

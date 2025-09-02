@@ -1,10 +1,10 @@
 import { Space } from 'antd';
+import CollapseConfigPanel from './components/CollapseConfigPanel';
 import ComponentListCollapse from './components/ComponentListCollapse';
 import ComponentSearch from './components/ComponentSearch';
-import LayerSearch from './components/LayerSearch';
-import CollapseConfigPanel from './components/CollapseConfigPanel';
-import LayerShowIcon from './components/LayerShowControl';
 import DebugConfig from './components/DebugConfig';
+import LayerSearch from './components/LayerSearch';
+import LayerShowIcon from './components/LayerShowControl';
 import styles from './index.less';
 
 const ActionList = () => {

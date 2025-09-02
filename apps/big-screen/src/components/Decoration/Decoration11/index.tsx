@@ -1,5 +1,5 @@
-import React, { useMemo, forwardRef, CSSProperties, ReactNode } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, forwardRef, ReactNode, useMemo } from 'react';
 import { useAutoResize } from '../../InternalBorder/components/Border/hooks';
 import styles from './index.less';
 
@@ -70,8 +70,8 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           points={`
             20 10, 5 ${height / 2} 20 ${height - 10}
             ${width - 20} ${height - 10} ${width - 5} ${height / 2} ${
-            width - 20
-          } 10
+              width - 20
+            } 10
           `}
         />
 

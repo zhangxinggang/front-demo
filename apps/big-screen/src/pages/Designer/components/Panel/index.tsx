@@ -1,9 +1,9 @@
-import { CSSProperties } from 'react';
 import classnames from 'classnames';
-import ReactSelecto from './components/ReactSelecto';
-import PanelWrapper from './components/PanelWrapper';
-import ToolBar from './components/ToolBar';
+import { CSSProperties } from 'react';
 import Painter from './components/Painter';
+import PanelWrapper from './components/PanelWrapper';
+import ReactSelecto from './components/ReactSelecto';
+import ToolBar from './components/ToolBar';
 import styles from './index.less';
 
 const Panel = (props: { style?: CSSProperties; className?: string }) => {
@@ -19,8 +19,7 @@ const Panel = (props: { style?: CSSProperties; className?: string }) => {
       )}
       style={{
         ...style,
-      }}
-    >
+      }}>
       <PanelWrapper>
         <ReactSelecto />
         <Painter />

@@ -1,10 +1,10 @@
-import { set, get, merge, cloneDeep } from 'lodash';
-import arrayMove from 'array-move';
+import ComponentUtil from '@/utils/Assist/Component';
+import { HistoryUtil } from '@/utils/Assist/History';
+import { ScreenDataRequest } from '@/utils/Assist/RequestPool';
 import { DEFAULT_SCREEN_DATA, ThemeMap } from '@/utils/constants';
 import { mergeWithoutArray } from '@/utils/tool';
-import { HistoryUtil } from '@/utils/Assist/History';
-import ComponentUtil from '@/utils/Assist/Component';
-import { ScreenDataRequest } from '@/utils/Assist/RequestPool';
+import arrayMove from 'array-move';
+import { cloneDeep, get, merge, set } from 'lodash';
 import { DragData } from './connect';
 
 export default {

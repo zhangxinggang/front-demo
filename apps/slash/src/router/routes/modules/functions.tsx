@@ -18,7 +18,13 @@ const functions: AppRouteObject = {
   ),
   meta: {
     label: 'sys.menu.functions',
-    icon: <Iconify icon="solar:plain-2-bold-duotone" className="ant-menu-item-icon" size="24" />,
+    icon: (
+      <Iconify
+        icon="solar:plain-2-bold-duotone"
+        className="ant-menu-item-icon"
+        size="24"
+      />
+    ),
     key: '/functions',
   },
   children: [

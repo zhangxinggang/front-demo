@@ -1,17 +1,17 @@
-import { ReactNode, useCallback, useMemo, Children, cloneElement } from 'react';
+import {
+  CaretRightOutlined,
+  EyeInvisibleOutlined,
+  EyeOutlined,
+} from '@ant-design/icons';
 import {
   Collapse as AntCollapse,
   CollapsePanelProps,
   CollapseProps,
 } from 'antd';
-import {
-  EyeOutlined,
-  EyeInvisibleOutlined,
-  CaretRightOutlined,
-} from '@ant-design/icons';
 import classnames from 'classnames';
-import PlaceHolder from '../Structure/PlaceHolder';
+import { Children, cloneElement, ReactNode, useCallback, useMemo } from 'react';
 import WrapperConfigList from '../Structure/ConfigList';
+import PlaceHolder from '../Structure/PlaceHolder';
 import Switch from '../Switch';
 import styles from './index.less';
 
@@ -165,8 +165,7 @@ export const SingleCollapse = (props: SingleCollapseProps) => {
           [styles['design-config-collapse-single-disabled']]:
             collapsible === 'disabled',
         },
-      )}
-    >
+      )}>
       <Panel {...child}>{realChildren}</Panel>
     </Collapse>
   );

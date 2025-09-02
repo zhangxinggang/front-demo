@@ -75,7 +75,9 @@ export default function ConnectionsTab() {
           <Card className="w-full flex-col items-center">
             <img alt="" src={item.avatar} className="h-20 w-20 rounded-full" />
 
-            <span className="mt-4 text-xl font-semibold opacity-60">{item.name}</span>
+            <span className="mt-4 text-xl font-semibold opacity-60">
+              {item.name}
+            </span>
             <span className="opacity-50">{item.title}</span>
 
             <div className="mt-4 flex gap-4">
@@ -87,16 +89,18 @@ export default function ConnectionsTab() {
             </div>
 
             <div className="mt-4 flex gap-4">
-              <div className="[ flex flex-col  items-center">
+              <div className="[ flex flex-col items-center">
                 <span className="text-xl font-semibold">{item.projects}</span>
                 <span className="opacity-60">Projects</span>
               </div>
-              <div className="[ flex flex-col  items-center">
+              <div className="[ flex flex-col items-center">
                 <span className="text-xl font-semibold">{item.tasks}</span>
                 <span className="opacity-60">Tasks</span>
               </div>
-              <div className="[ flex flex-col  items-center">
-                <span className="text-xl font-semibold">{item.connections}</span>
+              <div className="[ flex flex-col items-center">
+                <span className="text-xl font-semibold">
+                  {item.connections}
+                </span>
                 <span className="opacity-60">Tasks</span>
               </div>
             </div>

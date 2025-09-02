@@ -1,11 +1,11 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
+import InputNumbr from '@/components/ChartComponents/Common/InputNumber';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import InputNumbr from '@/components/ChartComponents/Common/InputNumber';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import { Component } from 'react';
 import { TDecoration5Config } from '../type';
 
 const { Item } = ConfigList;

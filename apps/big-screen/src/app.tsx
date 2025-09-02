@@ -39,8 +39,7 @@ export function rootContainer(container: JSX.Element) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-          }}
-        >
+          }}>
           <Result
             icon={<FrownOutlined />}
             title="发生了未知的错误！"

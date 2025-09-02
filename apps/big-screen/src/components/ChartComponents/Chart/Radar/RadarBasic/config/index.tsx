@@ -1,15 +1,15 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import LegendConfig from './Legend';
-import TooltipConfig from './Tooltip';
-import SeriesConfig from './Series';
-import AnimationConfig from './Animation';
-import RadarConfig from './Radar';
-import ConditionConfig from './Condition';
+import { Component } from 'react';
 import { TRadarBasicConfig } from '../type';
+import AnimationConfig from './Animation';
+import ConditionConfig from './Condition';
+import LegendConfig from './Legend';
+import RadarConfig from './Radar';
+import SeriesConfig from './Series';
+import TooltipConfig from './Tooltip';
 class Config extends Component<
   ComponentData.ComponentConfigProps<TRadarBasicConfig>
 > {

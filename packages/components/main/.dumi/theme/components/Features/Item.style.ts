@@ -55,7 +55,9 @@ export const useStyles = createStyles(
             ${lighten(0.5, token.colorFillQuaternary)}
           );
 
-          box-shadow: inset 0 0 0 1px ${token.colorBorder}, ${token.boxShadowSecondary};
+          box-shadow:
+            inset 0 0 0 1px ${token.colorBorder},
+            ${token.boxShadowSecondary};
 
           .${coverCls} {
             height: ${scaleUnit * rowNum}px;
@@ -104,7 +106,9 @@ export const useStyles = createStyles(
               border-radius: 2px;
               width: 4px;
               height: 100%;
-              background: ${isDarkMode ? token.colorPrimary : token.colorPrimaryBgHover};
+              background: ${isDarkMode
+                ? token.colorPrimary
+                : token.colorPrimaryBgHover};
             }
           }
         `,
@@ -122,7 +126,11 @@ export const useStyles = createStyles(
           padding: 4px;
 
           &[image-style='primary'] {
-            background: linear-gradient(135deg, ${token.gradientColor1}, ${token.gradientColor2});
+            background: linear-gradient(
+              135deg,
+              ${token.gradientColor1},
+              ${token.gradientColor2}
+            );
           }
 
           &[image-style='light'] {

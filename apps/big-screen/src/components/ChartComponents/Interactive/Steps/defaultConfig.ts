@@ -1,14 +1,14 @@
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { getName, getText } from '@/utils/constants';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
   DEFAULT_FONT_CONFIG,
-  DEFAULT_LINKAGE_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import { getName, getText } from '@/utils/constants';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { TStepsConfig } from './type';
 
 const DEFAULT_TITLE_LABEL = getName(3);

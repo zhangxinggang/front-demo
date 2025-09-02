@@ -1,8 +1,8 @@
-import { CSSProperties, ReactNode, useMemo } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, ReactNode, useMemo } from 'react';
 import Switch from '../../Switch';
-import PlaceHolder from '../PlaceHolder';
 import Container from '../Container';
+import PlaceHolder from '../PlaceHolder';
 import styles from './index.less';
 
 // 基础配置的外部容器
@@ -22,8 +22,7 @@ const ConfigList = (props: {
         styles[`design-config-level-${level}`],
         className,
       )}
-      style={style}
-    >
+      style={style}>
       {children}
     </div>
   );
@@ -80,8 +79,7 @@ const ConfigListItem = (props: TConfigListItemProps) => {
         {
           [styles['design-config-field-disabled']]: !!disabled,
         },
-      )}
-    >
+      )}>
       <PlaceHolder>{disabledPlaceHoler}</PlaceHolder>
 
       <div
@@ -92,8 +90,7 @@ const ConfigListItem = (props: TConfigListItemProps) => {
           className,
         )}
         style={style}
-        title={title || (typeof label === 'string' ? label : '')}
-      >
+        title={title || (typeof label === 'string' ? label : '')}>
         {label}
       </div>
       <ConfigListItemContainer>{children}</ConfigListItemContainer>

@@ -1,9 +1,9 @@
-import { useCallback } from 'react';
-import { Switch } from 'antd';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { Switch } from 'antd';
+import { useCallback } from 'react';
 import { TRankBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -39,8 +39,7 @@ const AxisConfig = (props: {
         }}
         parent={{
           defaultActiveKey: ['textStyle'],
-        }}
-      >
+        }}>
         <FontConfigList
           value={textStyle}
           onChange={onKeyChange.bind(null, 'textStyle')}
@@ -57,8 +56,7 @@ const AxisConfig = (props: {
               show: value,
             });
           },
-        }}
-      >
+        }}>
         <Item label="是否显示背景">
           <FullForm>
             <Switch
@@ -75,8 +73,7 @@ const AxisConfig = (props: {
           child={{
             header: '文字',
             key: 'rankIcon-textStyle',
-          }}
-        >
+          }}>
           <FontConfigList
             value={rankIcon.textStyle}
             onChange={(value) => {

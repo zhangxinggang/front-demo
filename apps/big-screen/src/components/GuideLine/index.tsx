@@ -194,14 +194,12 @@ class GuideLine extends Component<Props & { primaryColor: string }> {
         )}
         style={this.guideLineStyle}
         onMouseDown={this.onMouseDown}
-        onDoubleClick={this.onDoubleClick}
-      >
+        onDoubleClick={this.onDoubleClick}>
         <div
           className={styles[`ruler-guide-line-flag-${type}`]}
           style={{
             backgroundColor: primaryColor,
-          }}
-        >
+          }}>
           {Math.round(style.left ?? style.top) || 0}
           {/* {Math.round(((left ?? top) - 30 + GUIDE_LINE_PADDING) / scale) || 0} */}
         </div>
@@ -216,8 +214,7 @@ class GuideLine extends Component<Props & { primaryColor: string }> {
             type === 'horizontal'
               ? { top: GUIDE_LINE_PADDING * 2 }
               : { left: GUIDE_LINE_PADDING },
-          )}
-        ></div>
+          )}></div>
       </div>
     );
   }

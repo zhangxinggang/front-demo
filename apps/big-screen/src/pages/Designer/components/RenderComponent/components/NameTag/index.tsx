@@ -19,8 +19,7 @@ const NameTag = (props: {
       style={{
         visibility: loggerMode ? 'visible' : 'hidden',
         color: color,
-      }}
-    >
+      }}>
       <span>{componentName}</span>
       <span>({componentId})</span>
     </div>

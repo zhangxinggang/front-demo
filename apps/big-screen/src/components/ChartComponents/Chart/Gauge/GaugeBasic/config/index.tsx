@@ -1,13 +1,13 @@
-import { Component } from 'react';
-import { Tabs } from 'antd';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesConfig from './Series';
+import { Tabs } from 'antd';
+import { Component } from 'react';
+import { TGaugeBasicConfig } from '../type';
 import AnimationConfig from './Animation';
 import ConditionConfig from './Condition';
-import { TGaugeBasicConfig } from '../type';
+import SeriesConfig from './Series';
 
 const { TabPane } = Tabs;
 

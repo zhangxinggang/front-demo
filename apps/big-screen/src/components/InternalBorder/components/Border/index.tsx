@@ -1,10 +1,7 @@
-import GradientBorder from './GradientBorder';
-import RotateLoopBorder from './RotateLoopBorder';
-import GradientLoopBorder from './GradientLoopBorder';
-import DashedBorder from './DashedBorder';
-import ConnorBorder from './ConnorBorder';
-import FlickerBorder from './FlickerBorder';
 import BorderBox1 from './BorderBox1';
+import BorderBox10 from './BorderBox10';
+import BorderBox12 from './BorderBox12';
+import BorderBox13 from './BorderBox13';
 import BorderBox2 from './BorderBox2';
 import BorderBox3 from './BorderBox3';
 import BorderBox4 from './BorderBox4';
@@ -13,10 +10,10 @@ import BorderBox6 from './BorderBox6';
 import BorderBox7 from './BorderBox7';
 import BorderBox8 from './BorderBox8';
 import BorderBox9 from './BorderBox9';
-import BorderBox10 from './BorderBox10';
-import BorderBox11 from './BorderBox11';
-import BorderBox12 from './BorderBox12';
-import BorderBox13 from './BorderBox13';
+import ConnorBorder from './ConnorBorder';
+import DashedBorder from './DashedBorder';
+import FlickerBorder from './FlickerBorder';
+import GradientLoopBorder from './GradientLoopBorder';
 
 export const DEFAULT_BORDER = 'GradientLoopBorder';
 

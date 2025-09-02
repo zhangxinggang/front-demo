@@ -25,7 +25,11 @@ export default function RolePage() {
       render: (_, record) => {
         return (
           <div className="flex">
-            <img alt="" src={record.avatar} className="h-10 w-10 rounded-full" />
+            <img
+              alt=""
+              src={record.avatar}
+              className="h-10 w-10 rounded-full"
+            />
             <div className="ml-2 flex flex-col">
               <span className="text-sm">{record.username}</span>
               <span style={{ color: colorTextSecondary }} className="text-xs">
@@ -64,16 +68,23 @@ export default function RolePage() {
           <IconButton
             onClick={() => {
               push(`${pathname}/${record.id}`);
-            }}
-          >
+            }}>
             <Iconify icon="mdi:card-account-details" size={18} />
           </IconButton>
           <IconButton onClick={() => {}}>
             <Iconify icon="solar:pen-bold-duotone" size={18} />
           </IconButton>
-          <Popconfirm title="Delete the User" okText="Yes" cancelText="No" placement="left">
+          <Popconfirm
+            title="Delete the User"
+            okText="Yes"
+            cancelText="No"
+            placement="left">
             <IconButton>
-              <Iconify icon="mingcute:delete-2-fill" size={18} className="text-error" />
+              <Iconify
+                icon="mingcute:delete-2-fill"
+                size={18}
+                className="text-error"
+              />
             </IconButton>
           </Popconfirm>
         </div>
@@ -88,8 +99,7 @@ export default function RolePage() {
         <Button type="primary" onClick={() => {}}>
           New
         </Button>
-      }
-    >
+      }>
       <Table
         rowKey="id"
         size="small"

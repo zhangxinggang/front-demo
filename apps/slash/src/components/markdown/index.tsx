@@ -19,8 +19,7 @@ export default function Markdown({ children }: Props) {
     <StyledMarkdown $token={token} $thememode={themeMode}>
       <ReactMarkdown
         rehypePlugins={[rehypeHighlight, rehypeRaw]}
-        remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
-      >
+        remarkPlugins={[[remarkGfm, { singleTilde: false }]]}>
         {children}
       </ReactMarkdown>
     </StyledMarkdown>

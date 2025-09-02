@@ -1,10 +1,10 @@
-import { useCallback, useMemo } from 'react';
 import { Tabs } from 'antd';
-import ConfigList from '../Structure/ConfigList';
+import { useCallback, useMemo } from 'react';
 import { SingleCollapse as Collapse } from '../Collapse';
-import { getForm } from './utils';
-import { SubConfigRenderProps } from './type';
 import styles from '../global.less';
+import ConfigList from '../Structure/ConfigList';
+import { SubConfigRenderProps } from './type';
+import { getForm } from './utils';
 
 export const SubConfigRender = (props: SubConfigRenderProps) => {
   const {
@@ -58,8 +58,7 @@ export const SubConfigRender = (props: SubConfigRenderProps) => {
           onChange: onKeyChange.bind(null, 'show'),
           value: valueData.show,
           ...nextProps.child,
-        }}
-      >
+        }}>
         {schemaRender}
       </Collapse>
     );

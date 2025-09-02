@@ -67,8 +67,7 @@ export default function TopRelated() {
                   borderRadius: '12px',
                   width: '48px',
                   height: '48px',
-                }}
-              >
+                }}>
                 {item.logo}
               </div>
 
@@ -80,14 +79,20 @@ export default function TopRelated() {
                   ) : (
                     <Iconify icon="mingcute:windows-fill" size={12} />
                   )}
-                  <span className="mx-1 text-xs font-light">{item.platform}</span>
-                  <ProTag color={item.type === 'free' ? 'green' : 'red'}>{item.type}</ProTag>
+                  <span className="mx-1 text-xs font-light">
+                    {item.platform}
+                  </span>
+                  <ProTag color={item.type === 'free' ? 'green' : 'red'}>
+                    {item.type}
+                  </ProTag>
                 </div>
               </div>
 
               <div className="ml-auto flex flex-col self-center">
                 <ProRate allowHalf disabled defaultValue={item.star} />
-                <span className="mt-1 text-right text-xs text-gray-400">{item.reviews}reviews</span>
+                <span className="mt-1 text-right text-xs text-gray-400">
+                  {item.reviews}reviews
+                </span>
               </div>
             </div>
           ))}

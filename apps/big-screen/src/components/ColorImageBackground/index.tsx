@@ -1,6 +1,6 @@
-import { ReactNode, CSSProperties } from 'react';
-import classnames from 'classnames';
 import { BackgroundMap } from '@/components/InternalBackground';
+import classnames from 'classnames';
+import { CSSProperties, ReactNode } from 'react';
 import styles from './index.less';
 
 const ColorImageBackground = (props: {
@@ -23,8 +23,7 @@ const ColorImageBackground = (props: {
         styles['component-color-image-background'],
         className,
       )}
-      ref={forwardRef}
-    >
+      ref={forwardRef}>
       {type === 'image' && (
         <img
           // @ts-ignore

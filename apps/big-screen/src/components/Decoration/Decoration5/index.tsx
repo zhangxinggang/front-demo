@@ -1,5 +1,5 @@
-import React, { useMemo, forwardRef, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, forwardRef, useMemo } from 'react';
 import { useAutoResize } from '../../InternalBorder/components/Border/hooks';
 import styles from './index.less';
 
@@ -92,8 +92,7 @@ const Decoration = forwardRef((props: IProps, ref) => {
           fill="transparent"
           stroke={mergedColor[0]}
           strokeWidth="3"
-          points={line1Points}
-        >
+          points={line1Points}>
           <animate
             attributeName="stroke-dasharray"
             attributeType="XML"
@@ -111,8 +110,7 @@ const Decoration = forwardRef((props: IProps, ref) => {
           fill="transparent"
           stroke={mergedColor[1]}
           strokeWidth="2"
-          points={line2Points}
-        >
+          points={line2Points}>
           <animate
             attributeName="stroke-dasharray"
             attributeType="XML"

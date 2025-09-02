@@ -1,12 +1,12 @@
-import { useCallback } from 'react';
-import { CopyOutlined } from '@ant-design/icons';
-import { get } from 'lodash';
 import { Message } from '@/components/RequestMessage';
-import LocalConfigInstance, { LocalConfig } from '@/utils/Assist/LocalConfig';
 import ClipboardComponent from '@/utils/Assist/ClipboardComponent';
 import { getDvaGlobalModelData } from '@/utils/Assist/Component';
-import useChildren from './useChildren';
+import LocalConfigInstance, { LocalConfig } from '@/utils/Assist/LocalConfig';
+import { CopyOutlined } from '@ant-design/icons';
+import { get } from 'lodash';
+import { useCallback } from 'react';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 const _clone = async (
   select: string[],

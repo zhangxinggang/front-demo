@@ -1,6 +1,6 @@
-import { useCallback, useMemo, CSSProperties } from 'react';
 import { LockOutlined, UnlockOutlined } from '@ant-design/icons';
 import classnames from 'classnames';
+import { CSSProperties, useCallback, useMemo } from 'react';
 
 const LockEditor = (props: {
   lock: boolean;

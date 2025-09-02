@@ -1,7 +1,7 @@
-import {} from 'react';
+import { useControllableValue } from 'ahooks';
 import { Select } from 'antd';
 import { SelectProps } from 'antd/es/select';
-import { useControllableValue } from 'ahooks';
+import {} from 'react';
 
 const SingleDefineSelect = (props: SelectProps) => {
   const [value, setValue] = useControllableValue(props);

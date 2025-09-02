@@ -1,6 +1,6 @@
-import {} from 'react';
-import classnames from 'classnames';
 import { Layout } from 'antd';
+import classnames from 'classnames';
+import {} from 'react';
 import ActionSection from './components/ActionSection';
 import AnimationSection from './components/AnimationSection';
 import LinearBackground, {
@@ -23,8 +23,7 @@ const Home = () => {
         className={classnames(
           styles['home-page-main'],
           'dis-flex zero-scrollbar',
-        )}
-      >
+        )}>
         <div className={styles['home-page-wrapper-action']}>
           <ActionSection />
         </div>

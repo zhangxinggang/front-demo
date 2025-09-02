@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import TooltipConfigCommon from '@/components/ChartComponents/Common/TooltipCommon';
 import TooltipAnimationConfig from '@/components/ChartComponents/Common/TooltipAnimationConfig';
+import TooltipConfigCommon from '@/components/ChartComponents/Common/TooltipCommon';
+import { useCallback } from 'react';
 import { TBubbleScatterConfig } from '../type';
 
 const TooltipConfig = (props: {

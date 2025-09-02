@@ -21,18 +21,26 @@ const menulevel: AppRouteObject = {
   ),
   meta: {
     label: 'sys.menu.menulevel.index',
-    icon: <SvgIcon icon="ic-menulevel" className="ant-menu-item-icon" size="24" />,
+    icon: (
+      <SvgIcon icon="ic-menulevel" className="ant-menu-item-icon" size="24" />
+    ),
     key: '/menu_level',
   },
   children: [
     {
       path: 'menu_level_1a',
       element: <MenuLevel title="1a" />,
-      meta: { label: 'sys.menu.menulevel.1a', key: '/menu_level/menu_level_1a' },
+      meta: {
+        label: 'sys.menu.menulevel.1a',
+        key: '/menu_level/menu_level_1a',
+      },
     },
     {
       path: 'menu_level_1b',
-      meta: { label: 'sys.menu.menulevel.1b.index', key: '/menu_level/menu_level_1b' },
+      meta: {
+        label: 'sys.menu.menulevel.1b.index',
+        key: '/menu_level/menu_level_1b',
+      },
       children: [
         {
           index: true,

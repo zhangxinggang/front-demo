@@ -1,12 +1,12 @@
-import { useCallback, useMemo } from 'react';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import BarCarouselConfig from '@/components/ChartComponents/Common/BarCarouselConfig';
 import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import { InputNumber as AutoInputNumber } from '@/components/ChartComponents/Common/NumberPositionConfig';
 import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
-import { InputNumber as AutoInputNumber } from '@/components/ChartComponents/Common/NumberPositionConfig';
-import BarCarouselConfig from '@/components/ChartComponents/Common/BarCarouselConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { useCallback, useMemo } from 'react';
 import { THorizontalBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -38,8 +38,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         ignore={['position']}
-        onChange={onKeyChange.bind(null, 'label')}
-      >
+        onChange={onKeyChange.bind(null, 'label')}>
         <FormatterSelect
           value={label.formatter}
           onChange={(value) => {

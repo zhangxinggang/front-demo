@@ -1,20 +1,19 @@
+import MonacoEditor, {
+  OnMount as EditorDidMount,
+  EditorProps as MonacoEditorProps,
+} from '@monaco-editor/react';
+import { useControllableValue } from 'ahooks';
 import {
-  useCallback,
-  useMemo,
   forwardRef,
+  useCallback,
   useImperativeHandle,
+  useMemo,
   useState,
 } from 'react';
-import { useControllableValue } from 'ahooks';
-import MonacoEditor, {
-  EditorProps as MonacoEditorProps,
-  OnMount as EditorDidMount,
-  loader,
-} from '@monaco-editor/react';
 // import * as monaco from 'monaco-editor';
+import { sleep } from '@/utils';
 import classnames from 'classnames';
 import { merge } from 'lodash';
-import { sleep } from '@/utils';
 import { Loading } from '../PageLoading';
 import styles from './index.less';
 
@@ -141,16 +140,12 @@ const CodeEditor = forwardRef<EditorRef, EditorProps>((props, ref) => {
     } catch (err) {}
   };
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        format: multiFormat,
-        setValue,
-      };
-    },
-    [editorRef],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      format: multiFormat,
+      setValue,
+    };
+  }, [editorRef]);
 
   return (
     <MonacoEditor

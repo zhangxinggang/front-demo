@@ -1,23 +1,23 @@
-import { Component } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import { merge } from 'lodash';
-import Select from '@/components/ChartComponents/Common/Select';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import IconTooltip from '@/components/IconTooltip';
 import Input from '@/components/ChartComponents/Common/Input';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import Select from '@/components/ChartComponents/Common/Select';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
 import ThemeUtil from '@/utils/Assist/Theme';
-import ConditionConfig from './Condition';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { merge } from 'lodash';
+import { Component } from 'react';
 import { TLuckyDrawConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 
@@ -69,8 +69,7 @@ class Config extends Component<
                     <IconTooltip title="建议配置范围 10 ~ 30">
                       <InfoCircleOutlined />
                     </IconTooltip>
-                  }
-                >
+                  }>
                   <FullForm>
                     <InputNumber
                       value={global.config.speed}
@@ -102,8 +101,7 @@ class Config extends Component<
                   child={{
                     header: '文本',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={global.style}
                     onChange={(value) => {
@@ -174,8 +172,7 @@ class Config extends Component<
                   child={{
                     header: '文本',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={buttons.textStyle}
                     onChange={(value) => {

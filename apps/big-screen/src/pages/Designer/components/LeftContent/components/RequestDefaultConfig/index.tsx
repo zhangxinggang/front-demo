@@ -54,15 +54,11 @@ const LensConfig = forwardRef<RequestCofigRef, Props>((props, ref) => {
     setVisible(false);
   }, []);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open,
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open,
+    };
+  }, []);
 
   return (
     <Drawer
@@ -72,8 +68,7 @@ const LensConfig = forwardRef<RequestCofigRef, Props>((props, ref) => {
       onClose={onClose}
       title="默认请求配置"
       placement="left"
-      width={400}
-    >
+      width={400}>
       <ConfigList level={1}>
         <Item label="请求方法">
           <FullForm>

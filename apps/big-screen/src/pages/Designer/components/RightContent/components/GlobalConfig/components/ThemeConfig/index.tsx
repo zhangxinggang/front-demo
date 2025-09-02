@@ -1,7 +1,7 @@
-import { useMemo, useCallback, useState } from 'react';
 import Select from '@/components/ChartComponents/Common/Select';
 import { useHash } from '@/hooks';
 import ThemeUtil from '@/utils/Assist/Theme';
+import { useCallback, useMemo, useState } from 'react';
 
 export const BaseThemeConfig = (props: {
   value?: string;

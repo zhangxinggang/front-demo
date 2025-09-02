@@ -20,7 +20,10 @@ const SyntaxHighlighter = memo<SyntaxHighlighterProps>(
     const { isDarkMode } = useThemeMode();
     const [loading, setLoading] = useState(false);
 
-    const codeToHtml = useShiki({ onLoadingChange: setLoading, theme: syntaxTheme?.shiki });
+    const codeToHtml = useShiki({
+      onLoadingChange: setLoading,
+      theme: syntaxTheme?.shiki,
+    });
 
     switch (type) {
       case 'prism':

@@ -1,7 +1,7 @@
-import { useCallback, useMemo } from 'react';
 import { EditOutlined } from '@ant-design/icons';
-import useChildren from './useChildren';
+import { useCallback, useMemo } from 'react';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 const CopyAction = (props: CommonActionType) => {
   const { select, onClick, childrenType, disabled } = props;

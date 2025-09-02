@@ -35,13 +35,18 @@ function Login() {
   return (
     <Layout className="relative flex !min-h-screen !w-full !flex-row">
       <div
-        className="hidden grow flex-col items-center justify-center gap-[80px] bg-center  bg-no-repeat md:flex"
+        className="hidden grow flex-col items-center justify-center gap-[80px] bg-center bg-no-repeat md:flex"
         style={{
           background: bg,
-        }}
-      >
-        <div className="text-3xl font-bold leading-normal lg:text-4xl xl:text-5xl">Slash Admin</div>
-        <img className="max-w-[480px] xl:max-w-[560px]" src={DashboardImg} alt="" />
+        }}>
+        <div className="text-3xl font-bold leading-normal lg:text-4xl xl:text-5xl">
+          Slash Admin
+        </div>
+        <img
+          className="max-w-[480px] xl:max-w-[560px]"
+          src={DashboardImg}
+          alt=""
+        />
         <Typography.Text className="flex flex-row gap-[16px] text-2xl">
           {t('sys.login.signInSecondTitle')}
         </Typography.Text>

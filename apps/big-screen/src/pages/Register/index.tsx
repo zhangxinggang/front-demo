@@ -54,8 +54,7 @@ const Register = (props: { register: (value: any) => any }) => {
         loading={fetchLoading}
         type="primary"
         block
-        onClick={handleRegister}
-      >
+        onClick={handleRegister}>
         注册
       </Button>
     );

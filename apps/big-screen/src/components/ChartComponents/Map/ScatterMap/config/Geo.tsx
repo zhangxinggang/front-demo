@@ -1,13 +1,13 @@
-import { useCallback, useMemo } from 'react';
-import { pick } from 'lodash';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
 import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import ShadowConfig from '@/components/ChartComponents/Common/ShadowConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import { pick } from 'lodash';
+import { useCallback, useMemo } from 'react';
 import { TScatterMapConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -57,14 +57,12 @@ const GeoConfig = (props: {
         child={{
           header: '区块样式',
           key: 'itemStyle',
-        }}
-      >
+        }}>
         <Collapse
           child={{
             header: '基础样式',
             key: 'normal',
-          }}
-        >
+          }}>
           <Item label="边框">
             <FullForm label="宽度">
               <InputNumber
@@ -95,8 +93,7 @@ const GeoConfig = (props: {
             child={{
               header: '区域颜色',
               key: 'areaStyle',
-            }}
-          >
+            }}>
             <ChartGradientSelect
               value={itemStyle.normal.areaColor}
               onChange={(value) => {
@@ -112,8 +109,7 @@ const GeoConfig = (props: {
             child={{
               header: '阴影',
               key: 'shadow',
-            }}
-          >
+            }}>
             <ShadowConfig
               value={pick(itemStyle.normal, [
                 'shadowColor',
@@ -133,8 +129,7 @@ const GeoConfig = (props: {
           child={{
             header: '选中样式',
             key: 'emphasis',
-          }}
-        >
+          }}>
           <Item label="边框">
             <FullForm label="宽度">
               <InputNumber
@@ -165,8 +160,7 @@ const GeoConfig = (props: {
             child={{
               header: '区域颜色',
               key: 'areaStyle',
-            }}
-          >
+            }}>
             <ChartGradientSelect
               value={itemStyle.emphasis.areaColor}
               onChange={(value) => {
@@ -182,8 +176,7 @@ const GeoConfig = (props: {
             child={{
               header: '阴影',
               key: 'shadow',
-            }}
-          >
+            }}>
             <ShadowConfig
               value={pick(itemStyle.emphasis, [
                 'shadowColor',

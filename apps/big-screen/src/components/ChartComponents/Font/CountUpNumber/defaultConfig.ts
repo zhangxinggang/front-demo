@@ -1,14 +1,14 @@
 import { mergeWithoutArray } from '@/utils';
+import { getNumberValue } from '@/utils/constants';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
-  DEFAULT_FONT_CONFIG,
   DEFAULT_CONDITION_CONFIG,
-  DEFAULT_LINKAGE_CONFIG,
+  DEFAULT_FONT_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
 } from '../../Common/Constants/defaultConfig';
-import { getNumberValue } from '@/utils/constants';
 import { TCountUpNumberConfig } from './type';
 
 const [DEFAULT_NUMBER_VALUE] = getNumberValue(1, 2000, 200000);

@@ -1,7 +1,3 @@
-import { CSSProperties, useMemo, useRef, useCallback } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useSize } from 'ahooks';
 import {
   useComponent,
   useCondition,
@@ -9,8 +5,12 @@ import {
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TTextConfig } from '../type';
+import { useSize } from 'ahooks';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { CSSProperties, useCallback, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TTextConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -106,8 +106,7 @@ const Text = (props: ComponentData.CommonComponentProps<TTextConfig>) => {
         className={styles['component-font-text-carousel']}
         style={{
           animationDuration: `${animation.speed / 1000 || 1}s`,
-        }}
-      >
+        }}>
         <div style={componentStyle} ref={textRef}>
           {finalValue.value || ''}
         </div>
@@ -129,8 +128,7 @@ const Text = (props: ComponentData.CommonComponentProps<TTextConfig>) => {
           conditionStyle,
         )}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           {element}

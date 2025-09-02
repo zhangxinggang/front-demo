@@ -43,7 +43,14 @@ export interface ColorPaletteOptions {
   reverse?: boolean;
 }
 
-export type TokenType = 'primary' | 'success' | 'warning' | 'error' | 'info' | 'grey' | 'neutral';
+export type TokenType =
+  | 'primary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'info'
+  | 'grey'
+  | 'neutral';
 
 export type ColorPalettes = Record<TokenType, string[]>;
 export type SeedColors = Record<TokenType, string>;
@@ -80,11 +87,14 @@ export const generateColorPalette = (
 
   for (let i = lighter.steps; i > 0; i--) {
     const lightness =
-      baseColorOKLCH[0] + ((lighter.targetBrightness - baseColorOKLCH[0]) / lighter.steps) * i;
+      baseColorOKLCH[0] +
+      ((lighter.targetBrightness - baseColorOKLCH[0]) / lighter.steps) * i;
 
     const chromaValue =
       baseColorOKLCH[1] -
-      (((1 - lighter.saturationAdjustment) * lighter.saturationScale * baseColorOKLCH[1]) /
+      (((1 - lighter.saturationAdjustment) *
+        lighter.saturationScale *
+        baseColorOKLCH[1]) /
         lighter.steps) *
         i;
 
@@ -96,10 +106,13 @@ export const generateColorPalette = (
 
   for (let i = 1; i <= darker.steps; i++) {
     const lightness =
-      baseColorOKLCH[0] - ((baseColorOKLCH[0] - darker.targetBrightness) / darker.steps) * i;
+      baseColorOKLCH[0] -
+      ((baseColorOKLCH[0] - darker.targetBrightness) / darker.steps) * i;
     const chromaValue =
       baseColorOKLCH[1] -
-      (((1 - darker.saturationAdjustment) * darker.saturationScale * baseColorOKLCH[1]) /
+      (((1 - darker.saturationAdjustment) *
+        darker.saturationScale *
+        baseColorOKLCH[1]) /
         darker.steps) *
         i;
 
@@ -141,7 +154,11 @@ export const generateNeutralPalette = (
   const neutralChromaValue = options.neutral ? baseColorOKLCH[1] * 0.2 : 0;
 
   // 使用降低饱和度的颜色作为基础色重新生成色板
-  const neutralBaseColor = chroma.oklch(baseColorOKLCH[0], neutralChromaValue, neutralHue);
+  const neutralBaseColor = chroma.oklch(
+    baseColorOKLCH[0],
+    neutralChromaValue,
+    neutralHue,
+  );
 
   return generateColorPalette(neutralBaseColor.hex(), options);
 };

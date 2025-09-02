@@ -63,8 +63,7 @@ const Ticket = (
         },
         style,
       )}
-      id={chartId.current}
-    >
+      id={chartId.current}>
       <Wrapper border={border}>
         {children}
         <div
@@ -95,8 +94,7 @@ const Ticket = (
             radial-gradient(circle at left bottom, transparent ${radius}px, ${realBackgroundColor} 0) bottom right /${
               componentWidth - length
             }px 51% no-repeat`,
-          }}
-        ></div>
+          }}></div>
       </Wrapper>
     </div>
   );

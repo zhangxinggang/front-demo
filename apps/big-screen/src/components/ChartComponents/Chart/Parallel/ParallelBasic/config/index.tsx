@@ -1,15 +1,15 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import { Component } from 'react';
+import { TParallelBasicConfig } from '../type';
+import AnimationConfig from './Animation';
+import ConditionConfig from './Condition';
 import LegendConfig from './Legend';
+import ParallelAxisConfig from './ParallelAxis';
 import ParallelConfig from './ParallelConfig';
 import SeriesConfig from './Series';
-import AnimationConfig from './Animation';
-import ParallelAxisConfig from './ParallelAxis';
-import ConditionConfig from './Condition';
-import { TParallelBasicConfig } from '../type';
 class Config extends Component<
   ComponentData.ComponentConfigProps<TParallelBasicConfig>
 > {

@@ -67,8 +67,7 @@ const _ComponentList = (props: {
             id={viewportQuery}
             className={
               styles['component-exchange-screen-flag-component-list-item']
-            }
-          >
+            }>
             <TargetComponent
               viewportQuery={`#${viewportQuery}`}
               className={styles['render-component-children']}
@@ -229,15 +228,11 @@ const MobilePreviewer = forwardRef<MobilePreviewerRef, {}>((props, ref) => {
     }
   }, [componentList]);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open,
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open,
+    };
+  }, []);
 
   return (
     <Drawer
@@ -255,33 +250,28 @@ const MobilePreviewer = forwardRef<MobilePreviewerRef, {}>((props, ref) => {
             onClick={handleClose}
             loading={loading}
             needLoading={false}
-            force
-          >
+            force>
             取消
           </GlobalLoadingActionButton>
           <GlobalLoadingActionButton
             type="primary"
             onClick={GlobalConfig.IS_STATIC ? handleOkStatic : handleOk}
-            loading={loading}
-          >
+            loading={loading}>
             确认应用
           </GlobalLoadingActionButton>
         </div>
-      }
-    >
+      }>
       <div
         className={classnames(
           styles['component-exchange-screen-flag-drawer'],
           'pos-re',
-        )}
-      >
+        )}>
         {loading && (
           <div
             className={classnames(
               styles['component-exchange-screen-flag-drawer-loading'],
               'pos-ab w-100 h-100',
-            )}
-          >
+            )}>
             <Loading />
           </div>
         )}
@@ -289,8 +279,7 @@ const MobilePreviewer = forwardRef<MobilePreviewerRef, {}>((props, ref) => {
           <ExchangePreviewerContext.Provider
             value={{
               flag: 'H5',
-            }}
-          >
+            }}>
             <NormalPainter>
               <ComponentList value={componentList || []} />
             </NormalPainter>

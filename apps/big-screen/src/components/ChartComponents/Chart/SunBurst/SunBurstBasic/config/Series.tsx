@@ -1,11 +1,11 @@
-import { useCallback, useMemo } from 'react';
-import { Switch } from 'antd';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
 import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { Switch } from 'antd';
+import { useCallback, useMemo } from 'react';
 import { TSunBurstBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -68,8 +68,7 @@ const SeriesConfig = (props: {
         ignore={['position']}
         parent={{
           defaultActiveKey: ['label'],
-        }}
-      >
+        }}>
         <FormatterSelect
           value={label.formatter}
           onChange={(value) => {

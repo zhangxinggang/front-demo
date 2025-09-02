@@ -1,11 +1,11 @@
-import arrayMove from 'array-move';
-import { set, get, merge, pick, isNil, omit } from 'lodash';
 import { useComponentPath, useIdPathMap } from '@/hooks';
 import { IGlobalModelState } from '@/models/connect';
-import GroupUtil from '../Group';
+import arrayMove from 'array-move';
+import { get, isNil, merge, omit, pick, set } from 'lodash';
+import { isComponentParentEqual, isGroupComponent } from '.';
 import { mergeWithoutArray } from '../../tool';
+import GroupUtil from '../Group';
 import { ScreenDataRequest } from '../RequestPool';
-import { isGroupComponent, isComponentParentEqual } from '.';
 
 // get parentPath
 export const getParentPath = (path: string) => {

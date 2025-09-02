@@ -28,7 +28,10 @@ export default function Toolbar({
             <span className="ml-2">Multi Item</span>
           </div>
         )}
-        <ReloadOutlined className="cursor-pointer text-lg" onClick={onRefresh} />
+        <ReloadOutlined
+          className="cursor-pointer text-lg"
+          onClick={onRefresh}
+        />
       </div>
     </div>
   );

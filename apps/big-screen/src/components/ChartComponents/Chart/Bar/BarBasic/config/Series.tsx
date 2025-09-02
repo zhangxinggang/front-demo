@@ -1,17 +1,17 @@
-import { useCallback, useMemo } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import IconTooltip from '@/components/IconTooltip';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
-import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
+import BarCarouselConfig from '@/components/ChartComponents/Common/BarCarouselConfig';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import { InputNumber as AutoInputNumber } from '@/components/ChartComponents/Common/NumberPositionConfig';
-import BarCarouselConfig from '@/components/ChartComponents/Common/BarCarouselConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { useCallback, useMemo } from 'react';
 import { TBarBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -55,8 +55,7 @@ const SeriesConfig = (props: {
           visibleRender: true,
           value: showBackground,
           onChange: onKeyChange.bind(null, 'showBackground'),
-        }}
-      >
+        }}>
         <Item label="颜色">
           <FullForm>
             <CompatColorSelect
@@ -77,8 +76,7 @@ const SeriesConfig = (props: {
     return (
       <SeriesLabelConfig
         {...(label as any)}
-        onChange={onKeyChange.bind(null, 'label')}
-      >
+        onChange={onKeyChange.bind(null, 'label')}>
         <AngleSelect
           value={label.rotate}
           onChange={(value) => {
@@ -116,8 +114,7 @@ const SeriesConfig = (props: {
             <IconTooltip title="间距为柱子的宽度占比">
               <InfoCircleOutlined />
             </IconTooltip>
-          }
-        >
+          }>
           <FullForm label="宽度">
             <AutoInputNumber
               value={barWidth}

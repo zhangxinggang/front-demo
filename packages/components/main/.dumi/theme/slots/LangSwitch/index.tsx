@@ -52,7 +52,10 @@ const displayLangMap: Record<string, string> = {
   'en-US': 'EN',
 };
 
-const SingleSwitch: FC<{ locale: ILocaleItem; current: ILocaleItem }> = ({ locale, current }) => {
+const SingleSwitch: FC<{ locale: ILocaleItem; current: ILocaleItem }> = ({
+  locale,
+  current,
+}) => {
   const { pathname } = useLocation();
   const [path, setPath] = useState(() =>
     getTargetLocalePath({ pathname, current, target: locale }),
@@ -71,8 +74,7 @@ const SingleSwitch: FC<{ locale: ILocaleItem; current: ILocaleItem }> = ({ local
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-        }}
-      >
+        }}>
         {displayLangMap[locale.id]}
       </Button>
     </Link>
@@ -110,7 +112,9 @@ const LangSwitch: FC = () => {
         value: item.id,
         label: displayLangMap[item.id],
       }))}
-      renderItem={(item, index) => `${languageMap[locales[index].id]} ${locales[index].name}`}
+      renderItem={(item, index) =>
+        `${languageMap[locales[index].id]} ${locales[index].name}`
+      }
       style={{
         height: 32,
         minWidth: 32,
@@ -122,7 +126,10 @@ const LangSwitch: FC = () => {
     />
   ) : (
     // single language switch
-    <SingleSwitch locale={locales.find(({ id }) => id !== current.id)!} current={current} />
+    <SingleSwitch
+      locale={locales.find(({ id }) => id !== current.id)!}
+      current={current}
+    />
   );
 };
 

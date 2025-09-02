@@ -15,7 +15,7 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
         border-color: ${token.colorBorderSecondary};
         display: flex;
         flex-direction: column;
-        &-action-btn:not(:last-child){
+        &-action-btn:not(:last-child) {
           display: none;
         }
         &-demo {
@@ -147,28 +147,38 @@ export default (props: IPreviewerProps) => {
   const inheritSiteTheme = props.inheritSiteTheme || theme.demoInheritSiteTheme;
 
   const demoAppearance = props.appearance;
-  const lazyLoading = useSiteStore((s) => s.siteData.themeConfig.demo?.lazyLoading);
-  const fm = useSiteStore((s)=> s.routeMeta.frontmatter)
+  const lazyLoading = useSiteStore(
+    (s) => s.siteData.themeConfig.demo?.lazyLoading,
+  );
+  const fm = useSiteStore((s) => s.routeMeta.frontmatter);
   let demoDependencies = props.asset.dependencies;
-  if(fm.hideCode){
-    const newDemo = {}
-    Object.keys(props.asset.dependencies).forEach((key)=>{
-      if(!key.startsWith('.')){
-        newDemo[key] = props.asset.dependencies[key]
+  if (fm.hideCode) {
+    const newDemo = {};
+    Object.keys(props.asset.dependencies).forEach((key) => {
+      if (!key.startsWith('.')) {
+        newDemo[key] = props.asset.dependencies[key];
       }
-      demoDependencies = newDemo
-    })
+      demoDependencies = newDemo;
+    });
   }
 
-
   const content = (
-    <DemoProvider inheritSiteTheme={inheritSiteTheme} demoAppearance={demoAppearance}>
-      <Previewer {...props} asset={{...props.asset, dependencies: demoDependencies }} />
+    <DemoProvider
+      inheritSiteTheme={inheritSiteTheme}
+      demoAppearance={demoAppearance}>
+      <Previewer
+        {...props}
+        asset={{ ...props.asset, dependencies: demoDependencies }}
+      />
     </DemoProvider>
   );
 
   return (
-    <div className={cx(styles.container, styles[props.codePlacement as 'left' | 'right' | 'top'])}>
+    <div
+      className={cx(
+        styles.container,
+        styles[props.codePlacement as 'left' | 'right' | 'top'],
+      )}>
       {lazyLoading ? (
         <IntersectionLoad height={height} elementType="section">
           {content}

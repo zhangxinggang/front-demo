@@ -1,9 +1,9 @@
-import { useCallback, useMemo, useState } from 'react';
-import { Popover, Button } from 'antd';
-import type { ButtonProps } from 'antd';
-import ReactJson from 'react-json-view';
-import { BugOutlined } from '@ant-design/icons';
 import { FILTER_STEP_MAP_DATA } from '@/utils/Assist/FilterData';
+import { BugOutlined } from '@ant-design/icons';
+import type { ButtonProps } from 'antd';
+import { Button, Popover } from 'antd';
+import { useCallback, useMemo, useState } from 'react';
+import ReactJson from 'react-json-view';
 import styles from './index.less';
 
 const StepData = (props: { id: string }) => {
@@ -20,8 +20,7 @@ const StepData = (props: { id: string }) => {
       onClick={(e) => {
         e.stopPropagation();
         e.preventDefault();
-      }}
-    >
+      }}>
       {/* @ts-ignore */}
       <ReactJson
         src={jsonData}
@@ -34,8 +33,7 @@ const StepData = (props: { id: string }) => {
         displayObjectSize
         indentWidth={2}
         collapseStringsAfterLength={10}
-        iconStyle="square"
-      ></ReactJson>
+        iconStyle="square"></ReactJson>
     </div>
   );
 };
@@ -61,8 +59,7 @@ const StepDataButton = (props: { buttonProps?: ButtonProps; id: string }) => {
       mouseEnterDelay={1}
       open={visible}
       onOpenChange={onVisibleChange}
-      placement="left"
-    >
+      placement="left">
       <Button
         className="h-a m-r-4"
         type="link"

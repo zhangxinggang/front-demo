@@ -1,11 +1,11 @@
-import { useMemo, useRef, useState } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useUpdateEffect } from 'ahooks';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
 import ColorSelect from '@/components/ColorSelect';
-import { TInputConfig } from '../type';
+import { useUpdateEffect } from 'ahooks';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TInputConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -68,8 +68,7 @@ const Input = (props: ComponentData.CommonComponentProps<TInputConfig>) => {
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={outBorder}>
           {children}
           <div className="dis-flex w-100 h-100">
@@ -113,8 +112,7 @@ const Input = (props: ComponentData.CommonComponentProps<TInputConfig>) => {
                 className={styles['component-interactive-input-button']}
                 style={{
                   width: search.width + '%',
-                }}
-              >
+                }}>
                 <button
                   className={
                     styles['component-interactive-input-button-content']
@@ -126,8 +124,7 @@ const Input = (props: ComponentData.CommonComponentProps<TInputConfig>) => {
                     backgroundColor: getRgbaString(search.backgroundColor),
                     borderTopRightRadius: borderRadius,
                     borderBottomRightRadius: borderRadius,
-                  }}
-                >
+                  }}>
                   {search.value}
                 </button>
               </div>

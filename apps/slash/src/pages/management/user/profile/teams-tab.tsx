@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { Row, Col, Avatar } from 'antd';
+import { Avatar, Col, Row } from 'antd';
 
 import { fakeAvatars } from '@/_mock/utils';
 import Card from '@/components/card';

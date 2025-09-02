@@ -1,7 +1,6 @@
-import { useState, useCallback } from 'react';
-import { Button } from 'antd';
-import type { ButtonProps } from 'antd';
 import { useDebounceFn } from 'ahooks';
+import type { ButtonProps } from 'antd';
+import { Button } from 'antd';
 
 const DebounceButton = (props: ButtonProps & { wait?: number }) => {
   const { onClick: propsOnClick, wait = 100, ...nextProps } = props;

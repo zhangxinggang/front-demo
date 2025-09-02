@@ -1,16 +1,16 @@
-import { Component } from 'react';
-import { Radio, Switch } from 'antd';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import ConditionConfig from './Condition';
-import { TFontCarouselConfig } from '../type';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { Radio, Switch } from 'antd';
+import { Component } from 'react';
+import { TFontCarouselConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 class Config extends Component<
@@ -53,8 +53,7 @@ class Config extends Component<
                   child={{
                     header: '文字样式',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(null, 'textStyle')}

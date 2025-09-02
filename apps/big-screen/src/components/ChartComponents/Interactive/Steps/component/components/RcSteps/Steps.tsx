@@ -1,8 +1,8 @@
 /* eslint react/no-did-mount-set-state: 0, react/prop-types: 0 */
-import React, { cloneElement } from 'react';
-import toArray from 'rc-util/lib/Children/toArray';
 import classNames from 'classnames';
-import { Status, Icons } from './interface';
+import toArray from 'rc-util/lib/Children/toArray';
+import React, { cloneElement } from 'react';
+import { Icons, Status } from './interface';
 import Step from './Step';
 
 export type StepIconRender = (info: {

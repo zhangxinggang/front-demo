@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react';
-import json5 from 'json5';
 import CodeEditor from '@/components/CodeEditor';
+import json5 from 'json5';
+import { useCallback, useState } from 'react';
 
 const parseStringValue = (value: any) => {
   try {

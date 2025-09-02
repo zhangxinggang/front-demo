@@ -1,6 +1,6 @@
 import ApiConfig, { ApiConfigProps } from './ApiConfig';
-import StaticConfig from './StaticConfig';
 import MockConfig, { MockConfigProps } from './MockConfig';
+import StaticConfig from './StaticConfig';
 import { TOnChange } from './type';
 
 const DefineConfig = (props: {

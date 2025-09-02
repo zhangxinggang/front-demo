@@ -1,16 +1,16 @@
-import { useCallback, useMemo } from 'react';
-import Select from '@/components/ChartComponents/Common/Select';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
-import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
-import IconTooltip from '@/components/IconTooltip';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import LocalUpload from '@/components/ChartComponents/Common/LocalUpload';
+import Select from '@/components/ChartComponents/Common/Select';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { useCallback, useMemo } from 'react';
 import { TPictorialBarBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -86,16 +86,14 @@ const SeriesConfig = (props: {
               show: value,
             });
           },
-        }}
-      >
+        }}>
         <Item
           label="图形"
           placeholder={
             <IconTooltip title="尽量上传小一点的图片">
               <InfoCircleOutlined />
             </IconTooltip>
-          }
-        >
+          }>
           <FullForm>
             <LocalUpload
               value={spirit.value}
@@ -197,8 +195,7 @@ const SeriesConfig = (props: {
         child={{
           header: '重复',
           key: 'repeat',
-        }}
-      >
+        }}>
         {symbolRepeatConfig}
         {symbolRepeatDirectionConfig}
       </Collapse>

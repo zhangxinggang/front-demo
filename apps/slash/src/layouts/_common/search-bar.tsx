@@ -128,7 +128,9 @@ export default function SearchBar() {
         <IconButton className="h-10 w-10" onClick={handleOpen}>
           <SvgIcon icon="ic-search" size="20" />
         </IconButton>
-        <IconButton className="0 h-6 rounded-md bg-hover text-xs font-bold">⌘K</IconButton>
+        <IconButton className="0 bg-hover h-6 rounded-md text-xs font-bold">
+          ⌘K
+        </IconButton>
       </div>
       <Modal
         centered
@@ -153,7 +155,9 @@ export default function SearchBar() {
             autoFocus
             prefix={<SvgIcon icon="ic-search" size="20" />}
             suffix={
-              <IconButton className="h-6 rounded-md bg-hover text-xs" onClick={handleCancel}>
+              <IconButton
+                className="bg-hover h-6 rounded-md text-xs"
+                onClick={handleCancel}>
                 Esc
               </IconButton>
             }
@@ -175,15 +179,17 @@ export default function SearchBar() {
               <span>to close</span>
             </div>
           </div>
-        }
-      >
+        }>
         {searchResult.length === 0 ? (
           <Empty />
         ) : (
           <Scrollbar>
             <div ref={listRef} className="py-2">
               {searchResult.map(({ key, label }, index) => {
-                const partsTitle = parse(t(label), match(t(label), searchQuery));
+                const partsTitle = parse(
+                  t(label),
+                  match(t(label), searchQuery),
+                );
                 const partsKey = parse(key, match(key, searchQuery));
                 return (
                   <StyledListItemButton
@@ -191,8 +197,7 @@ export default function SearchBar() {
                     $themetoken={themeToken}
                     style={index === selectedItemIndex ? activeStyle : {}}
                     onClick={() => handleSelect(key)}
-                    onMouseMove={() => handleHover(index)}
-                  >
+                    onMouseMove={() => handleHover(index)}>
                     <div className="flex justify-between">
                       <div>
                         <div className="font-medium">
@@ -203,8 +208,7 @@ export default function SearchBar() {
                                 color: item.highlight
                                   ? themeToken.colorPrimary
                                   : themeToken.colorText,
-                              }}
-                            >
+                              }}>
                               {item.text}
                             </span>
                           ))}
@@ -217,8 +221,7 @@ export default function SearchBar() {
                                 color: item.highlight
                                   ? themeToken.colorPrimary
                                   : themeToken.colorTextDescription,
-                              }}
-                            >
+                              }}>
                               {item.text}
                             </span>
                           ))}

@@ -1,15 +1,14 @@
-import { useCallback, useMemo } from 'react';
-import { Switch } from 'antd';
-import { pick } from 'lodash';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
-import { CompatColorSelect } from '@/components/ColorSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import { pick } from 'lodash';
+import { useCallback, useMemo } from 'react';
 import { TClockGaugeConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -54,8 +53,7 @@ const SeriesConfig = (props: {
         child={{
           header: '轴线',
           key: 'axisLine',
-        }}
-      >
+        }}>
         <Item label="线条">
           <FullForm>
             <InputNumber
@@ -97,8 +95,7 @@ const SeriesConfig = (props: {
         child={{
           header: '分隔线',
           key: 'splitLine',
-        }}
-      >
+        }}>
         <Item label="宽度">
           <FullForm>
             <InputNumber
@@ -182,8 +179,7 @@ const SeriesConfig = (props: {
             });
           },
           value: axisTick.show,
-        }}
-      >
+        }}>
         <Item label="长度">
           <FullForm>
             <InputNumber
@@ -229,8 +225,7 @@ const SeriesConfig = (props: {
             });
           },
           value: axisLabel.show,
-        }}
-      >
+        }}>
         <Item label="距离">
           <FullForm>
             <InputNumber
@@ -248,8 +243,7 @@ const SeriesConfig = (props: {
           child={{
             header: '文字',
             key: 'font',
-          }}
-        >
+          }}>
           <FontConfigList
             value={pick(axisLabel, [
               'color',
@@ -270,14 +264,12 @@ const SeriesConfig = (props: {
         child={{
           header: '指针',
           key: 'pointer',
-        }}
-      >
+        }}>
         <Collapse
           child={{
             header: '时针',
             key: 'hourPointer',
-          }}
-        >
+          }}>
           <Item label="尺寸">
             <HalfForm label="长度">
               <InputNumber
@@ -319,8 +311,7 @@ const SeriesConfig = (props: {
           child={{
             header: '分针',
             key: 'minutePointer',
-          }}
-        >
+          }}>
           <Item label="尺寸">
             <HalfForm label="长度">
               <InputNumber
@@ -362,8 +353,7 @@ const SeriesConfig = (props: {
           child={{
             header: '秒针',
             key: 'secondPointer',
-          }}
-        >
+          }}>
           <Item label="尺寸">
             <HalfForm label="长度">
               <InputNumber
@@ -411,14 +401,12 @@ const SeriesConfig = (props: {
         child={{
           header: '固定点',
           key: 'anchor',
-        }}
-      >
+        }}>
         <Collapse
           child={{
             header: '外框',
             key: 'minuteAnchor',
-          }}
-        >
+          }}>
           <Item label="大小">
             <FullForm>
               <InputNumber
@@ -452,8 +440,7 @@ const SeriesConfig = (props: {
           child={{
             header: '内框',
             key: 'secondAnchor',
-          }}
-        >
+          }}>
           <Item label="大小">
             <FullForm>
               <InputNumber

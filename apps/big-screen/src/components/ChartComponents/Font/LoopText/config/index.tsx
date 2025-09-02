@@ -1,15 +1,15 @@
-import { Component } from 'react';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import TextAlignConfig from '@/components/ChartComponents/Common/TextAlignConfig';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import ConditionConfig from './Condition';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import TextAlignConfig from '@/components/ChartComponents/Common/TextAlignConfig';
+import { Component } from 'react';
 import { TLoopTextConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 class Config extends Component<
@@ -51,8 +51,7 @@ class Config extends Component<
                   child={{
                     header: '文字样式',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(null, 'textStyle')}
@@ -77,8 +76,7 @@ class Config extends Component<
                   }}
                   parent={{
                     activeKey: ['animation'],
-                  }}
-                >
+                  }}>
                   <Item label="速度">
                     <FullForm>
                       <InputNumber

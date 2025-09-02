@@ -1,9 +1,9 @@
-import { useMemo, useCallback, useState } from 'react';
-import { Button, message } from 'antd';
-import type { UploadFile } from 'antd/es/upload/interface';
-import LoadingButton from '../LoadingButton';
 import { captureCover, captureCoverAndUpload } from '@/utils/captureCover';
+import { message } from 'antd';
+import type { UploadFile } from 'antd/es/upload/interface';
+import { useCallback, useMemo } from 'react';
 import ImageUpload from '../ImageUpload';
+import LoadingButton from '../LoadingButton';
 
 const CoverSelect = (props: {
   value?: string;
@@ -47,8 +47,7 @@ const CoverSelect = (props: {
         className="m-b-4"
         block
         type="primary"
-        onClick={handleCaptureCover}
-      >
+        onClick={handleCaptureCover}>
         截取封面
       </LoadingButton>
       <ImageUpload value={fileList} onChange={onBackgroundChange} />

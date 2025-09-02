@@ -1,6 +1,3 @@
-import { useMemo, useRef, useCallback } from 'react';
-import { merge, uniqueId } from 'lodash';
-import classnames from 'classnames';
 import {
   useComponent,
   useCondition,
@@ -9,8 +6,11 @@ import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
 import ThemeUtil from '@/utils/Assist/Theme';
-import { TStateListConfig } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TStateListConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -125,8 +125,7 @@ const StateList = (
             justifyContent: align.horizontal,
             alignItems: align.vertical,
             borderRadius: `${borderRadius[3]}px ${borderRadius[0]}px ${borderRadius[1]}px ${borderRadius[2]}px`,
-          }}
-        >
+          }}>
           {value.value}
         </div>
       );
@@ -154,8 +153,7 @@ const StateList = (
       <div
         className={componentClassName}
         style={componentStyle}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           {listContent}

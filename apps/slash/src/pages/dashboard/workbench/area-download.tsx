@@ -61,5 +61,7 @@ function ChartArea({ series }: { series: ApexAxisChartSeries }) {
     tooltip: {},
   });
 
-  return <Chart type="area" series={series} options={chartOptions} height={300} />;
+  return (
+    <Chart type="area" series={series} options={chartOptions} height={300} />
+  );
 }

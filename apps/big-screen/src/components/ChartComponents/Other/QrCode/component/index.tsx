@@ -1,19 +1,19 @@
-import { useMemo, useRef, useState } from 'react';
-import { merge, uniqueId } from 'lodash';
-import classnames from 'classnames';
-import QRCode from 'qrcode';
-import type { QRCodeRenderersOptions } from 'qrcode';
-import { useDeepCompareEffect } from 'ahooks';
 import {
   useComponent,
   useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
+import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
-import { TQrCodeConfig } from '../type';
+import { useDeepCompareEffect } from 'ahooks';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import type { QRCodeRenderersOptions } from 'qrcode';
+import QRCode from 'qrcode';
+import { useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TQrCodeConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString, getHexString } = ColorSelect;
@@ -136,8 +136,7 @@ const QrCode = (props: ComponentData.CommonComponentProps<TQrCodeConfig>) => {
         className={componentClassName}
         style={componentStyle}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           <div
@@ -146,8 +145,7 @@ const QrCode = (props: ComponentData.CommonComponentProps<TQrCodeConfig>) => {
               backgroundColor: getRgbaString(base.backgroundColor),
               borderRadius: DEFAULT_BORDER_RADIUS,
               overflow: 'hidden',
-            }}
-          >
+            }}>
             <img
               src={qrCode}
               className={styles['component-other-qr-code-content-image']}

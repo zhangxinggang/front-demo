@@ -1,8 +1,3 @@
-import { CSSProperties, useMemo, useRef, useCallback } from 'react';
-import { uniqueId, merge, round as mathRound } from 'lodash';
-import classnames from 'classnames';
-import { CountUp } from 'countup.js';
-import { useDeepCompareEffect } from 'ahooks';
 import {
   useComponent,
   useCondition,
@@ -10,8 +5,13 @@ import {
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TCountUpNumberConfig } from '../type';
+import { useDeepCompareEffect } from 'ahooks';
+import classnames from 'classnames';
+import { CountUp } from 'countup.js';
+import { round as mathRound, merge, uniqueId } from 'lodash';
+import { CSSProperties, useCallback, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TCountUpNumberConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -155,14 +155,12 @@ const CountUpNumberBasic = (
           style,
           conditionStyle,
         )}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           <div
             id={chartId.current}
             className="w-100 h-100 dis-flex"
-            style={componentStyle}
-          >
+            style={componentStyle}>
             {calculateValue || ''}
           </div>
           {children}

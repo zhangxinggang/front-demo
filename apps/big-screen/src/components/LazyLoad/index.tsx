@@ -1,6 +1,6 @@
+import RequestPool from '@/utils/Assist/RequestPool';
 import { lazy, Suspense } from 'react';
 import { Loading } from '../PageLoading';
-import RequestPool from '@/utils/Assist/RequestPool';
 
 const requestPool = new RequestPool({
   concurrency: 5,

@@ -1,17 +1,16 @@
-import { useCallback, useMemo } from 'react';
-import { pick } from 'lodash';
-import Select from '@/components/ChartComponents/Common/Select';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import { CompatColorSelect } from '@/components/ColorSelect';
+import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import Select from '@/components/ChartComponents/Common/Select';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import { pick } from 'lodash';
+import { useCallback, useMemo } from 'react';
 import { TRadarBasicConfig } from '../type';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 
 const { Item } = ConfigList;
 
@@ -61,8 +60,7 @@ const RadarConfig = (props: {
             });
           },
           value: axisName.show,
-        }}
-      >
+        }}>
         <FormatterSelect
           value={axisName.formatter}
           onChange={(value) => {
@@ -75,8 +73,7 @@ const RadarConfig = (props: {
           child={{
             header: '文字',
             key: 'font',
-          }}
-        >
+          }}>
           <FontConfigList
             value={pick(axisName, [
               'fontSize',
@@ -156,8 +153,7 @@ const RadarConfig = (props: {
             });
           },
           value: splitArea.show,
-        }}
-      >
+        }}>
         <Item label="区域一颜色">
           <FullForm>
             <CompatColorSelect

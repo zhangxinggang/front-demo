@@ -22,8 +22,7 @@ const CodeView = (props: CodeViewProps) => {
         backgroundColor: 'transparent',
         borderWidth: '0.1em',
       }}
-      {...nextProps}
-    >
+      {...nextProps}>
       {/* {children.replace(/^\s+|\s+$/g, '')} */}
       {children}
     </SyntaxHighlighter>

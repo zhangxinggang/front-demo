@@ -129,14 +129,12 @@ const CarouselBasic = (
           clipPathStyle,
           conditionStyle,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper
           border={border}
           style={{
             pointerEvents: 'none',
-          }}
-        >
+          }}>
           {children}
           <div className="w-100 h-100">
             <Carousel
@@ -151,8 +149,7 @@ const CarouselBasic = (
                 overflow: 'hidden',
                 borderRadius: DEFAULT_BORDER_RADIUS,
               }}
-              pauseOnFocus={pauseOnHover}
-            >
+              pauseOnFocus={pauseOnHover}>
               {imageList}
             </Carousel>
           </div>

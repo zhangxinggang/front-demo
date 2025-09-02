@@ -1,17 +1,17 @@
-import { useMemo, useRef, useCallback } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
 import {
   useComponent,
   useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
-import { useClipPath } from '@/hooks';
-import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TVideoConfig } from '../type';
-import { CHART_ID } from '../id';
-import styles from './index.less';
 import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
+import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
+import { useClipPath } from '@/hooks';
+import FilterDataUtil from '@/utils/Assist/FilterData';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useMemo, useRef } from 'react';
+import { CHART_ID } from '../id';
+import { TVideoConfig } from '../type';
+import styles from './index.less';
 
 const VideoBasic = (
   props: ComponentData.CommonComponentProps<TVideoConfig>,
@@ -99,8 +99,7 @@ const VideoBasic = (
           conditionStyle,
         )}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           <video

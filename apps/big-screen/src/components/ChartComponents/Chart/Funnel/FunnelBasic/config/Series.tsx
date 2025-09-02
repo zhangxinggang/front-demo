@@ -1,17 +1,17 @@
-import { useCallback, useMemo } from 'react';
-import Select from '@/components/ChartComponents/Common/Select';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
-import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import LineStyle from '@/components/ChartComponents/Common/LineStyleSelect';
-import NumberPositionConfig from '@/components/ChartComponents/Common/NumberPositionConfig';
 import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
+import NumberPositionConfig from '@/components/ChartComponents/Common/NumberPositionConfig';
+import Select from '@/components/ChartComponents/Common/Select';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { useCallback, useMemo } from 'react';
 import { TFunnelBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -58,8 +58,7 @@ const SeriesConfig = (props: {
         ignore={['position']}
         parent={{
           defaultActiveKey: ['label'],
-        }}
-      >
+        }}>
         <Item label="位置">
           <FullForm>
             <Select
@@ -108,8 +107,7 @@ const SeriesConfig = (props: {
             });
           },
           value: labelLine.show,
-        }}
-      >
+        }}>
         <Item label="线段">
           <FullForm>
             <InputNumber

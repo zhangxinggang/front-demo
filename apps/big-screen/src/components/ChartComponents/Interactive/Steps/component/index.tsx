@@ -1,15 +1,15 @@
-import { useMemo, useRef, useCallback, useState, useEffect } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useUpdateEffect } from 'ahooks';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import RcSteps, { Step as RcStep } from './components/RcSteps';
-import { TStepsConfig } from '../type';
-import { CHART_ID } from '../id';
+import { useUpdateEffect } from 'ahooks';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { DEFAULT_ICON } from '../defaultConfig';
+import { CHART_ID } from '../id';
+import { TStepsConfig } from '../type';
+import RcSteps, { Step as RcStep } from './components/RcSteps';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -165,8 +165,7 @@ const Steps = (props: ComponentData.CommonComponentProps<TStepsConfig>) => {
               className={classnames(statusIcon, 'bi', {
                 [styles['component-interactive-steps-step-process']]:
                   statusKey === 'process',
-              })}
-            ></i>
+              })}></i>
           }
           status={isInteractive ? undefined : status || 'wait'}
           onClick={click.show ? onClick.bind(null, item, index) : undefined}
@@ -229,16 +228,14 @@ const Steps = (props: ComponentData.CommonComponentProps<TStepsConfig>) => {
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           <RcSteps
             current={activeStep}
             labelPlacement={labelPlacement}
             direction={direction}
-            status={outerStatus}
-          >
+            status={outerStatus}>
             {stepList}
           </RcSteps>
         </Wrapper>

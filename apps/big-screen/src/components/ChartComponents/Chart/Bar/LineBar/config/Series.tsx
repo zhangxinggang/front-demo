@@ -1,16 +1,16 @@
-import { useCallback, useMemo } from 'react';
-import { Switch } from 'antd';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
 import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import ThemeUtil from '@/utils/Assist/Theme';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
 import { InputNumber as AutoInputNumber } from '@/components/ChartComponents/Common/NumberPositionConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { Switch } from 'antd';
+import { useCallback, useMemo } from 'react';
 import { DEFAULT_RADIAL_CONFIG } from '../../../../Common/Constants/defaultConfig';
 import { TLineBarConfig } from '../type';
 
@@ -62,8 +62,7 @@ const SeriesConfig = (props: {
                 child={{
                   header: '柱图',
                   key: 'bar',
-                }}
-              >
+                }}>
                 <Collapse
                   child={{
                     header: '颜色',
@@ -71,8 +70,7 @@ const SeriesConfig = (props: {
                   }}
                   parent={{
                     defaultActiveKey: ['color'],
-                  }}
-                >
+                  }}>
                   <ChartGradientSelect
                     value={bar.color}
                     onChange={(value) => {
@@ -93,8 +91,7 @@ const SeriesConfig = (props: {
                 child={{
                   header: '折线',
                   key: 'line',
-                }}
-              >
+                }}>
                 <Item label="线条颜色">
                   <FullForm>
                     <CompatColorSelect
@@ -117,8 +114,7 @@ const SeriesConfig = (props: {
                   child={{
                     header: '区域颜色',
                     key: 'areaColor',
-                  }}
-                >
+                  }}>
                   <ChartGradientSelect
                     value={line.areaColor}
                     onChange={(value) => {
@@ -184,14 +180,12 @@ const SeriesConfig = (props: {
         child={{
           header: '基础样式',
           key: 'style',
-        }}
-      >
+        }}>
         <Collapse
           child={{
             header: '柱图',
             key: 'bar',
-          }}
-        >
+          }}>
           <Item label="柱子">
             <FullForm label="宽度">
               <AutoInputNumber
@@ -223,8 +217,7 @@ const SeriesConfig = (props: {
           child={{
             header: '折线',
             key: 'line',
-          }}
-        >
+          }}>
           <Item label="线条宽度">
             <FullForm>
               <InputNumber

@@ -1,11 +1,5 @@
-import {
-  useState,
-  useCallback,
-  useEffect,
-  useRef,
-  useImperativeHandle,
-} from 'react';
-import { useSize, useDebounceEffect } from 'ahooks';
+import { useDebounceEffect, useSize } from 'ahooks';
+import { useCallback, useImperativeHandle, useRef, useState } from 'react';
 
 export default function useAutoResize(ref: any) {
   const [state, setState] = useState({ width: 0, height: 0 });

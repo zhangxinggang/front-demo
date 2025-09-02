@@ -1,6 +1,6 @@
 import EventEmitter from 'eventemitter3';
-import pMap from 'p-map';
 import { debounce, throttle } from 'lodash';
+import pMap from 'p-map';
 // 组件拖拽删除添加等相关事件
 import ComponentAboutEvent from './ComponentAbout.event';
 

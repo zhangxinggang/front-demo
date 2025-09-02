@@ -85,8 +85,7 @@ const CustomConfig = (props: {
                 'w-100 dis-flex',
                 styles['designer-theme-config-custom-item'],
               )}
-              key="custom"
-            >
+              key="custom">
               <div className="m-r-4">
                 <Radio
                   checked={checked}

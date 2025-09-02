@@ -44,8 +44,7 @@ const Forget = (props: { forger: (value: any) => any }) => {
         loading={fetchLoading}
         type="primary"
         block
-        onClick={handleForget}
-      >
+        onClick={handleForget}>
         提交
       </Button>
     );

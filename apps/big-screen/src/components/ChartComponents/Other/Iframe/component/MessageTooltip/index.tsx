@@ -1,12 +1,12 @@
-import { useCallback } from 'react';
-import { InfoCircleOutlined, DownloadOutlined } from '@ant-design/icons';
-import { saveAs } from 'file-saver';
-import GlobalComponent from '@/utils/Assist/GlobalComponent';
 import IconTooltip from '@/components/IconTooltip';
+import GlobalComponent from '@/utils/Assist/GlobalComponent';
 import {
   IFRAME_COMPONENT_ON_MESSAGE_CODE_EXAMPLE,
   IFRAME_COMPONENT_POST_MESSAGE_CODE_EXAMPLE,
 } from '@/utils/constants';
+import { DownloadOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { saveAs } from 'file-saver';
+import { useCallback } from 'react';
 import styles from './index.less';
 
 export const OnMessageTooltip = () => {
@@ -26,14 +26,12 @@ export const OnMessageTooltip = () => {
           <br />
           <span
             className="underline-anime-color-white underline-anime c-po"
-            onClick={handleDownLoad}
-          >
+            onClick={handleDownLoad}>
             <DownloadOutlined className="m-r-4" />
             点击下载iframe数据发送示例代码
           </span>
         </div>
-      }
-    >
+      }>
       <InfoCircleOutlined className="m-l-4" />
     </IconTooltip>
   );
@@ -59,14 +57,12 @@ export const PostMessageTooltip = () => {
           <br />
           <span
             className="underline-anime-color-white underline-anime c-po"
-            onClick={handleDownLoad}
-          >
+            onClick={handleDownLoad}>
             <DownloadOutlined className="m-r-4" />
             点击下载iframe数据接收示例代码
           </span>
         </div>
-      }
-    >
+      }>
       <InfoCircleOutlined />
     </IconTooltip>
   );

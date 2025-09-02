@@ -20,7 +20,11 @@ export interface SiteStylish {
   blur: string;
 }
 
-export const getCustomStylish: GetCustomStylish<SiteStylish> = ({ css, token, isDarkMode }) => {
+export const getCustomStylish: GetCustomStylish<SiteStylish> = ({
+  css,
+  token,
+  isDarkMode,
+}) => {
   return {
     clickableText: css`
       cursor: pointer;
@@ -40,7 +44,11 @@ export const getCustomStylish: GetCustomStylish<SiteStylish> = ({ css, token, is
     `,
 
     heroButtonGradient: css`
-      background: linear-gradient(90deg, ${token.gradientColor1} 0%, ${token.gradientColor2} 100%);
+      background: linear-gradient(
+        90deg,
+        ${token.gradientColor1} 0%,
+        ${token.gradientColor2} 100%
+      );
     `,
 
     heroGradient: css`
@@ -68,7 +76,8 @@ export const getCustomStylish: GetCustomStylish<SiteStylish> = ({ css, token, is
     heroTextShadow: css`
       will-change: transform;
 
-      text-shadow: 0 8px 20px ${rgba(token.gradientColor2, 0.2)},
+      text-shadow:
+        0 8px 20px ${rgba(token.gradientColor2, 0.2)},
         0 8px 60px ${rgba(token.gradientColor3, 0.2)},
         0 8px 80px ${rgba(token.cyan, isDarkMode ? 0.2 : 0.4)};
     `,

@@ -22,7 +22,7 @@ export const useStyles = createStyles(({ css, token }) => ({
       .site-menu-submenu-selected > .site-menu-submenu-title,
       .site-menu-item-selected {
         background-color: unset !important;
-        color: ${token.blue}
+        color: ${token.blue};
       }
     }
   `,

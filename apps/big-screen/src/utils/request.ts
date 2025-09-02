@@ -1,9 +1,9 @@
-import { notification, message } from 'antd';
+import { useAnyDva } from '@/hooks';
+import { message, notification } from 'antd';
 import axios, { AxiosRequestConfig } from 'axios';
-import { history } from 'umi';
 import { debounce } from 'lodash';
 import { stringify } from 'querystring';
-import { useAnyDva } from '@/hooks';
+import { history } from 'umi';
 import { REQUEST_TIMEOUT } from './constants';
 import { formatQuery } from './tool';
 
@@ -123,7 +123,7 @@ const request = async <ResBody>(
 
   // 返回真正的response body res 内容
   if (!error) {
-    return (origin ? body : body?.data?.res?.data ?? {}) as ResBody;
+    return (origin ? body : (body?.data?.res?.data ?? {})) as ResBody;
   }
   error.mis = mis;
   mis && (await misManage(error));

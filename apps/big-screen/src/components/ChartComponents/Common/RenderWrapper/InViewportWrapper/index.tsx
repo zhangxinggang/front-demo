@@ -1,6 +1,6 @@
+import { useAnyDva } from '@/hooks';
 import { useInViewport, useUpdateEffect } from 'ahooks';
 import { useRef } from 'react';
-import { useAnyDva } from '@/hooks';
 
 let isMobile: boolean;
 

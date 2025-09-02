@@ -1,4 +1,4 @@
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Menu, MenuProps } from 'antd';
 import { ItemType } from 'antd/es/menu/hooks/useItems';
 import Color from 'color';
@@ -10,7 +10,11 @@ import MotionContainer from '@/components/animate/motion-container';
 import { varSlide } from '@/components/animate/variants';
 import Logo from '@/components/logo';
 import Scrollbar from '@/components/scrollbar';
-import { useRouteToMenuFn, usePermissionRoutes, useFlattenedRoutes } from '@/router/hooks';
+import {
+  useFlattenedRoutes,
+  usePermissionRoutes,
+  useRouteToMenuFn,
+} from '@/router/hooks';
 import { menuFilter } from '@/router/utils';
 import { useSettingActions, useSettings } from '@/store/settingStore';
 import { useThemeToken } from '@/theme/hooks';
@@ -29,7 +33,8 @@ export default function Nav(props: Props) {
   const matches = useMatches();
   const { pathname } = useLocation();
 
-  const { colorPrimary, colorTextBase, colorBgElevated, colorBorder } = useThemeToken();
+  const { colorPrimary, colorTextBase, colorBgElevated, colorBorder } =
+    useThemeToken();
 
   const settings = useSettings();
   const { themeLayout } = settings;
@@ -63,7 +68,7 @@ export default function Nav(props: Props) {
       }
       setSelectedKeys([pathname]);
     }
-  }, [menuList,pathname, matches, collapsed, themeLayout]);
+  }, [menuList, pathname, matches, collapsed, themeLayout]);
 
   useEffect(() => {
     const menuRoutes = menuFilter(permissionRoutes);
@@ -125,14 +130,15 @@ export default function Nav(props: Props) {
       style={{
         width: collapsed ? NAV_COLLAPSED_WIDTH : NAV_WIDTH,
         borderRight: `1px dashed ${Color(colorBorder).alpha(0.6).toString()}`,
-      }}
-    >
+      }}>
       <div className="relative flex h-20 items-center justify-center py-4">
         <MotionContainer className="flex items-center">
           <Logo />
           {themeLayout !== ThemeLayout.Mini && (
             <m.div variants={slideInLeft}>
-              <span className="ml-2 text-xl font-bold" style={{ color: colorPrimary }}>
+              <span
+                className="ml-2 text-xl font-bold"
+                style={{ color: colorPrimary }}>
                 Slash Admin
               </span>
             </m.div>
@@ -140,18 +146,24 @@ export default function Nav(props: Props) {
         </MotionContainer>
         <button
           onClick={toggleCollapsed}
-          className="absolute right-0 top-7 z-50 hidden h-6 w-6 translate-x-1/2 cursor-pointer select-none rounded-full text-center !text-gray md:block"
-          style={{ color: colorTextBase, borderColor: colorTextBase, fontSize: 16 }}
-        >
-          {collapsed ? <MenuUnfoldOutlined size={20} /> : <MenuFoldOutlined size={20} />}
+          className="!text-gray absolute right-0 top-7 z-50 hidden h-6 w-6 translate-x-1/2 cursor-pointer select-none rounded-full text-center md:block"
+          style={{
+            color: colorTextBase,
+            borderColor: colorTextBase,
+            fontSize: 16,
+          }}>
+          {collapsed ? (
+            <MenuUnfoldOutlined size={20} />
+          ) : (
+            <MenuFoldOutlined size={20} />
+          )}
         </button>
       </div>
 
       <Scrollbar
         style={{
           height: 'calc(100vh - 70px)',
-        }}
-      >
+        }}>
         {/* <!-- Sidebar Menu --> */}
         <Menu
           mode={menuMode}

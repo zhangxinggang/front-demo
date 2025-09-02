@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import AnimationConfigCommon from '@/components/ChartComponents/Common/AnimationConfig';
+import { useCallback } from 'react';
 import { TRadialStackLineConfig } from '../type';
 
 const AnimationConfig = (props: {

@@ -1,9 +1,9 @@
 import { get } from 'lodash';
-import { ConditionChange } from './ConditionChange';
-import { ScreenThemeTypeChange } from './ScreenThemeTypeChange';
-import { ComponentInputButtonWidthChange } from './ComponentInputButtonWidthChange';
-import { ScreenComponentConfigChangeTooltip } from './ScreenComponentConfigChangeTooltip';
 import { mergeWithoutArray } from '../../tool';
+import { ComponentInputButtonWidthChange } from './ComponentInputButtonWidthChange';
+import { ConditionChange } from './ConditionChange';
+import { ScreenComponentConfigChangeTooltip } from './ScreenComponentConfigChangeTooltip';
+import { ScreenThemeTypeChange } from './ScreenThemeTypeChange';
 
 export * from './ComponentTransformOriginChange';
 

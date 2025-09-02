@@ -1,4 +1,12 @@
-import { Drawer, Checkbox as AntCheckbox } from 'antd';
+import Select from '@/components/ChartComponents/Common/Select';
+import FocusWrapper from '@/components/FocusWrapper';
+import { useResponseData } from '@/hooks';
+import {
+  EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
+} from '@/utils/Assist/EventEmitter';
+import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { Checkbox as AntCheckbox, Drawer } from 'antd';
 import {
   forwardRef,
   useCallback,
@@ -6,22 +14,14 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { useResponseData } from '@/hooks';
-import Select from '@/components/ChartComponents/Common/Select';
-import FocusWrapper from '@/components/FocusWrapper';
-import GlobalConfig from '@/utils/Assist/GlobalConfig';
-import {
-  GLOBAL_EVENT_EMITTER,
-  EVENT_NAME_MAP,
-} from '@/utils/Assist/EventEmitter';
 import CodeViewer from '../CodeViewer';
-import Title from './components/NormalTitle';
-import ResponseDataTitle from './components/ResponseDataTitle';
-import SubTitle, { SubForm } from './components/SubTitle';
 import DataFilter from './components/DataFilter';
 import DefineConfig from './components/DefineConfig';
-import ResponseDataMap from './components/ResponseDataMap';
 import { TOnChange } from './components/DefineConfig/type';
+import Title from './components/NormalTitle';
+import ResponseDataMap from './components/ResponseDataMap';
+import ResponseDataTitle from './components/ResponseDataTitle';
+import SubTitle, { SubForm } from './components/SubTitle';
 import styles from './index.less';
 
 export interface IDataConfigDetailRef {
@@ -60,15 +60,11 @@ const DataConfigDetail = forwardRef<
     return <div></div>;
   }, []);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open,
-      };
-    },
-    [open],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open,
+    };
+  }, [open]);
 
   // config change
   // --- start
@@ -133,12 +129,10 @@ const DataConfigDetail = forwardRef<
       title="设置数据源"
       width={500}
       bodyStyle={{ paddingTop: 0 }}
-      destroyOnClose
-    >
+      destroyOnClose>
       <FocusWrapper
         className={styles['design-config-data-detail']}
-        force={visible}
-      >
+        force={visible}>
         <Title>数据源</Title>
         <SubTitle>数据源类型</SubTitle>
         <SubForm>

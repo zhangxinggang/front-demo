@@ -1,5 +1,5 @@
-import RadioGroup, { Radio } from '../IconRadio';
 import Icon from '../Icon';
+import RadioGroup, { Radio } from '../IconRadio';
 
 const OrientSelect = (props: {
   value: string;

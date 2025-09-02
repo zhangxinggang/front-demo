@@ -1,10 +1,10 @@
-import { useCallback } from 'react';
-import { Slider, Row, Col } from 'antd';
-import { useControllableValue } from 'ahooks';
-import { merge } from 'lodash';
-import classnames from 'classnames';
-import ColorSelect, { CompatColorSelect } from '../ColorSelect';
 import { DEFAULT_GRADIENT_COLOR } from '@/utils/constants';
+import { useControllableValue } from 'ahooks';
+import { Col, Row, Slider } from 'antd';
+import classnames from 'classnames';
+import { merge } from 'lodash';
+import { useCallback } from 'react';
+import ColorSelect, { CompatColorSelect } from '../ColorSelect';
 import styles from './index.less';
 
 const ColorGradientSelect = (props: {
@@ -52,8 +52,7 @@ const ColorGradientSelect = (props: {
               backgroundImage: `linear-gradient(${direction}deg, ${ColorSelect.getRgbaString(
                 start,
               )}, ${ColorSelect.getRgbaString(end)})`,
-            }}
-          ></div>
+            }}></div>
         </Col>
         <Col span={20} className="dis-flex-column-between">
           <CompatColorSelect

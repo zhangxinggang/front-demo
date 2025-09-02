@@ -1,1 +1,1 @@
-console.log(window.__WUJIE)
+console.log(window.__WUJIE);

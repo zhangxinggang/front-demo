@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from 'react';
+import getBackgroundColor from './getBackgroundColor';
 import {
   checkedIcon as defaultCheckedIcon,
   uncheckedIcon as defaultUncheckedIcon,
 } from './icons.jsx';
-import getBackgroundColor from './getBackgroundColor';
-import hexColorPropType from './hexColorPropType';
 
 class ReactSwitch extends Component {
   constructor(props) {
@@ -387,8 +385,7 @@ class ReactSwitch extends Component {
           className="react-switch-bg"
           style={backgroundStyle}
           onClick={disabled ? null : this.$onClick}
-          onMouseDown={(e) => e.preventDefault()}
-        >
+          onMouseDown={(e) => e.preventDefault()}>
           {checkedIcon && <div style={checkedIconStyle}>{checkedIcon}</div>}
           {uncheckedIcon && (
             <div style={uncheckedIconStyle}>{uncheckedIcon}</div>
@@ -402,8 +399,7 @@ class ReactSwitch extends Component {
           onTouchStart={disabled ? null : this.$onTouchStart}
           onTouchMove={disabled ? null : this.$onTouchMove}
           onTouchEnd={disabled ? null : this.$onTouchEnd}
-          onTouchCancel={disabled ? null : this.$unsetHasOutline}
-        >
+          onTouchCancel={disabled ? null : this.$unsetHasOutline}>
           {uncheckedHandleIcon && (
             <div style={uncheckedHandleIconStyle}>{uncheckedHandleIcon}</div>
           )}

@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { Tabs } from 'antd';
 import AxisConfigCommon from '@/components/ChartComponents/Common/AxisConfig';
-import { TStepLineConfig } from '../type';
+import { Tabs } from 'antd';
+import { useCallback } from 'react';
 import styles from '../../../../Common/global.less';
+import { TStepLineConfig } from '../type';
 
 type ValueType = Pick<TStepLineConfig, 'yAxis' | 'xAxis'>;
 

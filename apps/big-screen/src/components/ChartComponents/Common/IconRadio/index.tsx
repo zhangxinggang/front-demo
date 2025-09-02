@@ -1,8 +1,8 @@
-import { Children, ReactNode, useMemo, cloneElement } from 'react';
-import { Radio as AntRadio } from 'antd';
 import { useControllableValue } from 'ahooks';
-import classnames from 'classnames';
+import { Radio as AntRadio } from 'antd';
 import { RadioProps } from 'antd/es/radio';
+import classnames from 'classnames';
+import { Children, cloneElement, ReactNode, useMemo } from 'react';
 import styles from './index.less';
 
 const IconRadio = (props: {
@@ -42,8 +42,7 @@ export const Radio = (
         [styles['icon-radio-active']]: value === parentValue,
       })}
       onClick={onChange?.bind(null, value!)}
-      {...nextProps}
-    >
+      {...nextProps}>
       {icon}
     </AntRadio>
   );

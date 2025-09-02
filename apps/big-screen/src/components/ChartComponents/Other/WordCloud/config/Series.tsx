@@ -1,12 +1,12 @@
-import { useCallback, useMemo } from 'react';
-import Select from '@/components/ChartComponents/Common/Select';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
+import Select from '@/components/ChartComponents/Common/Select';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { useCallback, useMemo } from 'react';
 import { TWordCloudBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -51,14 +51,12 @@ const SeriesConfig = (props: {
         {...(textStyle as any)}
         onChange={onKeyChange.bind(null, 'textStyle')}
         ignore={['color', 'fontSize']}
-        level={1}
-      >
+        level={1}>
         <Collapse
           child={{
             header: '颜色范围',
             key: 'color',
-          }}
-        >
+          }}>
           {['r', 'g', 'b'].map((item: any) => {
             const target = (range as any)[item];
             return (

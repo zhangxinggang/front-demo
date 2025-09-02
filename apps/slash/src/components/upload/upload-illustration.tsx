@@ -10,10 +10,14 @@ export default function UploadIllustration() {
     <svg
       className="MuiBox-root css-olkjfu"
       viewBox="0 0 480 360"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="BG" x1="19.496%" x2="77.479%" y1="71.822%" y2="16.69%">
+        <linearGradient
+          id="BG"
+          x1="19.496%"
+          x2="77.479%"
+          y1="71.822%"
+          y2="16.69%">
           <stop offset="0%" stopColor={PRIMARY_MAIN} />
           <stop offset="100%" stopColor={PRIMARY_MAIN} stopOpacity="0" />
         </linearGradient>
@@ -25,7 +29,12 @@ export default function UploadIllustration() {
         opacity="0.2"
       />
       <defs>
-        <linearGradient id="linearGradient-2" x1="30.113%" x2="30.113%" y1="0%" y2="100%">
+        <linearGradient
+          id="linearGradient-2"
+          x1="30.113%"
+          x2="30.113%"
+          y1="0%"
+          y2="100%">
           <stop offset="0%" stopOpacity="0" />
           <stop offset="100%" />
         </linearGradient>

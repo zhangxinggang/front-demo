@@ -1,24 +1,24 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
-import { FontSizeOutlined, RocketOutlined } from '@ant-design/icons';
+import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
 import IconRadio, {
   Radio,
 } from '@/components/ChartComponents/Common/IconRadio';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import Input from '@/components/ChartComponents/Common/Input';
-import ConditionConfig from './Condition';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import { FontSizeOutlined, RocketOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
+import { Component } from 'react';
 import { TPaginationConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 class Config extends Component<
@@ -99,8 +99,7 @@ class Config extends Component<
                   child={{
                     header: '文字样式',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(null, 'textStyle')}
@@ -110,8 +109,7 @@ class Config extends Component<
                   child={{
                     header: '选中样式',
                     key: 'active',
-                  }}
-                >
+                  }}>
                   <Item label="背景颜色">
                     <FullForm>
                       <CompatColorSelect
@@ -142,8 +140,7 @@ class Config extends Component<
                     child={{
                       header: '文字样式',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={active.textStyle}
                       onChange={(value) =>
@@ -158,8 +155,7 @@ class Config extends Component<
                   child={{
                     header: '翻页按钮',
                     key: 'pageButton',
-                  }}
-                >
+                  }}>
                   <Item label="按钮类型">
                     <FullForm>
                       <IconRadio
@@ -168,8 +164,7 @@ class Config extends Component<
                           this.onKeyChange('pageButton', {
                             type: value,
                           })
-                        }
-                      >
+                        }>
                         <Radio
                           value="text"
                           key="text"
@@ -288,8 +283,7 @@ class Config extends Component<
                       this.onKeyChange('pageNumChanger', {
                         show: value,
                       }),
-                  }}
-                >
+                  }}>
                   <Item label="显示条数">
                     <FullForm>
                       <Input
@@ -339,8 +333,7 @@ class Config extends Component<
                       this.onKeyChange('skip', {
                         show: value,
                       }),
-                  }}
-                >
+                  }}>
                   <Item label="间距">
                     <FullForm>
                       <InputNumber
@@ -357,8 +350,7 @@ class Config extends Component<
                     child={{
                       header: '文字样式',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={skip.textStyle}
                       onChange={(value) =>
@@ -379,8 +371,7 @@ class Config extends Component<
                       this.onKeyChange('total', {
                         show: value,
                       }),
-                  }}
-                >
+                  }}>
                   <Item label="间距">
                     <FullForm>
                       <InputNumber
@@ -397,8 +388,7 @@ class Config extends Component<
                     child={{
                       header: '文字样式',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={total.textStyle}
                       onChange={(value) =>

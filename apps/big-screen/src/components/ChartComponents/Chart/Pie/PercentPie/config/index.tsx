@@ -1,14 +1,14 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesConfig from './Series';
+import { Component } from 'react';
+import { TPercentPieConfig } from '../type';
 import AnimationConfig from './Animation';
 import ConditionConfig from './Condition';
-import StatisticsConfig from './Statistics';
 import LineStyleConfig from './LineStyle';
-import { TPercentPieConfig } from '../type';
+import SeriesConfig from './Series';
+import StatisticsConfig from './Statistics';
 class Config extends Component<
   ComponentData.ComponentConfigProps<TPercentPieConfig>
 > {

@@ -1,4 +1,10 @@
-import { PropsWithChildren, createContext, useContext, useMemo, useState } from 'react';
+import {
+  PropsWithChildren,
+  createContext,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 
 export enum LoginStateEnum {
   LOGIN,
@@ -35,5 +41,9 @@ export function LoginStateProvider({ children }: PropsWithChildren) {
     () => ({ loginState, setLoginState, backToLogin }),
     [loginState],
   );
-  return <LoginStateContext.Provider value={value}>{children}</LoginStateContext.Provider>;
+  return (
+    <LoginStateContext.Provider value={value}>
+      {children}
+    </LoginStateContext.Provider>
+  );
 }

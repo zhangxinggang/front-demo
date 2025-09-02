@@ -1,4 +1,4 @@
-import { noop, merge } from 'lodash';
+import { merge, noop } from 'lodash';
 
 export type TooltipOptions = {
   interval: number;

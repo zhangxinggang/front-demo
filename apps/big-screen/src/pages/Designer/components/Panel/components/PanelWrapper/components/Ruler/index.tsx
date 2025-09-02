@@ -322,11 +322,11 @@ const Ruler = (props: {
           styles['designer-page-main-horizontal-ruler'],
           'dis-flex',
         )}
-        style={{ width: size.width }}
-      >
+        style={{ width: size.width }}>
         <div
-          className={styles['designer-page-main-horizontal-ruler-prefix']}
-        ></div>
+          className={
+            styles['designer-page-main-horizontal-ruler-prefix']
+          }></div>
         <ComponentRuler
           type="horizontal"
           width={size.width}
@@ -350,8 +350,7 @@ const Ruler = (props: {
             height: 2,
           },
           true,
-        )}
-      >
+        )}>
         <ComponentRuler
           width={30}
           height={size.height}

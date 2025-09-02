@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Button } from "antd";
-import s from "./style.module.less";
+import { Button } from 'antd';
+import * as React from 'react';
+import s from './style.module.less';
 
 const MyButton: React.FC = () => {
   return (

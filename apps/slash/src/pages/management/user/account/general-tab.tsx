@@ -54,8 +54,7 @@ export default function GeneralTab() {
             layout="vertical"
             initialValues={initFormValues}
             labelCol={{ span: 8 }}
-            className="w-full"
-          >
+            className="w-full">
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item<FieldType> label="Username" name="name">

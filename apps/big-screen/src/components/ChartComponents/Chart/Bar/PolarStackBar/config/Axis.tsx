@@ -1,8 +1,8 @@
-import { useCallback, useMemo } from 'react';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import { useCallback, useMemo } from 'react';
 import { TPolarStackBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -37,8 +37,7 @@ const AxisConfig = (props: {
         ignore={['position']}
         parent={{
           defaultActiveKey: ['label'],
-        }}
-      >
+        }}>
         <Item label="间距">
           <FullForm>
             <InputNumber

@@ -1,4 +1,4 @@
-import { Typography, Upload as AntdUpload } from 'antd';
+import { Upload as AntdUpload, Typography } from 'antd';
 import { ItemRender } from 'antd/es/upload/interface';
 
 import { useThemeToken } from '@/theme/hooks';
@@ -20,7 +20,9 @@ const itemRender: (thumbnail: boolean) => ItemRender = (thumbnail) => {
   return function temp() {
     // eslint-disable-next-line prefer-rest-params
     const [, file, , actions] = arguments;
-    return <UploadListItem file={file} actions={actions} thumbnail={thumbnail} />;
+    return (
+      <UploadListItem file={file} actions={actions} thumbnail={thumbnail} />
+    );
   };
 };
 export function Upload({ thumbnail = false, ...other }: Props) {

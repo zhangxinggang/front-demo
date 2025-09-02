@@ -1,9 +1,13 @@
 import { Menu, MenuProps } from 'antd';
 import { ItemType } from 'antd/es/menu/hooks/useItems';
-import { useState, useEffect, CSSProperties } from 'react';
-import { useNavigate, useMatches, useLocation } from 'react-router-dom';
+import { CSSProperties, useEffect, useState } from 'react';
+import { useLocation, useMatches, useNavigate } from 'react-router-dom';
 
-import { useRouteToMenuFn, usePermissionRoutes, useFlattenedRoutes } from '@/router/hooks';
+import {
+  useFlattenedRoutes,
+  usePermissionRoutes,
+  useRouteToMenuFn,
+} from '@/router/hooks';
 import { menuFilter } from '@/router/utils';
 import { useThemeToken } from '@/theme/hooks';
 

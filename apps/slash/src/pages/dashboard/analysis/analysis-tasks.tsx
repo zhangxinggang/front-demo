@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { List, Checkbox } from 'antd';
+import { Checkbox, List } from 'antd';
 
 import { IconButton, Iconify } from '@/components/icon';
 
@@ -32,13 +32,11 @@ export default function AnalysisTasks() {
             <IconButton>
               <Iconify icon="fontisto:more-v-a" />
             </IconButton>,
-          ]}
-        >
+          ]}>
           <Checkbox
             onChange={(e) => {
               item.checked = e.target.checked;
-            }}
-          >
+            }}>
             {item.task}
           </Checkbox>
         </List.Item>

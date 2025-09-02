@@ -1,11 +1,11 @@
-import { useCallback, useMemo } from 'react';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import { CompatColorSelect } from '@/components/ColorSelect';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { useCallback, useMemo } from 'react';
 import { TPercentPieConfig } from '../type';
 
 const { Item } = ConfigList;

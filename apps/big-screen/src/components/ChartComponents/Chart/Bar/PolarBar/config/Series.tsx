@@ -1,13 +1,13 @@
-import { useCallback, useMemo } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import IconTooltip from '@/components/IconTooltip';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import Select from '@/components/ChartComponents/Common/Select';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import IconTooltip from '@/components/IconTooltip';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { useCallback, useMemo } from 'react';
 import { TPolarBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -39,8 +39,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         onChange={onKeyChange.bind(null, 'label')}
-        ignore={['position']}
-      >
+        ignore={['position']}>
         <Item label="位置">
           <FullForm>
             <Select
@@ -93,8 +92,7 @@ const SeriesConfig = (props: {
             <IconTooltip title="间距为柱子的宽度占比">
               <InfoCircleOutlined />
             </IconTooltip>
-          }
-        >
+          }>
           <FullForm label="宽度">
             <InputNumber
               value={barWidth}

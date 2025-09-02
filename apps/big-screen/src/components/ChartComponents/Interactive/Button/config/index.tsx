@@ -1,17 +1,17 @@
-import { Component } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
+import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
+import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import Select from '@/components/ChartComponents/Common/Select';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
 import { CompatColorSelect } from '@/components/ColorSelect';
-import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Component } from 'react';
 import { TButtonConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -81,8 +81,7 @@ class Config extends Component<
                   child={{
                     header: '文字样式',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(null, 'textStyle')}
@@ -115,12 +114,10 @@ class Config extends Component<
                   label="交互类型"
                   placeholder={
                     <IconTooltip
-                      title={`设置为 "提交按钮" 时，当点击按钮时，交互的值会在按钮内容后加一个时间戳以达到每次都变化的目的，这样在其他组件的 "url" 上设置了按钮的交互属性时，就可以达到触发响应的目的。`}
-                    >
+                      title={`设置为 "提交按钮" 时，当点击按钮时，交互的值会在按钮内容后加一个时间戳以达到每次都变化的目的，这样在其他组件的 "url" 上设置了按钮的交互属性时，就可以达到触发响应的目的。`}>
                       <InfoCircleOutlined />
                     </IconTooltip>
-                  }
-                >
+                  }>
                   <FullForm>
                     <Select
                       value={actionType}

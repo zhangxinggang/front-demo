@@ -1,8 +1,8 @@
-import { useCallback, useMemo } from 'react';
 import { Loading3QuartersOutlined } from '@ant-design/icons';
+import { useCallback, useMemo } from 'react';
 import { getComponentDefaultConfigByType } from '../../ChartComponents';
-import useChildren from './useChildren';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 const RecoverDefaultAction = (props: CommonActionType) => {
   const {

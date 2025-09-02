@@ -1,6 +1,3 @@
-import { CSSProperties, useMemo, useRef, useCallback } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
 import {
   useComponent,
   useCondition,
@@ -8,8 +5,11 @@ import {
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TTitleConfig } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { CSSProperties, useCallback, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TTitleConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -114,8 +114,7 @@ const TitleBasic = (
           conditionStyle,
         )}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           <div style={componentStyle} className="w-100 h-100 dis-flex">

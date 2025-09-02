@@ -1,11 +1,11 @@
-import { useCallback } from 'react';
-import { Tabs } from 'antd';
-import { TPictorialBarBasicConfig } from '../type';
 import AxisConfigCommon from '@/components/ChartComponents/Common/AxisConfig';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import { Tabs } from 'antd';
+import { useCallback } from 'react';
 import styles from '../../../../Common/global.less';
+import { TPictorialBarBasicConfig } from '../type';
 
 type ValueType = Pick<TPictorialBarBasicConfig, 'yAxis' | 'xAxis'>;
 
@@ -44,8 +44,7 @@ const AxisConfig = (props: {
               type="xAxis"
               value={xAxis}
               onChange={onKeyChange.bind(null, 'xAxis')}
-              ignore={['position', 'splitLine']}
-            >
+              ignore={['position', 'splitLine']}>
               <Item label="最大值">
                 <FullForm>
                   <InputNumber

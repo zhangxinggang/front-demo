@@ -1,19 +1,19 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
+import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
 import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import BootstrapIconSelect from '@/components/ChartComponents/Common/BootstrapIconSelect';
 import OrientSelect from '@/components/ChartComponents/Common/OrientSelect';
-import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { updateInteractiveAndSyncParams4Component } from '@/components/ChartComponents/Common/utils';
+import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { Switch } from 'antd';
+import { Component } from 'react';
 import { DEFAULT_ICON } from '../defaultConfig';
 import { TStepsConfig } from '../type';
 
@@ -187,14 +187,12 @@ class Config extends Component<
                   child={{
                     header: '等待',
                     key: 'wait',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文字',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={style.wait.textStyle}
                       onChange={(value) => {
@@ -222,14 +220,12 @@ class Config extends Component<
                   child={{
                     header: '执行中',
                     key: 'process',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文字',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={style.process.textStyle}
                       onChange={(value) => {
@@ -257,14 +253,12 @@ class Config extends Component<
                   child={{
                     header: '完成',
                     key: 'finish',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文字',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={style.finish.textStyle}
                       onChange={(value) => {
@@ -292,14 +286,12 @@ class Config extends Component<
                   child={{
                     header: '错误',
                     key: 'error',
-                  }}
-                >
+                  }}>
                   <Collapse
                     child={{
                       header: '文字',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={style.error.textStyle}
                       onChange={(value) => {
@@ -363,8 +355,7 @@ class Config extends Component<
                         show: value,
                       });
                     },
-                  }}
-                >
+                  }}>
                   <Item label="循环">
                     <FullForm>
                       <Switch

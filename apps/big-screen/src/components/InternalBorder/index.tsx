@@ -40,8 +40,7 @@ const _InternalBorderWrapper = (
         style={
           Dom?.getOuterStyle?.(pick(nextProps, ['width', 'padding'])) || {}
         }
-        data-id={nextProps.id}
-      >
+        data-id={nextProps.id}>
         {children}
       </div>
     </>

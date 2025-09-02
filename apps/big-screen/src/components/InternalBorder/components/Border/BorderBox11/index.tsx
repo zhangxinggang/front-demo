@@ -1,8 +1,8 @@
-import React, { useMemo, forwardRef, useRef, CSSProperties } from 'react';
 import classnames from 'classnames';
 import { nanoid } from 'nanoid';
+import { CSSProperties, forwardRef, useMemo, useRef } from 'react';
+import { useAutoResize, useBorderWrapper } from '../hooks';
 import { CommonBorderProps } from '../type';
-import { useBorderWrapper, useAutoResize } from '../hooks';
 import styles from './index.less';
 
 const defaultColor = ['#8aaafb', '#1f33a2'];
@@ -45,8 +45,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       <svg
         className={styles['internal-border-11-border-container']}
         width={width}
-        height={height}
-      >
+        height={height}>
         <defs>
           <filter id={filterId} height="150%" width="150%" x="-25%" y="-25%">
             <feMorphology
@@ -167,8 +166,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           ${(width - titleWidth) / 2 - 25}, 46 ${
             (width - titleWidth) / 2 - 4
           }, 46
-        `}
-        >
+        `}>
           <animate
             attributeName="opacity"
             values="1;0.7;1"
@@ -189,8 +187,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           ${(width - titleWidth) / 2 - 55}, 46 ${
             (width - titleWidth) / 2 - 34
           }, 46
-        `}
-        >
+        `}>
           <animate
             attributeName="opacity"
             values="0.7;0.4;0.7"
@@ -211,8 +208,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           ${(width - titleWidth) / 2 - 85}, 46 ${
             (width - titleWidth) / 2 - 64
           }, 46
-        `}
-        >
+        `}>
           <animate
             attributeName="opacity"
             values="0.5;0.2;0.5"
@@ -233,8 +229,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           ${(width + titleWidth) / 2 + 3}, 46 ${
             (width + titleWidth) / 2 + 24
           }, 46
-        `}
-        >
+        `}>
           <animate
             attributeName="opacity"
             values="1;0.7;1"
@@ -255,8 +250,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           ${(width + titleWidth) / 2 + 33}, 46 ${
             (width + titleWidth) / 2 + 54
           }, 46
-        `}
-        >
+        `}>
           <animate
             attributeName="opacity"
             values="0.7;0.4;0.7"
@@ -277,8 +271,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           ${(width + titleWidth) / 2 + 63}, 46 ${
             (width + titleWidth) / 2 + 84
           }, 46
-        `}
-        >
+        `}>
           <animate
             attributeName="opacity"
             values="0.5;0.2;0.5"
@@ -295,8 +288,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           fill="#fff"
           fontSize="18"
           textAnchor="middle"
-          dominantBaseline="middle"
-        >
+          dominantBaseline="middle">
           {title}
         </text>
 
@@ -325,8 +317,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
 
       <div
         {...nextProps}
-        className={styles['internal-border-11-border-content']}
-      >
+        className={styles['internal-border-11-border-content']}>
         {children}
       </div>
     </div>

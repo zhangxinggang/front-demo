@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
 import queryString from 'query-string';
+import { useEffect, useRef } from 'react';
 
 export const useHash = (
   onHashChange?: (hash: string, prevHash: string) => void,

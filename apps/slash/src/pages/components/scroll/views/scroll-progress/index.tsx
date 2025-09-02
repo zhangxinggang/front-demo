@@ -17,8 +17,7 @@ export default function ScrollProgressView() {
       <Typography.Link
         href="https://www.framer.com/motion/"
         style={{ color: colorPrimary }}
-        className="mb-4 block"
-      >
+        className="mb-4 block">
         https://www.framer.com/motion/
       </Typography.Link>
       <Card title="ScrollProgress">

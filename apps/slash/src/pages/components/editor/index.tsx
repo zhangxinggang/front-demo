@@ -14,12 +14,16 @@ export default function EditorPage() {
       <Typography.Link
         href="https://github.com/zenoamaro/react-quill"
         style={{ color: colorPrimary }}
-        className="mb-4 block"
-      >
+        className="mb-4 block">
         https://github.com/zenoamaro/react-quill
       </Typography.Link>
       <Card title="Editor Simple">
-        <Editor id="sample-editor" sample value={quillSimple} onChange={setQuillSimple} />
+        <Editor
+          id="sample-editor"
+          sample
+          value={quillSimple}
+          onChange={setQuillSimple}
+        />
       </Card>
       <div className="h-10" />
       <Card title="Editor Full">

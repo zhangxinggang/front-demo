@@ -1,13 +1,12 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import { CompatColorSelect } from '@/components/ColorSelect';
+import { Switch } from 'antd';
+import { Component } from 'react';
 import { TTicketConfig } from '../type';
 
 const { Item } = ConfigList;

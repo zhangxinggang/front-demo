@@ -5,7 +5,12 @@ import { Outlet } from 'react-router-dom';
 import { useSettings } from '@/store/settingStore';
 import { useResponsive } from '@/theme/hooks';
 
-import { NAV_WIDTH, NAV_COLLAPSED_WIDTH, HEADER_HEIGHT, MULTI_TABS_HEIGHT } from './config';
+import {
+  HEADER_HEIGHT,
+  MULTI_TABS_HEIGHT,
+  NAV_COLLAPSED_WIDTH,
+  NAV_WIDTH,
+} from './config';
 import MultiTabs from './multi-tabs';
 
 import { ThemeLayout } from '#/enum';
@@ -38,8 +43,7 @@ const Main = forwardRef<HTMLDivElement, Props>(({ offsetTop = false }, ref) => {
       <div
         className={`m-auto h-full w-full flex-grow sm:p-2 ${
           themeStretch ? '' : 'xl:max-w-screen-xl'
-        }`}
-      >
+        }`}>
         {multiTab ? <MultiTabs offsetTop={offsetTop} /> : <Outlet />}
       </div>
     </Content>

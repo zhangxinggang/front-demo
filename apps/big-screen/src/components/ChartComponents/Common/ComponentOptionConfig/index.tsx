@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import { Tabs } from 'antd';
 import type { TabsProps } from 'antd';
+import { Tabs } from 'antd';
 import classnames from 'classnames';
+import { ReactNode } from 'react';
 import styles from './index.less';
 
 const { TabPane } = Tabs;
@@ -31,8 +31,7 @@ export const Tab = (props: TabProps) => {
       className={classnames(
         styles['design-config-default-tab-title'],
         'dis-flex-column',
-      )}
-    >
+      )}>
       {icon}
       <div>{children}</div>
     </div>

@@ -1,15 +1,15 @@
-import { useEffect, useRef } from 'react';
-import { uniqueId, merge } from 'lodash';
-import { useDeepUpdateEffect } from '@/hooks';
 import {
   useChartComponentResize,
-  useComponentResize,
   useChartPerConfig,
+  useComponentResize,
 } from '@/components/ChartComponents/Common/Component/hook';
 import ColorSelect from '@/components/ColorSelect';
+import { useDeepUpdateEffect } from '@/hooks';
 import { init } from '@/utils/Assist/EchartsLoader';
-import { TClockGaugeConfig } from '../type';
+import { merge, uniqueId } from 'lodash';
+import { useEffect, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TClockGaugeConfig } from '../type';
 
 const { getRgbaString } = ColorSelect;
 
@@ -302,8 +302,7 @@ const ClockGauge = (
             height: '100%',
           },
           style,
-        )}
-      >
+        )}>
         <Wrapper border={border}>
           <div id={chartId.current} className="w-100 h-100"></div>
           {children}

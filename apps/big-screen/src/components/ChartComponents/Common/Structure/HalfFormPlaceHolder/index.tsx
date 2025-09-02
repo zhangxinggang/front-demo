@@ -11,8 +11,7 @@ const HalfFormPlaceHolder = (props: { children?: ReactNode }) => {
       className={styles['design-config-half-form-placeholder']}
       style={{
         cursor: !!children ? 'pointer' : 'default',
-      }}
-    >
+      }}>
       {children}
     </i>
   );

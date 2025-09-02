@@ -1,8 +1,8 @@
-import { get } from 'lodash';
 import { useIdPathMap } from '@/hooks';
-import { getDvaGlobalModelData, getComponent } from '../Component';
-import LocalConfigInstance, { LocalConfig } from '../LocalConfig';
+import { get } from 'lodash';
+import { getComponent, getDvaGlobalModelData } from '../Component';
 import GroupUtil from '../Group';
+import LocalConfigInstance, { LocalConfig } from '../LocalConfig';
 
 // 需要特殊处理的一些组件的配置
 const NEED_DEAL_COMPONENT_MAP: any = {};

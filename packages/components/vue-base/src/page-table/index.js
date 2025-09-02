@@ -2,12 +2,8 @@
  * @Description: 页面列表相关组件
  */
 
-import PageTitle from './page-title'
-import PageHandle from './page-handle'
-import PageHandleItem from './page-handle-item'
+import PageHandle from './page-handle';
+import PageHandleItem from './page-handle-item';
+import PageTitle from './page-title';
 
-export {
-  PageTitle,
-  PageHandle,
-  PageHandleItem
-}
+export { PageHandle, PageHandleItem, PageTitle };

@@ -1,20 +1,20 @@
-import { useEffect, useRef, useMemo } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useDeepUpdateEffect } from '@/hooks';
 import {
-  useComponent,
   useChartComponentResize,
+  useChartPerConfig,
+  useComponent,
   useComponentResize,
   useCondition,
-  useChartPerConfig,
 } from '@/components/ChartComponents/Common/Component/hook';
-import ColorSelect from '@/components/ColorSelect';
-import FilterDataUtil from '@/utils/Assist/FilterData';
-import { init } from '@/utils/Assist/EchartsLoader';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import { TPercentPieConfig } from '../type';
+import ColorSelect from '@/components/ColorSelect';
+import { useDeepUpdateEffect } from '@/hooks';
+import { init } from '@/utils/Assist/EchartsLoader';
+import FilterDataUtil from '@/utils/Assist/FilterData';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useEffect, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TPercentPieConfig } from '../type';
 
 const { getRgbaString } = ColorSelect;
 
@@ -493,8 +493,7 @@ const PercentPie = (
           },
           style,
           conditionStyle,
-        )}
-      >
+        )}>
         <Wrapper border={border}>
           <div id={chartId.current} className="w-100 h-100"></div>
           {children}

@@ -21,13 +21,15 @@ const Linker: FC<LinkerProps> = ({ title, link, type }) => {
       case 'prev':
         return (
           <>
-            <ArrowLeftOutlined /> {intl.formatMessage({ id: 'content.footer.actions.previous' })}
+            <ArrowLeftOutlined />{' '}
+            {intl.formatMessage({ id: 'content.footer.actions.previous' })}
           </>
         );
       case 'next':
         return (
           <>
-            {intl.formatMessage({ id: 'content.footer.actions.next' })} <ArrowRightOutlined />
+            {intl.formatMessage({ id: 'content.footer.actions.next' })}{' '}
+            <ArrowRightOutlined />
           </>
         );
     }
@@ -39,11 +41,12 @@ const Linker: FC<LinkerProps> = ({ title, link, type }) => {
         <Flexbox
           horizontal
           gap={4}
-          className={cx(styles.nav, type === 'next' && styles.alignmentEnd)}
-        >
+          className={cx(styles.nav, type === 'next' && styles.alignmentEnd)}>
           {navContent}
         </Flexbox>
-        <Flexbox horizontal className={cx(styles.title, type === 'next' && styles.alignmentEnd)}>
+        <Flexbox
+          horizontal
+          className={cx(styles.title, type === 'next' && styles.alignmentEnd)}>
           {title}
         </Flexbox>
       </Flexbox>

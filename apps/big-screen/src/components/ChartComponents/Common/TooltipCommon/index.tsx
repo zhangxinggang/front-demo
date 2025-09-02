@@ -1,10 +1,10 @@
-import { ReactNode, useCallback, useMemo } from 'react';
 import { CompatColorSelect } from '@/components/ColorSelect';
-import ConfigList from '../Structure/ConfigList';
+import { ReactNode, useCallback, useMemo } from 'react';
 import { SingleCollapse as Collapse } from '../Collapse';
 import { FontConfigList } from '../FontConfig';
-import FullForm from '../Structure/FullForm';
 import FormatterSelect from '../FormatterSelect';
+import ConfigList from '../Structure/ConfigList';
+import FullForm from '../Structure/FullForm';
 
 const { Item } = ConfigList;
 
@@ -75,8 +75,7 @@ const TooltipConfig = (props: TooltipConfigProps) => {
         child={{
           header: '文本',
           key: 'textStyle',
-        }}
-      >
+        }}>
         <FontConfigList
           value={textStyle}
           onChange={onKeyChange.bind(null, 'textStyle')}
@@ -97,8 +96,7 @@ const TooltipConfig = (props: TooltipConfigProps) => {
         }}
         parent={{
           activeKey: ['tooltip'],
-        }}
-      >
+        }}>
         {formatterConfig}
         {backgroundColorConfig}
         {textStyleConfig}

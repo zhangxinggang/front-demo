@@ -1,12 +1,12 @@
-import { forwardRef, useImperativeHandle, useRef, useCallback } from 'react';
-import { Switch } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import IconTooltip from '@/components/IconTooltip';
 import LazyLoadWrapper from '@/components/LazyLoad';
 import type { WinBoxRef } from '@/components/Winbox';
 import type { ConnectState } from '@/models/connect';
-import IconTooltip from '@/components/IconTooltip';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import InsertComponent from './components/InsertComponent';
 
 const { Item } = ConfigList;
@@ -40,15 +40,11 @@ const Winbox = forwardRef<
     });
   }, []);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open: () => boxRef.current?.open(),
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open: () => boxRef.current?.open(),
+    };
+  }, []);
 
   return (
     <WinBox wrapperComponentRef={boxRef}>
@@ -75,8 +71,7 @@ const Winbox = forwardRef<
                   <IconTooltip title="此功能仅会在开发阶段显示">
                     <InfoCircleOutlined />
                   </IconTooltip>
-                }
-              >
+                }>
                 <FullForm>
                   <InsertComponent />
                 </FullForm>

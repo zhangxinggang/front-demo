@@ -1,6 +1,6 @@
+import { ConnectState } from '@/models/connect';
 import { set } from 'lodash';
 import UndoHistory from 'react-undo-component/lib/Component/history';
-import { ConnectState } from '@/models/connect';
 
 export class HistoryUtil {
   constructor() {

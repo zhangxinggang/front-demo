@@ -1,14 +1,14 @@
 import { mergeWithoutArray } from '@/utils';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { getName, getNumberValue } from '@/utils/constants';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
-  DEFAULT_FONT_CONFIG,
   DEFAULT_ANIMATION_CONFIG,
   DEFAULT_CONDITION_CONFIG,
+  DEFAULT_FONT_CONFIG,
 } from '../../../Common/Constants/defaultConfig';
-import { getName, getNumberValue } from '@/utils/constants';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { TGaugeBasicConfig } from './type';
 
 const [DEFAULT_NAME_LABEL] = getName(1);

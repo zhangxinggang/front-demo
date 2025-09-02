@@ -1,6 +1,6 @@
-import { useMemo, useRef, useState } from 'react';
-import { useScroll, useDebounceEffect } from 'ahooks';
-import { Target, ScrollListenController } from 'ahooks/es/useScroll';
+import { useDebounceEffect, useScroll } from 'ahooks';
+import { ScrollListenController, Target } from 'ahooks/es/useScroll';
+import { useRef, useState } from 'react';
 
 export function useIsScrolling(
   target: Target,

@@ -1,5 +1,5 @@
 import { debounce, throttle } from 'lodash';
-import { GLOBAL_EVENT_EMITTER_FACTORY, EVENT_NAME_MAP } from '../EventEmitter';
+import { EVENT_NAME_MAP, GLOBAL_EVENT_EMITTER_FACTORY } from '../EventEmitter';
 
 export class MultiComponentAction extends GLOBAL_EVENT_EMITTER_FACTORY {
   static DRAG_START = EVENT_NAME_MAP.MULTIPLE_COMPONENT_DRAG_START;

@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { Checkbox } from 'antd';
-import classnames from 'classnames';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import ScreenComponentConfigChangeTooltip from '@/components/ScreenComponentConfigChangeTooltip';
+import { Checkbox } from 'antd';
+import classnames from 'classnames';
+import { useCallback } from 'react';
 import styles from './index.less';
 
 export type TValue = Partial<
@@ -45,8 +45,7 @@ const AutoUpdate = (props: {
       className={classnames(
         styles['design-config-auto-update'],
         'design-config-format-font-size',
-      )}
-    >
+      )}>
       <Checkbox onChange={onCheckChange} checked={!!value.show}>
         自动更新请求
       </Checkbox>

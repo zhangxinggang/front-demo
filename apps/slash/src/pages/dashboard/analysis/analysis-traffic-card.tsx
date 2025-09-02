@@ -15,8 +15,7 @@ export default function AnalysisTrafficCard({ icon, title, subtitle }: Props) {
       className="flex flex-col items-center rounded py-5"
       style={{
         border: `1px solid ${theme.colorBorder}`,
-      }}
-    >
+      }}>
       <div>{icon}</div>
       <span className="text-2xl font-bold">{title}</span>
       <span className="text-sm" style={{ color: theme.colorTextSecondary }}>

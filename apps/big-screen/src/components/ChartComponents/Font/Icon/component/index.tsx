@@ -85,8 +85,7 @@ const Icon = (
         componentStyle,
       )}
       id={chartId.current}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       <Wrapper border={border}>
         {children}
         <div className={classnames('w-100 h-100', chartId.current)}>

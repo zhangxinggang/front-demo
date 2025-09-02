@@ -1,6 +1,6 @@
+import ThemeUtil from '@/utils/Assist/Theme';
 import { omit } from 'lodash';
 import { nanoid } from 'nanoid';
-import ThemeUtil from '@/utils/Assist/Theme';
 import { DEFAULT_BORDER } from '../../../InternalBorder/components/Border';
 
 // 默认的圆角

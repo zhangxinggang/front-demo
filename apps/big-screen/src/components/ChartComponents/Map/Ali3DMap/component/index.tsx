@@ -1,17 +1,17 @@
-import { useEffect, useRef } from 'react';
-import { uniqueId, merge, pick } from 'lodash';
-import classnames from 'classnames';
-import { useUnmount } from 'ahooks';
-import { useDeepUpdateEffect } from '@/hooks';
 import {
-  useComponent,
   useChartValueMapField,
+  useComponent,
   useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
-import ColorSelect from '@/components/ColorSelect';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import { TAli3DMapConfig } from '../type';
+import ColorSelect from '@/components/ColorSelect';
+import { useDeepUpdateEffect } from '@/hooks';
+import { useUnmount } from 'ahooks';
+import classnames from 'classnames';
+import { merge, pick, uniqueId } from 'lodash';
+import { useEffect, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TAli3DMapConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -153,10 +153,10 @@ const Ali3DMap = (
       <div
         class='${styles['component-map-ali3d-window-top']}'
         style='font-size: ${textStyle.fontSize}px;font-weight: ${
-      textStyle.fontWeight
-    };font-family: ${textStyle.fontFamily};color:${getRgbaString(
-      textStyle.color,
-    )};background-color:${getRgbaString(backgroundColor)}'
+          textStyle.fontWeight
+        };font-family: ${textStyle.fontFamily};color:${getRgbaString(
+          textStyle.color,
+        )};background-color:${getRgbaString(backgroundColor)}'
       >
         <div
           class='${styles['component-map-ali3d-window-header']}'
@@ -370,8 +370,7 @@ const Ali3DMap = (
           style,
           conditionStyle,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           <div className="w-100 h-100" id={chartId.current}>

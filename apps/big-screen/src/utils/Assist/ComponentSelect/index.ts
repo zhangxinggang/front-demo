@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GLOBAL_EVENT_EMITTER, EVENT_NAME_MAP } from '../EventEmitter';
+import { EVENT_NAME_MAP, GLOBAL_EVENT_EMITTER } from '../EventEmitter';
 
 const DATA_SOURCE: {
   select: string[];

@@ -1,10 +1,10 @@
-import { useMemo, ReactNode, useCallback } from 'react';
-import { Collapse, Checkbox } from 'antd';
-import { get } from 'lodash';
-import { InfoCircleOutlined, CaretRightOutlined } from '@ant-design/icons';
 import IconTooltip from '@/components/IconTooltip';
 import { getPath } from '@/utils/Assist/Component';
 import GlobalComponent from '@/utils/Assist/GlobalComponent';
+import { CaretRightOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { Checkbox, Collapse } from 'antd';
+import { get } from 'lodash';
+import { ReactNode, useCallback, useMemo } from 'react';
 import Textarea from '../../../Textarea';
 import baseStyles from '../BaseConfig/index.less';
 
@@ -111,12 +111,10 @@ const LinkageConfig = (props: {
                 onChange={(e) => {
                   const value = e.target.checked;
                   onLinkageChange('show', name, value);
-                }}
-              >
+                }}>
                 <span onClick={(e) => e.stopPropagation()}>启用</span>
               </Checkbox>
-            }
-          >
+            }>
             <Textarea
               value={value}
               onChange={onLinkageChange.bind(null, 'value', name)}
@@ -140,8 +138,7 @@ const LinkageConfig = (props: {
         defaultActiveKey={['2']}
         expandIcon={Icon}
         bordered={false}
-        className={baseStyles['design-config-interactive-base-collapse']}
-      >
+        className={baseStyles['design-config-interactive-base-collapse']}>
         <Panel
           header={
             <IconTooltip title='链接地址支持变量，使用"{{}}"包含变量'>
@@ -149,14 +146,12 @@ const LinkageConfig = (props: {
               <InfoCircleOutlined className="m-l-4" />
             </IconTooltip>
           }
-          key="2"
-        >
+          key="2">
           <Collapse
             defaultActiveKey={keys}
             expandIcon={Icon}
             bordered={false}
-            className={baseStyles['design-config-interactive-base-collapse']}
-          >
+            className={baseStyles['design-config-interactive-base-collapse']}>
             {domList}
           </Collapse>
         </Panel>

@@ -1,11 +1,11 @@
-import { useCallback, useMemo } from 'react';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { useCallback, useMemo } from 'react';
 import { TZebraBarConfig } from '../type';
 
 const { Item } = ConfigList;

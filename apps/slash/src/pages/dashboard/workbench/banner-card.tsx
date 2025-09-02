@@ -19,30 +19,30 @@ export default function BannerCard() {
       className="!mx-0 rounded-2xl p-10"
       gutter={[16, 16]}
       justify="space-between"
-      style={{ background: bg }}
-    >
-      <Col span={24} md={12} xl={16} className="flex-1 text-center md:text-left">
+      style={{ background: bg }}>
+      <Col
+        span={24}
+        md={12}
+        xl={16}
+        className="flex-1 text-center md:text-left">
         <div
           className="mt-4 text-lg font-semibold md:text-xl"
-          style={{ color: themeToken.colorPrimaryActive }}
-        >
+          style={{ color: themeToken.colorPrimaryActive }}>
           <h4>Welcome back 👋 </h4>
           <h4>{username}</h4>
         </div>
         <div
           style={{ color: themeToken.colorPrimaryTextActive }}
-          className="mx-auto mb-6 mt-4 max-w-sm text-sm opacity-80 md:mx-0"
-        >
-          Welcome to join the Discord channel to discuss everything about Slash Admin, or you can
-          visite my blog:
+          className="mx-auto mb-6 mt-4 max-w-sm text-sm opacity-80 md:mx-0">
+          Welcome to join the Discord channel to discuss everything about Slash
+          Admin, or you can visite my blog:
           <div>
             <a
               href="https://blog.slashspaces.com"
               target="_blank"
               className="text-base font-bold"
               style={{ color: themeToken.colorPrimaryTextActive }}
-              rel="noreferrer"
-            >
+              rel="noreferrer">
               👉 https://blog.slashspaces.com
             </a>
           </div>
@@ -50,8 +50,7 @@ export default function BannerCard() {
         <button
           className="font-mediumtext-black m-auto flex items-center justify-center rounded-md px-2 py-1 shadow-none md:m-0"
           style={{ backgroundColor: themeToken.colorPrimary, color: '#fff' }}
-          onClick={() => window.open('https://discord.gg/fXemAXVNDa')}
-        >
+          onClick={() => window.open('https://discord.gg/fXemAXVNDa')}>
           <Iconify icon="carbon:logo-discord" size={24} />
           <span className="ml-2">Open Discord</span>
         </button>
@@ -61,8 +60,7 @@ export default function BannerCard() {
         span={24}
         md={12}
         xl={8}
-        className="!md:max-w-[320px] mx-auto !max-w-[270px] flex-none items-center justify-center "
-      >
+        className="!md:max-w-[320px] mx-auto !max-w-[270px] flex-none items-center justify-center">
         <BannerSvg />
       </Col>
     </Row>
@@ -70,11 +68,20 @@ export default function BannerCard() {
 }
 
 function BannerSvg() {
-  const { colorPrimary, colorPrimaryActive, colorPrimaryHover } = useThemeToken();
+  const { colorPrimary, colorPrimaryActive, colorPrimaryHover } =
+    useThemeToken();
   return (
-    <svg viewBox="0 0 480 360" className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 480 360"
+      className="h-full w-full"
+      xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="BG" x1="19.496%" x2="77.479%" y1="71.822%" y2="16.69%">
+        <linearGradient
+          id="BG"
+          x1="19.496%"
+          x2="77.479%"
+          y1="71.822%"
+          y2="16.69%">
           <stop offset="0%" stopColor={colorPrimary} />
           <stop offset="100%" stopColor={colorPrimary} stopOpacity="0" />
         </linearGradient>
@@ -147,7 +154,10 @@ function BannerSvg() {
       <g fill="#fff" fillRule="evenodd" clipRule="evenodd" opacity="0.4">
         <path d="M78.02 155.171a15.22 15.22 0 11.312 1.015l-.156-.495-.157-.52zm15.194-4.189l-3.59-11.525a12.641 12.641 0 013.121-.547 12.102 12.102 0 0111.994 8.456c.312 1.014.496 2.062.546 3.122a13.006 13.006 0 01-.286 3.148 11.815 11.815 0 01-2.914 5.516 11.914 11.914 0 01-11.525 3.59 13.21 13.21 0 01-2.94-1.067 12.76 12.76 0 01-2.602-1.821 12.257 12.257 0 01-3.33-5.203l11.526-3.669zM111.296 251.773a15.298 15.298 0 0129.321-8.429v.494c0 .156 0 .338.182.494a15.272 15.272 0 01-28.619 10.407c-.078-.247-.149-.495-.221-.742a28.499 28.499 0 00-.221-.741 16.041 16.041 0 01-.171-.595 10.734 10.734 0 00-.271-.888zm11.187-14.7l3.746 11.474.079-.026 3.746 11.5a11.965 11.965 0 006.921-6.01 11.83 11.83 0 001.04-2.966c.23-1.024.317-2.075.26-3.122a12.07 12.07 0 00-9.548-11.188 12.42 12.42 0 00-6.244.338zM100.21 187.509a15.272 15.272 0 00-4.473 10.799v1.066a15.272 15.272 0 1030.544 0v-1.066a15.271 15.271 0 00-26.071-10.799zm10.591 11.293V186.73c2.112.016 4.183.581 6.01 1.639a11.366 11.366 0 012.602 1.925 12.027 12.027 0 01-.005 17.068 12.022 12.022 0 01-5.433 3.096 11.575 11.575 0 01-6.244 0 12.202 12.202 0 01-2.914-1.171l5.984-10.485z" />
       </g>
-      <path fill="url(#paint5_linear_1_51)" d="M151.154 76h-41.55l12.645 7.727L151.154 76z" />
+      <path
+        fill="url(#paint5_linear_1_51)"
+        d="M151.154 76h-41.55l12.645 7.727L151.154 76z"
+      />
       <path
         fill="url(#paint6_linear_1_51)"
         d="M151.154 76l-26.668 12.332 4.501 15.715L151.154 76z"
@@ -168,11 +178,13 @@ function BannerSvg() {
           x="232.807"
           y="109.722"
           colorInterpolationFilters="sRGB"
-          filterUnits="userSpaceOnUse"
-        >
+          filterUnits="userSpaceOnUse">
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur result="effect1_foregroundBlur_1_51" stdDeviation="10" />
+          <feGaussianBlur
+            result="effect1_foregroundBlur_1_51"
+            stdDeviation="10"
+          />
         </filter>
         <linearGradient
           id="paint0_linear_1_51"
@@ -180,8 +192,7 @@ function BannerSvg() {
           x2="47.397"
           y1="107.95"
           y2="281.395"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor={colorPrimaryHover} />
           <stop offset="1" stopColor={colorPrimaryActive} />
         </linearGradient>
@@ -191,8 +202,7 @@ function BannerSvg() {
           x2="248.43"
           y1="128.061"
           y2="169.533"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor={colorPrimaryHover} />
           <stop offset="1" stopColor={colorPrimaryActive} />
         </linearGradient>
@@ -202,8 +212,7 @@ function BannerSvg() {
           x2="248.43"
           y1="128.061"
           y2="169.533"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor={colorPrimaryHover} />
           <stop offset="1" stopColor={colorPrimaryActive} />
         </linearGradient>
@@ -213,8 +222,7 @@ function BannerSvg() {
           x2="248.43"
           y1="128.061"
           y2="169.533"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor={colorPrimaryHover} />
           <stop offset="1" stopColor={colorPrimaryActive} />
         </linearGradient>
@@ -224,8 +232,7 @@ function BannerSvg() {
           x2="248.43"
           y1="128.061"
           y2="169.533"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor={colorPrimaryHover} />
           <stop offset="1" stopColor={colorPrimaryActive} />
         </linearGradient>
@@ -235,8 +242,7 @@ function BannerSvg() {
           x2="109.604"
           y1="76"
           y2="104.047"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor={colorPrimaryHover} />
           <stop offset="1" stopColor={colorPrimaryActive} />
         </linearGradient>
@@ -246,8 +252,7 @@ function BannerSvg() {
           x2="109.604"
           y1="76"
           y2="104.047"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor={colorPrimaryHover} />
           <stop offset="1" stopColor={colorPrimaryActive} />
         </linearGradient>
@@ -257,8 +262,7 @@ function BannerSvg() {
           x2="109.604"
           y1="76"
           y2="104.047"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor={colorPrimaryHover} />
           <stop offset="1" stopColor={colorPrimaryActive} />
         </linearGradient>

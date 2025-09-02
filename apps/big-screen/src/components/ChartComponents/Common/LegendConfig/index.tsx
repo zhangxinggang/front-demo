@@ -1,15 +1,15 @@
-import { ReactNode, useCallback, useMemo } from 'react';
-import { Switch } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
 import IconTooltip from '@/components/IconTooltip';
-import Select from '../Select';
-import ConfigList from '../Structure/ConfigList';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
+import { ReactNode, useCallback, useMemo } from 'react';
 import { SingleCollapse as Collapse } from '../Collapse';
 import { FontConfigList } from '../FontConfig';
-import FullForm from '../Structure/FullForm';
-import OrientSelect from '../OrientSelect';
-import KeyWordPosition from '../KeyWordPosition';
 import InputNumber from '../InputNumber';
+import KeyWordPosition from '../KeyWordPosition';
+import OrientSelect from '../OrientSelect';
+import Select from '../Select';
+import ConfigList from '../Structure/ConfigList';
+import FullForm from '../Structure/FullForm';
 import HalfForm from '../Structure/HalfForm';
 import SymbolSelect from '../SymbolSelect';
 
@@ -130,8 +130,7 @@ const LegendConfig = (props: LegendConfigProps) => {
         child={{
           header: '文本',
           key: 'textStyle',
-        }}
-      >
+        }}>
         <FontConfigList
           value={textStyle}
           onChange={onKeyChange.bind(null, 'textStyle')}
@@ -174,8 +173,7 @@ const LegendConfig = (props: LegendConfigProps) => {
         child={{
           header: '图形样式',
           key: 'itemStyle',
-        }}
-      >
+        }}>
         <Item label="类型">
           <FullForm>
             <SymbolSelect
@@ -194,8 +192,7 @@ const LegendConfig = (props: LegendConfigProps) => {
             <IconTooltip title="选择非默认图形时忽略尺寸设置">
               <InfoCircleOutlined />
             </IconTooltip>
-          }
-        >
+          }>
           <Switch
             checked={!!itemStyle?.sizeIgnore}
             onChange={(value) => {
@@ -274,8 +271,7 @@ const LegendConfig = (props: LegendConfigProps) => {
         }}
         parent={{
           activeKey: ['legend'],
-        }}
-      >
+        }}>
         {typeConfig}
         {orientConfig}
         {itemGapConfig}

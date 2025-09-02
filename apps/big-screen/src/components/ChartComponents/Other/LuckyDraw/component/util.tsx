@@ -1,6 +1,6 @@
-import { ReactNode, useMemo, CSSProperties } from 'react';
+import ThemeUtil from '@/utils/Assist/Theme';
 import classnames from 'classnames';
-import ThemeUtil, { getRgbaString } from '@/utils/Assist/Theme';
+import { CSSProperties, ReactNode, useMemo } from 'react';
 import styles from './index.less';
 
 const themeList = ThemeUtil.themeNameList;
@@ -34,8 +34,7 @@ const Button1 = (props: CommonProps) => {
         '--component-other-lucky-draw-button-color': color,
         '--component-other-lucky-draw-button-size': buttonSize * 0.2 + 'px',
       }}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       {children}
     </div>
   );
@@ -60,8 +59,7 @@ const Button2 = (props: CommonProps) => {
         '--component-other-lucky-draw-button-color': color,
         '--component-other-lucky-draw-button-size': buttonSize * 0.2 + 'px',
       }}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       {children}
     </div>
   );

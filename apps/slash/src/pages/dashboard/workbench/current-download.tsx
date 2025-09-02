@@ -52,5 +52,7 @@ function ChartDonut() {
     },
   });
 
-  return <Chart type="donut" series={series} options={chartOptions} height={360} />;
+  return (
+    <Chart type="donut" series={series} options={chartOptions} height={360} />
+  );
 }

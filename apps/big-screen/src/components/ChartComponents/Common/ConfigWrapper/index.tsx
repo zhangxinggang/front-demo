@@ -1,9 +1,9 @@
-import { ReactNode, useMemo, cloneElement, useRef } from 'react';
-import { Tabs } from 'antd';
-import type { TabsProps } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
+import type { TabsProps } from 'antd';
+import { Tabs } from 'antd';
 import classnames from 'classnames';
 import { uniqueId } from 'lodash';
+import { cloneElement, ReactNode, useMemo, useRef } from 'react';
 import styles from './index.less';
 
 // 配置项顶部的tab切换
@@ -65,8 +65,7 @@ export const ConfigItem = (props: {
               className={classnames(
                 styles['design-config-wrapper-item-title-content-main'],
                 'dis-flex',
-              )}
-            >
+              )}>
               {!!hasBack && (
                 <LeftOutlined
                   className="c-po"
@@ -76,8 +75,7 @@ export const ConfigItem = (props: {
               )}
               <span
                 className={classnames('text-ellipsis', 'dis-flex')}
-                title={title || ''}
-              >
+                title={title || ''}>
                 {title}
               </span>
             </div>
@@ -85,8 +83,7 @@ export const ConfigItem = (props: {
               className={classnames(
                 styles['design-config-wrapper-item-title-content-sub'],
                 'dis-flex',
-              )}
-            >
+              )}>
               <span>{title && `${version} | ${title}`}</span>
             </div>
           </div>
@@ -100,8 +97,7 @@ export const ConfigItem = (props: {
         className={classnames(
           styles['design-config-wrapper-item-content'],
           'zero-scrollbar',
-        )}
-      >
+        )}>
         <div className={styles['design-config-wrapper-item-content-main']}>
           {children}
         </div>

@@ -1,6 +1,3 @@
-import { useMemo, useRef, useCallback } from 'react';
-import { merge, uniqueId } from 'lodash';
-import classnames from 'classnames';
 import {
   useComponent,
   useCondition,
@@ -8,8 +5,11 @@ import {
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TStateCardConfig } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TStateCardConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -97,8 +97,7 @@ const StateCard = (
             style={{
               marginTop: margin,
             }}
-            onClick={onClick.bind(null, value)}
-          >
+            onClick={onClick.bind(null, value)}>
             {/* 状态圆点 */}
             <div
               className={styles['component-other-state-card-column-state']}
@@ -113,13 +112,11 @@ const StateCard = (
                 [stateIcon.position === 'start' ? 'marginRight' : 'marginLeft']:
                   stateIcon.margin,
                 float: stateIcon.position === 'start' ? 'left' : 'right',
-              }}
-            ></div>
+              }}></div>
 
             <div
               className={styles['component-other-state-card-column-main']}
-              onClick={onClick.bind(null, value)}
-            >
+              onClick={onClick.bind(null, value)}>
               {value.name}
             </div>
           </div>
@@ -149,8 +146,7 @@ const StateCard = (
       <div
         className={componentClassName}
         style={componentStyle}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           {listContent}

@@ -15,7 +15,8 @@ const isAppleDevice = /(mac|iphone|ipod|ipad)/i.test(
 );
 
 const isInput = (target: HTMLElement) =>
-  ['TEXTAREA', 'INPUT'].includes(target.tagName) || target.contentEditable === 'true';
+  ['TEXTAREA', 'INPUT'].includes(target.tagName) ||
+  target.contentEditable === 'true';
 
 const SearchBar: FC = () => {
   const { styles } = useStyles();
@@ -41,9 +42,13 @@ const SearchBar: FC = () => {
         ev.preventDefault();
 
         if (inputRef.current) {
-          const { top, bottom, left, right } = inputRef.current.getBoundingClientRect();
+          const { top, bottom, left, right } =
+            inputRef.current.getBoundingClientRect();
           const isInViewport =
-            top >= 0 && left >= 0 && bottom <= window.innerHeight && right <= window.innerWidth;
+            top >= 0 &&
+            left >= 0 &&
+            bottom <= window.innerHeight &&
+            right <= window.innerWidth;
 
           if (isInViewport) {
             inputRef.current.focus();
@@ -84,21 +89,23 @@ const SearchBar: FC = () => {
         className={styles.input}
       />
       <span className={styles.shortcut}>{symbol} K</span>
-      {keywords.trim() && focusing && (result.length || !loading) && !modalVisible && (
-        <div className={styles.popover}>
-          <section>
-            <SearchResult data={result} loading={loading} />
-          </section>
-        </div>
-      )}
+      {keywords.trim() &&
+        focusing &&
+        (result.length || !loading) &&
+        !modalVisible && (
+          <div className={styles.popover}>
+            <section>
+              <SearchResult data={result} loading={loading} />
+            </section>
+          </div>
+        )}
 
       <Mask
         visible={modalVisible}
         onMaskClick={() => {
           setModalVisible(false);
         }}
-        onClose={() => setKeywords('')}
-      >
+        onClose={() => setKeywords('')}>
         <div style={{ position: 'relative' }}>
           <SearchOutlined className={styles.svg} />
           <Input

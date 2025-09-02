@@ -74,8 +74,7 @@ export default function MarkdownPage() {
       <Typography.Link
         href="https://github.com/remarkjs/react-markdown"
         style={{ color: colorPrimary }}
-        className="mb-4 block"
-      >
+        className="mb-4 block">
         https://github.com/remarkjs/react-markdown
       </Typography.Link>
       <Card title="Mardown content">

@@ -24,7 +24,9 @@ export const useStyles = createStyles(({ token, css }) => {
       width: 500px;
       padding: 12px;
       box-sizing: border-box;
-      box-shadow: inset 1px 1px 0 0 hsla(0deg, 0%, 100%, 50%), 0 3px 8px 0 #555a64;
+      box-shadow:
+        inset 1px 1px 0 0 hsla(0deg, 0%, 100%, 50%),
+        0 3px 8px 0 #555a64;
       border-radius: 8px;
       max-height: calc(100% - 120px);
       display: flex;

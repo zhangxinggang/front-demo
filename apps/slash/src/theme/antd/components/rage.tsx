@@ -6,7 +6,10 @@ import { Iconify } from '@/components/icon';
 export default function ProRate(props: RateProps) {
   return (
     <StyledRate>
-      <Rate character={<Iconify icon="solar:star-bold" size={18} />} {...props} />
+      <Rate
+        character={<Iconify icon="solar:star-bold" size={18} />}
+        {...props}
+      />
     </StyledRate>
   );
 }

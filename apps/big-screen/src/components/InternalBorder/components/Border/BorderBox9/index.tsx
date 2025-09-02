@@ -1,8 +1,8 @@
-import React, { useMemo, forwardRef, useState, CSSProperties } from 'react';
 import classnames from 'classnames';
 import { nanoid } from 'nanoid';
+import { CSSProperties, forwardRef, useMemo, useState } from 'react';
+import { useAutoResize, useBorderWrapper } from '../hooks';
 import { CommonBorderProps } from '../type';
-import { useBorderWrapper, useAutoResize } from '../hooks';
 import styles from './index.less';
 
 const defaultColor = ['#11eefd', '#0078d2'];
@@ -49,8 +49,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       <svg
         className={styles['internal-border-9-border-container']}
         width={width}
-        height={height}
-      >
+        height={height}>
         <defs>
           <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
             <animate
@@ -121,8 +120,8 @@ const BorderBox = forwardRef((props: IProps, ref) => {
               points={`
                 ${width * 0.9}, 3 ${width - 3}, 3 ${width - 3}, ${height * 0.1}
                 ${width - 9}, ${height * 0.1 - 7} ${width - 9}, 9 ${
-                width * 0.9 + 7
-              }, 9
+                  width * 0.9 + 7
+                }, 9
               `}
             />
 
@@ -154,11 +153,11 @@ const BorderBox = forwardRef((props: IProps, ref) => {
               fill="#fff"
               points={`
                 ${width * 0.92}, ${height - 3} ${width - 3}, ${height - 3} ${
-                width - 3
-              }, ${height * 0.8}
+                  width - 3
+                }, ${height * 0.8}
                 ${width - 9}, ${height * 0.8 + 7} ${width - 9}, ${height - 9} ${
-                width * 0.92 + 7
-              }, ${height - 9}
+                  width * 0.92 + 7
+                }, ${height - 9}
               `}
             />
           </mask>
@@ -196,8 +195,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
 
       <div
         {...nextProps}
-        className={styles['internal-border-9-border-content']}
-      >
+        className={styles['internal-border-9-border-content']}>
         {children}
       </div>
     </div>

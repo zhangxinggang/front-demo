@@ -1,13 +1,13 @@
-import { useCallback, useMemo, useRef } from 'react';
-import { Steps, Checkbox } from 'antd';
-import { get } from 'lodash';
-import classnames from 'classnames';
-import AutoUpdate, { TValue } from './components/AutoUpdate';
 import GhostButton from '@/components/GhostButton';
 import {
-  GLOBAL_EVENT_EMITTER,
   EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
 } from '@/utils/Assist/EventEmitter';
+import { Checkbox, Steps } from 'antd';
+import classnames from 'classnames';
+import { get } from 'lodash';
+import { useCallback, useMemo, useRef } from 'react';
+import AutoUpdate, { TValue } from './components/AutoUpdate';
 import CodeEditor from './components/CodeViewer';
 import DataConfigDetail, {
   IDataConfigDetailRef,
@@ -117,20 +117,17 @@ const ResponseData = (props: {
                   className={classnames(
                     styles['design-config-response-data-step-item'],
                     'dis-flex',
-                  )}
-                >
+                  )}>
                   <div
                     className={
                       styles['design-config-response-data-step-item-title']
-                    }
-                  >
+                    }>
                     <span
                       className={
                         styles[
                           'design-config-response-data-step-item-title-type-txt'
                         ]
-                      }
-                    >
+                      }>
                       {apiTypeString}
                     </span>
                   </div>
@@ -144,17 +141,14 @@ const ResponseData = (props: {
                   className={classnames(
                     styles['design-config-response-data-step-item'],
                     'dis-flex',
-                  )}
-                >
+                  )}>
                   <div
                     className={
                       styles['design-config-response-data-step-item-title']
-                    }
-                  >
+                    }>
                     <Checkbox
                       checked={filterOpen}
-                      onChange={onFilterConfigChange}
-                    >
+                      onChange={onFilterConfigChange}>
                       数据过滤器
                     </Checkbox>
                   </div>
@@ -169,13 +163,11 @@ const ResponseData = (props: {
                   className={classnames(
                     styles['design-config-response-data-step-item'],
                     'dis-flex',
-                  )}
-                >
+                  )}>
                   <div
                     className={
                       styles['design-config-response-data-step-item-title']
-                    }
-                  >
+                    }>
                     <span>数据响应结果{'（ 只读 ）'}</span>
                   </div>
                 </div>

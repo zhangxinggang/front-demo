@@ -1,7 +1,7 @@
-import { CSSProperties } from 'react';
 import { getRgbaString } from '@/utils/Assist/Theme';
-import { CommonBorderProps } from '../type';
+import { CSSProperties } from 'react';
 import { useBorderWrapper } from '../hooks';
+import { CommonBorderProps } from '../type';
 import './index.less';
 
 const FlickerBorder = (props: CommonBorderProps) => {
@@ -38,8 +38,7 @@ const FlickerBorder = (props: CommonBorderProps) => {
             ...ColorList[2],
             a: 0.6,
           }),
-        }}
-      >
+        }}>
         {children}
       </div>
     </>

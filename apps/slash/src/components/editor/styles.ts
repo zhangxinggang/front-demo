@@ -67,7 +67,10 @@ const StyledEditor = styled.div<{ $token: GlobalToken; $thememode: ThemeMode }>`
   }
 `;
 
-const StyledToolbar = styled.div<{ $token: GlobalToken; $thememode: ThemeMode }>`
+const StyledToolbar = styled.div<{
+  $token: GlobalToken;
+  $thememode: ThemeMode;
+}>`
   & .ql-snow.ql-toolbar button:hover .ql-fill,
   .ql-snow .ql-toolbar button:hover .ql-fill,
   .ql-snow.ql-toolbar button:focus .ql-fill,

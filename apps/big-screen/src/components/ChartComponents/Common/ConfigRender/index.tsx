@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import { get } from 'lodash';
+import { useMemo } from 'react';
 import ComponentOptionConfig, { Tab } from '../ComponentOptionConfig';
 import ConfigList from '../Structure/ConfigList';
 import { SubConfigRender, SubMultipleConfigRender } from './SubConfigRender';

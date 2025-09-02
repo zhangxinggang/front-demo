@@ -208,8 +208,7 @@ const Painter = (props: PainterProps) => {
       image={backgroundStyle.backgroundImage}
       type={poster!.type}
       onMouseDown={onMouseDown}
-      onTransitionEnd={onTransitionEnd}
-    >
+      onTransitionEnd={onTransitionEnd}>
       {componentList}
       <H5AutoHeight />
       <LogWinbox />

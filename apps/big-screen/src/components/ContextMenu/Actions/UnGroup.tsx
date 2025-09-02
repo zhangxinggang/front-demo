@@ -1,8 +1,8 @@
-import { useCallback, useMemo } from 'react';
-import { UngroupOutlined } from '@ant-design/icons';
 import { isGroupComponent } from '@/utils/Assist/Component';
-import useChildren from './useChildren';
+import { UngroupOutlined } from '@ant-design/icons';
+import { useCallback, useMemo } from 'react';
 import { CommonActionType } from './type';
+import useChildren from './useChildren';
 
 const UnGroupAction = (props: CommonActionType) => {
   const {

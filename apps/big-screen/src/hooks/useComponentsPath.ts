@@ -1,9 +1,9 @@
-import { useMemo, useState, useEffect, useRef } from 'react';
-import { useThrottleFn, useDeepCompareEffect } from 'ahooks';
 import {
-  GLOBAL_EVENT_EMITTER,
   EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
 } from '@/utils/Assist/EventEmitter';
+import { useDeepCompareEffect, useThrottleFn } from 'ahooks';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLayerHover } from './useLayerHover';
 
 let ID_PATH_MAP: {

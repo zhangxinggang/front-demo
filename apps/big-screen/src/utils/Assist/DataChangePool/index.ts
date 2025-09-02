@@ -1,4 +1,4 @@
-import { useIdPathMap, useAnyDva } from '@/hooks';
+import { useAnyDva, useIdPathMap } from '@/hooks';
 import { getDvaGlobalModelData } from '../Component';
 import ComponentActionValidator from '../Component/ComponentActionValidator';
 

@@ -1,13 +1,13 @@
-import { Component } from 'react';
-import { Switch } from 'antd';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import Select from '@/components/ChartComponents/Common/Select';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import Select from '@/components/ChartComponents/Common/Select';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import ParamsSelect from '@/components/ParamsSelect';
+import { Switch } from 'antd';
+import { Component } from 'react';
 import { PostMessageTooltip } from '../component/MessageTooltip';
 import { TIFrameConfig } from '../type';
 

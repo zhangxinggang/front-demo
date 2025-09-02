@@ -1,13 +1,13 @@
-import React, { useMemo, useCallback } from 'react';
-import { Col, Radio } from 'antd';
+import { DEFAULT_BACKGROUND_CONFIG } from '@/utils/constants';
 import { useControllableValue } from 'ahooks';
+import { Col, Radio } from 'antd';
+import type { UploadFile } from 'antd/es/upload/interface';
 import classnames from 'classnames';
 import { merge } from 'lodash';
-import type { UploadFile } from 'antd/es/upload/interface';
-import { DEFAULT_BACKGROUND_CONFIG } from '@/utils/constants';
-import { InternalBackgroundSelect } from '../InternalBackground';
+import { useCallback, useMemo } from 'react';
 import { CompatColorSelect } from '../ColorSelect';
 import ImageUpload from '../ImageUpload';
+import { InternalBackgroundSelect } from '../InternalBackground';
 import styles from './index.less';
 
 const BackgroundSelect = (props: {

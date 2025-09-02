@@ -1,22 +1,22 @@
-import { useEffect, useRef } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useDeepUpdateEffect } from '@/hooks';
 import {
-  useComponent,
-  useChartComponentResize,
-  useChartValueMapField,
-  useComponentResize,
   useAnimationChange,
-  useCondition,
+  useChartComponentResize,
   useChartComponentTooltip,
   useChartPerConfig,
+  useChartValueMapField,
+  useComponent,
+  useComponentResize,
+  useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
-import ColorSelect from '@/components/ColorSelect';
-import { init } from '@/utils/Assist/EchartsLoader';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import { TBubbleScatterConfig } from '../type';
+import ColorSelect from '@/components/ColorSelect';
+import { useDeepUpdateEffect } from '@/hooks';
+import { init } from '@/utils/Assist/EchartsLoader';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useEffect, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TBubbleScatterConfig } from '../type';
 
 const { getRgbaString } = ColorSelect;
 
@@ -232,8 +232,7 @@ const BubbleScatter = (
           style,
           conditionStyle,
         )}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           <div id={chartId.current} className="w-100 h-100"></div>
           {children}

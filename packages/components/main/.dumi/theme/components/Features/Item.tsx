@@ -54,16 +54,23 @@ const FeatureItem: FC<IFeature> = ({
         } else {
           history.push(link);
         }
-      }}
-    >
+      }}>
       <div className={styles.cell}>
         {image && (
-          <Center image-style={imageType} className={styles.imgContainer} style={imageStyle}>
+          <Center
+            image-style={imageType}
+            className={styles.imgContainer}
+            style={imageStyle}>
             <Image className={styles.img} image={image} title={title} />
           </Center>
         )}
         {title && (
-          <Flexbox as={'h3'} horizontal gap={8} align={'center'} className={styles.title}>
+          <Flexbox
+            as={'h3'}
+            horizontal
+            gap={8}
+            align={'center'}
+            className={styles.title}>
             {emoji}
             {title}
             {imageType === 'soon' ? (
@@ -77,7 +84,10 @@ const FeatureItem: FC<IFeature> = ({
           </Flexbox>
         )}
         {description && (
-          <p dangerouslySetInnerHTML={{ __html: description }} className={styles.desc} />
+          <p
+            dangerouslySetInnerHTML={{ __html: description }}
+            className={styles.desc}
+          />
         )}
         {link && (
           <div className={styles.link}>

@@ -1,16 +1,16 @@
-import { useCallback, useMemo } from 'react';
-import Select from '@/components/ChartComponents/Common/Select';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import { SimpleHueRadialSelect } from '@/components/ChartComponents/Common/SimpleHueSelect';
-import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import BarCarouselConfig from '@/components/ChartComponents/Common/BarCarouselConfig';
+import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import Select from '@/components/ChartComponents/Common/Select';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import { SimpleHueRadialSelect } from '@/components/ChartComponents/Common/SimpleHueSelect';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { useCallback, useMemo } from 'react';
 import { TRankBarConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -50,8 +50,7 @@ const SeriesConfig = (props: {
               show: value,
             });
           },
-        }}
-      >
+        }}>
         <Item label="颜色">
           <FullForm>
             <CompatColorSelect
@@ -73,8 +72,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         ignore={['position']}
-        onChange={onKeyChange.bind(null, 'label')}
-      >
+        onChange={onKeyChange.bind(null, 'label')}>
         <Item label="位置">
           <FullForm>
             <Select
@@ -121,8 +119,7 @@ const SeriesConfig = (props: {
           child={{
             header: '默认颜色',
             key: 'defaultColor',
-          }}
-        >
+          }}>
           <ChartGradientSelect
             value={itemStyle.defaultColor}
             onChange={(value) => {
@@ -139,8 +136,7 @@ const SeriesConfig = (props: {
           }}
           parent={{
             activeKey: ['itemColor'],
-          }}
-        >
+          }}>
           <SimpleHueRadialSelect
             value={itemStyle.color}
             onChange={(value) => {

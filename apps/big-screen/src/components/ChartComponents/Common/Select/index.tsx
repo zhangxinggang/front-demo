@@ -1,5 +1,5 @@
-import { Select as AntSelect } from 'antd';
 import type { SelectProps } from 'antd';
+import { Select as AntSelect } from 'antd';
 import classnames from 'classnames';
 
 const { OptGroup, Option } = AntSelect;

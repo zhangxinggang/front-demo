@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
-import type { ECharts } from 'echarts';
 import { useDebounceFn, useSize, useUpdateEffect } from 'ahooks';
+import type { ECharts } from 'echarts';
+import { useEffect, useRef } from 'react';
 import EventEmitter from '../EventEmitter';
 
 export function useChartComponentResize(instance: ECharts) {

@@ -35,16 +35,14 @@ const IntroductionButton = () => {
         }}
         icon={<SmileOutlined />}
         event={'hover'}
-        alwaysShowTitle
-      >
+        alwaysShowTitle>
         <Action
           text="Github"
           onClick={gotoGithub}
           style={{
             backgroundColor: subColor,
             ...commonStyle,
-          }}
-        >
+          }}>
           <GithubOutlined />
         </Action>
         <Action
@@ -53,8 +51,7 @@ const IntroductionButton = () => {
           style={{
             backgroundColor: thirdColor,
             ...commonStyle,
-          }}
-        >
+          }}>
           <ContactsOutlined />
         </Action>
         <Action
@@ -63,8 +60,7 @@ const IntroductionButton = () => {
           style={{
             backgroundColor: forthColor,
             ...commonStyle,
-          }}
-        >
+          }}>
           <QuestionCircleOutlined />
         </Action>
       </Fab>

@@ -6,49 +6,51 @@ import { memo, type FC } from 'react';
 import { shallow } from 'zustand/shallow';
 import { activePathSel, useSiteStore } from '../../store';
 
-const useStyles = createStyles(({ css, responsive, token, stylish, prefixCls }) => {
-  const prefix = `.${prefixCls}-tabs`;
+const useStyles = createStyles(
+  ({ css, responsive, token, stylish, prefixCls }) => {
+    const prefix = `.${prefixCls}-tabs`;
 
-  const marginHoriz = 16;
-  const paddingVertical = 6;
+    const marginHoriz = 16;
+    const paddingVertical = 6;
 
-  return {
-    tabs: css`
-      ${prefix}-tab + ${prefix}-tab {
-        margin: ${marginHoriz}px 4px !important;
-        padding: 0 12px !important;
-      }
-
-      ${prefix}-tab {
-        color: ${token.colorTextSecondary};
-        transition: background-color 100ms ease-out;
-
-        &:first-child {
-          margin: ${marginHoriz}px 4px ${marginHoriz}px 0;
-          padding: ${paddingVertical}px 12px !important;
+    return {
+      tabs: css`
+        ${prefix}-tab + ${prefix}-tab {
+          margin: ${marginHoriz}px 4px !important;
+          padding: 0 12px !important;
         }
 
-        &:hover {
-          color: ${token.colorText} !important;
-          background: ${token.colorFillTertiary};
-          border-radius: ${token.borderRadius}px;
+        ${prefix}-tab {
+          color: ${token.colorTextSecondary};
+          transition: background-color 100ms ease-out;
+
+          &:first-child {
+            margin: ${marginHoriz}px 4px ${marginHoriz}px 0;
+            padding: ${paddingVertical}px 12px !important;
+          }
+
+          &:hover {
+            color: ${token.colorText} !important;
+            background: ${token.colorFillTertiary};
+            border-radius: ${token.borderRadius}px;
+          }
         }
-      }
 
-      ${prefix}-nav {
-        margin-bottom: 0;
-      }
+        ${prefix}-nav {
+          margin-bottom: 0;
+        }
 
-      ${responsive.mobile} {
-        display: none;
-      }
-    `,
+        ${responsive.mobile} {
+          display: none;
+        }
+      `,
 
-    link: css`
-      ${stylish.resetLinkColor}
-    `,
-  };
-});
+      link: css`
+        ${stylish.resetLinkColor}
+      `,
+    };
+  },
+);
 const Navbar: FC = () => {
   const { styles } = useStyles();
 
@@ -60,7 +62,9 @@ const Navbar: FC = () => {
     <>
       <Tabs
         onChange={(path) => {
-          const url = nav.find((i) => i.activePath === path || i.link === path)?.link;
+          const url = nav.find(
+            (i) => i.activePath === path || i.link === path,
+          )?.link;
           if (!url || regLink.test(url)) return;
           history.push(url);
         }}
@@ -68,7 +72,11 @@ const Navbar: FC = () => {
         className={styles.tabs}
         items={nav.map((item) => ({
           label: regLink.test(item.link || '') ? (
-            <a href={item.link} className={styles.link} target="_blank" rel="noreferrer">
+            <a
+              href={item.link}
+              className={styles.link}
+              target="_blank"
+              rel="noreferrer">
               {item.title}
             </a>
           ) : (

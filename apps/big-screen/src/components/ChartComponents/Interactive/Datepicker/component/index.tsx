@@ -1,14 +1,14 @@
-import { useMemo, useRef, useState, useEffect, cloneElement } from 'react';
-import { uniqueId, merge } from 'lodash';
+import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
+import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
+import ColorSelect from '@/components/ColorSelect';
+import { useUpdateEffect } from 'ahooks';
 import { DatePicker as AntDatePicker } from 'antd';
 import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
 import moment from 'moment';
-import { useUpdateEffect } from 'ahooks';
-import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
-import ColorSelect from '@/components/ColorSelect';
-import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
-import { TDatePickerConfig } from '../type';
+import { cloneElement, useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TDatePickerConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -254,8 +254,7 @@ const DatePicker = (
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           {DatePickerDom}

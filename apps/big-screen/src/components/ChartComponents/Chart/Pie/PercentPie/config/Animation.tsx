@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import { useCallback } from 'react';
 import { TPercentPieConfig } from '../type';
 
 const { Item } = ConfigList;

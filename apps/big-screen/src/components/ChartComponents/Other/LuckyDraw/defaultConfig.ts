@@ -1,21 +1,21 @@
 import { mergeWithoutArray } from '@/utils';
-import {
-  BASIC_DEFAULT_CONFIG,
-  BASIC_DEFAULT_DATA_CONFIG,
-  BASIC_DEFAULT_INTERACTIVE_CONFIG,
-  DEFAULT_FONT_CONFIG,
-  DEFAULT_CONDITION_CONFIG,
-  DEFAULT_LINKAGE_CONFIG,
-  DEFAULT_THEME_COLOR_LIST,
-  DEFAULT_INTERACTIVE_BASE_CONFIG,
-} from '../../Common/Constants/defaultConfig';
-import { TLuckyDrawConfig } from './type';
 import prizes1 from '../../../../../public/other/prizes-1.png';
 import prizes2 from '../../../../../public/other/prizes-2.png';
 import prizes3 from '../../../../../public/other/prizes-3.png';
 import prizes4 from '../../../../../public/other/prizes-4.png';
 import prizes5 from '../../../../../public/other/prizes-5.png';
 import prizes6 from '../../../../../public/other/prizes-6.png';
+import {
+  BASIC_DEFAULT_CONFIG,
+  BASIC_DEFAULT_DATA_CONFIG,
+  BASIC_DEFAULT_INTERACTIVE_CONFIG,
+  DEFAULT_CONDITION_CONFIG,
+  DEFAULT_FONT_CONFIG,
+  DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
+  DEFAULT_THEME_COLOR_LIST,
+} from '../../Common/Constants/defaultConfig';
+import { TLuckyDrawConfig } from './type';
 
 const DEFAULT_VALUE = [
   {

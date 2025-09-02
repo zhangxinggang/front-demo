@@ -1,4 +1,4 @@
-import { Card, Tooltip, Typography, Image } from 'antd';
+import { Card, Image, Tooltip, Typography } from 'antd';
 import { ItemRender } from 'antd/es/upload/interface';
 import { m } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -15,7 +15,11 @@ type Props = {
   thumbnail?: boolean;
 };
 
-export default function UploadListItem({ file, actions, thumbnail = false }: Props) {
+export default function UploadListItem({
+  file,
+  actions,
+  thumbnail = false,
+}: Props) {
   const { name, size } = file;
   const thumb = getFileThumb(name);
   const format = getFileFormat(name);
@@ -31,8 +35,7 @@ export default function UploadListItem({ file, actions, thumbnail = false }: Pro
   const closeButton = (
     <button
       className="ml-auto h-6 w-6 cursor-pointer rounded-full text-center hover:bg-gray-400 hover:bg-opacity-20"
-      onClick={actions.remove}
-    >
+      onClick={actions.remove}>
       <Iconify icon="mingcute:close-line" size={14} className="text-gray-600" />
     </button>
   );
@@ -40,8 +43,7 @@ export default function UploadListItem({ file, actions, thumbnail = false }: Pro
   const thumbList = (
     <Card
       className="relative flex items-center justify-center"
-      style={{ width: 80, height: 80, marginTop: '8px', marginRight: '8px' }}
-    >
+      style={{ width: 80, height: 80, marginTop: '8px', marginRight: '8px' }}>
       <Tooltip title={name}>
         {format === 'img' ? (
           <Image src={imgThumbUrl} preview={false} width={40} height={40} />
@@ -55,15 +57,16 @@ export default function UploadListItem({ file, actions, thumbnail = false }: Pro
   const cardList = (
     <Card
       bodyStyle={{ display: 'flex', alignItems: 'center', padding: '8px 12px' }}
-      style={{ marginTop: '8px' }}
-    >
+      style={{ marginTop: '8px' }}>
       {format === 'img' ? (
         <Image src={imgThumbUrl} preview={false} width={32} height={32} />
       ) : (
         <SvgIcon icon={thumb} size={32} />
       )}
       <div className="ml-4 flex flex-col">
-        <Typography.Text className="!text-sm !font-medium">{name}</Typography.Text>
+        <Typography.Text className="!text-sm !font-medium">
+          {name}
+        </Typography.Text>
         <Typography.Text type="secondary" className="!text-xs">
           {fBytes(size)}
         </Typography.Text>
@@ -72,7 +75,11 @@ export default function UploadListItem({ file, actions, thumbnail = false }: Pro
     </Card>
   );
   return (
-    <m.div initial="initial" animate="animate" exit="exit" variants={varFade().inUp}>
+    <m.div
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={varFade().inUp}>
       {thumbnail ? thumbList : cardList}
     </m.div>
   );

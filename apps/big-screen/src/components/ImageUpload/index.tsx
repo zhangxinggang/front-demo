@@ -1,17 +1,17 @@
-import { useCallback, CSSProperties, useState, useRef, useEffect } from 'react';
-import { Upload, Modal, UploadProps, message } from 'antd';
-import { useControllableValue } from 'ahooks';
-import classnames from 'classnames';
-import { nanoid } from 'nanoid';
-import type { UploadFile } from 'antd/es/upload/interface';
-import { FileImageOutlined, LinkOutlined } from '@ant-design/icons';
+import GlobalConfig from '@/utils/Assist/GlobalConfig';
 import {
   UploadImage,
+  beforeDelete,
   createBaseUploadFile,
   createUploadedFile,
-  beforeDelete,
 } from '@/utils/Assist/Upload';
-import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { FileImageOutlined, LinkOutlined } from '@ant-design/icons';
+import { useControllableValue } from 'ahooks';
+import { Modal, Upload, UploadProps, message } from 'antd';
+import type { UploadFile } from 'antd/es/upload/interface';
+import classnames from 'classnames';
+import { nanoid } from 'nanoid';
+import { CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
 import Input, { InputRef } from './Input';
 import styles from './index.less';
 
@@ -36,8 +36,7 @@ export const UploadButton = (props: {
       className={classnames(
         styles['component-image-upload-placeholder'],
         props.className,
-      )}
-    >
+      )}>
       <FileImageOutlined />
       <div style={{ marginTop: 8 }}>点击这里进行更改</div>
     </div>
@@ -202,16 +201,14 @@ const PicturesWall = (
         className={classnames(styles['component-image-upload'], className)}
         onRemove={onRemove}
         disabled={validLoading}
-        {...nextProps}
-      >
+        {...nextProps}>
         {value.length >= 1 ? null : <UploadButton />}
       </Upload>
       <Modal
         open={previewVisible}
         footer={null}
         onCancel={handleCancel}
-        width={'90vw'}
-      >
+        width={'90vw'}>
         <img alt="background" style={{ width: '100%' }} src={previewImage} />
       </Modal>
     </>

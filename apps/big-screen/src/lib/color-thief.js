@@ -4,7 +4,7 @@ if (!t)
       var n = {};
       return r
         ? t.map(function (t, o) {
-            return (n.index = o), r.call(n, t);
+            return ((n.index = o), r.call(n, t));
           })
         : t.slice();
     },
@@ -16,7 +16,7 @@ if (!t)
       return t.reduce(
         r
           ? function (t, o, e) {
-              return (n.index = e), t + r.call(n, o);
+              return ((n.index = e), t + r.call(n, o));
             }
           : function (t, r) {
               return t + r;
@@ -39,17 +39,17 @@ var r = (function () {
       var r = [],
         n = !1;
       function o() {
-        r.sort(t), (n = !0);
+        (r.sort(t), (n = !0));
       }
       return {
         push: function (t) {
-          r.push(t), (n = !1);
+          (r.push(t), (n = !1));
         },
         peek: function (t) {
-          return n || o(), void 0 === t && (t = r.length - 1), r[t];
+          return (n || o(), void 0 === t && (t = r.length - 1), r[t]);
         },
         pop: function () {
-          return n || o(), r.pop();
+          return (n || o(), r.pop());
         },
         size: function () {
           return r.length;
@@ -58,18 +58,18 @@ var r = (function () {
           return r.map(t);
         },
         debug: function () {
-          return n || o(), r;
+          return (n || o(), r);
         },
       };
     }
     function u(t, r, n, o, e, i, u) {
-      (this.r1 = t),
+      ((this.r1 = t),
         (this.r2 = r),
         (this.g1 = n),
         (this.g2 = o),
         (this.b1 = e),
         (this.b2 = i),
-        (this.histo = u);
+        (this.histo = u));
     }
     function a() {
       this.vboxes = new i(function (r, n) {
@@ -137,7 +137,7 @@ var r = (function () {
                 )
                   u++;
                 for (c = l[u]; !c && v[u - 1]; ) c = l[--u];
-                return (e[h] = u), (i[s] = e[h] + 1), [e, i];
+                return ((e[h] = u), (i[s] = e[h] + 1), [e, i]);
               }
           })(u == o ? 'r' : u == i ? 'g' : 'b')
         );
@@ -165,7 +165,7 @@ var r = (function () {
             for (n = this.r1; n <= this.r2; n++)
               for (o = this.g1; o <= this.g2; o++)
                 for (i = this.b1; i <= this.b2; i++) u += r[e(n, o, i)] || 0;
-            (this._count = u), (this._count_set = !0);
+            ((this._count = u), (this._count_set = !0));
           }
           return this._count;
         },
@@ -195,10 +195,10 @@ var r = (function () {
             for (i = this.r1; i <= this.r2; i++)
               for (u = this.g1; u <= this.g2; u++)
                 for (a = this.b1; a <= this.b2; a++)
-                  (s += o = n[e(i, u, a)] || 0),
+                  ((s += o = n[e(i, u, a)] || 0),
                     (c += o * (i + 0.5) * h),
                     (f += o * (u + 0.5) * h),
-                    (v += o * (a + 0.5) * h);
+                    (v += o * (a + 0.5) * h));
             this._avg = s
               ? [~~(c / s), ~~(f / s), ~~(v / s)]
               : [
@@ -274,8 +274,8 @@ var r = (function () {
               i = new Array(1 << (3 * r));
             return (
               t.forEach(function (t) {
-                (o = e(t[0] >> n, t[1] >> n, t[2] >> n)),
-                  (i[o] = (i[o] || 0) + 1);
+                ((o = e(t[0] >> n, t[1] >> n, t[2] >> n)),
+                  (i[o] = (i[o] || 0) + 1));
               }),
               i
             );
@@ -293,9 +293,9 @@ var r = (function () {
                 v = 0;
               return (
                 t.forEach(function (t) {
-                  (o = t[0] >> n) < a ? (a = o) : o > s && (s = o),
+                  ((o = t[0] >> n) < a ? (a = o) : o > s && (s = o),
                     (e = t[1] >> n) < h ? (h = e) : e > c && (c = e),
-                    (i = t[2] >> n) < f ? (f = i) : i > v && (v = i);
+                    (i = t[2] >> n) < f ? (f = i) : i > v && (v = i));
                 }),
                 new u(a, s, h, c, f, v, r)
               );
@@ -312,11 +312,11 @@ var r = (function () {
                   a = u[0],
                   h = u[1];
                 if (!a) return;
-                t.push(a), h && (t.push(h), e++);
-              } else t.push(n), i++;
+                (t.push(a), h && (t.push(h), e++));
+              } else (t.push(n), i++);
             }
           }
-          l.push(v), g(l, 0.75 * c);
+          (l.push(v), g(l, 0.75 * c));
           for (
             var p = new i(function (r, n) {
               return t.naturalOrder(
@@ -336,18 +336,18 @@ var r = (function () {
     );
   })().quantize,
   n = function (t) {
-    (this.canvas = document.createElement('canvas')),
+    ((this.canvas = document.createElement('canvas')),
       (this.context = this.canvas.getContext('2d')),
       (this.width = this.canvas.width = t.naturalWidth),
       (this.height = this.canvas.height = t.naturalHeight),
-      this.context.drawImage(t, 0, 0, this.width, this.height);
+      this.context.drawImage(t, 0, 0, this.width, this.height));
   };
 n.prototype.getImageData = function () {
   return this.context.getImageData(0, 0, this.width, this.height);
 };
 var o = function () {};
-(o.prototype.getColor = function (t, r) {
-  return void 0 === r && (r = 10), this.getPalette(t, 5, r)[0];
+((o.prototype.getColor = function (t, r) {
+  return (void 0 === r && (r = 10), this.getPalette(t, 5, r)[0]);
 }),
   (o.prototype.getPalette = function (t, o, e) {
     var i = (function (t) {
@@ -358,7 +358,7 @@ var o = function () {};
             throw new Error(
               'colorCount should be between 2 and 20. To get one color, call getColor() instead of getPalette()',
             );
-          (r = Math.max(r, 2)), (r = Math.min(r, 20));
+          ((r = Math.max(r, 2)), (r = Math.min(r, 20)));
         } else r = 10;
         return (
           (void 0 === n || !Number.isInteger(n) || n < 1) && (n = 10),
@@ -379,11 +379,11 @@ var o = function () {};
           i < r;
           i += n
         )
-          (a = o[0 + (u = 4 * i)]),
+          ((a = o[0 + (u = 4 * i)]),
             (s = o[u + 1]),
             (h = o[u + 2]),
             (void 0 === (c = o[u + 3]) || c >= 125) &&
-              ((a > 250 && s > 250 && h > 250) || e.push([a, s, h]));
+              ((a > 250 && s > 250 && h > 250) || e.push([a, s, h])));
         return e;
       })(u.getImageData().data, u.width * u.height, i.quality),
       s = r(a, i.colorCount);
@@ -392,15 +392,15 @@ var o = function () {};
   (o.prototype.getColorFromUrl = function (t, r, n) {
     var o = this,
       e = document.createElement('img');
-    e.addEventListener('load', function () {
+    (e.addEventListener('load', function () {
       var i = o.getPalette(e, 5, n);
       r(i[0], t);
     }),
-      (e.src = t);
+      (e.src = t));
   }),
   (o.prototype.getImageData = function (t, r) {
     var n = new XMLHttpRequest();
-    n.open('GET', t, !0),
+    (n.open('GET', t, !0),
       (n.responseType = 'arraybuffer'),
       (n.onload = function () {
         if (200 == this.status) {
@@ -413,17 +413,17 @@ var o = function () {};
           r('data:image/png;base64,' + u);
         }
       }),
-      n.send();
+      n.send());
   }),
   (o.prototype.getColorAsync = function (t, r, n) {
     var o = this;
     this.getImageData(t, function (t) {
       var e = document.createElement('img');
-      e.addEventListener('load', function () {
+      (e.addEventListener('load', function () {
         var t = o.getPalette(e, 5, n);
         r(t[0], this);
       }),
-        (e.src = t);
+        (e.src = t));
     });
-  });
+  }));
 export default o;

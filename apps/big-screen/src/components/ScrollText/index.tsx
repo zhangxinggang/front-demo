@@ -1,6 +1,6 @@
-import { ReactNode, CSSProperties } from 'react';
-import { merge } from 'lodash';
 import classnames from 'classnames';
+import { merge } from 'lodash';
+import { CSSProperties, ReactNode } from 'react';
 import styles from './index.less';
 
 // function
@@ -38,8 +38,7 @@ const ScrollText = (props: {
         'h-100',
         className,
       )}
-      style={merge({}, style)}
-    >
+      style={merge({}, style)}>
       <div
         className={styles['component-scroll-text-content']}
         style={{
@@ -47,8 +46,7 @@ const ScrollText = (props: {
           animationDelay: delay + 's',
           animationIterationCount: count,
           animationTimingFunction: timeFunction,
-        }}
-      >
+        }}>
         {children}
       </div>
     </div>

@@ -1,9 +1,9 @@
-import { useCallback } from 'react';
-import { Modal, Button } from 'antd';
-import type { ModalProps } from 'antd';
-import classnames from 'classnames';
 import { useControlDisableKeyPressVisible } from '@/hooks';
 import { sleep } from '@/utils';
+import type { ModalProps } from 'antd';
+import { Button, Modal } from 'antd';
+import classnames from 'classnames';
+import { useCallback } from 'react';
 
 // 用于在一些表单容器很小的情况下，方便编辑
 
@@ -42,8 +42,7 @@ function FormModal<T extends object & { onClick?: (...args: any[]) => void }>(
           wrapClassName={classnames(
             modalProps?.wrapClassName,
             'design-config-format-font-size',
-          )}
-        >
+          )}>
           <Component {...netProps} />
         </Modal>
       </>

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { Row, Col, Avatar, Divider } from 'antd';
+import { Avatar, Col, Divider, Row } from 'antd';
 import dayjs from 'dayjs';
 
 import { fakeAvatars } from '@/_mock/utils';
@@ -85,7 +85,9 @@ export default function ProjectsTab() {
 
               <div className="flex flex-col">
                 <span className="ml-4 text-xl opacity-70">{item.name}</span>
-                <span className="text-md ml-4 opacity-50">Client: {item.client}</span>
+                <span className="text-md ml-4 opacity-50">
+                  Client: {item.client}
+                </span>
               </div>
 
               <div className="ml-auto flex opacity-70">
@@ -99,12 +101,16 @@ export default function ProjectsTab() {
               <div className="my-2 flex justify-between">
                 <span>
                   Start Date:
-                  <span className="ml-2 opacity-50">{item.startDate.format('DD/MM/YYYY')}</span>
+                  <span className="ml-2 opacity-50">
+                    {item.startDate.format('DD/MM/YYYY')}
+                  </span>
                 </span>
 
                 <span>
                   Deadline:
-                  <span className="ml-2 opacity-50">{item.deadline.format('DD/MM/YYYY')}</span>
+                  <span className="ml-2 opacity-50">
+                    {item.deadline.format('DD/MM/YYYY')}
+                  </span>
                 </span>
               </div>
               <span className="opacity-70">{item.desc}</span>
@@ -112,16 +118,18 @@ export default function ProjectsTab() {
 
             <Divider />
 
-            <footer className="flex w-full  flex-col items-center">
+            <footer className="flex w-full flex-col items-center">
               <div className="mb-4 flex w-full justify-between">
                 <span>
                   All Hours:
                   <span className="ml-2 opacity-50">{item.allHours}</span>
                 </span>
 
-                <ProTag color="warning">{item.deadline.diff(dayjs(), 'day')} days left</ProTag>
+                <ProTag color="warning">
+                  {item.deadline.diff(dayjs(), 'day')} days left
+                </ProTag>
               </div>
-              <div className="flex w-full ">
+              <div className="flex w-full">
                 <Avatar.Group maxCount={4}>
                   {item.members.map((memberAvatar, index) => (
                     <Avatar src={memberAvatar} key={index} />

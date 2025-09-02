@@ -17,10 +17,14 @@ export default function MultiLanguagePage() {
 
   return (
     <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
-      <Typography.Link href="https://www.i18next.com/" style={{ color: colorPrimary }}>
+      <Typography.Link
+        href="https://www.i18next.com/"
+        style={{ color: colorPrimary }}>
         https://www.i18next.com
       </Typography.Link>
-      <Typography.Link href="https://ant.design/docs/react/i18n-cn" style={{ color: colorPrimary }}>
+      <Typography.Link
+        href="https://ant.design/docs/react/i18n-cn"
+        style={{ color: colorPrimary }}>
         https://ant.design/docs/react/i18n-cn
       </Typography.Link>
       <Card title="Flexible">
@@ -36,7 +40,12 @@ export default function MultiLanguagePage() {
       </Card>
 
       <Card title="System">
-        <Pagination defaultCurrent={1} total={50} showSizeChanger showQuickJumper />
+        <Pagination
+          defaultCurrent={1}
+          total={50}
+          showSizeChanger
+          showQuickJumper
+        />
       </Card>
     </Space>
   );

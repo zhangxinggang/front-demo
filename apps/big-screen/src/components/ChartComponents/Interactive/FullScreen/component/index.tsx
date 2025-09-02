@@ -1,10 +1,10 @@
-import { useMemo, useRef } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useFullscreen } from 'ahooks';
 import ColorSelect from '@/components/ColorSelect';
-import { TFullScreenConfig } from '../type';
+import { useFullscreen } from 'ahooks';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TFullScreenConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -48,8 +48,7 @@ const FullScreen = (
           backgroundColor: getRgbaString(backgroundColor),
           borderRadius: `${borderRadius}%`,
         }}
-        className="w-100 h-100"
-      >
+        className="w-100 h-100">
         <div className="w-100 h-100">
           <img
             className="pos-re w-100 h-100"
@@ -72,8 +71,7 @@ const FullScreen = (
         style,
       )}
       id={chartId.current}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       <Wrapper border={border}>
         {children}
         <div
@@ -81,8 +79,7 @@ const FullScreen = (
             'w-100 h-100',
             chartId.current,
             styles['component-interactive-full-screen-main'],
-          )}
-        >
+          )}>
           {iconNode}
         </div>
       </Wrapper>

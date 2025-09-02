@@ -56,8 +56,7 @@ export default function logRequest(context: any, log: Logger.LoggerItem) {
           <span style={{ color }}>{`[${level}]`}</span>
           {`{request}--${name}(${component})`}
         </div>
-      }
-    >
+      }>
       <div>
         request type is: <span style={{ color: 'green' }}>{requestType}</span>
       </div>
@@ -126,8 +125,7 @@ export default function logRequest(context: any, log: Logger.LoggerItem) {
             displayObjectSize
             indentWidth={2}
             collapseStringsAfterLength={10}
-            iconStyle="square"
-          ></ReactJson>
+            iconStyle="square"></ReactJson>
         )}
       </div>
     </Panel>

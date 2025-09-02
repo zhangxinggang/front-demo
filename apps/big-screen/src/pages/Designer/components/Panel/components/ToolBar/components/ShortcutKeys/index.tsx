@@ -1,10 +1,10 @@
-import { useState, useMemo } from 'react';
-import classnames from 'classnames';
-import { Button, Typography } from 'antd';
-import { usePrimaryColor } from '@/hooks';
 import IconFont from '@/components/ChartComponents/Common/Icon';
-import { Tooltip } from '../PanelThumb';
+import { usePrimaryColor } from '@/hooks';
 import { KEY_PRESS_MAP } from '@/utils/constants/another';
+import { Button, Typography } from 'antd';
+import classnames from 'classnames';
+import { useMemo, useState } from 'react';
+import { Tooltip } from '../PanelThumb';
 import styles from './index.less';
 
 const ShortcutKeys = () => {
@@ -18,8 +18,7 @@ const ShortcutKeys = () => {
       return (
         <div
           className={classnames(styles['shortcut-keys-item'], 'dis-flex m-b-4')}
-          key={keyCode}
-        >
+          key={keyCode}>
           <span className="text-ellipsis">{label}</span>
           <Typography.Text className="text-ellipsis" code>
             {keyCode}
@@ -34,20 +33,17 @@ const ShortcutKeys = () => {
       <Tooltip
         visible={visible}
         uniqueKey="shortcut"
-        onHide={setVisible.bind(null, false)}
-      >
+        onHide={setVisible.bind(null, false)}>
         <div
           className={classnames(styles['shortcut-keys'], 'c-f-s p-4')}
-          style={{ backgroundColor: color }}
-        >
+          style={{ backgroundColor: color }}>
           {element}
         </div>
       </Tooltip>
       <Button
         type="link"
         icon={<IconFont title="快捷键" type="icon-keyborad" />}
-        onClick={setVisible.bind(null, !visible)}
-      ></Button>
+        onClick={setVisible.bind(null, !visible)}></Button>
     </div>
   );
 };

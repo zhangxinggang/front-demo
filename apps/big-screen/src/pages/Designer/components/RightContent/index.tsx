@@ -68,8 +68,7 @@ const RightContent = (props: {
         {
           [styles['design-page-right-show']]: !componentConfigCollapse,
         },
-      )}
-    >
+      )}>
       {children}
     </FocusWrapper>
   );

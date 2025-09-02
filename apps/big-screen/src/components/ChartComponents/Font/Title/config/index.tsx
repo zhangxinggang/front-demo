@@ -1,19 +1,19 @@
-import { Component } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import Select from '@/components/ChartComponents/Common/Select';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import SingleDefineSelect from '@/components/ChartComponents/Common/SingleDefineSelect';
-import IconTooltip from '@/components/IconTooltip';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
 import OrientSelect from '@/components/ChartComponents/Common/OrientSelect';
+import Select from '@/components/ChartComponents/Common/Select';
+import SingleDefineSelect from '@/components/ChartComponents/Common/SingleDefineSelect';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import TextAlignConfig from '@/components/ChartComponents/Common/TextAlignConfig';
-import ConditionConfig from './Condition';
+import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Component } from 'react';
 import { TTitleConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 class Config extends Component<
@@ -48,8 +48,7 @@ class Config extends Component<
                   child={{
                     header: '文字样式',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(null, 'textStyle')}
@@ -92,8 +91,7 @@ class Config extends Component<
                   }}
                   parent={{
                     activeKey: ['animation'],
-                  }}
-                >
+                  }}>
                   <Item
                     label="动画"
                     placeholder={
@@ -104,17 +102,14 @@ class Config extends Component<
                             <a
                               className="underline-anime underline-anime-color-white"
                               target="_blank"
-                              href="https://animate.style/"
-                            >
+                              href="https://animate.style/">
                               这里
                             </a>
                           </>
-                        }
-                      >
+                        }>
                         <InfoCircleOutlined />
                       </IconTooltip>
-                    }
-                  >
+                    }>
                     <FullForm>
                       <SingleDefineSelect
                         value={animation.value}

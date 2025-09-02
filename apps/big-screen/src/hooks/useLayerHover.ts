@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
 import {
-  GLOBAL_EVENT_EMITTER,
   EVENT_NAME_MAP,
+  GLOBAL_EVENT_EMITTER,
 } from '@/utils/Assist/EventEmitter';
+import { useCallback } from 'react';
 
 let HOVER_SELECT = '';
 let CHANGE_DEALING = 0;

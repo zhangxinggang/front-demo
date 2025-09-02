@@ -1,17 +1,17 @@
-import { Component } from 'react';
-import Select from '@/components/ChartComponents/Common/Select';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import Input from '@/components/ChartComponents/Common/Input';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import Input from '@/components/ChartComponents/Common/Input';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import Select from '@/components/ChartComponents/Common/Select';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import TextAlignConfig from '@/components/ChartComponents/Common/TextAlignConfig';
-import ConditionConfig from './Condition';
+import { Component } from 'react';
 import { TCountUpNumberConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 class Config extends Component<
@@ -59,8 +59,7 @@ class Config extends Component<
                   }}
                   parent={{
                     defaultActiveKey: ['textStyle'],
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(null, 'textStyle')}
@@ -98,8 +97,7 @@ class Config extends Component<
                         show: value,
                       });
                     },
-                  }}
-                >
+                  }}>
                   <Item label="保留小数">
                     <FullForm>
                       <InputNumber
@@ -126,8 +124,7 @@ class Config extends Component<
                         show: value,
                       });
                     },
-                  }}
-                >
+                  }}>
                   <Item label="内容">
                     <FullForm>
                       <Input
@@ -153,8 +150,7 @@ class Config extends Component<
                         show: value,
                       });
                     },
-                  }}
-                >
+                  }}>
                   <Item label="内容">
                     <FullForm>
                       <Input
@@ -180,8 +176,7 @@ class Config extends Component<
                         show: value,
                       });
                     },
-                  }}
-                >
+                  }}>
                   <Item label="内容">
                     <FullForm>
                       <Input

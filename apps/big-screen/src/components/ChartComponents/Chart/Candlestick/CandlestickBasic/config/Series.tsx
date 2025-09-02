@@ -1,23 +1,20 @@
-import { useCallback, useMemo } from 'react';
-import { Select } from 'antd';
-import { merge } from 'lodash';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
 import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import LineStyle from '@/components/ChartComponents/Common/LineStyleSelect';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
-import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
 import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
+import LineStyle from '@/components/ChartComponents/Common/LineStyleSelect';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import SymbolSelect from '@/components/ChartComponents/Common/SymbolSelect';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import { useCallback, useMemo } from 'react';
 import {
   TCandlestickBasicConfig,
-  markPointTypeConfig,
   markLineTypeConfig,
+  markPointTypeConfig,
 } from '../type';
 
 const { Item } = ConfigList;
@@ -51,14 +48,12 @@ const SeriesConfig = (props: {
         child={{
           header: '图形样式',
           key: 'itemStyle',
-        }}
-      >
+        }}>
         <Collapse
           child={{
             header: '阳线',
             key: 'itemStyle0',
-          }}
-        >
+          }}>
           <Item label="背景颜色">
             <FullForm>
               <CompatColorSelect
@@ -88,8 +83,7 @@ const SeriesConfig = (props: {
           child={{
             header: '阴线',
             key: 'itemStyle1',
-          }}
-        >
+          }}>
           <Item label="背景颜色">
             <FullForm>
               <CompatColorSelect
@@ -175,14 +169,12 @@ const SeriesConfig = (props: {
                 show: value,
               });
             },
-          }}
-        >
+          }}>
           <Collapse
             child={{
               header: '图形',
               key: key + 'symbol',
-            }}
-          >
+            }}>
             <Item label="类型">
               <FullForm>
                 <SymbolSelect
@@ -237,8 +229,7 @@ const SeriesConfig = (props: {
               onChange({
                 label: value,
               });
-            }}
-          >
+            }}>
             <Item label="距离">
               <FullForm>
                 <InputNumber
@@ -289,8 +280,7 @@ const SeriesConfig = (props: {
                 show: value,
               });
             },
-          }}
-        >
+          }}>
           <SeriesLabelConfig
             {...(value.label as any)}
             onChange={(value) => {
@@ -298,8 +288,7 @@ const SeriesConfig = (props: {
                 label: value,
               });
             }}
-            ignore={['position']}
-          >
+            ignore={['position']}>
             <FormatterSelect
               value={value.label.formatter}
               onChange={(value) => {
@@ -331,8 +320,7 @@ const SeriesConfig = (props: {
         child={{
           header: '图表标注',
           key: 'markPoint',
-        }}
-      >
+        }}>
         {markPointConfigDetail(
           markPoint.min,
           (value) => {
@@ -431,8 +419,7 @@ const SeriesConfig = (props: {
         child={{
           header: '图表标线',
           key: 'markLine',
-        }}
-      >
+        }}>
         {markLineConfig}
       </Collapse>
     </ConfigList>

@@ -176,8 +176,7 @@ const LuckyDrawBasic = (
         className={componentClassName}
         style={merge(style, conditionStyle)}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           <div
@@ -185,8 +184,7 @@ const LuckyDrawBasic = (
               chartId.current,
               'w-100 h-100 pos-ab',
               styles['component-other-lucky-draw-main'],
-            )}
-          >
+            )}>
             <LuckyWheel
               width={luckySize}
               height={luckySize}
@@ -213,8 +211,7 @@ const LuckyDrawBasic = (
                   ...pick(buttons.textStyle, ['fontWeight', 'fontFamily']),
                   fontSize: buttons.textStyle.fontSize + 'px',
                   color: getRgbaString(buttons.textStyle.color),
-                }}
-              >
+                }}>
                 {buttons.content}
               </Button>
             )}

@@ -1,14 +1,14 @@
-import { CSSProperties, useMemo, useRef, useCallback } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useUpdateEffect, useUnmount } from 'ahooks';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import MessageUtil from './MessageUitl';
-import { TIFrameConfig } from '../type';
+import { useUnmount, useUpdateEffect } from 'ahooks';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { CSSProperties, useCallback, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TIFrameConfig } from '../type';
 import styles from './index.less';
+import MessageUtil from './MessageUitl';
 
 const IframeBasic = (
   props: ComponentData.CommonComponentProps<TIFrameConfig>,
@@ -85,8 +85,7 @@ const IframeBasic = (
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <div
           className="w-100 h-100"
           style={merge(
@@ -98,8 +97,7 @@ const IframeBasic = (
               : ({
                   pointerEvents: 'none',
                 } as CSSProperties),
-          )}
-        >
+          )}>
           <Wrapper border={border}>
             {children}
             <iframe

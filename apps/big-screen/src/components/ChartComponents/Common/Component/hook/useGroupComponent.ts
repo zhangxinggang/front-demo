@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import VariableStringUtil from '@/utils/Assist/VariableString';
+import { useCallback } from 'react';
 import { getGlobalParamsAndFilterAndConstants } from './useComponent';
 
 export function useGroupComponent<P extends object = {}>(

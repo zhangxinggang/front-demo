@@ -1,12 +1,12 @@
-import { ReactNode, CSSProperties, useMemo, useRef } from 'react';
-import { Resizable, ResizeCallback, ResizableProps } from 're-resizable';
-import { Props } from 'react-rnd';
-import { omit } from 'lodash';
 import {
   MIN_COMPONENT_HEIGHT,
   MIN_COMPONENT_WIDTH,
   SELECTO_CLASSNAME,
 } from '@/utils/constants';
+import { omit } from 'lodash';
+import { Resizable, ResizableProps, ResizeCallback } from 're-resizable';
+import { CSSProperties, ReactNode, useMemo, useRef } from 'react';
+import { Props } from 'react-rnd';
 
 type IProps = {
   children?: ReactNode;
@@ -138,8 +138,7 @@ const ComponentWrapper = (
         'onResize',
         'flag',
         'position',
-      ])}
-    >
+      ])}>
       {realChildren}
     </Resizable>
   );

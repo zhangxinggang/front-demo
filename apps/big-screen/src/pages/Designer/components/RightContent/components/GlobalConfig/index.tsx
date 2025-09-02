@@ -112,8 +112,7 @@ const GlobalConfig = (props: {
                       <IconTooltip title="设置保存时的封面，可以截图">
                         <InfoCircleOutlined />
                       </IconTooltip>
-                    }
-                  >
+                    }>
                     <FullForm>
                       <CoverSelect
                         value={cover}
@@ -127,8 +126,7 @@ const GlobalConfig = (props: {
                       <IconTooltip title="统一配置组件边框的样式">
                         <InfoCircleOutlined />
                       </IconTooltip>
-                    }
-                  >
+                    }>
                     <FullForm label="宽度">
                       <InputNumber
                         value={componentBorder.width}
@@ -229,8 +227,7 @@ const GlobalConfig = (props: {
               </ConfigItem>
             ),
           },
-        ]}
-      ></ConfigWrapper>
+        ]}></ConfigWrapper>
     </div>
   );
 };

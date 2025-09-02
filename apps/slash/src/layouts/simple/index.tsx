@@ -15,8 +15,7 @@ export default function SimpleLayout({ children }: Props) {
       style={{
         color: colorTextBase,
         background: colorBgElevated,
-      }}
-    >
+      }}>
       <HeaderSimple />
       {children}
     </div>

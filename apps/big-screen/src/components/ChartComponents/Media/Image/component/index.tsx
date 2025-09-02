@@ -1,17 +1,17 @@
-import { useMemo, useRef, useCallback, useState } from 'react';
-import { uniqueId, merge } from 'lodash';
-import { Image } from 'antd';
-import classnames from 'classnames';
 import {
   useComponent,
   useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
-import { useClipPath } from '@/hooks';
-import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import FilterDataUtil from '@/utils/Assist/FilterData';
 import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
-import { TImageConfig } from '../type';
+import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
+import { useClipPath } from '@/hooks';
+import FilterDataUtil from '@/utils/Assist/FilterData';
+import { Image } from 'antd';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TImageConfig } from '../type';
 import styles from './index.less';
 
 const ImageBasic = (
@@ -114,8 +114,7 @@ const ImageBasic = (
           },
           style,
           conditionStyle,
-        )}
-      >
+        )}>
         <Wrapper border={border}>
           <div
             id={chartId.current}
@@ -123,8 +122,7 @@ const ImageBasic = (
             className="w-100 h-100"
             style={merge(componentStyle, clipPathStyle, {
               borderRadius: DEFAULT_BORDER_RADIUS,
-            })}
-          ></div>
+            })}></div>
           {children}
         </Wrapper>
       </div>

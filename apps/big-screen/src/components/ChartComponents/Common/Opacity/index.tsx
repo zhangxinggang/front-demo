@@ -1,6 +1,6 @@
+import { SliderSingleProps } from 'antd/es/slider';
 import { useCallback } from 'react';
 import Slider from '../Slider';
-import { SliderSingleProps } from 'antd/es/slider';
 
 // 透明度配置表单
 const Opacity = (props: SliderSingleProps) => {

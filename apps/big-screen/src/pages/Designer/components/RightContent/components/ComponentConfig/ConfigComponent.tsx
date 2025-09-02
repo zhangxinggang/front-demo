@@ -1,7 +1,7 @@
-import { useCallback, useMemo } from 'react';
 import { getComponentConfigComponentByType } from '@/components/ChartComponents';
 import { getPath } from '@/utils/Assist/Component';
 import DataChangePool from '@/utils/Assist/DataChangePool';
+import { useCallback, useMemo } from 'react';
 
 const ConfigComponent = (props: {
   component: ComponentData.TComponentData;

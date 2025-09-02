@@ -1,25 +1,25 @@
-import { Component } from 'react';
-import { Tabs, Switch } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import { merge } from 'lodash';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import Select from '@/components/ChartComponents/Common/Select';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import Input from '@/components/ChartComponents/Common/Input';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import Input from '@/components/ChartComponents/Common/Input';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import Select from '@/components/ChartComponents/Common/Select';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
 import IconTooltip from '@/components/IconTooltip';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Switch, Tabs } from 'antd';
+import { merge } from 'lodash';
+import { Component } from 'react';
 import { DEFAULT_FONT_CONFIG } from '../../../Common/Constants/defaultConfig';
-import ConditionConfig from './Condition';
 import { TListConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { TabPane } = Tabs;
 const { Item } = ConfigList;
@@ -82,8 +82,7 @@ class Config extends Component<
                   }}
                   parent={{
                     activeKey: 'animation',
-                  }}
-                >
+                  }}>
                   <Item label="滚动类型">
                     <FullForm>
                       <Select
@@ -160,8 +159,7 @@ class Config extends Component<
                   }}
                   parent={{
                     activeKey: ['header'],
-                  }}
-                >
+                  }}>
                   <Item label="高度">
                     <FullForm>
                       <InputNumber
@@ -191,8 +189,7 @@ class Config extends Component<
                     child={{
                       header: '文本',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={header.textStyle}
                       onChange={(value) => {
@@ -228,8 +225,7 @@ class Config extends Component<
                   child={{
                     header: '背景颜色',
                     key: 'backgroundColor',
-                  }}
-                >
+                  }}>
                   <Item label="奇行">
                     <FullForm>
                       <CompatColorSelect
@@ -484,8 +480,7 @@ class Config extends Component<
                             <IconTooltip title={'只对文字类型内容生效'}>
                               <InfoCircleOutlined />
                             </IconTooltip>
-                          }
-                        >
+                          }>
                           <FullForm>
                             <Switch
                               checked={scroll.show}
@@ -513,8 +508,7 @@ class Config extends Component<
                           child={{
                             header: '文本',
                             key: 'textStyle',
-                          }}
-                        >
+                          }}>
                           <FontConfigList
                             value={textStyle}
                             onChange={(value) => {
@@ -626,8 +620,7 @@ class Config extends Component<
                   }}
                   parent={{
                     defaultActiveKey: ['indexes'],
-                  }}
-                >
+                  }}>
                   <Item label="宽度（%）">
                     <FullForm>
                       <InputNumber
@@ -683,8 +676,7 @@ class Config extends Component<
                     child={{
                       header: '文本',
                       key: 'textStyle',
-                    }}
-                  >
+                    }}>
                     <FontConfigList
                       value={index.textStyle}
                       onChange={(value) => {

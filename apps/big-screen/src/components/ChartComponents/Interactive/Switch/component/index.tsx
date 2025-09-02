@@ -1,14 +1,14 @@
-import { useMemo, useRef, useState } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useUpdateEffect } from 'ahooks';
 import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
 import { boxShadow as boxShadowMethod } from '@/components/ChartComponents/Common/utils';
 import ColorSelect from '@/components/ColorSelect';
+import { useUpdateEffect } from 'ahooks';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useMemo, useRef, useState } from 'react';
 // @ts-ignore
-import ReactSwitch from './components/Switch';
-import { TSwitchConfig } from '../type';
 import { CHART_ID } from '../id';
+import { TSwitchConfig } from '../type';
+import ReactSwitch from './components/Switch';
 import styles from './index.less';
 
 const { getRgbaString, getHexString } = ColorSelect;
@@ -66,8 +66,7 @@ const Switch = (props: ComponentData.CommonComponentProps<TSwitchConfig>) => {
         style={{
           fontSize: height * 0.5,
           color: getRgbaString(checkedIcon.color),
-        }}
-      >
+        }}>
         {checkedIcon.type === 'text' && checkedIcon.value}
       </i>
     );
@@ -90,8 +89,7 @@ const Switch = (props: ComponentData.CommonComponentProps<TSwitchConfig>) => {
         style={{
           fontSize: height * 0.5,
           color: getRgbaString(uncheckedIcon.color),
-        }}
-      >
+        }}>
         {uncheckedIcon.type === 'text' && uncheckedIcon.value}
       </i>
     );
@@ -120,8 +118,7 @@ const Switch = (props: ComponentData.CommonComponentProps<TSwitchConfig>) => {
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           <ReactSwitch

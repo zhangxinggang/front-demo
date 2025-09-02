@@ -1,10 +1,5 @@
-import { Collapse } from 'antd';
 import { ReactNode } from 'react';
-import {
-  SortableContainer as SortableContainerWrapper,
-  SortableElement,
-  SortableHandle,
-} from 'react-sortable-hoc';
+import { SortableContainer as SortableContainerWrapper } from 'react-sortable-hoc';
 
 const SortableContainer = SortableContainerWrapper(
   ({ children }: { children: ReactNode }) => {

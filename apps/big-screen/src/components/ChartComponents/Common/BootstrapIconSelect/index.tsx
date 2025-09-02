@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
 import IconTooltip from '@/components/IconTooltip';
-import ConfigList, { TConfigListItemProps } from '../Structure/ConfigList';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { useMemo } from 'react';
 import SingleDefineSelect from '../SingleDefineSelect';
+import ConfigList, { TConfigListItemProps } from '../Structure/ConfigList';
 import FullForm from '../Structure/FullForm';
 
 const { Item } = ConfigList;
@@ -38,19 +38,16 @@ const BootstrapIconSelect = (props: {
               <a
                 className="underline-anime underline-anime-color-white"
                 target="_blank"
-                href="https://icons.bootcss.com/"
-              >
+                href="https://icons.bootcss.com/">
                 这里
               </a>
             </>
-          }
-        >
+          }>
           <InfoCircleOutlined />
         </IconTooltip>
       }
       labelProps={{ level }}
-      {...(itemProps || {})}
-    >
+      {...(itemProps || {})}>
       <FullForm>
         <SingleDefineSelect
           value={value}

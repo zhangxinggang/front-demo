@@ -1,5 +1,5 @@
-import request from '../utils/request';
 import { SCREEN_MODEL_VERSION } from '../utils/constants';
+import request from '../utils/request';
 
 // 新增大屏模板
 export const postScreenModel = (data: API_SCREEN.TAddScreenParams) => {

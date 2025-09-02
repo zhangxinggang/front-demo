@@ -1,15 +1,15 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import LegendConfig from './Legend';
-import TooltipConfig from './Tooltip';
-import SeriesConfig from './Series';
+import { Component } from 'react';
+import { TCirclePieConfig } from '../type';
 import AnimationConfig from './Animation';
 import ConditionConfig from './Condition';
+import LegendConfig from './Legend';
+import SeriesConfig from './Series';
 import StatisticsConfig from './Statistics';
-import { TCirclePieConfig } from '../type';
+import TooltipConfig from './Tooltip';
 class Config extends Component<
   ComponentData.ComponentConfigProps<TCirclePieConfig>
 > {

@@ -1,7 +1,3 @@
-import { CSSProperties, useMemo, useRef, useCallback } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import Marquee from 'react-fast-marquee';
 import {
   useComponent,
   useCondition,
@@ -9,8 +5,12 @@ import {
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import ColorSelect from '@/components/ColorSelect';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TFontCarouselConfig } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { CSSProperties, useCallback, useMemo, useRef } from 'react';
+import Marquee from 'react-fast-marquee';
 import { CHART_ID } from '../id';
+import { TFontCarouselConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -100,8 +100,7 @@ const TFontCarousel = (
           conditionStyle,
         )}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           {
@@ -111,14 +110,12 @@ const TFontCarousel = (
               speed={speed}
               direction={direction}
               pauseOnHover={pauseOnHover}
-              delay={delay}
-            >
+              delay={delay}>
               <div
                 className={styles['component-font-carousel-main']}
                 style={{
                   height,
-                }}
-              >
+                }}>
                 {finalValue.value || ''}
               </div>
             </Marquee>

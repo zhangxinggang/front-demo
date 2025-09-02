@@ -1,14 +1,14 @@
-import { useMemo, useRef, useCallback } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
 import {
   useComponent,
   useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
 import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TAudioConfig } from '../type';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useCallback, useMemo, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TAudioConfig } from '../type';
 import styles from './index.less';
 
 const AudioBasic = (
@@ -85,8 +85,7 @@ const AudioBasic = (
           conditionStyle,
         )}
         id={chartId.current}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <Wrapper border={border}>
           {children}
           <audio

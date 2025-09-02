@@ -12,39 +12,41 @@ export interface IContentTabsProps {
   onChange: (tab?: NonNullable<IContentTabs>[0]) => void;
 }
 
-const ContentTabs: FC<IContentTabsProps> = memo(({ tabs, tabKey: key, onChange }) => {
-  const intl = useIntl();
-  const { styles } = useStyles();
-  // TODO: tab.Extra & tab.Action render
+const ContentTabs: FC<IContentTabsProps> = memo(
+  ({ tabs, tabKey: key, onChange }) => {
+    const intl = useIntl();
+    const { styles } = useStyles();
+    // TODO: tab.Extra & tab.Action render
 
-  return !!tabs && Boolean(tabs?.length) ? (
-    <Tabs
-      data-page-tabs
-      activeKey={key || 'default'}
-      className={styles.cls}
-      items={[
-        {
-          key: 'default',
-          value: 'default',
-          label: intl.formatMessage({ id: 'content.tabs.default' })
-        },
-        ...tabs.map((tab) => ({
-          key: tab.key,
-          value: tab.key,
-          label: tab.titleIntlId
-            ? intl.formatMessage({ id: tab.titleIntlId })
-            : tab.meta.frontmatter.title,
-        })),
-      ]}
-      onChange={(key) => {
-        if (key === 'default') {
-          onChange();
-        } else {
-          onChange(tabs.find((t) => t.key === key));
-        }
-      }}
-    />
-  ) : null;
-});
+    return !!tabs && Boolean(tabs?.length) ? (
+      <Tabs
+        data-page-tabs
+        activeKey={key || 'default'}
+        className={styles.cls}
+        items={[
+          {
+            key: 'default',
+            value: 'default',
+            label: intl.formatMessage({ id: 'content.tabs.default' }),
+          },
+          ...tabs.map((tab) => ({
+            key: tab.key,
+            value: tab.key,
+            label: tab.titleIntlId
+              ? intl.formatMessage({ id: tab.titleIntlId })
+              : tab.meta.frontmatter.title,
+          })),
+        ]}
+        onChange={(key) => {
+          if (key === 'default') {
+            onChange();
+          } else {
+            onChange(tabs.find((t) => t.key === key));
+          }
+        }}
+      />
+    ) : null;
+  },
+);
 
 export default ContentTabs;

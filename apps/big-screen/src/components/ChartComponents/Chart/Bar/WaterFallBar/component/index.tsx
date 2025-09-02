@@ -1,24 +1,24 @@
-import { useEffect, useRef } from 'react';
-import { uniqueId, merge } from 'lodash';
-import classnames from 'classnames';
-import { useDeepUpdateEffect } from '@/hooks';
 import {
-  useComponent,
-  useChartComponentResize,
-  useChartValueMapField,
-  useComponentResize,
   useAnimationChange,
-  useCondition,
+  useChartComponentResize,
   useChartComponentTooltip,
   useChartPerConfig,
+  useChartValueMapField,
+  useComponent,
+  useComponentResize,
+  useCondition,
 } from '@/components/ChartComponents/Common/Component/hook';
-import { init } from '@/utils/Assist/EchartsLoader';
+import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
+import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
 import { radialGradientColor } from '@/components/ChartComponents/Common/utils';
 import ColorSelect from '@/components/ColorSelect';
-import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import { DEFAULT_BORDER_RADIUS } from '@/components/ChartComponents/Common/Constants/defaultConfig';
-import { TWaterFallBarConfig } from '../type';
+import { useDeepUpdateEffect } from '@/hooks';
+import { init } from '@/utils/Assist/EchartsLoader';
+import classnames from 'classnames';
+import { merge, uniqueId } from 'lodash';
+import { useEffect, useRef } from 'react';
 import { CHART_ID } from '../id';
+import { TWaterFallBarConfig } from '../type';
 
 const { getRgbaString } = ColorSelect;
 
@@ -227,8 +227,7 @@ const WaterFallBar = (
           },
           style,
           conditionStyle,
-        )}
-      >
+        )}>
         <Wrapper border={border}>
           <div id={chartId.current} className="w-100 h-100"></div>
           {children}

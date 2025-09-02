@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import GridConfigCommon from '@/components/ChartComponents/Common/GridConfig';
+import { useCallback } from 'react';
 import { TLineBarConfig } from '../type';
 
 const GridConfig = (props: {

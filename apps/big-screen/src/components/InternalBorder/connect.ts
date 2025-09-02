@@ -1,5 +1,5 @@
-import { get } from 'lodash';
 import { ConnectState } from '@/models/connect';
+import { get } from 'lodash';
 
 export const mapStateToProps = (state: ConnectState) => {
   const { width, padding } = get(

@@ -1,14 +1,14 @@
-import { useMemo, useRef, useState, useEffect } from 'react';
-import { uniqueId, merge } from 'lodash';
+import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
+import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
+import ColorSelect from '@/components/ColorSelect';
+import FilterDataUtil from '@/utils/Assist/FilterData';
+import { useUpdateEffect } from 'ahooks';
 import { Radio as AntRadio } from 'antd';
 import classnames from 'classnames';
-import { useUpdateEffect } from 'ahooks';
-import { useComponent } from '@/components/ChartComponents/Common/Component/hook';
-import ColorSelect from '@/components/ColorSelect';
-import FetchFragment from '@/components/ChartComponents/Common/FetchFragment';
-import FilterDataUtil from '@/utils/Assist/FilterData';
-import { TRadioConfig } from '../type';
+import { merge, uniqueId } from 'lodash';
+import { useMemo, useRef, useState } from 'react';
 import { CHART_ID } from '../id';
+import { TRadioConfig } from '../type';
 import styles from './index.less';
 
 const { getRgbaString } = ColorSelect;
@@ -86,8 +86,7 @@ const Radio = (props: ComponentData.CommonComponentProps<TRadioConfig>) => {
           },
           style,
         )}
-        id={chartId.current}
-      >
+        id={chartId.current}>
         <Wrapper border={border}>
           {children}
           <AntRadio.Group
@@ -108,8 +107,7 @@ const Radio = (props: ComponentData.CommonComponentProps<TRadioConfig>) => {
               ),
               '--component-radio-checked-color': getRgbaString(check.color),
               '--component-radio-checked-margin': -(size / 2) + 'px',
-            }}
-          >
+            }}>
             {(finalValue || []).map((item: any) => {
               const { name, value } = item;
               return (
@@ -119,8 +117,7 @@ const Radio = (props: ComponentData.CommonComponentProps<TRadioConfig>) => {
                   style={{
                     ...textStyle,
                     color: getRgbaString(textStyle.color),
-                  }}
-                >
+                  }}>
                   {name}
                 </AntRadio>
               );

@@ -226,8 +226,7 @@ const MockConfig = (props: MockConfigProps) => {
                 },
               },
             });
-          }}
-        >
+          }}>
           随机返回
         </Checkbox>
       </SubForm>

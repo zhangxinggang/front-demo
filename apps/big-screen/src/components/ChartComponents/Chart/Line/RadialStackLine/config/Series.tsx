@@ -1,10 +1,10 @@
-import { useCallback, useMemo } from 'react';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
 import ChartGradientSelect from '@/components/ChartComponents/Common/ChartGradientSelect';
-import ThemeUtil from '@/utils/Assist/Theme';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { useCallback, useMemo } from 'react';
 import { DEFAULT_RADIAL_CONFIG } from '../../../../Common/Constants/defaultConfig';
 import { TRadialStackLineConfig } from '../type';
 
@@ -46,8 +46,7 @@ const SeriesConfig = (props: {
               }}
               parent={{
                 activeKey: ['areaColor'],
-              }}
-            >
+              }}>
               <ChartGradientSelect
                 value={targetAreaStyleColor}
                 onChange={(value) => {

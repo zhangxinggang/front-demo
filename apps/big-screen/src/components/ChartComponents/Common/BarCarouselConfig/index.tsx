@@ -1,6 +1,6 @@
-import { ReactNode, useCallback, useMemo } from 'react';
-import { InfoCircleOutlined } from '@ant-design/icons';
 import IconTooltip from '@/components/IconTooltip';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { ReactNode, useCallback, useMemo } from 'react';
 import { SingleCollapse as Collapse } from '../Collapse';
 import InputNumber from '../InputNumber';
 import ConfigList from '../Structure/ConfigList';
@@ -71,8 +71,7 @@ const BarCarouselConfig = (props: BarCarouselConfigProps) => {
         visibleRender: true,
         onChange: onKeyChange.bind(null, 'show'),
         value: show,
-      }}
-    >
+      }}>
       {speedConfig}
       {showCountConfig}
       {children}

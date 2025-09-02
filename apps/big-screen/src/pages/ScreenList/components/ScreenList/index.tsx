@@ -1,23 +1,23 @@
-import { useRef, useCallback } from 'react';
-import { Row, Col, Button, Switch, message, Modal, Tag } from 'antd';
 import {
-  SendOutlined,
-  DeleteOutlined,
-  FolderViewOutlined,
-  CopyOutlined,
-  ExportOutlined,
-} from '@ant-design/icons';
-import classnames from 'classnames';
-import {
+  copyScreen,
   deleteScreen,
+  disabledScreen,
+  enableScreen,
   previewScreen,
   shareScreen,
-  enableScreen,
-  disabledScreen,
-  copyScreen,
 } from '@/services';
-import { goDesign, goPreview } from '@/utils/tool';
 import { exportData } from '@/utils/Assist/LeadInAndOutput';
+import { goDesign, goPreview } from '@/utils/tool';
+import {
+  CopyOutlined,
+  DeleteOutlined,
+  ExportOutlined,
+  FolderViewOutlined,
+  SendOutlined,
+} from '@ant-design/icons';
+import { Button, Col, message, Modal, Row, Switch } from 'antd';
+import classnames from 'classnames';
+import { useCallback, useRef } from 'react';
 import ShareSetting, { ShareSettingRef } from './ShareSetting';
 import styles from './index.less';
 
@@ -176,16 +176,14 @@ const ScreenList = (props: {
           xs: 12,
           sm: 24,
           md: 24,
-        }}
-      >
+        }}>
         {value.map((item) => {
           const { name, poster, _id, enable, description, flag } = item;
           return (
             <Col key={_id} {...COL_SPAN} onClick={handleEdit.bind(null, item)}>
               <div className={styles['screen-list-icon-content-item']}>
                 <div
-                  className={styles['screen-list-icon-content-item-wrapper']}
-                >
+                  className={styles['screen-list-icon-content-item-wrapper']}>
                   <div className={styles['screen-list-icon-content-item-main']}>
                     <img src={poster} />
                     <div>
@@ -194,16 +192,14 @@ const ScreenList = (props: {
                         type="link"
                         icon={<ExportOutlined />}
                         title="导出"
-                        onClick={handleExport.bind(null, item)}
-                      ></Button>
+                        onClick={handleExport.bind(null, item)}></Button>
                       {enable && (
                         <Button
                           size="small"
                           type="link"
                           icon={<SendOutlined />}
                           title={'分享'}
-                          onClick={shareScreenMethod.bind(null, item)}
-                        ></Button>
+                          onClick={shareScreenMethod.bind(null, item)}></Button>
                       )}
                       {!enable && (
                         <Button
@@ -211,8 +207,10 @@ const ScreenList = (props: {
                           type="link"
                           icon={<DeleteOutlined />}
                           title="删除"
-                          onClick={deleteScreenMethod.bind(null, item)}
-                        ></Button>
+                          onClick={deleteScreenMethod.bind(
+                            null,
+                            item,
+                          )}></Button>
                       )}
                     </div>
                   </div>
@@ -223,14 +221,12 @@ const ScreenList = (props: {
                       styles['screen-list-icon-content-item-footer-name'],
                       'dis-flex',
                     )}
-                    title={name}
-                  >
-                    <div className="text-ellipsis m-r-4">{name}</div>
+                    title={name}>
+                    <div className="m-r-4 text-ellipsis">{name}</div>
                     <div
                       style={{
                         color: flag === 'H5' ? 'orange' : 'green',
-                      }}
-                    >
+                      }}>
                       ({flag})
                     </div>
                   </div>
@@ -238,15 +234,13 @@ const ScreenList = (props: {
                     className={classnames(
                       styles['screen-list-icon-content-item-footer-desc'],
                       'text-ellipsis',
-                    )}
-                  >
+                    )}>
                     {description || '无任何描述~'}
                   </div>
                   <div
                     className={
                       styles['screen-list-icon-content-item-footer-action']
-                    }
-                  >
+                    }>
                     <Switch
                       className={
                         enable
@@ -265,8 +259,7 @@ const ScreenList = (props: {
                       size="small"
                       icon={<FolderViewOutlined />}
                       type="link"
-                      onClick={previewScreenMethod.bind(null, item)}
-                    >
+                      onClick={previewScreenMethod.bind(null, item)}>
                       预览
                     </Button>
                     <Button
@@ -274,8 +267,7 @@ const ScreenList = (props: {
                       icon={<CopyOutlined />}
                       type="link"
                       onClick={copyScreenMethod.bind(null, item)}
-                      style={{ paddingLeft: 0 }}
-                    >
+                      style={{ paddingLeft: 0 }}>
                       复制
                     </Button>
                   </div>

@@ -24,8 +24,7 @@ export default function NotificationsTab() {
         <Col span={24} lg={16}>
           <div
             className="flex w-full flex-col gap-4 rounded-lg px-6 py-8"
-            style={{ backgroundColor: colorBgContainerDisabled }}
-          >
+            style={{ backgroundColor: colorBgContainerDisabled }}>
             <div className="flex w-full justify-between">
               <div>Email me when someone answers on my form</div>
               <Switch defaultChecked />
@@ -50,8 +49,7 @@ export default function NotificationsTab() {
         <Col span={24} lg={16}>
           <div
             className="flex w-full flex-col gap-4 rounded-lg px-6 py-8"
-            style={{ backgroundColor: colorBgContainerDisabled }}
-          >
+            style={{ backgroundColor: colorBgContainerDisabled }}>
             <div className="flex w-full justify-between">
               <div>News and announcements</div>
               <Switch />

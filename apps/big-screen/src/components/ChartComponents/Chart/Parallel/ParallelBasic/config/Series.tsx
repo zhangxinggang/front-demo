@@ -1,11 +1,11 @@
-import { useCallback, useMemo } from 'react';
-import { Switch } from 'antd';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
 import LineStyleGroupConfig from '@/components/ChartComponents/Common/LineStyleGroupConfig';
-import ThemeUtil from '@/utils/Assist/Theme';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ThemeUtil from '@/utils/Assist/Theme';
+import { Switch } from 'antd';
+import { useCallback, useMemo } from 'react';
 import { DEFAULT_LINE_STYLE } from '../defaultConfig';
 import { TParallelBasicConfig } from '../type';
 

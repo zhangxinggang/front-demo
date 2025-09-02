@@ -1,7 +1,7 @@
-import { get } from 'lodash';
-import InteractiveUtil from '@/utils/Assist/Interactive';
 import { useAnyDva } from '@/hooks';
-import { GLOBAL_EVENT_EMITTER, EVENT_NAME_MAP } from '../index';
+import InteractiveUtil from '@/utils/Assist/Interactive';
+import { get } from 'lodash';
+import { EVENT_NAME_MAP, GLOBAL_EVENT_EMITTER } from '../index';
 
 // 组件被删除
 // 自动删除相关关联属性

@@ -80,15 +80,11 @@ const ThemeConfig = forwardRef<ThemeConfigRef, Props>((props, ref) => {
     setVisible(false);
   }, []);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        open,
-      };
-    },
-    [],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      open,
+    };
+  }, []);
 
   return (
     <Drawer
@@ -97,8 +93,7 @@ const ThemeConfig = forwardRef<ThemeConfigRef, Props>((props, ref) => {
       onClose={onClose}
       title="主题色修改"
       placement="left"
-      width={400}
-    >
+      width={400}>
       <Tabs
         className={styles['designer-theme-config']}
         centered

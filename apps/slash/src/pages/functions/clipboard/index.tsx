@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { Card, Row, Col, Input, Tooltip, Typography } from 'antd';
+import { Card, Col, Input, Row, Tooltip, Typography } from 'antd';
 import { ChangeEvent, useState } from 'react';
 
 import { IconButton, Iconify } from '@/components/icon';
@@ -12,7 +12,8 @@ export default function ClipboardPage() {
 
   const textOnClick = faker.lorem.paragraphs({ min: 3, max: 5 });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setValue(e.target.value);
   const CopyButton = (
     <Tooltip title="Copy">
       <IconButton className="text-gray" onClick={() => copyFn(value)}>
@@ -29,7 +30,9 @@ export default function ClipboardPage() {
         </Col>
         <Col span={24} md={12}>
           <Typography.Title level={5}>ON DOUBLE CLICK</Typography.Title>
-          <Typography onDoubleClick={() => copyFn(textOnClick)}>{textOnClick}</Typography>
+          <Typography onDoubleClick={() => copyFn(textOnClick)}>
+            {textOnClick}
+          </Typography>
         </Col>
       </Row>
     </Card>

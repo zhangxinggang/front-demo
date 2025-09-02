@@ -1,8 +1,8 @@
-import { useCallback, useMemo } from 'react';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import OrientSelect from '@/components/ChartComponents/Common/OrientSelect';
 import NumberPositionConfig from '@/components/ChartComponents/Common/NumberPositionConfig';
+import OrientSelect from '@/components/ChartComponents/Common/OrientSelect';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { useCallback, useMemo } from 'react';
 import { TParallelBasicConfig } from '../type';
 
 const { Item } = ConfigList;

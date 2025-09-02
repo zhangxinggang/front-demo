@@ -1,6 +1,6 @@
-import React from 'react';
 import Proton from 'proton-engine';
 import RAFManager from 'raf-manager';
+import React from 'react';
 import Canvas from './Canvas';
 
 class Particles extends React.Component {

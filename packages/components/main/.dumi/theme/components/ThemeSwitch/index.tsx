@@ -62,7 +62,9 @@ const ThemeSwitch: FC<ThemeSwitchProps> = ({
           onChange(mode);
         }}
         renderValue={(index) => options[index]?.icon}
-        renderItem={(item) => item && <Option label={item.label} icon={item.icon} />}
+        renderItem={(item) =>
+          item && <Option label={item.label} icon={item.icon} />
+        }
         className={className}
         style={style}
       />

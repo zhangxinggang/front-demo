@@ -220,8 +220,7 @@ const DataFilter = (props: {
           [styles['design-config-data-filter-disabled']]: disabled,
         },
         'border-1',
-      )}
-    >
+      )}>
       <List onSortEnd={onSortEnd} useDragHandle distance={10}>
         {mergedFilterList.map((item, index) => {
           return (

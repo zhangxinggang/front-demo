@@ -69,17 +69,15 @@ export const useStyles = createStyles(({ token, responsive, css, cx }) => {
       }
     `,
 
-    svg: cx(
-      css`
-        position: absolute;
-        top: 50%;
-        margin-top: 1px;
-        inset-inline-start: 16px;
-        width: 16px;
-        color: ${token.colorTextPlaceholder};
-        transform: translateY(-50%);
-      `,
-    ),
+    svg: cx(css`
+      position: absolute;
+      top: 50%;
+      margin-top: 1px;
+      inset-inline-start: 16px;
+      width: 16px;
+      color: ${token.colorTextPlaceholder};
+      transform: translateY(-50%);
+    `),
     input: css`
       width: 280px;
       height: ${token.controlHeightLG}px;

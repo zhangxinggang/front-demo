@@ -1,9 +1,22 @@
 import { Dropdown, MenuProps, Tabs, TabsProps } from 'antd';
 import Color from 'color';
-import { CSSProperties, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { DragDropContext, Draggable, Droppable, OnDragEndResponder } from 'react-beautiful-dnd';
+import {
+  CSSProperties,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import {
+  DragDropContext,
+  Draggable,
+  Droppable,
+  OnDragEndResponder,
+} from 'react-beautiful-dnd';
 import { useTranslation } from 'react-i18next';
-import { useToggle, useFullscreen } from 'react-use';
+import { useFullscreen, useToggle } from 'react-use';
 import styled from 'styled-components';
 
 import { USER_LIST } from '@/_mock/assets';
@@ -15,12 +28,12 @@ import { useSettings } from '@/store/settingStore';
 import { useResponsive, useThemeToken } from '@/theme/hooks';
 
 import {
-  NAV_WIDTH,
-  NAV_COLLAPSED_WIDTH,
   HEADER_HEIGHT,
-  OFFSET_HEADER_HEIGHT,
   MULTI_TABS_HEIGHT,
+  NAV_COLLAPSED_WIDTH,
   NAV_HORIZONTAL_HEIGHT,
+  NAV_WIDTH,
+  OFFSET_HEADER_HEIGHT,
 } from './config';
 
 import { MultiTabOperation, ThemeLayout } from '#/enum';
@@ -38,7 +51,9 @@ export default function MultiTabs({ offsetTop = false }: Props) {
 
   const tabContentRef = useRef(null);
   const [fullScreen, toggleFullScreen] = useToggle(false);
-  useFullscreen(tabContentRef, fullScreen, { onClose: () => toggleFullScreen(false) });
+  useFullscreen(tabContentRef, fullScreen, {
+    onClose: () => toggleFullScreen(false),
+  });
 
   const {
     tabs,
@@ -58,20 +73,21 @@ export default function MultiTabs({ offsetTop = false }: Props) {
    * @example
    * /user/:id --> `A-UserDetail`
    */
-  const SpecialTabRenderMap: Record<string, (tab: KeepAliveTab) => ReactNode> = useMemo(
-    () => ({
-      'sys.menu.system.user_detail': (tab: KeepAliveTab) => {
-        const userId = tab.params?.id;
-        const defaultLabel = t(tab.label);
-        if (userId) {
-          const user = USER_LIST.find((item) => item.id === userId);
-          return `${user?.username}-${defaultLabel}`;
-        }
-        return defaultLabel;
-      },
-    }),
-    [t],
-  );
+  const SpecialTabRenderMap: Record<string, (tab: KeepAliveTab) => ReactNode> =
+    useMemo(
+      () => ({
+        'sys.menu.system.user_detail': (tab: KeepAliveTab) => {
+          const userId = tab.params?.id;
+          const defaultLabel = t(tab.label);
+          if (userId) {
+            const user = USER_LIST.find((item) => item.id === userId);
+            return `${user?.username}-${defaultLabel}`;
+          }
+          return defaultLabel;
+        },
+      }),
+      [t],
+    );
 
   /**
    * tab dropdown下拉选
@@ -112,8 +128,12 @@ export default function MultiTabs({ offsetTop = false }: Props) {
       {
         label: t(`sys.tab.${MultiTabOperation.CLOSERIGHT}`),
         key: MultiTabOperation.CLOSERIGHT,
-        icon: <Iconify icon="material-symbols:tab-close-right-outline" size={18} />,
-        disabled: tabs.findIndex((tab) => tab.key === openDropdownTabKey) === tabs.length - 1,
+        icon: (
+          <Iconify icon="material-symbols:tab-close-right-outline" size={18} />
+        ),
+        disabled:
+          tabs.findIndex((tab) => tab.key === openDropdownTabKey) ===
+          tabs.length - 1,
       },
       {
         type: 'divider',
@@ -166,7 +186,15 @@ export default function MultiTabs({ offsetTop = false }: Props) {
           break;
       }
     },
-    [refreshTab, closeTab, closeOthersTab, closeLeft, closeRight, closeAll, toggleFullScreen],
+    [
+      refreshTab,
+      closeTab,
+      closeOthersTab,
+      closeLeft,
+      closeRight,
+      closeAll,
+      toggleFullScreen,
+    ],
   );
 
   /**
@@ -185,7 +213,8 @@ export default function MultiTabs({ offsetTop = false }: Props) {
    */
   const calcTabStyle: (tab: KeepAliveTab) => CSSProperties = useCallback(
     (tab) => {
-      const isActive = tab.key === activeTabRoutePath || tab.key === hoveringTabKey;
+      const isActive =
+        tab.key === activeTabRoutePath || tab.key === hoveringTabKey;
       const result: CSSProperties = {
         borderRadius: '8px 8px 0 0',
         borderWidth: '1px',
@@ -214,9 +243,11 @@ export default function MultiTabs({ offsetTop = false }: Props) {
       return (
         <Dropdown
           trigger={['contextMenu']}
-          menu={{ items: menuItems, onClick: (menuInfo) => menuClick(menuInfo, tab) }}
-          onOpenChange={(open) => onOpenChange(open, tab)}
-        >
+          menu={{
+            items: menuItems,
+            onClick: (menuInfo) => menuClick(menuInfo, tab),
+          }}
+          onOpenChange={(open) => onOpenChange(open, tab)}>
           <div
             className="relative mx-px flex select-none items-center px-4 py-1"
             style={calcTabStyle(tab)}
@@ -224,10 +255,11 @@ export default function MultiTabs({ offsetTop = false }: Props) {
               if (tab.key === activeTabRoutePath) return;
               setHoveringTabKey(tab.key);
             }}
-            onMouseLeave={() => setHoveringTabKey('')}
-          >
+            onMouseLeave={() => setHoveringTabKey('')}>
             <div>
-              {SpecialTabRenderMap[tab.label] ? SpecialTabRenderMap[tab.label](tab) : t(tab.label)}
+              {SpecialTabRenderMap[tab.label]
+                ? SpecialTabRenderMap[tab.label](tab)
+                : t(tab.label)}
             </div>
             <Iconify
               icon="ion:close-outline"
@@ -239,7 +271,8 @@ export default function MultiTabs({ offsetTop = false }: Props) {
               }}
               style={{
                 visibility:
-                  (tab.key !== activeTabRoutePath && tab.key !== hoveringTabKey) ||
+                  (tab.key !== activeTabRoutePath &&
+                    tab.key !== hoveringTabKey) ||
                   tabs.length === 1
                     ? 'hidden'
                     : 'visible',
@@ -288,7 +321,10 @@ export default function MultiTabs({ offsetTop = false }: Props) {
       return;
     }
     // 原地放下
-    if (destination.droppableId === source.droppableId && destination.index === source.index) {
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
       return;
     }
 
@@ -338,23 +374,29 @@ export default function MultiTabs({ offsetTop = false }: Props) {
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId="tabsDroppable" direction="horizontal">
             {(provided) => (
-              <div ref={provided.innerRef} {...provided.droppableProps} className="flex w-full">
-                <div ref={scrollContainer} className="hide-scrollbar flex w-full px-2">
+              <div
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+                className="flex w-full">
+                <div
+                  ref={scrollContainer}
+                  className="hide-scrollbar flex w-full px-2">
                   {tabs.map((tab, index) => (
                     <div
                       id={`tab-${index}`}
                       className="flex-shrink-0"
                       key={tab.key}
-                      onClick={() => handleTabClick(tab)}
-                    >
-                      <Draggable key={tab.key} draggableId={tab.key} index={index}>
+                      onClick={() => handleTabClick(tab)}>
+                      <Draggable
+                        key={tab.key}
+                        draggableId={tab.key}
+                        index={index}>
                         {(provided) => (
                           <div
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
-                            className="w-auto"
-                          >
+                            className="w-auto">
                             {renderTabLabel(tab)}
                           </div>
                         )}
@@ -379,7 +421,9 @@ export default function MultiTabs({ offsetTop = false }: Props) {
       return;
     }
     const index = tabs.findIndex((tab) => tab.key === activeTabRoutePath);
-    const currentTabElement = scrollContainer.current.querySelector(`#tab-${index}`);
+    const currentTabElement = scrollContainer.current.querySelector(
+      `#tab-${index}`,
+    );
     if (currentTabElement) {
       currentTabElement.scrollIntoView({
         block: 'nearest',

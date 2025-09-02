@@ -1,31 +1,31 @@
-import { Component } from 'react';
+import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
+import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
+import ComponentOptionConfig, {
+  Tab,
+} from '@/components/ChartComponents/Common/ComponentOptionConfig';
+import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
+import IconRadio, {
+  Radio,
+} from '@/components/ChartComponents/Common/IconRadio';
+import Input from '@/components/ChartComponents/Common/Input';
+import InputNumber from '@/components/ChartComponents/Common/InputNumber';
+import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
+import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import { CompatColorSelect } from '@/components/ColorSelect';
+import IconTooltip from '@/components/IconTooltip';
+import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import ThemeUtil from '@/utils/Assist/Theme';
 import {
   InfoCircleOutlined,
   PicLeftOutlined,
   PicRightOutlined,
 } from '@ant-design/icons';
 import { merge } from 'lodash';
-import ComponentOptionConfig, {
-  Tab,
-} from '@/components/ChartComponents/Common/ComponentOptionConfig';
-import { CompatColorSelect } from '@/components/ColorSelect';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import IconRadio, {
-  Radio,
-} from '@/components/ChartComponents/Common/IconRadio';
-import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import Input from '@/components/ChartComponents/Common/Input';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import { FontConfigList } from '@/components/ChartComponents/Common/FontConfig';
-import MultipleSeriesConfig from '@/components/ChartComponents/Common/MultipleSeriesConfig';
-import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
-import InputNumber from '@/components/ChartComponents/Common/InputNumber';
-import IconTooltip from '@/components/IconTooltip';
-import AngleSelect from '@/components/ChartComponents/Common/AngleSelect';
-import ThemeUtil from '@/utils/Assist/Theme';
-import GlobalConfig from '@/utils/Assist/GlobalConfig';
-import ConditionConfig from './Condition';
+import { Component } from 'react';
 import { TStateCardConfig } from '../type';
+import ConditionConfig from './Condition';
 
 const { Item } = ConfigList;
 
@@ -71,8 +71,7 @@ class Config extends Component<
                   child={{
                     header: '文字样式',
                     key: 'textStyle',
-                  }}
-                >
+                  }}>
                   <FontConfigList
                     value={textStyle}
                     onChange={this.onKeyChange.bind(this, 'textStyle')}
@@ -116,8 +115,7 @@ class Config extends Component<
                             <IconTooltip title="与数据的value字段相关">
                               <InfoCircleOutlined />
                             </IconTooltip>
-                          }
-                        >
+                          }>
                           <FullForm>
                             <Input
                               className="w-100"
@@ -140,8 +138,7 @@ class Config extends Component<
                           child={{
                             header: '圆点',
                             key: 'stateIcon',
-                          }}
-                        >
+                          }}>
                           <Item label="颜色">
                             <FullForm>
                               <CompatColorSelect
@@ -199,8 +196,7 @@ class Config extends Component<
                         this.onKeyChange('stateIcon', {
                           position: value,
                         });
-                      }}
-                    >
+                      }}>
                       <Radio value={'start'} icon={<PicLeftOutlined />} />
                       <Radio value={'end'} icon={<PicRightOutlined />} />
                     </IconRadio>

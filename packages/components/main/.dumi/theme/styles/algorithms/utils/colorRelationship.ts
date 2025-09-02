@@ -32,7 +32,10 @@ const findClosestColorBase = (hue: number) => {
   return closestColorBase.hue;
 };
 
-export const generateAssociatedColors = (baseColor: string, adjustWarning: boolean = true) => {
+export const generateAssociatedColors = (
+  baseColor: string,
+  adjustWarning: boolean = true,
+) => {
   const color = chroma(baseColor);
   const [baseLightness, baseChroma, baseHue] = color.oklch();
   const closestColorHue = findClosestColorBase(baseHue);
@@ -53,7 +56,9 @@ export const generateAssociatedColors = (baseColor: string, adjustWarning: boole
   const warningHue = (warningBaseHue + hueOffset) % 360;
   const infoHue = (infoBaseHue + hueOffset) % 360;
 
-  const warningLightness = adjustWarning ? 0.7 + baseLightness * 0.2 : baseLightness;
+  const warningLightness = adjustWarning
+    ? 0.7 + baseLightness * 0.2
+    : baseLightness;
 
   return {
     success: chroma.oklch(baseLightness, baseChroma, successHue).hex(),

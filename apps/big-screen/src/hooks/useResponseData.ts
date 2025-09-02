@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import json5 from 'json5';
+import { useMemo } from 'react';
 
 export const useResponseData = (
   value: ComponentData.TComponentApiDataConfig,

@@ -34,8 +34,7 @@ export default function NoticeButton() {
           styles={{
             root: { color: 'inherit' },
             indicator: { color: '#fff' },
-          }}
-        >
+          }}>
           <Iconify icon="solar:bell-bing-bold-duotone" size={24} />
         </Badge>
       </IconButton>
@@ -55,20 +54,17 @@ export default function NoticeButton() {
             onClick={() => {
               setCount(0);
               setDrawerOpen(false);
-            }}
-          >
+            }}>
             <Iconify icon="solar:check-read-broken" size={20} />
           </IconButton>
         }
         footer={
           <div
             style={{ color: themeToken.colorTextBase }}
-            className="flex h-10 w-full items-center justify-center font-semibold"
-          >
+            className="flex h-10 w-full items-center justify-center font-semibold">
             View All
           </div>
-        }
-      >
+        }>
         <NoticeTab />
       </Drawer>
     </div>
@@ -80,13 +76,22 @@ function NoticeTab() {
   const tabChildren: ReactNode = (
     <div className="text-sm">
       <div className="flex">
-        <img className="h-10 w-10 rounded-full" src={faker.image.avatar()} alt="" />
+        <img
+          className="h-10 w-10 rounded-full"
+          src={faker.image.avatar()}
+          alt=""
+        />
         <div className="ml-2">
           <div>
             <span className="font-medium">{faker.person.fullName()}</span>
-            <span className="text-xs font-light"> sent you a frind request</span>
+            <span className="text-xs font-light">
+              {' '}
+              sent you a frind request
+            </span>
           </div>
-          <span className="text-xs font-light opacity-60">about 1 hour ago</span>
+          <span className="text-xs font-light opacity-60">
+            about 1 hour ago
+          </span>
           <div className="mt-2">
             <Space>
               <Button type="primary">Accept</Button>
@@ -97,7 +102,11 @@ function NoticeTab() {
       </div>
 
       <div className="mt-8 flex">
-        <img className="h-10 w-10 rounded-full" src={faker.image.avatar()} alt="" />
+        <img
+          className="h-10 w-10 rounded-full"
+          src={faker.image.avatar()}
+          alt=""
+        />
         <div className="ml-2">
           <div>
             <span className="font-medium">{faker.person.fullName()}</span>
@@ -107,9 +116,8 @@ function NoticeTab() {
           <span className="text-xs font-light opacity-60">5 hour ago</span>
           <div
             style={{ background: themeToken.colorBgContainerDisabled }}
-            className="mt-2 flex items-center rounded-lg bg-gray-200 p-4"
-          >
-            <div className="ml-2 flex flex-col text-gray">
+            className="mt-2 flex items-center rounded-lg bg-gray-200 p-4">
+            <div className="text-gray ml-2 flex flex-col">
               <span className="font-medium">@{faker.person.fullName()}</span>
               <span className="text-xs">{faker.lorem.lines(2)}</span>
             </div>
@@ -123,7 +131,11 @@ function NoticeTab() {
       </div>
 
       <div className="mt-8 flex">
-        <img className="h-10 w-10 rounded-full" src={faker.image.avatar()} alt="" />
+        <img
+          className="h-10 w-10 rounded-full"
+          src={faker.image.avatar()}
+          alt=""
+        />
         <div className="ml-2">
           <div>
             <span className="font-medium">{faker.person.fullName()}</span>
@@ -140,7 +152,11 @@ function NoticeTab() {
       </div>
 
       <div className="mt-8 flex">
-        <img className="h-10 w-10 rounded-full" src={faker.image.avatar()} alt="" />
+        <img
+          className="h-10 w-10 rounded-full"
+          src={faker.image.avatar()}
+          alt=""
+        />
         <div className="ml-2">
           <div>
             <span className="font-medium">{faker.person.fullName()}</span>
@@ -150,10 +166,9 @@ function NoticeTab() {
           <span className="text-xs font-light opacity-60">2 days ago</span>
           <div
             style={{ background: themeToken.colorBgContainerDisabled }}
-            className="mt-2 flex items-center rounded-lg bg-gray-200 p-4"
-          >
+            className="mt-2 flex items-center rounded-lg bg-gray-200 p-4">
             <SvgIcon icon="ic_file_audio" size={48} />
-            <div className="ml-2 flex flex-col text-gray">
+            <div className="text-gray ml-2 flex flex-col">
               <span className="font-medium">Witout Me</span>
               <span className="text-xs">1.2GB·30 min ago </span>
             </div>
@@ -163,7 +178,11 @@ function NoticeTab() {
       </div>
 
       <div className="mt-8 flex">
-        <img className="h-10 w-10 rounded-full" src={faker.image.avatar()} alt="" />
+        <img
+          className="h-10 w-10 rounded-full"
+          src={faker.image.avatar()}
+          alt=""
+        />
         <div className="ml-2">
           <div>
             <span className="font-medium">{faker.person.fullName()}</span>
@@ -186,7 +205,9 @@ function NoticeTab() {
         </IconButton>
         <div className="ml-2">
           <div>
-            <span className="font-light">Your order is placed waiting for shipping</span>
+            <span className="font-light">
+              Your order is placed waiting for shipping
+            </span>
           </div>
           <span className="text-xs font-light opacity-60">4 days ago</span>{' '}
         </div>
@@ -210,7 +231,9 @@ function NoticeTab() {
         </IconButton>
         <div className="ml-2">
           <div>
-            <span className="font-light">You have new message 5 unread message</span>
+            <span className="font-light">
+              You have new message 5 unread message
+            </span>
           </div>
           <span className="text-xs font-light opacity-60">7 days ago</span>
         </div>
@@ -222,7 +245,9 @@ function NoticeTab() {
         </IconButton>
         <div className="ml-2">
           <div>
-            <span className="font-light">Delivery processing your order is being shipped</span>
+            <span className="font-light">
+              Delivery processing your order is being shipped
+            </span>
           </div>
           <span className="text-xs font-light opacity-60">8 days ago</span>{' '}
         </div>

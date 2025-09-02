@@ -1,14 +1,14 @@
-import { get, set, merge, pick } from 'lodash';
-import { useIdPathMap, useComponentPath } from '@/hooks';
-import ComponentUtil, {
-  getParentComponent,
-  getParentPath,
-  createGroupComponent,
-  isGroupComponent,
-  getParentComponentIds,
-  getPath,
-} from '../Component';
+import { useComponentPath, useIdPathMap } from '@/hooks';
+import { get, merge, pick, set } from 'lodash';
 import { mergeWithoutArray } from '../../tool';
+import ComponentUtil, {
+  createGroupComponent,
+  getParentComponent,
+  getParentComponentIds,
+  getParentPath,
+  getPath,
+  isGroupComponent,
+} from '../Component';
 
 class GroupUtil {
   covertComponentPosition = (

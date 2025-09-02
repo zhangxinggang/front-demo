@@ -1,5 +1,5 @@
 import { message as Message } from 'antd';
-import axios, { AxiosRequestConfig, AxiosError, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { isEmpty } from 'ramda';
 
 import { t } from '@/locales/i18n';
@@ -34,7 +34,8 @@ axiosInstance.interceptors.response.use(
 
     const { status, data, message } = res.data;
     // 业务请求成功
-    const hasSuccess = data && Reflect.has(res.data, 'status') && status === ResultEnum.SUCCESS;
+    const hasSuccess =
+      data && Reflect.has(res.data, 'status') && status === ResultEnum.SUCCESS;
     if (hasSuccess) {
       return data;
     }

@@ -44,7 +44,8 @@ function DashboardLayout() {
     </div>
   );
 
-  const nav = themeLayout === ThemeLayout.Horizontal ? <NavHorizontal /> : navVertical;
+  const nav =
+    themeLayout === ThemeLayout.Horizontal ? <NavHorizontal /> : navVertical;
 
   return (
     <StyleWrapper $themeMode={themeMode}>
@@ -58,10 +59,13 @@ function DashboardLayout() {
           background: colorBgElevated,
           transition:
             'color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-        }}
-      >
+        }}>
         <Suspense fallback={<CircleLoading />}>
-          <Header offsetTop={themeLayout === ThemeLayout.Vertical ? offsetTop : undefined} />
+          <Header
+            offsetTop={
+              themeLayout === ThemeLayout.Vertical ? offsetTop : undefined
+            }
+          />
           {nav}
           <Main ref={mainEl} offsetTop={offsetTop} />
         </Suspense>
@@ -80,17 +84,20 @@ const StyleWrapper = styled.div<{ $themeMode?: ThemeMode }>`
   /* 设置滚动条轨道的样式 */
   ::-webkit-scrollbar-track {
     border-radius: 8px;
-    background: ${(props) => (props.$themeMode === ThemeMode.Dark ? '#2c2c2c' : '#FAFAFA')};
+    background: ${(props) =>
+      props.$themeMode === ThemeMode.Dark ? '#2c2c2c' : '#FAFAFA'};
   }
 
   /* 设置滚动条滑块的样式 */
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: ${(props) => (props.$themeMode === ThemeMode.Dark ? '#6b6b6b' : '#C1C1C1')};
+    background: ${(props) =>
+      props.$themeMode === ThemeMode.Dark ? '#6b6b6b' : '#C1C1C1'};
   }
 
   /* 设置鼠标悬停在滚动条上的样式 */
   ::-webkit-scrollbar-thumb:hover {
-    background: ${(props) => (props.$themeMode === ThemeMode.Dark ? '#939393' : '##7D7D7D')};
+    background: ${(props) =>
+      props.$themeMode === ThemeMode.Dark ? '#939393' : '##7D7D7D'};
   }
 `;

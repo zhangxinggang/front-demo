@@ -99,8 +99,7 @@ const Selecto = (props: {
       ratio={0}
       onDragStart={handleDragStart}
       onSelectEnd={handleSelectEnd}
-      onSelect={handleSelect}
-    ></ReactSelecto>
+      onSelect={handleSelect}></ReactSelecto>
   );
 };
 
@@ -119,8 +118,7 @@ const OuterSelecto = () => {
           a: 0.4,
         }),
       }}
-      className={styles['react-select-to-wrapper']}
-    >
+      className={styles['react-select-to-wrapper']}>
       <InternalSelecto />
     </div>
   );

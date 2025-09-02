@@ -38,8 +38,7 @@ const GroupConfig = (props: {
       className={classnames('h-100', styles['design-config-group'])}
       style={{
         pointerEvents: disabled ? 'none' : 'unset',
-      }}
-    >
+      }}>
       <ConfigWrapper
         tabCounter={1}
         title={title}

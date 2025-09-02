@@ -1,6 +1,6 @@
+import { ThemeMap } from '@/utils/constants';
 import { MenuDataItem, Settings as ProSettings } from '@ant-design/pro-layout';
 import UndoHistory from 'react-undo-component/lib/Component/history';
-import { ThemeMap } from '@/utils/constants';
 
 export type ILocalModelState = {
   componentCollapse: boolean;

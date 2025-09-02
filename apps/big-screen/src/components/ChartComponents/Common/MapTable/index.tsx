@@ -1,6 +1,6 @@
 import { Table } from 'antd';
-import classnames from 'classnames';
 import { TableProps } from 'antd/es/table';
+import classnames from 'classnames';
 import styles from './index.less';
 
 function MapTable(

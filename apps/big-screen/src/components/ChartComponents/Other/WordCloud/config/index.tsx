@@ -1,12 +1,12 @@
-import { Component } from 'react';
 import ComponentOptionConfig, {
   Tab,
 } from '@/components/ChartComponents/Common/ComponentOptionConfig';
 import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import TooltipConfig from './Tooltip';
-import SeriesConfig from './Series';
-import ConditionConfig from './Condition';
+import { Component } from 'react';
 import { TWordCloudBasicConfig } from '../type';
+import ConditionConfig from './Condition';
+import SeriesConfig from './Series';
+import TooltipConfig from './Tooltip';
 
 class Config extends Component<
   ComponentData.ComponentConfigProps<TWordCloudBasicConfig>

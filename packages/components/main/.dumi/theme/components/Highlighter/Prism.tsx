@@ -1,7 +1,10 @@
 import { useTheme } from 'antd-style';
 import { memo } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import {
+  oneDark,
+  oneLight,
+} from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import { languageMap } from './language';
 
@@ -33,8 +36,7 @@ export const Prism = memo<HighlighterProps>(({ children, language, theme }) => {
     <SyntaxHighlighter
       language={language}
       style={isDarkMode ? Theme.dark : Theme.light}
-      customStyle={{ borderRadius: 8, lineHeight: lineHeight }}
-    >
+      customStyle={{ borderRadius: 8, lineHeight: lineHeight }}>
       {children}
     </SyntaxHighlighter>
   );

@@ -12,8 +12,7 @@ export default function ScrollbarView() {
       <Typography.Link
         href="https://grsmto.github.io/simplebar/"
         style={{ color: colorPrimary }}
-        className="mb-4 block"
-      >
+        className="mb-4 block">
         https://grsmto.github.io/simplebar/
       </Typography.Link>
       <Row gutter={[16, 16]} justify="center">

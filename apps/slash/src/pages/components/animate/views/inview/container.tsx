@@ -16,14 +16,16 @@ type Props = {
 export default function ContainerView({ isText, variant, isMulti }: Props) {
   const { colorBgLayout } = useThemeToken();
   const varients = useMemo(() => getVariant(variant), [variant]);
-  const imgs = useMemo(() => (isMulti ? repeat(Cover3, 5) : [Cover3]), [isMulti]);
+  const imgs = useMemo(
+    () => (isMulti ? repeat(Cover3, 5) : [Cover3]),
+    [isMulti],
+  );
 
   return (
     <div
       key={variant}
-      className="overflow-auto rounded-lg xs:p-20"
-      style={{ backgroundColor: colorBgLayout }}
-    >
+      className="xs:p-20 overflow-auto rounded-lg"
+      style={{ backgroundColor: colorBgLayout }}>
       {isText ? (
         <MotionContainer className="flex h-80 items-center justify-center font-bold md:text-6xl">
           {TEXT.split('').map((letter, index) => (

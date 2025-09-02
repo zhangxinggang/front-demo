@@ -18,7 +18,14 @@ import {
   useRole,
   useTypeahead,
 } from '@floating-ui/react';
-import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
+import {
+  CSSProperties,
+  FC,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import useControlledState from 'use-merge-value';
 
 import SelectItem from './SelectItem';
@@ -51,7 +58,10 @@ const NativeSelect: FC<NativeSelectProps> = ({
   className,
 }) => {
   const cls = prefixCls ?? 'native-select';
-  const [selectedIndex, setSelectedIndex] = useControlledState<number>(0, { value, onChange });
+  const [selectedIndex, setSelectedIndex] = useControlledState<number>(0, {
+    value,
+    onChange,
+  });
 
   const { styles, cx } = useStyles(cls);
   const listRef = useRef<Array<HTMLElement | null>>([]);
@@ -83,7 +93,9 @@ const NativeSelect: FC<NativeSelectProps> = ({
     middleware: fallback
       ? [
           offset(5),
-          touch ? shift({ crossAxis: true, padding: 10 }) : flip({ padding: 10 }),
+          touch
+            ? shift({ crossAxis: true, padding: 10 })
+            : flip({ padding: 10 }),
           size({
             apply({ availableHeight }) {
               Object.assign(scrollRef.current?.style ?? {}, {
@@ -109,28 +121,30 @@ const NativeSelect: FC<NativeSelectProps> = ({
         ],
   });
 
-  const { getReferenceProps, getFloatingProps, getItemProps } = useInteractions([
-    useClick(context, { event: 'mousedown' }),
-    useDismiss(context),
-    useRole(context, { role: 'listbox' }),
-    useInnerOffset(context, {
-      enabled: !fallback,
-      onChange: setInnerOffset,
-      overflowRef,
-      scrollRef,
-    }),
-    useListNavigation(context, {
-      listRef,
-      activeIndex,
-      selectedIndex,
-      onNavigate: setActiveIndex,
-    }),
-    useTypeahead(context, {
-      listRef: listContentRef,
-      activeIndex,
-      onMatch: open ? setActiveIndex : setSelectedIndex,
-    }),
-  ]);
+  const { getReferenceProps, getFloatingProps, getItemProps } = useInteractions(
+    [
+      useClick(context, { event: 'mousedown' }),
+      useDismiss(context),
+      useRole(context, { role: 'listbox' }),
+      useInnerOffset(context, {
+        enabled: !fallback,
+        onChange: setInnerOffset,
+        overflowRef,
+        scrollRef,
+      }),
+      useListNavigation(context, {
+        listRef,
+        activeIndex,
+        selectedIndex,
+        onNavigate: setActiveIndex,
+      }),
+      useTypeahead(context, {
+        listRef: listContentRef,
+        activeIndex,
+        onMatch: open ? setActiveIndex : setSelectedIndex,
+      }),
+    ],
+  );
 
   useEffect(() => {
     if (open) {
@@ -166,23 +180,24 @@ const NativeSelect: FC<NativeSelectProps> = ({
               setTouch(false);
             }
           },
-        })}
-      >
+        })}>
         {renderValue ? renderValue(selectedIndex) : label}
       </button>
 
       <FloatingPortal>
         {open && (
           <FloatingOverlay lockScroll={!touch} style={{ zIndex: 3000 }}>
-            <FloatingFocusManager context={context} modal={false} initialFocus={-1}>
+            <FloatingFocusManager
+              context={context}
+              modal={false}
+              initialFocus={-1}>
               <div
                 ref={refs.setFloating}
                 style={{
                   position: strategy,
                   top: y ?? 0,
                   left: x ?? 0,
-                }}
-              >
+                }}>
                 <div
                   className={styles.container}
                   style={{ overflowY: 'auto' }}
@@ -191,8 +206,7 @@ const NativeSelect: FC<NativeSelectProps> = ({
                     onContextMenu(e) {
                       e.preventDefault();
                     },
-                  })}
-                >
+                  })}>
                   {options.map((item, i) => {
                     return (
                       <SelectItem

@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from 'react';
-import ConfigList from '../Structure/ConfigList';
 import { SingleCollapse as Collapse } from '../Collapse';
-import FullForm from '../Structure/FullForm';
 import InputNumber from '../InputNumber';
+import ConfigList from '../Structure/ConfigList';
+import FullForm from '../Structure/FullForm';
 
 const { Item } = ConfigList;
 
@@ -51,8 +51,7 @@ const TooltipAnimationConfig = (props: TooltipAnimationConfigProps) => {
       parent={{
         activeKey: ['tooltip-animation'],
       }}
-      level={level}
-    >
+      level={level}>
       {speedConfig}
     </Collapse>
   );

@@ -35,8 +35,8 @@ export default function Page404() {
 
           <m.div variants={varBounce().in}>
             <Typography.Paragraph type="secondary" className="text-center">
-              Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL?
-              Be sure to check your spelling.
+              Sorry, we couldn’t find the page you’re looking for. Perhaps
+              you’ve mistyped the URL? Be sure to check your spelling.
             </Typography.Paragraph>
           </m.div>
 
@@ -46,12 +46,20 @@ export default function Page404() {
               xmlns="http://www.w3.org/2000/svg"
               width={400}
               height={400}
-              className="w-full"
-            >
+              className="w-full">
               <defs>
-                <linearGradient id="BG" x1="19.496%" x2="77.479%" y1="71.822%" y2="16.69%">
+                <linearGradient
+                  id="BG"
+                  x1="19.496%"
+                  x2="77.479%"
+                  y1="71.822%"
+                  y2="16.69%">
                   <stop offset="0%" stopColor={colorPrimary} />
-                  <stop offset="100%" stopColor={colorPrimary} stopOpacity="0" />
+                  <stop
+                    offset="100%"
+                    stopColor={colorPrimary}
+                    stopOpacity="0"
+                  />
                 </linearGradient>
               </defs>
               {/* background */}
@@ -97,8 +105,7 @@ export default function Page404() {
                   x2="78.3"
                   y1="187.77"
                   y2="305.935"
-                  gradientUnits="userSpaceOnUse"
-                >
+                  gradientUnits="userSpaceOnUse">
                   <stop stopColor={colorPrimaryHover} />
                   <stop offset="1" stopColor={colorPrimaryActive} />
                 </linearGradient>
@@ -109,8 +116,7 @@ export default function Page404() {
           <NavLink
             to={HOMEPAGE}
             style={{ background: colorTextBase, color: colorBgBase }}
-            className="rounded-md p-4"
-          >
+            className="rounded-md p-4">
             Go to Home
           </NavLink>
         </MotionContainer>

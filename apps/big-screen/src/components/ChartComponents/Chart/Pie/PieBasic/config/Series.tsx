@@ -1,17 +1,17 @@
-import { useCallback, useMemo } from 'react';
-import { Select, Switch } from 'antd';
-import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
-import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
-import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
-import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
-import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
+import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
 import { SingleCollapse as Collapse } from '@/components/ChartComponents/Common/Collapse';
-import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
+import FormatterSelect from '@/components/ChartComponents/Common/FormatterSelect';
 import InputNumber from '@/components/ChartComponents/Common/InputNumber';
 import LineStyle from '@/components/ChartComponents/Common/LineStyleSelect';
-import CenterPositionConfig from '@/components/ChartComponents/Common/CenterPositionConfig';
 import MaxMinConfig from '@/components/ChartComponents/Common/MaxMinConfig';
+import SeriesLabelConfig from '@/components/ChartComponents/Common/SeriesLabelConfig';
+import SimpleHueSelect from '@/components/ChartComponents/Common/SimpleHueSelect';
+import ConfigList from '@/components/ChartComponents/Common/Structure/ConfigList';
+import FullForm from '@/components/ChartComponents/Common/Structure/FullForm';
+import HalfForm from '@/components/ChartComponents/Common/Structure/HalfForm';
 import GlobalConfig from '@/utils/Assist/GlobalConfig';
+import { Select, Switch } from 'antd';
+import { useCallback, useMemo } from 'react';
 import { TPieBasicConfig } from '../type';
 
 const { Item } = ConfigList;
@@ -43,8 +43,7 @@ const SeriesConfig = (props: {
       <SeriesLabelConfig
         {...(label as any)}
         onChange={onKeyChange.bind(null, 'label')}
-        ignore={['position']}
-      >
+        ignore={['position']}>
         <Item label="位置（%）">
           <FullForm>
             <Select
@@ -93,8 +92,7 @@ const SeriesConfig = (props: {
             });
           },
           value: labelLine.show,
-        }}
-      >
+        }}>
         <MaxMinConfig
           label="线段"
           subLabel={['第一线段', '第二线段']}

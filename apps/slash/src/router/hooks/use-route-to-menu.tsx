@@ -28,9 +28,10 @@ export function useRouteToMenuFn() {
             menuItem.label = (
               <div
                 className={`inline-flex w-full items-center ${
-                  themeLayout === ThemeLayout.Horizontal ? 'justify-start' : 'justify-between'
-                } `}
-              >
+                  themeLayout === ThemeLayout.Horizontal
+                    ? 'justify-start'
+                    : 'justify-between'
+                } `}>
                 <div className="">{t(label)}</div>
                 {suffix}
               </div>
@@ -38,9 +39,21 @@ export function useRouteToMenuFn() {
             if (icon) {
               if (typeof icon === 'string') {
                 if (icon.startsWith('ic')) {
-                  menuItem.icon = <SvgIcon icon={icon} size={24} className="ant-menu-item-icon" />;
+                  menuItem.icon = (
+                    <SvgIcon
+                      icon={icon}
+                      size={24}
+                      className="ant-menu-item-icon"
+                    />
+                  );
                 } else {
-                  menuItem.icon = <Iconify icon={icon} size={24} className="ant-menu-item-icon" />;
+                  menuItem.icon = (
+                    <Iconify
+                      icon={icon}
+                      size={24}
+                      className="ant-menu-item-icon"
+                    />
+                  );
                 }
               } else {
                 menuItem.icon = icon;

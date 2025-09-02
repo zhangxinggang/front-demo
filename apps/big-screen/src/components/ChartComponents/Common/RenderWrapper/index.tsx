@@ -1,6 +1,6 @@
+import DeepStructureComponent from '../../../DeepStructureComponent';
 import InViewportWrapper from './InViewportWrapper';
 import ShowIdWrapper from './ShowIdWrapper';
-import DeepStructureComponent from '../../../DeepStructureComponent';
 
 const ChartComponentMap: any = {};
 

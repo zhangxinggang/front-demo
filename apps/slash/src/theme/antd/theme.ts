@@ -60,4 +60,9 @@ const themeModeToken: Record<'dark' | 'light', ThemeConfig> = {
   light: {},
 };
 
-export { customThemeTokenConfig, customComponentConfig, colorPrimarys, themeModeToken };
+export {
+  colorPrimarys,
+  customComponentConfig,
+  customThemeTokenConfig,
+  themeModeToken,
+};

@@ -24,8 +24,7 @@ const Content: FC<PropsWithChildren> = ({ children }) => {
         <div
           style={{
             display: loading ? 'none' : undefined,
-          }}
-        >
+          }}>
           {children}
         </div>
         <div id="author-info"></div>

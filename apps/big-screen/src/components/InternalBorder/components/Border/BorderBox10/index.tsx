@@ -1,7 +1,7 @@
-import React, { useMemo, forwardRef, CSSProperties } from 'react';
 import classnames from 'classnames';
+import { CSSProperties, forwardRef, useMemo } from 'react';
+import { useAutoResize, useBorderWrapper } from '../hooks';
 import { CommonBorderProps } from '../type';
-import { useBorderWrapper, useAutoResize } from '../hooks';
 import styles from './index.less';
 
 const border = ['left-top', 'right-top', 'left-bottom', 'right-bottom'];
@@ -47,8 +47,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       <svg
         className={styles['internal-border-10-border-container']}
         width={width}
-        height={height}
-      >
+        height={height}>
         <polygon
           fill={backgroundColor}
           points={`
@@ -68,8 +67,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           className={classnames(
             styles[`internal-border-10-border-${borderName}`],
             styles['internal-border-10-border-container'],
-          )}
-        >
+          )}>
           <polygon
             fill={mergedColor[1]}
             points="40, 0 5, 0 0, 5 0, 16 3, 19 3, 7 7, 3 35, 3"
@@ -78,8 +76,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       ))}
       <div
         {...nextProps}
-        className={styles['internal-border-10-border-content']}
-      >
+        className={styles['internal-border-10-border-content']}>
         {children}
       </div>
     </div>

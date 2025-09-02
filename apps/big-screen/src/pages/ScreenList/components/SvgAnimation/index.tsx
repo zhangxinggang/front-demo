@@ -3,16 +3,16 @@ import Vivus from 'vivus';
 import {
   AreaChart,
   BarChart,
-  LineChart,
   DotChart,
-  TitleChart,
-  MapChart,
-  ListChart,
   ImageChart,
-  VideoChart,
+  LineChart,
+  ListChart,
+  MapChart,
   PieChart,
   RadarChart,
   ThermogramChart,
+  TitleChart,
+  VideoChart,
 } from './SvgMap';
 import styles from './index.less';
 

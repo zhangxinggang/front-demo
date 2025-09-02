@@ -1,14 +1,14 @@
 import classnames from 'classnames';
 import {
-  UndoIcon,
-  RedoIcon,
   CallbackIcon,
   ConstantIcon,
-  TCommonProps,
-  LocalConfigIcon,
   LensConfig,
-  ThemeConfig,
+  LocalConfigIcon,
+  RedoIcon,
   RequestDefaultConfig,
+  TCommonProps,
+  ThemeConfig,
+  UndoIcon,
 } from './action.map';
 import styles from './index.less';
 
@@ -27,8 +27,7 @@ const ToolBar = (props: TCommonProps) => {
         'pos-sti',
         'page-design-left-tool-bar',
         'zero-scrollbar',
-      )}
-    >
+      )}>
       <UndoIcon {...nextProps} />
       <RedoIcon {...nextProps} />
       <CallbackIcon {...nextProps} />

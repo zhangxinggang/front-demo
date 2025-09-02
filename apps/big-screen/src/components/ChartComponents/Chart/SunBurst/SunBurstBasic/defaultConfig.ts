@@ -1,16 +1,16 @@
 import { mergeWithoutArray } from '@/utils';
+import { getName, getNumberValue } from '@/utils/constants';
 import {
   BASIC_DEFAULT_CONFIG,
   BASIC_DEFAULT_DATA_CONFIG,
   BASIC_DEFAULT_INTERACTIVE_CONFIG,
-  DEFAULT_TOOLTIP_CONFIG,
-  DEFAULT_FONT_CONFIG,
   DEFAULT_ANIMATION_CONFIG,
   DEFAULT_CONDITION_CONFIG,
-  DEFAULT_LINKAGE_CONFIG,
+  DEFAULT_FONT_CONFIG,
   DEFAULT_INTERACTIVE_BASE_CONFIG,
+  DEFAULT_LINKAGE_CONFIG,
+  DEFAULT_TOOLTIP_CONFIG,
 } from '../../../Common/Constants/defaultConfig';
-import { getName, getNumberValue } from '@/utils/constants';
 import { TSunBurstBasicConfig } from './type';
 
 function generateList(count = 10): any {

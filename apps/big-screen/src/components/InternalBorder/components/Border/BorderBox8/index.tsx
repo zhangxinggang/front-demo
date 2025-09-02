@@ -1,8 +1,8 @@
-import React, { useMemo, forwardRef, useState, CSSProperties } from 'react';
 import classnames from 'classnames';
 import { nanoid } from 'nanoid';
+import { CSSProperties, forwardRef, useMemo, useState } from 'react';
+import { useAutoResize, useBorderWrapper } from '../hooks';
 import { CommonBorderProps } from '../type';
-import { useBorderWrapper, useAutoResize } from '../hooks';
 import styles from './index.less';
 
 const defaultColor = ['#235fa7', '#4fd2dd'];
@@ -67,8 +67,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
       <svg
         className={styles['internal-border-8-border-container']}
         width={width}
-        height={height}
-      >
+        height={height}>
         <defs>
           <path id={path} d={pathD} fill="transparent" />
           <radialGradient id={gradient} cx="50%" cy="50%" r="50%">
@@ -101,8 +100,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
           stroke={mergedColor[1]}
           strokeWidth="3"
           href={`#${path}`}
-          mask={`url(#${mask})`}
-        >
+          mask={`url(#${mask})`}>
           <animate
             attributeName="stroke-dasharray"
             from={`0, ${length}`}
@@ -115,8 +113,7 @@ const BorderBox = forwardRef((props: IProps, ref) => {
 
       <div
         {...nextProps}
-        className={styles['internal-border-8-border-content']}
-      >
+        className={styles['internal-border-8-border-content']}>
         {children}
       </div>
     </div>

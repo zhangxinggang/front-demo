@@ -1,7 +1,7 @@
 import { ReactNode, useCallback, useMemo } from 'react';
-import ConfigList from '../Structure/ConfigList';
 import { SingleCollapse as Collapse } from '../Collapse';
 import MarginConfig from '../MarginConfig';
+import ConfigList from '../Structure/ConfigList';
 
 export type GridConfigProps = {
   ignore?: ('show' | 'position')[];
@@ -65,8 +65,7 @@ const GridConfig = (props: GridConfigProps) => {
         }}
         parent={{
           activeKey: ['legend'],
-        }}
-      >
+        }}>
         {positionConfig}
         {children}
       </Collapse>
