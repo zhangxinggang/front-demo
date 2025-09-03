@@ -1,10 +1,9 @@
-const fabric = require('@umijs/fabric');
 module.exports = {
-  ...fabric.prettier,
   printWidth: 80,
   singleQuote: true,
   trailingComma: 'all',
   bracketSameLine: true,
+  proseWrap: 'never',
   endOfLine: 'auto',
   plugins: [
     'prettier-plugin-organize-imports',
@@ -13,6 +12,9 @@ module.exports = {
     'prettier-plugin-tailwindcss',
   ],
   importOrder: ['<THIRD_PARTY_MODULES>', '^@(.*)', '^[./]'],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: false,
+  importOrderGroupNamespaceSpecifiers: false,
   overrides: [
     {
       files: '.prettierrc',

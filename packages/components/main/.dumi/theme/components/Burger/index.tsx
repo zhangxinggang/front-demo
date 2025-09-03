@@ -2,7 +2,7 @@ import { Drawer } from 'antd';
 import { useState } from 'react';
 import { Center } from 'react-layout-kit';
 
-import Sidebar from '../../slots/Slidebar';
+import Sidebar from '../../slots/Sidebar';
 import { useStyles } from './style';
 
 const Burger = () => {
